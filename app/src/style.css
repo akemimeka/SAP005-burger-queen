@@ -71,3 +71,25 @@ body {
   background-color: #F6C13C;
   color: #7F381A;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5rem;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  background-color: #829F19;
+}
+
+.footer-text{
+  color: #7F381A;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.footer-link {
+  color: #F8EDDD;
+  text-decoration: none;
+}
