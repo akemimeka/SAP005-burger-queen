@@ -88,7 +88,6 @@ export default function Signup() {
               labelClassName='button-base label-radio'
               labelText='Salão'
             />
-            <p>{workerRole}</p>
 
             <InputRadio
               inputClassName='input-radio'
@@ -103,7 +102,6 @@ export default function Signup() {
               labelText='Cozinha'
             />
           </div>
-          <p>{workerRole}</p>
 
           <InputText
             divWrapClassName='label-input-wrap'
