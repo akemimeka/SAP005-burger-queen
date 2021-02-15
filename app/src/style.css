@@ -26,6 +26,16 @@ body {
 
 
 /* BASE STYLING */
+.main-container {
+  padding-bottom: 5rem;
+}
+
+.subtitle-base {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+}
+
 .tag-link {
   display: inline-block;
   position: relative;
@@ -58,7 +68,7 @@ body {
 
 /* LOGIN PAGE */
 .logo-login {
-  width: 16rem;
+  width: 14rem;
 }
 
 .form-container {
@@ -103,6 +113,20 @@ body {
 
 
 /* SIGNUP PAGE */
+.signup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #829F19;
+  border-radius: 0 0 1.5rem 1.5rem;
+  padding: 0.5rem 2.5rem;
+}
+
+.logo-signup {
+  width: 9rem;
+  position: relative;
+  top: 0.3rem;
+}
 
 .signup-subtitle {
   color: #F8EDDD;
@@ -131,21 +155,21 @@ body {
   color: #A64922;
 }
 
+
 /* FOOTER */
 .footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 0.7rem 0;
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding: 0.6rem 0;
   background-color: #829F19;
 }
 
 .footer-text {
   color: #7F381A;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
 }
 
