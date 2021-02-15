@@ -48,7 +48,7 @@ export default function Signup() {
         <h2 className='subtitle-base signup-subtitle'>Cadastro</h2>
       </header>
 
-      <main className='main-container'>
+      <main className='main-container-base main-container-signup'>
         <form className='form-container' onSubmit={registerUser}>
           <InputText
             divWrapClassName='label-input-wrap'
@@ -74,8 +74,9 @@ export default function Signup() {
             inputOnChange={(event) => setWorkerEmail(event.target.value)}
           />
 
-          <p className='label-for-input'>Função</p>
-          <div className='radio-buttons-wrap'>
+          <div className='label-input-wrap'>
+            <p className='label-for-input'>Função</p>
+            <div className='radio-buttons-wrap'>
             <InputRadio
               inputClassName='input-radio'
               inputId='role-hall'
@@ -99,6 +100,7 @@ export default function Signup() {
               labelClassName='button-base label-radio'
               labelText='Cozinha'
             />
+            </div>
           </div>
 
           <InputText
@@ -114,7 +116,7 @@ export default function Signup() {
 
           <Button
             type='submit'
-            className='button-base button-primary'
+            className='button-base button-primary button-centered'
             buttonText='Cadastrar'
           />
         </form>

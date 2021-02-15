@@ -34,7 +34,7 @@ export default function Login() {
 
   return (
     <Fragment>
-      <main className='main-container'>
+      <main className='main-container-base main-container-login'>
         <h1>
           <img className='logo-login' src={logo} alt='Logo Hamburgueria Ipê' />
         </h1>
@@ -66,7 +66,7 @@ export default function Login() {
 
           <Button
             type='submit'
-            className='button-base button-primary'
+            className='button-base button-primary button-centered'
             buttonText='Entrar'
           />
         </form>
