@@ -39,6 +39,15 @@ export default function Signup() {
       .catch((error) => console.log(error));
   };
 
+  //   const checkPassword() = {
+  //     if(!input["password"] && typeof input["confirm_password"] !== "undefined") {
+  //     if (input["password"] != input["confirm_password"]) {
+  //       isValid = false;
+  //       errors["password"] = "As senhas não coincidem.";
+  //     }
+  //   }
+  // }
+
   return (
     <Fragment>
       <header className='signup-header'>
@@ -77,31 +86,31 @@ export default function Signup() {
           <div className='label-input-wrap'>
             <p className='label-for-input'>Função</p>
             <div className='radio-buttons-wrap'>
-            <InputRadio
-              inputClassName='input-radio'
-              inputId='role-hall'
-              inputName='role'
-              inputRequired
-              inputValue='hall'
-              inputChecked={workerRole === 'hall'}
-              inputOnChange={(event) => setWorkerRole(event.target.value)}
-              labelHtmlFor='role-hall'
-              labelClassName='button-base label-radio'
-              labelText='Salão'
-            />
+              <InputRadio
+                inputClassName='input-radio'
+                inputId='role-hall'
+                inputName='role'
+                inputRequired
+                inputValue='hall'
+                inputChecked={workerRole === 'hall'}
+                inputOnChange={(event) => setWorkerRole(event.target.value)}
+                labelHtmlFor='role-hall'
+                labelClassName='button-base label-radio'
+                labelText='Salão'
+              />
 
-            <InputRadio
-              inputClassName='input-radio'
-              inputId='role-kitchen'
-              inputName='role'
-              inputRequired
-              inputValue='kitchen'
-              inputChecked={workerRole === 'kitchen'}
-              inputOnChange={(event) => setWorkerRole(event.target.value)}
-              labelHtmlFor='role-kitchen'
-              labelClassName='button-base label-radio'
-              labelText='Cozinha'
-            />
+              <InputRadio
+                inputClassName='input-radio'
+                inputId='role-kitchen'
+                inputName='role'
+                inputRequired
+                inputValue='kitchen'
+                inputChecked={workerRole === 'kitchen'}
+                inputOnChange={(event) => setWorkerRole(event.target.value)}
+                labelHtmlFor='role-kitchen'
+                labelClassName='button-base label-radio'
+                labelText='Cozinha'
+              />
             </div>
           </div>
 
@@ -115,6 +124,17 @@ export default function Signup() {
             inputClassName='input-text'
             inputOnChange={(event) => setWorkerPassword(event.target.value)}
           />
+
+          {/* <InputText
+          divWrapClassName='label-input-wrap'
+          labelClassName='label-for-input'
+          labelText='Confirmar Senha'
+          inputRequired
+          inputType='password'
+          inputPlaceholder='Confirmar senha'
+          inputClassName='input-text'
+          inputOnChange={(event) => setworkerConfirmPassword(event.target.value)}
+        /> */}
 
           <Button
             type='submit'
