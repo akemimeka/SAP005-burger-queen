@@ -81,25 +81,29 @@ export default function Signup() {
               inputId='role-hall'
               inputName='role'
               inputRequired
-              inputValue={workerRole === 'hall'}
+              inputValue='hall'
+              inputChecked={workerRole === 'hall'}
               inputOnChange={(event) => setWorkerRole(event.target.value)}
               labelHtmlFor='role-hall'
               labelClassName='button-base label-radio'
               labelText='Salão'
             />
+            <p>{workerRole}</p>
 
             <InputRadio
               inputClassName='input-radio'
               inputId='role-kitchen'
               inputName='role'
               inputRequired
-              inputValue={workerRole === 'kitchen'}
+              inputValue='kitchen'
+              inputChecked={workerRole === 'kitchen'}
               inputOnChange={(event) => setWorkerRole(event.target.value)}
               labelHtmlFor='role-kitchen'
               labelClassName='button-base label-radio'
               labelText='Cozinha'
             />
           </div>
+          <p>{workerRole}</p>
 
           <InputText
             divWrapClassName='label-input-wrap'
