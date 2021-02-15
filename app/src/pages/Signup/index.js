@@ -98,8 +98,6 @@ export default function Signup() {
             labelClassName='button-base label-radio'
             labelText='Cozinha'
           />
-
-
         </div>
 
         <InputText

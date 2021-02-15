@@ -25,6 +25,37 @@ body {
 }
 
 
+/* BASE STYLING */
+.tag-link {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  transition: ease 0.1s;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.button-base {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  transition: ease 0.1s;
+}
+
+.tag-link:hover,
+.button-base:hover {
+  top: -0.3rem;
+}
+
+
 /* LOGIN PAGE */
 .logo-login {
   width: 16rem;
@@ -60,77 +91,18 @@ body {
   font-size: 1.2rem;
 }
 
-.button-base {
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-}
-
 .button-primary {
-<<<<<<< HEAD
-  background-color: #BF4719;
-=======
-  display: inline-block;
-  position: relative;
   background-color: #7F381A;
->>>>>>> 8eabb0180f8187954913c6cc39a0bdd78f8a33e4
   color:#F6C13C;
-  top: 0;
-  transition: top ease 0.3s;
-}
-
-.button-primary:hover {
-  top: -0.3rem;
 }
 
 .button-secondary {
-  display: inline-block;
-  position: relative;
   background-color: #F6C13C;
   color: #7F381A;
-  top: 0;
-  transition: top ease 0.3s;
 }
 
-.button-secondary:hover {
-  top: -0.3rem;
-}
 
-/* Footer */
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 0.7rem;
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
-  background-color: #829F19;
-}
-
-.footer-text {
-  color: #7F381A;
-  text-align: center;
-  font-size: 0.80rem;
-  font-weight: 500;
-}
-
-.footer-link {
-  display: inline-block;
-  position: relative;
-  top: 0;
-  transition: top ease 0.3s;
-  color: #F8EDDD;
-  text-decoration: none;
-}
-
-.footer-link:hover {
-  top: -0.3rem;
-}
+/* SIGNUP PAGE */
 
 .signup-subtitle {
   color: #F8EDDD;
@@ -157,4 +129,26 @@ body {
 .radio-buttons-wrap .input-radio:checked + .label-radio {
   background-color: #F6C13C;
   color: #A64922;
+}
+
+/* FOOTER */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0.7rem 0;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  background-color: #829F19;
+}
+
+.footer-text {
+  color: #7F381A;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.footer-link {
+  color: #F8EDDD;
 }
