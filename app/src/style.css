@@ -25,9 +25,50 @@ body {
 }
 
 
+/* BASE STYLING */
+.main-container {
+  padding-bottom: 5rem;
+}
+
+.subtitle-base {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+}
+
+.tag-link {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  transition: ease 0.1s;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.button-base {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  transition: ease 0.1s;
+}
+
+.tag-link:hover,
+.button-base:hover {
+  top: -0.3rem;
+}
+
+
 /* LOGIN PAGE */
 .logo-login {
-  width: 16rem;
+  width: 14rem;
 }
 
 .form-container {
@@ -60,76 +101,31 @@ body {
   font-size: 1.2rem;
 }
 
-.button-base {
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-}
-
 .button-primary {
-<<<<<<< HEAD
-  background-color: #BF4719;
-=======
-  display: inline-block;
-  position: relative;
   background-color: #7F381A;
->>>>>>> 8eabb0180f8187954913c6cc39a0bdd78f8a33e4
   color:#F6C13C;
-  top: 0;
-  transition: top ease 0.3s;
-}
-
-.button-primary:hover {
-  top: -0.3rem;
 }
 
 .button-secondary {
-  display: inline-block;
-  position: relative;
   background-color: #F6C13C;
   color: #7F381A;
-  top: 0;
-  transition: top ease 0.3s;
 }
 
-.button-secondary:hover {
-  top: -0.3rem;
-}
 
-/* Footer */
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 0.7rem;
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
+/* SIGNUP PAGE */
+.signup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #829F19;
+  border-radius: 0 0 1.5rem 1.5rem;
+  padding: 0.5rem 2.5rem;
 }
 
-.footer-text {
-  color: #7F381A;
-  text-align: center;
-  font-size: 0.80rem;
-  font-weight: 500;
-}
-
-.footer-link {
-  display: inline-block;
+.logo-signup {
+  width: 9rem;
   position: relative;
-  top: 0;
-  transition: top ease 0.3s;
-  color: #F8EDDD;
-  text-decoration: none;
-}
-
-.footer-link:hover {
-  top: -0.3rem;
+  top: 0.3rem;
 }
 
 .signup-subtitle {
@@ -157,4 +153,26 @@ body {
 .radio-buttons-wrap .input-radio:checked + .label-radio {
   background-color: #F6C13C;
   color: #A64922;
+}
+
+
+/* FOOTER */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding: 0.6rem 0;
+  background-color: #829F19;
+}
+
+.footer-text {
+  color: #7F381A;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.footer-link {
+  color: #F8EDDD;
 }
