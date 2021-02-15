@@ -48,94 +48,85 @@ export default function Signup() {
         <h2 className='subtitle-base signup-subtitle'>Cadastro</h2>
       </header>
 
-      <form className='form-container' onSubmit={registerUser}>
-        <InputText
-          divWrapClassName='label-input-wrap'
-          labelClassName='label-for-input'
-          labelText='Nome'
-          inputRequired
-          inputType='text'
-          inputValue={workerName}
-          inputPlaceholder='Digite seu nome'
-          inputClassName='input-text'
-          inputOnChange={(event) => setWorkerName(event.target.value)}
-        />
-
-        <InputText
-          divWrapClassName='label-input-wrap'
-          labelClassName='label-for-input'
-          labelText='E-mail'
-          inputRequired
-          inputType='email'
-          inputValue={workerEmail}
-          inputPlaceholder='Digite seu email'
-          inputClassName='input-text'
-          inputOnChange={(event) => setWorkerEmail(event.target.value)}
-        />
-
-        <p className='label-for-input'>Função</p>
-        <div className='radio-buttons-wrap'>
-          <InputRadio
-            inputClassName='input-radio'
-            inputId='role-hall'
-            inputName='role'
+      <main className='main-container'>
+        <form className='form-container' onSubmit={registerUser}>
+          <InputText
+            divWrapClassName='label-input-wrap'
+            labelClassName='label-for-input'
+            labelText='Nome'
             inputRequired
-            inputValue={workerRole === 'hall'}
-            inputOnChange={(event) => setWorkerRole(event.target.value)}
-            labelHtmlFor='role-hall'
-            labelClassName='button-base label-radio'
-            labelText='Salão'
+            inputType='text'
+            inputValue={workerName}
+            inputPlaceholder='Digite seu nome'
+            inputClassName='input-text'
+            inputOnChange={(event) => setWorkerName(event.target.value)}
           />
 
-          <InputRadio
-            inputClassName='input-radio'
-            inputId='role-kitchen'
-            inputName='role'
+          <InputText
+            divWrapClassName='label-input-wrap'
+            labelClassName='label-for-input'
+            labelText='E-mail'
             inputRequired
-            inputValue={workerRole === 'kitchen'}
-            inputOnChange={(event) => setWorkerRole(event.target.value)}
-            labelHtmlFor='role-kitchen'
-            labelClassName='button-base label-radio'
-            labelText='Cozinha'
+            inputType='email'
+            inputValue={workerEmail}
+            inputPlaceholder='Digite seu email'
+            inputClassName='input-text'
+            inputOnChange={(event) => setWorkerEmail(event.target.value)}
           />
-        </div>
 
-        <InputText
-          divWrapClassName='label-input-wrap'
-          labelClassName='label-for-input'
-          labelText='Senha'
-          inputRequired
-          inputType='password'
-          inputPlaceholder='Digite a senha'
-          inputClassName='input-text'
-          inputOnChange={(event) => setWorkerPassword(event.target.value)}
-        />
+          <p className='label-for-input'>Função</p>
+          <div className='radio-buttons-wrap'>
+            <InputRadio
+              inputClassName='input-radio'
+              inputId='role-hall'
+              inputName='role'
+              inputRequired
+              inputValue={workerRole === 'hall'}
+              inputOnChange={(event) => setWorkerRole(event.target.value)}
+              labelHtmlFor='role-hall'
+              labelClassName='button-base label-radio'
+              labelText='Salão'
+            />
 
-        {/* <InputText
-          divWrapClassName='label-input-wrap'
-          labelClassName='signup-label'
-          labelText='Confirmar senha'
-          inputRequired
-          inputType='password'
-          inputPlaceholder='Digite a senha novamente'
-          inputClassName='signup-input-password'
-          inputOnChange={(event) => setWorkerConfirmPassword(event.target.value)}
-        /> */}
+            <InputRadio
+              inputClassName='input-radio'
+              inputId='role-kitchen'
+              inputName='role'
+              inputRequired
+              inputValue={workerRole === 'kitchen'}
+              inputOnChange={(event) => setWorkerRole(event.target.value)}
+              labelHtmlFor='role-kitchen'
+              labelClassName='button-base label-radio'
+              labelText='Cozinha'
+            />
+          </div>
 
-        <Button
-          type='submit'
-          className='button-base button-primary'
-          buttonText='Cadastrar'
-        />
-      </form>
+          <InputText
+            divWrapClassName='label-input-wrap'
+            labelClassName='label-for-input'
+            labelText='Senha'
+            inputRequired
+            inputType='password'
+            inputPlaceholder='Digite a senha'
+            inputClassName='input-text'
+            inputOnChange={(event) => setWorkerPassword(event.target.value)}
+          />
 
-      <Link to="/">
-        <Button
-          type='button'
-          className='button-base button-secondary'
-          buttonText='Voltar'
-        />
-      </Link>
+          <Button
+            type='submit'
+            className='button-base button-primary'
+            buttonText='Cadastrar'
+          />
+        </form>
+
+        <Link to="/">
+          <Button
+            type='button'
+            className='button-base button-secondary'
+            buttonText='Voltar'
+          />
+        </Link>
+      </main>
 
       <Footer />
     </Fragment>

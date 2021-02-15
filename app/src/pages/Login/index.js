@@ -34,49 +34,51 @@ export default function Login() {
 
   return (
     <Fragment>
-      <h1>
-        <img className='logo-login' src={logo} alt='Logo Hamburgueria Ipê' />
-      </h1>
+      <main className='main-container'>
+        <h1>
+          <img className='logo-login' src={logo} alt='Logo Hamburgueria Ipê' />
+        </h1>
 
-      <form className='form-container' onSubmit={authUser}>
-        <Input
-          divWrapClassName='label-input-wrap'
-          labelClassName='label-for-input'
-          labelText='E-mail'
-          inputRequired
-          inputType='email'
-          inputValue={emailLogin}
-          inputPlaceholder='Insira aqui seu e-mail'
-          inputClassName='input-text'
-          inputOnChange={(event) => setEmailLogin(event.target.value)}
-        />
+        <form className='form-container' onSubmit={authUser}>
+          <Input
+            divWrapClassName='label-input-wrap'
+            labelClassName='label-for-input'
+            labelText='E-mail'
+            inputRequired
+            inputType='email'
+            inputValue={emailLogin}
+            inputPlaceholder='Insira aqui seu e-mail'
+            inputClassName='input-text'
+            inputOnChange={(event) => setEmailLogin(event.target.value)}
+          />
 
-        <Input
-          divWrapClassName='label-input-wrap'
-          labelClassName='label-for-input'
-          labelText='Senha'
-          inputRequired
-          inputType='password'
-          inputValue={passwordLogin}
-          inputPlaceholder='Insira aqui sua senha'
-          inputClassName='input-text'
-          inputOnChange={(event) => setPasswordLogin(event.target.value)}
-        />
+          <Input
+            divWrapClassName='label-input-wrap'
+            labelClassName='label-for-input'
+            labelText='Senha'
+            inputRequired
+            inputType='password'
+            inputValue={passwordLogin}
+            inputPlaceholder='Insira aqui sua senha'
+            inputClassName='input-text'
+            inputOnChange={(event) => setPasswordLogin(event.target.value)}
+          />
 
-        <Button
-          type='submit'
-          className='button-base button-primary'
-          buttonText='Entrar'
-        />
-      </form>
+          <Button
+            type='submit'
+            className='button-base button-primary'
+            buttonText='Entrar'
+          />
+        </form>
 
-      <Link to="/cadastro">
-        <Button
-          type='button'
-          className='button-base button-secondary'
-          buttonText='Cadastre-se'
-        />
-      </Link>
+        <Link to="/cadastro">
+          <Button
+            type='button'
+            className='button-base button-secondary'
+            buttonText='Cadastre-se'
+          />
+        </Link>
+      </main>
 
       <Footer />
     </Fragment>
