@@ -100,17 +100,6 @@ export default function Signup() {
           />
 
 
-          {/* <InputText
-            divWrapClassName='label-input-wrap'
-            labelClassName='button-base label-radio'
-            labelText='Cozinha'
-            inputRequired
-            inputType='radio'
-            inputValue='kitchen'
-            inputChecked={workerRole === 'kitchen'}
-            inputClassName='input-radio'
-            inputOnChange={(event) => setWorkerRole(event.target.value)}
-          /> */}
         </div>
 
         <InputText
