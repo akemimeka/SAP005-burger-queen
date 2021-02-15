@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import Input from '../../components/InputText';
 import Footer from '../../components/Footer';
-import logo from '../../images/logo-circulo.png';
+import logo from '../../images/logo-circular.png';
 
 export default function Login() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';
@@ -34,7 +34,7 @@ export default function Login() {
 
   return (
     <Fragment>
-      <main className='main-container'>
+      <main className='main-container-base main-container-login'>
         <h1>
           <img className='logo-login' src={logo} alt='Logo Hamburgueria Ipê' />
         </h1>
@@ -66,7 +66,7 @@ export default function Login() {
 
           <Button
             type='submit'
-            className='button-base button-primary'
+            className='button-base button-primary button-centered'
             buttonText='Entrar'
           />
         </form>
