@@ -2,7 +2,7 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
-import Input from '../../components/Input';
+import Input from '../../components/InputText';
 import Footer from '../../components/Footer';
 import logo from '../../images/logo-circulo.png';
 
@@ -37,15 +37,14 @@ export default function Login() {
       <h1>
         <img className='logo-login' src={logo} alt='Logo Hamburgueria Ipê' />
       </h1>
-      <form className='login-form' onSubmit={authUser}>
+
+      <form className='form-container' onSubmit={authUser}>
         <Input
           divWrapClassName='label-input-wrap'
-          labelHtmlFor='login-email'
           labelClassName='label-for-input'
           labelText='E-mail'
           inputRequired
           inputType='email'
-          inputName='login-email'
           inputValue={emailLogin}
           inputPlaceholder='Insira aqui seu e-mail'
           inputClassName='input-text'
@@ -54,12 +53,10 @@ export default function Login() {
 
         <Input
           divWrapClassName='label-input-wrap'
-          labelHtmlFor='login-password'
           labelClassName='label-for-input'
           labelText='Senha'
           inputRequired
           inputType='password'
-          inputName='login-password'
           inputValue={passwordLogin}
           inputPlaceholder='Insira aqui sua senha'
           inputClassName='input-text'

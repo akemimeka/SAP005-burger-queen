@@ -1,11 +1,17 @@
+/* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
+/* GLOBAL STYLING */
 html {
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
@@ -18,32 +24,35 @@ body {
   background-size: auto;
 }
 
+
+/* LOGIN PAGE */
 .logo-login {
   width: 16rem;
 }
 
-.login-form {
+.form-container {
   background-color: #f6c13c20;
   border-radius: 1rem;
   padding: 0.5rem;
 }
 
-.label-input-wrap {
+.label-input-wrap,
+.radio-buttons-wrap {
   margin-bottom: 2rem;
 }
 
 .label-for-input{
   display: block;
-  margin-bottom: 0.5rem;
   font-size: 1.2rem;
   font-weight: 500;
   color: #829F19;
 }
 
 .input-text {
-  width: 25rem;
+  width: 23rem;
   background-color: #F8EDDD;
   display: block;
+  margin-top: 0.5rem;
   padding: 0.5rem 0.7rem;
   border-radius: 0.5rem;
   border: solid 3px #829F19;
@@ -54,7 +63,7 @@ body {
 .button-base {
   padding: 0.8rem 2rem;
   border: none;
-  border-radius: 0.6rem;
+  border-radius: 0.5rem;
   font-family: 'Work Sans', sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
@@ -63,9 +72,13 @@ body {
 }
 
 .button-primary {
+<<<<<<< HEAD
+  background-color: #BF4719;
+=======
   display: inline-block;
   position: relative;
   background-color: #7F381A;
+>>>>>>> 8eabb0180f8187954913c6cc39a0bdd78f8a33e4
   color:#F6C13C;
   top: 0;
   transition: top ease 0.3s;
@@ -117,4 +130,31 @@ body {
 
 .footer-link:hover {
   top: -0.3rem;
+}
+
+.signup-subtitle {
+  color: #F8EDDD;
+}
+
+.radio-buttons-wrap {
+  width: 23rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.input-radio {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.label-radio {
+  background-color: #829F19;
+  color: #F8EDDD;
+}
+
+.radio-buttons-wrap .input-radio:checked + .label-radio {
+  background-color: #F6C13C;
+  color: #A64922;
 }
