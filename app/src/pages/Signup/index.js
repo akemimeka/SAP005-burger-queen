@@ -66,7 +66,8 @@ export default function Signup() {
             inputRequired
             inputType='text'
             inputValue={workerName}
-            inputPlaceholder='Digite seu nome'
+            inputMinLength='6'
+            inputPlaceholder='Digite seu nome e sobrenome'
             inputClassName='input-text'
             inputOnChange={(event) => setWorkerName(event.target.value)}
           />
@@ -78,6 +79,7 @@ export default function Signup() {
             inputRequired
             inputType='email'
             inputValue={workerEmail}
+            inputMinLength='6'
             inputPlaceholder='Digite seu email'
             inputClassName='input-text'
             inputOnChange={(event) => setWorkerEmail(event.target.value)}
@@ -120,6 +122,7 @@ export default function Signup() {
             labelText='Senha'
             inputRequired
             inputType='password'
+            inputMinLength='6'
             inputPlaceholder='Digite a senha'
             inputClassName='input-text'
             inputOnChange={(event) => setWorkerPassword(event.target.value)}
