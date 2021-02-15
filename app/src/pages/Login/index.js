@@ -28,8 +28,23 @@ export default function Login() {
 
     fetch(apiAuth, authOptions)
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((workerData) => workerData.role)
+      .then((workerRole) => navigateToPage(workerRole))
       .catch((error) => console.log(error));
+
+    function navigateToPage(role) {
+      switch (role) {
+        case 'hall':
+          console.log('linka pro hall');
+          break;
+        case 'kitchen':
+          <Link to='/cozinha'></Link>;
+          break;
+        default:
+          <Link to='/'></Link>;
+          break;
+      }
+    }
   };
 
   return (
