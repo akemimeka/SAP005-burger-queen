@@ -7,6 +7,7 @@ export default function InputRadio({
   inputName,
   inputRequired,
   inputValue,
+  inputChecked,
   inputOnChange,
   labelHtmlFor,
   labelClassName,
@@ -21,6 +22,7 @@ export default function InputRadio({
         name={inputName}
         required={inputRequired}
         value={inputValue}
+        checked={inputChecked}
         onChange={inputOnChange}
       />
       <label htmlFor={labelHtmlFor} className={labelClassName}>
