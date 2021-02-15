@@ -8,6 +8,7 @@ export default function InputText({
   inputRequired,
   inputType,
   inputValue,
+  inputMinLength,
   inputPlaceholder,
   inputClassName,
   inputOnChange,
@@ -20,6 +21,7 @@ export default function InputText({
         required={inputRequired}
         type={inputType}
         value={inputValue}
+        minLength={inputMinLength}
         placeholder={inputPlaceholder}
         className={inputClassName}
         onChange={inputOnChange}
