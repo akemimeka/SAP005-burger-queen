@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Button from '../../components/Button';
 import Input from '../../components/InputText';
 import Footer from '../../components/Footer';
@@ -9,6 +9,7 @@ import logo from '../../images/logo-circular.png';
 export default function Login() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';
   const apiAuth = `${apiURL}/auth`;
+  const history = useHistory();
   const [emailLogin, setEmailLogin] = useState('');
   const [passwordLogin, setPasswordLogin] = useState('');
 
@@ -35,13 +36,13 @@ export default function Login() {
     function navigateToPage(role) {
       switch (role) {
         case 'hall':
-          console.log('linka pro hall');
+          history.push('/salao');
           break;
         case 'kitchen':
-          <Link to='/cozinha'></Link>;
+          history.push('/cozinha');
           break;
         default:
-          <Link to='/'></Link>;
+          history.push('/');
           break;
       }
     }
