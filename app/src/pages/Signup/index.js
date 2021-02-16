@@ -129,14 +129,14 @@ export default function Signup() {
           />
 
           <InputText
-          labelClassName='label-for-input'
-          labelText='Confirmar Senha'
-          inputRequired
-          inputType='password'
-          inputPlaceholder='Confirmar senha'
-          inputClassName='input-text'
-          inputOnChange={(event) => setWorkerConfirmPassword(event.target.value)}
-        />
+            labelClassName='label-for-input'
+            labelText='Confirmar Senha'
+            inputRequired
+            inputType='password'
+            inputPlaceholder='Confirmar senha'
+            inputClassName='input-text'
+            inputOnChange={(event) => setWorkerConfirmPassword(event.target.value)}
+          />
 
           {!equalPasswords && <p className='msg-different-passwords'>As senhas são diferentes. Tente novamente.</p>}
 
