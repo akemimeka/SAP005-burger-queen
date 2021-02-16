@@ -170,6 +170,16 @@ body {
   color: #a64922;
 }
 
+.msg-different-passwords {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  color: #d30404;
+}
+
+
 /* FOOTER */
 .footer {
   position: fixed;
