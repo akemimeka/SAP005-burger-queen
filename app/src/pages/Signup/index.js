@@ -14,10 +14,16 @@ export default function Signup() {
   const [workerEmail, setWorkerEmail] = useState('');
   const [workerRole, setWorkerRole] = useState('');
   const [workerPassword, setWorkerPassword] = useState('');
-  // const [workerConfirmPassword, setWorkerConfirmPassword] = useState('');
+  const [workerConfirmPassword, setWorkerConfirmPassword] = useState('');
+  const [equalPasswords, setEqualPasswords] = useState(true);
 
   const registerUser = (event) => {
     event.preventDefault();
+
+    if (workerPassword !== workerConfirmPassword) {
+      setEqualPasswords(false);
+      return;
+    }
 
     const requestOptions = {
       method: 'POST',
@@ -38,15 +44,6 @@ export default function Signup() {
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
   };
-
-  //   const checkPassword() = {
-  //     if(!input["password"] && typeof input["confirm_password"] !== "undefined") {
-  //     if (input["password"] != input["confirm_password"]) {
-  //       isValid = false;
-  //       errors["password"] = "As senhas não coincidem.";
-  //     }
-  //   }
-  // }
 
   return (
     <Fragment>
@@ -128,16 +125,17 @@ export default function Signup() {
             inputOnChange={(event) => setWorkerPassword(event.target.value)}
           />
 
-          {/* <InputText
-          divWrapClassName='label-input-wrap'
+          <InputText
           labelClassName='label-for-input'
           labelText='Confirmar Senha'
           inputRequired
           inputType='password'
           inputPlaceholder='Confirmar senha'
           inputClassName='input-text'
-          inputOnChange={(event) => setworkerConfirmPassword(event.target.value)}
-        /> */}
+          inputOnChange={(event) => setWorkerConfirmPassword(event.target.value)}
+        />
+
+          {!equalPasswords && <p className='msg-different-passwords'>As senhas são diferentes. Tente novamente.</p>}
 
           <Button
             type='submit'
