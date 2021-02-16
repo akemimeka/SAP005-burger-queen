@@ -6,6 +6,7 @@ import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
 import InputRadio from '../../components/InputRadio';
+import Header from '../../components/Header';
 
 export default function Signup() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';
@@ -50,12 +51,14 @@ export default function Signup() {
 
   return (
     <Fragment>
-      <header className='signup-header'>
-        <Link to="/">
-          <h1><img className='logo-signup' src={logo} alt='Logo Hamburgueria Ipê' /></h1>
-        </Link>
-        <h2 className='subtitle-base signup-subtitle'>Cadastro</h2>
-      </header>
+      <Header
+        headerClassName='signup-header'
+        headerLink='/'
+        logoClassName='logo-signup'
+        logoSrc={logo}
+        subtitleClassName='subtitle-base signup-subtitle'
+        subtitleText='Cadastro'
+      />
 
       <main className='main-container-base main-container-signup'>
         <form className='form-container' onSubmit={registerUser}>
