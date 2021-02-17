@@ -31,10 +31,37 @@ body {
   align-items: center;
 }
 
-.subtitle-base {
+.header-base {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 1.5rem 1.5rem;
+  padding: 0.5rem 2.5rem;
+}
+
+.header-work-area-base {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: space-around;
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 700;
   font-size: 2.1rem;
+}
+
+.logout-base {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.logout-role-text,
+.logout-name-text p {
+  color: #F8EDDD;
 }
 
 .tag-link {
@@ -60,9 +87,54 @@ body {
   transition: ease 0.1s;
 }
 
+.button-loggout-base {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  padding: 0.4rem 1.3rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* VARIATIONS */
+.header-login {
+  background-color: #829f19;
+
+}
+.header-hall {
+  background-color: #F6C13C;
+}
+
+.header-kitchen {
+  background-color: #7F381A;
+}
+
+.button-primary {
+  background-color: #7f381a;
+  color: #f6c13c;
+}
+
+.button-secondary {
+  background-color: #f6c13c;
+  color: #7f381a;
+}
 .button-centered {
   display: block;
   margin: 0 auto;
+}
+
+.button-loggout-hall {
+  background-color: #F8EDDD;
+  color: #A64922;
+}
+
+.button-loggout-kitchen {
+  background-color: #8CAB21;
+  color: #F5E4CC;
 }
 
 .tag-link:hover,
@@ -109,29 +181,7 @@ body {
   font-size: 1.2rem;
 }
 
-.button-primary {
-  background-color: #7f381a;
-  color: #f6c13c;
-}
-
-.button-secondary {
-  background-color: #f6c13c;
-  color: #7f381a;
-}
-
 /* SIGNUP PAGE */
-.signup-header {
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #829f19;
-  border-radius: 0 0 1.5rem 1.5rem;
-  padding: 0.5rem 2.5rem;
-}
-
 .logo-signup {
   width: 7.5rem;
   position: relative;
@@ -178,6 +228,10 @@ body {
   text-align: center;
   color: #d30404;
 }
+
+/* HALL PAGE */
+
+/* KITCHEN PAGE */
 
 
 /* FOOTER */
