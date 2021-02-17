@@ -8,10 +8,14 @@ export default function Header({
   headerLink,
   logoClassName,
   logoSrc,
-  subtitleClassName,
-  subtitleText,
-  subtitleWorkerRole,
-  subtitleWorkerName,
+  workAreaClassName,
+  workAreaText,
+  divLogoutClassName,
+  workerRoleClassName,
+  workerRoleText,
+  workerNameClassName,
+  workerNameText,
+  btnClassName,
 }) {
   return (
     <header className={headerClassName}>
@@ -24,13 +28,16 @@ export default function Header({
           />
         </h1>
       </Link>
-      <h2 className={subtitleClassName}>{subtitleText}</h2>
-      <div>
-        <p>{subtitleWorkerRole}</p>
-        <p>{subtitleWorkerName}</p>
+      <h2 className={workAreaClassName}>{workAreaText}</h2>
+      <div className={divLogoutClassName}>
+        <p className={workerRoleClassName}>{workerRoleText}</p>
+        <p className={workerNameClassName}>{workerNameText}</p>
+        <Button
+          type='text'
+          className={btnClassName}
+          buttonText='Sair'
+        />
       </div>
-      <Button
-      />
     </header>
   );
 }
