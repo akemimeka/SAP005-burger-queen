@@ -53,8 +53,9 @@ export default function Signup() {
         headerLink='/'
         logoClassName='logo-signup'
         logoSrc={logo}
-        subtitleClassName='subtitle-base signup-subtitle'
-        subtitleText='Cadastro'
+        workAreaClassName='header-title-base header-title-signup'
+        workAreaText='Cadastro'
+        divLogoutClassName='hidden'
       />
 
       <main className='main-container-base main-container-signup'>

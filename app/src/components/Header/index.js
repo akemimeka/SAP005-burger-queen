@@ -15,7 +15,7 @@ export default function Header({
   workerRoleText,
   workerNameClassName,
   workerNameText,
-  btnClassName,
+  buttonLogoutClassName,
 }) {
   return (
     <header className={headerClassName}>
@@ -34,7 +34,7 @@ export default function Header({
         <p className={workerNameClassName}>{workerNameText}</p>
         <Button
           type='text'
-          className={btnClassName}
+          className={buttonLogoutClassName}
           buttonText='Sair'
         />
       </div>
