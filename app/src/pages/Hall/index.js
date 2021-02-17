@@ -36,16 +36,16 @@ export default function Hall() {
   return (
     <Fragment>
       <Header
-        headerClassName='header-base header-hall'
+        headerClass='header-base header-hall'
         headerLink='/'
-        logoClassName='logo-signup'
+        logoClass='logo-signup'
         logoSrc={logo}
-        workAreaClassName='header-work-area-base signup-subtitle'
+        workAreaClass='header-work-area-base signup-subtitle'
         workAreaText='Salão'
-        divLogoutClassName='logout-base'
-        workerRoleClassName='logout-base logout-name-text'
+        divLogoutClass='logout-base'
+        workerRoleClass='logout-base logout-name-text'
         workerRoleText='Chef'
-        workerNameClassName='logout-base logout-role-text'
+        workerNameClass='logout-base logout-role-text'
         workerNameText='Jussara Silva'
       />
     </Fragment>

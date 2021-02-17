@@ -2,20 +2,20 @@
 import React from 'react';
 
 export default function InputText({
-  divWrapClassName,
-  labelClassName,
+  divWrapClass,
+  labelClass,
   labelText,
   inputRequired,
   inputType,
   inputValue,
   inputMinLength,
   inputPlaceholder,
-  inputClassName,
+  inputClass,
   inputOnChange,
 }) {
   return (
-    <div className={divWrapClassName}>
-      <label className={labelClassName}>
+    <div className={divWrapClass}>
+      <label className={labelClass}>
         {labelText}
       <input
         required={inputRequired}
@@ -23,7 +23,7 @@ export default function InputText({
         value={inputValue}
         minLength={inputMinLength}
         placeholder={inputPlaceholder}
-        className={inputClassName}
+        className={inputClass}
         onChange={inputOnChange}
       />
       </label>
