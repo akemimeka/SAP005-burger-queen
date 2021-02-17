@@ -7,7 +7,7 @@ export default function Hall() {
   return (
     <Fragment>
       <Header
-        headerClassName='signup-header'
+        headerClassName='signup-header header-hall'
         headerLink='/'
         logoClassName='logo-signup'
         logoSrc={logo}

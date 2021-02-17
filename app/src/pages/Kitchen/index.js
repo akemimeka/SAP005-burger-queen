@@ -7,13 +7,13 @@ export default function Kitchen() {
   return (
     <Fragment>
       <Header
-        headerClassName='signup-header'
+        headerClassName='signup-header header-kitchen'
         headerLink='/'
         logoClassName='logo-signup'
         logoSrc={logo}
         subtitleClassName='subtitle-base signup-subtitle'
         subtitleText='Salão'
-        subtitleWorkerRole='ATENDENTE'
+        subtitleWorkerRole='CHEF'
         subtitleWorkerName='Jussara Silva'
       />
       <Button

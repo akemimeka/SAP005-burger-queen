@@ -49,7 +49,7 @@ export default function Signup() {
   return (
     <Fragment>
       <Header
-        headerClassName='signup-header'
+        headerClassName='signup-header header-login'
         headerLink='/'
         logoClassName='logo-signup'
         logoSrc={logo}
