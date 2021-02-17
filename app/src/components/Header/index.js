@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../Button';
 
 export default function Header({
   headerClassName,
@@ -9,6 +10,8 @@ export default function Header({
   logoSrc,
   subtitleClassName,
   subtitleText,
+  subtitleWorkerRole,
+  subtitleWorkerName,
 }) {
   return (
     <header className={headerClassName}>
@@ -22,6 +25,12 @@ export default function Header({
         </h1>
       </Link>
       <h2 className={subtitleClassName}>{subtitleText}</h2>
+      <div>
+        <p>{subtitleWorkerRole}</p>
+        <p>{subtitleWorkerName}</p>
+      </div>
+      <Button
+      />
     </header>
   );
 }
