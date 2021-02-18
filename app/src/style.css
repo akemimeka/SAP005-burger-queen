@@ -187,11 +187,15 @@ body {
 
 .yellow-box-hall {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: center;
-  align-items: flex-end;
-  align-content: center;
+  align-items: center;
+  align-content: space-between;
+  flex: 1 1 auto;
+  margin: 14px;
+  border-radius: 1.5rem;
+  padding: 4rem;
   color: fuchsia;
 }
 
