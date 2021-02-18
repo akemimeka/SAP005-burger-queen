@@ -101,7 +101,6 @@ body {
 }
 
 .header-base {
-  width: 100vw;
   top: 0;
   display: flex;
   justify-content: space-between;
