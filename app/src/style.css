@@ -68,6 +68,10 @@ body {
   background-color: var(--yellow);
 }
 
+.bg-color-yellow-20 {
+  background-color: var(--yellow-opacity-20);
+}
+
 .bg-color-dark-brown {
   background-color: var(--dark-brown);
 }
@@ -102,6 +106,7 @@ body {
 
 .header-base {
   width: 100vw;
+  height: 5.1rem;
   position: fixed;
   top: 0;
   display: flex;
@@ -181,34 +186,52 @@ body {
   top: -0.3rem;
 }
 
-.yellow-box-base {
-  background-color: var(--yellow-opacity-20);
-}
-
 /* GRID */
-.yellow-box-main-menu {
+.menu-grid-container {
+  height: 100vh;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 33% 33% 33%;
-  gap: 6px 6px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 5.1rem 1fr 1fr 1fr;
+  gap: 2%;
   grid-template-areas:
-    'yellow-box-itens yellow-box-itens yellow-box-itens yellow-box-order'
-    'yellow-box-sides yellow-box-sides yellow-box-sides yellow-box-order'
-    'yellow-box-drinks yellow-box-drinks yellow-box-drinks yellow-box-order';
-    place-items: center;
-    justify-content: space-evenly;
+    'header   header'
+    'burgers  orders'
+    'sides    orders'
+    'drinks   orders';
+  /* place-items: center;
+  justify-content: space-evenly; */
+  padding-bottom: 2%;
 }
 
-.yellow-box-itens { grid-area: yellow-box-itens; 
-  place-self: center;
-  background-color: red;
+.menu-grid-child{
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
 }
 
-.yellow-box-sides { grid-area: yellow-box-sides; }
+.header-base {
+  grid-area: header;
+}
 
-.yellow-box-drinks { grid-area: yellow-box-drinks; }
+.main-menu-burgers {
+  grid-area: burgers;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
 
-.yellow-box-order { grid-area: yellow-box-order; }
+.main-menu-sides {
+  grid-area: sides;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.main-menu-drinks {
+  grid-area: drinks;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.main-menu-orders {
+  grid-area: orders;
+  border-radius: 1.5rem 0 0 1.5rem;
+}
 
 /* LOGIN PAGE */
 .main-container-login {
