@@ -4,37 +4,38 @@ import { Link } from 'react-router-dom';
 import Button from '../Button';
 
 export default function Header({
-  headerClassName,
-  headerLink,
-  logoClassName,
+  headerClass,
+  headerLogoLink,
   logoSrc,
-  workAreaClassName,
+  workAreaClass,
   workAreaText,
-  divLogoutClassName,
-  workerRoleClassName,
+  divLogoutClass,
+  workerRoleClass,
   workerRoleText,
-  workerNameClassName,
+  workerNameClass,
   workerNameText,
-  btnClassName,
+  buttonLogoutClass,
+  buttonLogoutOnClick,
 }) {
   return (
-    <header className={headerClassName}>
-      <Link to={headerLink}>
+    <header className={headerClass}>
+      <Link to={headerLogoLink}>
         <h1>
           <img
-            className={logoClassName}
+            className='logo-horizontal'
             src={logoSrc}
             alt='Logo Hamburgueria Ipê'
           />
         </h1>
       </Link>
-      <h2 className={workAreaClassName}>{workAreaText}</h2>
-      <div className={divLogoutClassName}>
-        <p className={workerRoleClassName}>{workerRoleText}</p>
-        <p className={workerNameClassName}>{workerNameText}</p>
+      <h2 className={workAreaClass}>{workAreaText}</h2>
+      <div className={divLogoutClass}>
+        <p className={workerRoleClass}>{workerRoleText}</p>
+        <p className={workerNameClass}>{workerNameText}</p>
         <Button
-          type='text'
-          className={btnClassName}
+          buttonType='text'
+          buttonClass={buttonLogoutClass}
+          buttonOnClick={buttonLogoutOnClick}
           buttonText='Sair'
         />
       </div>
