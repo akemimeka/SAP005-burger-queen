@@ -50,7 +50,7 @@ export default function Signup() {
     <Fragment>
       <Header
         headerClass='header-base bg-color-green'
-        headerLink='/'
+        headerLogoLink='/'
         logoClass='logo-signup'
         logoSrc={logo}
         workAreaClass='header-title-base color-lightest'

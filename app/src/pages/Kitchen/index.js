@@ -7,7 +7,7 @@ export default function Kitchen() {
     <Fragment>
       <Header
         headerClass='header-base bg-color-light-brown'
-        headerLink='/'
+        headerLogoLink='/cozinha'
         logoSrc={logo}
         workAreaClass='header-title-base color-lightest'
         workAreaText='Cozinha'
