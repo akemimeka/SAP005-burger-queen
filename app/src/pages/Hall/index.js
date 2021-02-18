@@ -1,11 +1,13 @@
 /* eslint-disable no-console */
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-brown.png';
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 
 export default function Hall() {
+  const [clientName, setClientName] = useState('');
+
   // Function to get and display the username after he's logged in
   // const apiURL = 'https://lab-api-bq.herokuapp.com';
   // const apiUsers = `${apiURL}/users`;
@@ -53,39 +55,58 @@ export default function Hall() {
       />
 
       <main className='main-container-base main-container-hall'>
-        <div className='info-message color-dark-green'>
+        <div className='info-message color-dark-green weight-500'>
           Selecione uma mesa e digite o nome do cliente
         </div>
 
-        <div className='tables-grid-container'>
-          <div className='table-size-4'>
-            <p className='table-number'>01</p>
+        <section className='tables-grid-container'>
+          <div className='table-01 table-size-4 bg-color-light-brown' onClick>
+            <p className='table-number color-lightest'>01</p>
           </div>
-          <div className='table-size-4'>
-            <p className='table-number'>02</p>
+          <div className='table-02 table-size-4 bg-color-light-brown' onClick>
+            <p className='table-number color-lightest'>02</p>
           </div>
-          <div className='table-size-4'>
-            <p className='table-number'>03</p>
+          <div className='table-03 table-size-4 bg-color-light-brown' onClick>
+            <p className='table-number color-lightest'>03</p>
           </div>
-          <div className='table-size-4'>
-            <p className='table-number'>04</p>
+          <div className='table-04 table-size-4 bg-color-light-brown' onClick>
+            <p className='table-number color-lightest'>04</p>
           </div>
-          <div className='table-size-4'>
-            <p className='table-number'>05</p>
+          <div className='table-05 table-size-4 bg-color-light-brown' onClick>
+            <p className='table-number color-lightest'>05</p>
           </div>
-          <div className='table-size-2'>
-            <p className='table-number'>06</p>
+          <div className='tables-size-2-wrap'>
+            <div className='table-06 table-size-2 bg-color-light-brown' onClick>
+              <p className='table-number color-lightest'>06</p>
+            </div>
+            <div className='table-07 table-size-2 bg-color-light-brown' onClick>
+              <p className='table-number color-lightest'>07</p>
+            </div>
           </div>
-          <div className='table-size-2'>
-            <p className='table-number'>07</p>
-          </div>
-        </div>
+        </section>
 
-        <section className='client-section'>
-          <InputText
-          />
-          <Button
-          />
+        <section className='form-container-base form-container-hall bg-color-yellow-20'>
+          <form className='hall-form' onSubmit=''>
+            <InputText
+              divWrapClass='client-input-wrap'
+              labelClass='label-for-input'
+              labelText='Cliente'
+              inputRequired
+              inputType='text'
+              inputValue={clientName}
+              inputMinLength='3'
+              inputPlaceholder='Digite o nome do cliente'
+              inputClass='input-text input-client'
+              inputOnChange={(event) => setClientName(event.target.value)}
+            />
+
+            <Button
+              buttonType='submit'
+              buttonClass='button-base bg-color-green color-lightest'
+              buttonText='Fazer pedido'
+              buttonOnClick=''
+            />
+          </form>
         </section>
       </main>
     </Fragment>
