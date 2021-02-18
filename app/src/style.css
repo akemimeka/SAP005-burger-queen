@@ -237,7 +237,7 @@ body {
   width: 0;
 }
 
-.input-radio:checked + .label-radio {
+.input-radio:checked + label {
   background-color: var(--yellow);
   color: var(--light-brown);
 }
