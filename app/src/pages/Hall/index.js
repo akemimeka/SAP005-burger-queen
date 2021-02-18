@@ -2,6 +2,7 @@
 import React, { Fragment } from 'react';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-brown.png';
+import YellowBox from '../../components/YellowBox';
 
 export default function Hall() {
   // Function to get and display the username after he's logged in
@@ -48,6 +49,9 @@ export default function Hall() {
         workerNameText={'Jussara Silva'}
         buttonLogoutClass='button-logout-base bg-color-light color-brown'
         buttonLogoutOnClick={''}
+      />
+      <YellowBox
+        divYellowBox='yellow-box-base yellow-box-hall'
       />
     </Fragment>
   );

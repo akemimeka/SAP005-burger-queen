@@ -9,8 +9,10 @@
   --dark-green: #799027;
   --light-green: #A1BD43;
   --yellow: #F6C13C;
+  --yellow-opacity-20: #f6c13c20;
   --champagne: #F5E4CC;
   --lightest: #F8EDDD;
+  --red: #d30404;
 }
 
 /* RESET */
@@ -100,7 +102,7 @@ body {
 
 .header-base {
   width: 100vw;
-  position: fixed;
+  z-index: -10;
   top: 0;
   display: flex;
   justify-content: space-between;
@@ -179,6 +181,20 @@ body {
   top: -0.3rem;
 }
 
+.yellow-box-base {
+  background-color: var(--yellow-opacity-20);
+}
+
+.yellow-box-hall {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: center;
+  color: fuchsia;
+}
+
 /* LOGIN PAGE */
 .main-container-login {
   padding-bottom: 2rem;
@@ -189,7 +205,7 @@ body {
 }
 
 .form-container {
-  background-color: #f6c13c20;
+  background-color: var(--yellow-opacity-20);
   border-radius: 1.5rem;
   padding: 2.5rem 4rem;
 }
@@ -208,7 +224,7 @@ body {
 
 .input-text {
   width: 23rem;
-  background-color: #f8eddd;
+  background-color: var(--lightest);
   display: block;
   margin-top: 0.5rem;
   padding: 0.5rem 0.7rem;
@@ -247,7 +263,7 @@ body {
   font-size: 0.9rem;
   font-weight: 600;
   text-align: center;
-  color: #d30404;
+  color: var(--red);
 }
 
 /* HALL PAGE */
