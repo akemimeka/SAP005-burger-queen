@@ -191,7 +191,7 @@ body {
 
 /* SIGNUP PAGE */
 .main-container-signup {
-  padding-top: 6rem;
+  padding-top: 5.1rem;
   padding-bottom: 2rem;
 }
 
@@ -223,6 +223,12 @@ body {
 
 
 /* HALL PAGE */
+.main-container-hall {
+  padding-top: 5.1rem;
+}
+
+
+/* MENU PAGE */
 /* GRID */
 .menu-grid-container {
   height: 100vh;
