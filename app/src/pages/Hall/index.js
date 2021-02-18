@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { Fragment } from 'react';
 import Header from '../../components/Header';
-import logo from '../../images/logo-horizontal.png';
+import logo from '../../images/logo-horizontal-brown.png';
 
 export default function Hall() {
   // Function to get and display the username after he's logged in
