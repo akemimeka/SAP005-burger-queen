@@ -199,6 +199,30 @@ body {
   color: fuchsia;
 }
 
+.yellow-box-main-menu {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 33% 33% 33%;
+  gap: 6px 6px;
+  grid-template-areas:
+    'yellow-box-itens yellow-box-itens yellow-box-itens yellow-box-order'
+    'yellow-box-sides yellow-box-sides yellow-box-sides yellow-box-order'
+    'yellow-box-drinks yellow-box-drinks yellow-box-drinks yellow-box-order';
+    place-items: center;
+    justify-content: space-evenly;
+}
+
+.yellow-box-itens { grid-area: yellow-box-itens; 
+  place-self: center;
+  background-color: red;
+}
+
+.yellow-box-sides { grid-area: yellow-box-sides; }
+
+.yellow-box-drinks { grid-area: yellow-box-drinks; }
+
+.yellow-box-order { grid-area: yellow-box-order; }
+
 /* LOGIN PAGE */
 .main-container-login {
   padding-bottom: 2rem;
