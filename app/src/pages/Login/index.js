@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import Button from '../../components/Button';
 import Input from '../../components/InputText';
 import Footer from '../../components/Footer';
-import logo from '../../images/logo-circular.png';
+import logo from '../../images/logo-circular-brown.png';
 
 export default function Login() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';

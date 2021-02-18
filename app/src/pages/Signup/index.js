@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo-horizontal.png';
+import logo from '../../images/logo-horizontal-brown.png';
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
