@@ -1,7 +1,6 @@
 import { React, Fragment } from 'react';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-brown.png';
-import YellowBox from '../../components/YellowBox';
 
 export default function MainMenu() {
   return (
@@ -20,14 +19,12 @@ export default function MainMenu() {
         buttonLogoutClass='button-logout-base bg-color-light color-brown'
         buttonLogoutOnClick={''}
       />
-      <YellowBox
-
-        divYellowBoxMainMenu='yellow-box-main-menu'
-        divYellowBoxItens='yellow-box-itens'
-        divYellowBoxSides='yellow-box-sides'
-        divYellowBoxDrinks='yellow-box-drinks'
-        divYellowBoxOrder='yellow-box-order'
-      />
+      <div className='yellow-box-main-menu'>
+        <div className='yellow-box-itens'><h1>ITENS</h1></div>
+        <div className='yellow-box-sides'><h1>ACOMPANHAMENTOS</h1></div>
+        <div className='yellow-box-drinks'><h1>DRINKS</h1></div>
+        <div className='yellow-box-order'><h1>TOTAL</h1></div>
+      </div>
     </Fragment>
   );
 }

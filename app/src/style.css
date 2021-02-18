@@ -102,7 +102,6 @@ body {
 
 .header-base {
   width: 100vw;
-  z-index: -10;
   top: 0;
   display: flex;
   justify-content: space-between;
@@ -185,20 +184,7 @@ body {
   background-color: var(--yellow-opacity-20);
 }
 
-.yellow-box-hall {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: space-between;
-  flex: 1 1 auto;
-  margin: 14px;
-  border-radius: 1.5rem;
-  padding: 4rem;
-  color: fuchsia;
-}
-
+/* GRID */
 .yellow-box-main-menu {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
