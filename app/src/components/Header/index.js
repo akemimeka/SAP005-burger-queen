@@ -5,8 +5,7 @@ import Button from '../Button';
 
 export default function Header({
   headerClass,
-  headerLink,
-  logoClass,
+  headerLogoLink,
   logoSrc,
   workAreaClass,
   workAreaText,
@@ -16,13 +15,14 @@ export default function Header({
   workerNameClass,
   workerNameText,
   buttonLogoutClass,
+  buttonLogoutOnClick,
 }) {
   return (
     <header className={headerClass}>
-      <Link to={headerLink}>
+      <Link to={headerLogoLink}>
         <h1>
           <img
-            className={logoClass}
+            className='logo-horizontal'
             src={logoSrc}
             alt='Logo Hamburgueria Ipê'
           />
@@ -33,8 +33,9 @@ export default function Header({
         <p className={workerRoleClass}>{workerRoleText}</p>
         <p className={workerNameClass}>{workerNameText}</p>
         <Button
-          type='text'
-          className={buttonLogoutClass}
+          buttonType='text'
+          buttonClass={buttonLogoutClass}
+          buttonOnClick={buttonLogoutOnClick}
           buttonText='Sair'
         />
       </div>

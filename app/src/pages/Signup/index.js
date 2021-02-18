@@ -49,11 +49,11 @@ export default function Signup() {
   return (
     <Fragment>
       <Header
-        headerClass='header-base header-login'
+        headerClass='header-base bg-color-green'
         headerLink='/'
         logoClass='logo-signup'
         logoSrc={logo}
-        workAreaClass='header-title-base header-title-signup'
+        workAreaClass='header-title-base color-lightest'
         workAreaText='Cadastro'
         divLogoutClass='hidden'
       />
@@ -98,7 +98,7 @@ export default function Signup() {
                 inputChecked={workerRole === 'hall'}
                 inputOnChange={(event) => setWorkerRole(event.target.value)}
                 labelHtmlFor='role-hall'
-                labelClass='button-base label-radio'
+                labelClass='button-base bg-color-green color-lightest'
                 labelText='Salão'
               />
 
@@ -111,7 +111,7 @@ export default function Signup() {
                 inputChecked={workerRole === 'kitchen'}
                 inputOnChange={(event) => setWorkerRole(event.target.value)}
                 labelHtmlFor='role-kitchen'
-                labelClass='button-base label-radio'
+                labelClass='button-base bg-color-green color-lightest'
                 labelText='Cozinha'
               />
             </div>
@@ -143,7 +143,7 @@ export default function Signup() {
 
           <Button
             buttonType='submit'
-            buttonClass='button-base button-primary button-centered'
+            buttonClass='button-base button-centered mg-top-2 bg-color-light-brown color-yellow'
             buttonText='Cadastrar'
           />
         </form>
@@ -151,7 +151,7 @@ export default function Signup() {
         <Link to="/">
           <Button
             buttonType='button'
-            buttonClass='button-base button-secondary'
+            buttonClass='button-base bg-color-yellow color-brown'
             buttonText='Voltar'
           />
         </Link>

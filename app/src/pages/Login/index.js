@@ -82,7 +82,7 @@ export default function Login() {
 
           <Button
             buttonType='submit'
-            buttonClass='button-base button-primary button-centered'
+            buttonClass='button-base button-centered bg-color-light-brown color-yellow'
             buttonText='Entrar'
           />
         </form>
@@ -90,7 +90,7 @@ export default function Login() {
         <Link to="/cadastro">
           <Button
             buttonType='button'
-            buttonClass='button-base button-secondary'
+            buttonClass='button-base bg-color-yellow color-brown'
             buttonText='Cadastre-se'
           />
         </Link>

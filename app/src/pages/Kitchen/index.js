@@ -6,17 +6,18 @@ export default function Kitchen() {
   return (
     <Fragment>
       <Header
-        headerClassName='header-base header-kitchen'
+        headerClass='header-base bg-color-light-brown'
         headerLink='/'
-        logoClassName='logo-signup'
         logoSrc={logo}
-        workAreaClassName='header-work-area-base signup-subtitle'
+        workAreaClass='header-title-base color-lightest'
         workAreaText='Cozinha'
-        divLogoutClassName='logout-base'
-        workerRoleClassName='logout-base logout-name-text'
-        workerRoleText='Chef'
-        workerNameClassName='logout-base logout-role-text'
-        workerNameText='Jussara Silva'
+        divLogoutClass='align-right weight-500'
+        workerRoleClass='header-role-base color-lightest'
+        workerRoleText={'Chef'}
+        workerNameClass='header-name-base color-lightest'
+        workerNameText={'Jussara Silva'}
+        buttonLogoutClass='button-logout-base bg-color-green color-lightest'
+        buttonLogoutOnClick={''}
       />
     </Fragment>
   );
