@@ -57,40 +57,40 @@ export default function Login() {
 
         <form className='form-container' onSubmit={authUser}>
           <Input
-            divWrapClassName='label-input-wrap'
-            labelClassName='label-for-input'
+            divWrapClass='label-input-wrap'
+            labelClass='label-for-input'
             labelText='E-mail'
             inputRequired
             inputType='email'
             inputValue={emailLogin}
             inputPlaceholder='Insira aqui seu e-mail'
-            inputClassName='input-text'
+            inputClass='input-text'
             inputOnChange={(event) => setEmailLogin(event.target.value)}
           />
 
           <Input
-            divWrapClassName='label-input-wrap'
-            labelClassName='label-for-input'
+            divWrapClass='label-input-wrap'
+            labelClass='label-for-input'
             labelText='Senha'
             inputRequired
             inputType='password'
             inputValue={passwordLogin}
             inputPlaceholder='Insira aqui sua senha'
-            inputClassName='input-text'
+            inputClass='input-text'
             inputOnChange={(event) => setPasswordLogin(event.target.value)}
           />
 
           <Button
-            type='submit'
-            className='button-base button-primary button-centered'
+            buttonType='submit'
+            buttonClass='button-base button-centered bg-color-light-brown color-yellow'
             buttonText='Entrar'
           />
         </form>
 
         <Link to="/cadastro">
           <Button
-            type='button'
-            className='button-base button-secondary'
+            buttonType='button'
+            buttonClass='button-base bg-color-yellow color-brown'
             buttonText='Cadastre-se'
           />
         </Link>

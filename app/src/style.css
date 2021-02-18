@@ -2,6 +2,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
 
+/* VARIABLES */
+:root {
+  --dark-brown: #7F381A;
+  --light-brown: #A64922;
+  --dark-green: #799027;
+  --light-green: #A1BD43;
+  --yellow: #F6C13C;
+  --champagne: #F5E4CC;
+  --lightest: #F8EDDD;
+}
+
 /* RESET */
 * {
   margin: 0;
@@ -16,13 +27,69 @@ html {
 }
 
 body {
-  background-color: #f8eddd;
-  background-image: url(./images/texture.png);
+  background-color: var(--lightest);
+  background-image: url(./images/textura.png);
   background-repeat: repeat;
   background-size: auto;
 }
 
 /* BASE STYLING */
+.color-brown {
+  color: var(--dark-brown);
+}
+
+.color-yellow {
+  color: var(--yellow);
+}
+
+.color-lightest {
+  color: var(--lightest);
+}
+
+.color-champagne {
+  color: var(--champagne);
+}
+
+.color-dark-green {
+  color: var(--dark-green);
+}
+
+.bg-color-green {
+  background-color: var(--dark-green);
+}
+
+.bg-color-light {
+  background-color: var(--lightest);
+}
+
+.bg-color-yellow {
+  background-color: var(--yellow);
+}
+
+.bg-color-dark-brown {
+  background-color: var(--dark-brown);
+}
+
+.bg-color-light-brown {
+  background-color: var(--light-brown);
+}
+
+.hidden {
+  display: none;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.weight-500 {
+  font-weight: 500;
+}
+
+.weight-600 {
+  font-weight: 600;
+}
+
 .main-container-base {
   height: 100vh;
   display: flex;
@@ -31,10 +98,38 @@ body {
   align-items: center;
 }
 
-.subtitle-base {
+.header-base {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 1.5rem 1.5rem;
+  padding: 0.5rem 2.5rem;
+}
+
+.header-title-base {
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 700;
   font-size: 2.1rem;
+}
+
+.logo-horizontal {
+  width: 7.5rem;
+  position: relative;
+  top: 0.3rem;
+}
+
+.header-role-base {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.header-name-base {
+  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
 }
 
 .tag-link {
@@ -60,9 +155,23 @@ body {
   transition: ease 0.1s;
 }
 
+.button-logout-base {
+  padding: 0.4rem 1.3rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
 .button-centered {
   display: block;
   margin: 0 auto;
+}
+
+.mg-top-2 {
+  margin-top: 2rem;
 }
 
 .tag-link:hover,
@@ -94,7 +203,7 @@ body {
   display: block;
   font-size: 1.2rem;
   font-weight: 500;
-  color: #829f19;
+  color: var(--dark-green);
 }
 
 .input-text {
@@ -104,44 +213,12 @@ body {
   margin-top: 0.5rem;
   padding: 0.5rem 0.7rem;
   border-radius: 0.5rem;
-  border: solid 3px #829f19;
+  border: solid 3px var(--dark-green);
   font-family: "Work Sans", sans-serif;
   font-size: 1.2rem;
 }
 
-.button-primary {
-  background-color: #7f381a;
-  color: #f6c13c;
-}
-
-.button-secondary {
-  background-color: #f6c13c;
-  color: #7f381a;
-}
-
 /* SIGNUP PAGE */
-.signup-header {
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #829f19;
-  border-radius: 0 0 1.5rem 1.5rem;
-  padding: 0.5rem 2.5rem;
-}
-
-.logo-signup {
-  width: 7.5rem;
-  position: relative;
-  top: 0.3rem;
-}
-
-.signup-subtitle {
-  color: #f8eddd;
-}
-
 .main-container-signup {
   padding-top: 6rem;
   padding-bottom: 2rem;
@@ -160,24 +237,22 @@ body {
   width: 0;
 }
 
-.label-radio {
-  background-color: #829f19;
-  color: #f8eddd;
-}
-
 .input-radio:checked + .label-radio {
-  background-color: #f6c13c;
-  color: #a64922;
+  background-color: var(--yellow);
+  color: var(--light-brown);
 }
 
 .msg-different-passwords {
   margin-top: 0.5rem;
-  margin-bottom: 2rem;
   font-size: 0.9rem;
   font-weight: 600;
   text-align: center;
   color: #d30404;
 }
+
+/* HALL PAGE */
+
+/* KITCHEN PAGE */
 
 
 /* FOOTER */
@@ -187,16 +262,9 @@ body {
   width: 100%;
   border-radius: 1.5rem 1.5rem 0 0;
   padding: 0.6rem 0;
-  background-color: #829f19;
 }
 
 .footer-text {
-  color: #7f381a;
   text-align: center;
   font-size: 0.7rem;
-  font-weight: 500;
-}
-
-.footer-link {
-  color: #f8eddd;
 }

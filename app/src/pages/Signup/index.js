@@ -6,6 +6,7 @@ import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
 import InputRadio from '../../components/InputRadio';
+import Header from '../../components/Header';
 
 export default function Signup() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';
@@ -47,38 +48,41 @@ export default function Signup() {
 
   return (
     <Fragment>
-      <header className='signup-header'>
-        <Link to="/">
-          <h1><img className='logo-signup' src={logo} alt='Logo Hamburgueria Ipê' /></h1>
-        </Link>
-        <h2 className='subtitle-base signup-subtitle'>Cadastro</h2>
-      </header>
+      <Header
+        headerClass='header-base bg-color-green'
+        headerLink='/'
+        logoClass='logo-signup'
+        logoSrc={logo}
+        workAreaClass='header-title-base color-lightest'
+        workAreaText='Cadastro'
+        divLogoutClass='hidden'
+      />
 
       <main className='main-container-base main-container-signup'>
         <form className='form-container' onSubmit={registerUser}>
           <InputText
-            divWrapClassName='label-input-wrap'
-            labelClassName='label-for-input'
+            divWrapClass='label-input-wrap'
+            labelClass='label-for-input'
             labelText='Nome'
             inputRequired
             inputType='text'
             inputValue={workerName}
             inputMinLength='6'
             inputPlaceholder='Digite seu nome e sobrenome'
-            inputClassName='input-text'
+            inputClass='input-text'
             inputOnChange={(event) => setWorkerName(event.target.value)}
           />
 
           <InputText
-            divWrapClassName='label-input-wrap'
-            labelClassName='label-for-input'
+            divWrapClass='label-input-wrap'
+            labelClass='label-for-input'
             labelText='E-mail'
             inputRequired
             inputType='email'
             inputValue={workerEmail}
             inputMinLength='6'
             inputPlaceholder='Digite seu email'
-            inputClassName='input-text'
+            inputClass='input-text'
             inputOnChange={(event) => setWorkerEmail(event.target.value)}
           />
 
@@ -86,7 +90,7 @@ export default function Signup() {
             <p className='label-for-input'>Função</p>
             <div className='radio-buttons-wrap'>
               <InputRadio
-                inputClassName='input-radio'
+                inputClass='input-radio'
                 inputId='role-hall'
                 inputName='role'
                 inputRequired
@@ -94,12 +98,12 @@ export default function Signup() {
                 inputChecked={workerRole === 'hall'}
                 inputOnChange={(event) => setWorkerRole(event.target.value)}
                 labelHtmlFor='role-hall'
-                labelClassName='button-base label-radio'
+                labelClass='button-base bg-color-green color-lightest'
                 labelText='Salão'
               />
 
               <InputRadio
-                inputClassName='input-radio'
+                inputClass='input-radio'
                 inputId='role-kitchen'
                 inputName='role'
                 inputRequired
@@ -107,47 +111,47 @@ export default function Signup() {
                 inputChecked={workerRole === 'kitchen'}
                 inputOnChange={(event) => setWorkerRole(event.target.value)}
                 labelHtmlFor='role-kitchen'
-                labelClassName='button-base label-radio'
+                labelClass='button-base bg-color-green color-lightest'
                 labelText='Cozinha'
               />
             </div>
           </div>
 
           <InputText
-            divWrapClassName='label-input-wrap'
-            labelClassName='label-for-input'
+            divWrapClass='label-input-wrap'
+            labelClass='label-for-input'
             labelText='Senha'
             inputRequired
             inputType='password'
             inputMinLength='6'
             inputPlaceholder='Digite a senha'
-            inputClassName='input-text'
+            inputClass='input-text'
             inputOnChange={(event) => setWorkerPassword(event.target.value)}
           />
 
           <InputText
-          labelClassName='label-for-input'
-          labelText='Confirmar Senha'
-          inputRequired
-          inputType='password'
-          inputPlaceholder='Confirmar senha'
-          inputClassName='input-text'
-          inputOnChange={(event) => setWorkerConfirmPassword(event.target.value)}
-        />
+            labelClass='label-for-input'
+            labelText='Confirmar Senha'
+            inputRequired
+            inputType='password'
+            inputPlaceholder='Confirmar senha'
+            inputClass='input-text'
+            inputOnChange={(event) => setWorkerConfirmPassword(event.target.value)}
+          />
 
           {!equalPasswords && <p className='msg-different-passwords'>As senhas são diferentes. Tente novamente.</p>}
 
           <Button
-            type='submit'
-            className='button-base button-primary button-centered'
+            buttonType='submit'
+            buttonClass='button-base button-centered mg-top-2 bg-color-light-brown color-yellow'
             buttonText='Cadastrar'
           />
         </form>
 
         <Link to="/">
           <Button
-            type='button'
-            className='button-base button-secondary'
+            buttonType='button'
+            buttonClass='button-base bg-color-yellow color-brown'
             buttonText='Voltar'
           />
         </Link>

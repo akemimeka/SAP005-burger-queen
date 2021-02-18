@@ -2,16 +2,16 @@
 import React from 'react';
 
 export default function Button({
-  type,
-  className,
-  onClick,
+  buttonType,
+  buttonClass,
+  buttonOnClick,
   buttonText,
 }) {
   return (
     <button
-      type={type}
-      className={className}
-      onClick={onClick}
+      type={buttonType}
+      className={buttonClass}
+      onClick={buttonOnClick}
     >
       {buttonText}
     </button>
