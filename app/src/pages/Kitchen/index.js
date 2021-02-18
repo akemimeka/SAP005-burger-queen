@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Header from '../../components/Header';
-import logo from '../../images/logo-horizontal.png';
+import logo from '../../images/logo-horizontal-green.png';
 
 export default function Kitchen() {
   return (
