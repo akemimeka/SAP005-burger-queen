@@ -19,7 +19,7 @@ export default function MainMenu() {
         buttonLogoutClass='button-logout-base bg-color-light color-brown'
         buttonLogoutOnClick={''}
       />
-      <div className='yellow-box-main-menu'>
+      <div className='main-container-base yellow-box-main-menu'>
         <div className='yellow-box-itens'><h1>ITENS</h1></div>
         <div className='yellow-box-sides'><h1>ACOMPANHAMENTOS</h1></div>
         <div className='yellow-box-drinks'><h1>DRINKS</h1></div>
