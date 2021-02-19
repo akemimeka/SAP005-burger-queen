@@ -59,7 +59,7 @@ export default function Signup() {
       />
 
       <main className='main-container-base main-container-signup'>
-        <div className='form-container-base form-container-signup' >
+        <div className='form-container-base form-container-signup-login' >
           <form onSubmit={registerUser}>
             <InputText
               divWrapClass='label-input-wrap'

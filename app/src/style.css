@@ -189,15 +189,15 @@ body {
   width: 14rem;
 }
 
+.form-container-signup-login {
+  padding: 2.5rem 4rem;
+}
+
 
 /* SIGNUP PAGE */
 .main-container-signup {
   padding-top: 5.1rem;
   padding-bottom: 2rem;
-}
-
-.form-container-signup {
-  padding: 2.5rem 4rem;
 }
 
 .radio-buttons-wrap {

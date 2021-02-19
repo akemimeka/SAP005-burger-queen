@@ -29,8 +29,13 @@ export default function Login() {
 
     fetch(apiAuth, authOptions)
       .then((response) => response.json())
-      .then((workerData) => workerData.role)
-      .then((workerRole) => navigateToPage(workerRole))
+      .then((workerData) => {
+        localStorage.setItem('currentUserName', workerData.name);
+        localStorage.setItem('currentUserRole', workerData.role);
+        localStorage.setItem('currentUserToken', workerData.token);
+        return workerData.role;
+      })
+      .then((role) => navigateToPage(role))
       .catch((error) => console.log(error));
 
     function navigateToPage(role) {
@@ -55,37 +60,39 @@ export default function Login() {
           <img className='logo-login' src={logo} alt='Logo Hamburgueria Ipê' />
         </h1>
 
-        <form className='form-container' onSubmit={authUser}>
-          <Input
-            divWrapClass='label-input-wrap'
-            labelClass='label-for-input'
-            labelText='E-mail'
-            inputRequired
-            inputType='email'
-            inputValue={emailLogin}
-            inputPlaceholder='Insira aqui seu e-mail'
-            inputClass='input-text'
-            inputOnChange={(event) => setEmailLogin(event.target.value)}
-          />
+        <div className='form-container-base form-container-signup-login'>
+          <form onSubmit={authUser}>
+            <Input
+              divWrapClass='label-input-wrap'
+              labelClass='label-for-input'
+              labelText='E-mail'
+              inputRequired
+              inputType='email'
+              inputValue={emailLogin}
+              inputPlaceholder='Insira aqui seu e-mail'
+              inputClass='input-text'
+              inputOnChange={(event) => setEmailLogin(event.target.value)}
+            />
 
-          <Input
-            divWrapClass='label-input-wrap'
-            labelClass='label-for-input'
-            labelText='Senha'
-            inputRequired
-            inputType='password'
-            inputValue={passwordLogin}
-            inputPlaceholder='Insira aqui sua senha'
-            inputClass='input-text'
-            inputOnChange={(event) => setPasswordLogin(event.target.value)}
-          />
+            <Input
+              divWrapClass='label-input-wrap'
+              labelClass='label-for-input'
+              labelText='Senha'
+              inputRequired
+              inputType='password'
+              inputValue={passwordLogin}
+              inputPlaceholder='Insira aqui sua senha'
+              inputClass='input-text'
+              inputOnChange={(event) => setPasswordLogin(event.target.value)}
+            />
 
-          <Button
-            buttonType='submit'
-            buttonClass='button-base button-centered bg-color-light-brown color-yellow'
-            buttonText='Entrar'
-          />
-        </form>
+            <Button
+              buttonType='submit'
+              buttonClass='button-base button-centered bg-color-light-brown color-yellow'
+              buttonText='Entrar'
+            />
+          </form>
+        </div>
 
         <Link to="/cadastro">
           <Button
