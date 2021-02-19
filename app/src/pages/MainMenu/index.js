@@ -18,16 +18,16 @@ export default function MainMenu() {
           workerNameClass='header-name-base color-brown'
           workerNameText={'Jussara Silva'}
           buttonLogoutClass='button-logout-base bg-color-light color-brown'
-          buttonLogoutOnClick={''}
+          // buttonLogoutOnClick={''}
         />
 
-        <div className='menu-grid-child main-menu-burgers bg-color-yellow-20'>BURGS</div>
+        <section className='menu-grid-child main-menu-burgers bg-color-yellow-20'>BURGS</section>
 
-        <div className='menu-grid-child main-menu-sides bg-color-yellow-20'>ACOMPANHAMENTOS</div>
+        <section className='menu-grid-child main-menu-sides bg-color-yellow-20'>ACOMPANHAMENTOS</section>
 
-        <div className='menu-grid-child main-menu-drinks bg-color-yellow-20'>DRINKS</div>
+        <section className='menu-grid-child main-menu-drinks bg-color-yellow-20'>DRINKS</section>
 
-        <div className='menu-grid-child main-menu-orders bg-color-yellow-20'>TOTAL</div>
+        <aside className='menu-grid-child main-menu-orders bg-color-yellow-20'>TOTAL</aside>
       </div>
     </Fragment>
   );

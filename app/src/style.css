@@ -102,6 +102,36 @@ body {
   font-size: 0.8rem;
 }
 
+.form-container-base {
+  background-color: var(--yellow-opacity-20);
+  border-radius: 1.5rem;
+
+}
+
+.label-input-wrap,
+.radio-buttons-wrap {
+  margin-bottom: 2rem;
+}
+
+.label-for-input {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--dark-green);
+}
+
+.input-text {
+  width: 23rem;
+  background-color: var(--lightest);
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.5rem;
+  border: solid 3px var(--dark-green);
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.2rem;
+}
+
 .tag-link {
   display: inline-block;
   position: relative;
@@ -159,40 +189,15 @@ body {
   width: 14rem;
 }
 
-.form-container {
-  background-color: var(--yellow-opacity-20);
-  border-radius: 1.5rem;
-  padding: 2.5rem 4rem;
-}
-
-.label-input-wrap,
-.radio-buttons-wrap {
-  margin-bottom: 2rem;
-}
-
-.label-for-input {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--dark-green);
-}
-
-.input-text {
-  width: 23rem;
-  background-color: var(--lightest);
-  display: block;
-  margin-top: 0.5rem;
-  padding: 0.5rem 0.7rem;
-  border-radius: 0.5rem;
-  border: solid 3px var(--dark-green);
-  font-family: "Work Sans", sans-serif;
-  font-size: 1.2rem;
-}
 
 /* SIGNUP PAGE */
 .main-container-signup {
-  padding-top: 6rem;
+  padding-top: 5.1rem;
   padding-bottom: 2rem;
+}
+
+.form-container-signup {
+  padding: 2.5rem 4rem;
 }
 
 .radio-buttons-wrap {
@@ -223,6 +228,99 @@ body {
 
 
 /* HALL PAGE */
+.main-container-hall {
+  padding-top: 5.1rem;
+}
+
+.info-message {
+  width: 20rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.tables-grid-container {
+  height: 45vh;
+  width: 75vw;
+  display: grid;
+  grid-template-columns: 6fr 4fr 3fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 8% 0;
+  grid-template-areas:
+    'table-01    .    table-04      table-04'
+    'table-02    .    table-05      table-05'
+    'table-03    .    tables-06-07  tables-06-07';
+}
+
+.table-01 {
+  grid-area: table-01;
+  text-align: right;
+}
+
+.table-02 {
+  grid-area: table-02;
+  text-align: right;
+}
+
+.table-03 {
+  grid-area: table-03;
+  text-align: right;
+}
+
+.table-04 {
+  grid-area: table-04;
+}
+
+.table-05 {
+  grid-area: table-05;
+}
+
+.tables-size-2-wrap {
+  grid-area: tables-06-07;
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-size-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1.4rem;
+}
+
+.table-size-2 {
+  padding: 0.7rem 1.3rem;
+  text-align: center;
+}
+
+.table-size-4,
+.table-size-2 {
+  border-radius: 0.7rem;
+}
+
+.table-number {
+  font-size: 2.7rem;
+}
+
+.form-container-hall {
+  padding: 1.5rem 3rem;
+}
+
+.hall-form {
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
+}
+
+.client-input-wrap {
+  margin-right: 4rem;
+}
+
+.input-client {
+  width: 17rem;
+}
+
+
+/* MENU PAGE */
 /* GRID */
 .menu-grid-container {
   height: 100vh;
