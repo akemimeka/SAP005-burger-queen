@@ -366,6 +366,32 @@ body {
   border-radius: 1.5rem 0 0 1.5rem;
 }
 
+/* MENU ITEM BOX */
+.menu-item-wrap {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;  
+}
+.menu-item-image {
+  width: 127px;
+  height: 127px;
+  border: 0.3rem solid var(--dark-brown);
+  border-radius: 0.6rem;
+}
+.menu-item-title {
+  width: auto;
+  position: relative;
+  top: -0.9rem;
+  text-align: center;
+}
+.menu-item-name {
+  border-radius: 0.3rem;
+  background-color: var(--dark-brown);
+  color: var(--yellow);
+  padding: 0.25rem 0.7rem;
+}
 
 /* KITCHEN PAGE */
 
