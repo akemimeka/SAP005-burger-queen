@@ -18,7 +18,6 @@ export default function MainMenu() {
           workerNameClass='header-name-base color-brown'
           workerNameText={'Jussara Silva'}
           buttonLogoutClass='button-logout-base bg-color-light color-brown'
-          // buttonLogoutOnClick={''}
         />
 
         <section className='menu-grid-child main-menu-burgers bg-color-yellow-20'>BURGS</section>

@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+// import { GoToPage } from '../../services';
 import logo from '../../images/logo-horizontal-brown.png';
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
@@ -11,6 +12,7 @@ import Header from '../../components/Header';
 export default function Signup() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';
   const apiUsers = `${apiURL}/users`;
+  const history = useHistory();
   const [workerName, setWorkerName] = useState('');
   const [workerEmail, setWorkerEmail] = useState('');
   const [workerRole, setWorkerRole] = useState('');
@@ -43,6 +45,7 @@ export default function Signup() {
     fetch(apiUsers, requestOptions)
       .then((response) => response.json())
       .then((data) => console.log(data))
+      .then(() => history.push('/'))
       .catch((error) => console.log(error));
   };
 
