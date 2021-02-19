@@ -26,10 +26,10 @@ export default function MainMenu() {
           workerNameClass='header-name-base color-brown'
           workerNameText={'Jussara Silva'}
           buttonLogoutClass='button-logout-base bg-color-light color-brown'
-          buttonLogoutOnClick={''}
+          // buttonLogoutOnClick={''}
         />
 
-        <div className='menu-grid-child main-menu-burgers bg-color-yellow-20'>
+        <section className='menu-grid-child main-menu-burgers bg-color-yellow-20'>
           <MenuItem
             menuItemSrc={meatBurger}
             menuItemDescription='Hambúrguer de Carne'
@@ -45,9 +45,9 @@ export default function MainMenu() {
             menuItemDescription='Hambúrguer Vegetariano'
             menuItemText='Vegetariano'
           />
-        </div>
+        </section>
 
-        <div className='menu-grid-child main-menu-sides bg-color-yellow-20'>
+        <section className='menu-grid-child main-menu-sides bg-color-yellow-20'>
           <MenuItem
             menuItemSrc={frenchFries}
             menuItemDescription='Fritas'
@@ -58,9 +58,9 @@ export default function MainMenu() {
             menuItemDescription='Anéis de cebola'
             menuItemText='Anéis de cebola'
           />
-        </div>
+        </section>
 
-        <div className='menu-grid-child main-menu-drinks bg-color-yellow-20'>
+        <section className='menu-grid-child main-menu-drinks bg-color-yellow-20'>
           <MenuItem
             menuItemSrc={water}
             menuItemDescription='Água'
@@ -71,9 +71,8 @@ export default function MainMenu() {
             menuItemDescription='Refrigerante'
             menuItemText='Refrigerante'
           />
-        </div>
-
-        <div className='menu-grid-child main-menu-orders bg-color-yellow-20'>TOTAL</div>
+        </section>
+        <aside className='menu-grid-child main-menu-orders bg-color-yellow-20'>TOTAL</aside>
       </div>
     </Fragment>
   );
