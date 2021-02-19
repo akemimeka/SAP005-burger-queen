@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Button from '../Button';
 
 export default function Header({
@@ -15,8 +15,9 @@ export default function Header({
   workerNameClass,
   workerNameText,
   buttonLogoutClass,
-  buttonLogoutOnClick,
 }) {
+  const history = useHistory();
+
   return (
     <header className={headerClass}>
       <Link to={headerLogoLink}>
@@ -35,7 +36,11 @@ export default function Header({
         <Button
           buttonType='text'
           buttonClass={buttonLogoutClass}
-          buttonOnClick={buttonLogoutOnClick}
+          buttonOnClick={(event) => {
+            event.preventDefault();
+            localStorage.clear();
+            history.push('/');
+          }}
           buttonText='Sair'
         />
       </div>

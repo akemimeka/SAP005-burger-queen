@@ -17,7 +17,6 @@ export default function Kitchen() {
         workerNameClass='header-name-base color-lightest'
         workerNameText={'Jussara Silva'}
         buttonLogoutClass='button-logout-base bg-color-green color-lightest'
-        buttonLogoutOnClick={''}
       />
     </Fragment>
   );

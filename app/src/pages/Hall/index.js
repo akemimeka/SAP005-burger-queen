@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-brown.png';
 import InputText from '../../components/InputText';
@@ -7,6 +8,7 @@ import Button from '../../components/Button';
 
 export default function Hall() {
   const [clientName, setClientName] = useState('');
+  const history = useHistory();
 
   // Function to get and display the username after he's logged in
   // const apiURL = 'https://lab-api-bq.herokuapp.com';
@@ -51,7 +53,6 @@ export default function Hall() {
         workerNameClass='header-name-base color-brown'
         workerNameText={'Jussara Silva'}
         buttonLogoutClass='button-logout-base bg-color-light color-brown'
-      // buttonLogoutOnClick={''}
       />
 
       <main className='main-container-base main-container-hall'>

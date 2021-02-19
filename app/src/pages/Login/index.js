@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+// import { navigateAfterLogin } from '../../services';
 import Button from '../../components/Button';
 import Input from '../../components/InputText';
 import Footer from '../../components/Footer';
@@ -35,23 +36,22 @@ export default function Login() {
         localStorage.setItem('currentUserToken', workerData.token);
         return workerData.role;
       })
-      .then((role) => navigateToPage(role))
+      .then((role) => navigateAfterLogin(role))
       .catch((error) => console.log(error));
-
-    function navigateToPage(role) {
-      switch (role) {
-        case 'hall':
-          history.push('/salao');
-          break;
-        case 'kitchen':
-          history.push('/cozinha');
-          break;
-        default:
-          history.push('/');
-          break;
-      }
-    }
   };
+
+  function navigateAfterLogin(role) {
+    switch (role) {
+      case 'hall':
+        history.push('/salao');
+        break;
+      case 'kitchen':
+        history.push('/cozinha');
+        break;
+      default:
+        break;
+    }
+  }
 
   return (
     <Fragment>
