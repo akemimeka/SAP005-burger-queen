@@ -13,9 +13,8 @@ export default function Kitchen() {
         workAreaText='Cozinha'
         divLogoutClass='align-right weight-500'
         workerRoleClass='header-role-base color-lightest'
-        workerRoleText={'Chef'}
+        workerRoleText='Chef'
         workerNameClass='header-name-base color-lightest'
-        workerNameText={'Jussara Silva'}
         buttonLogoutClass='button-logout-base bg-color-green color-lightest'
       />
     </Fragment>

@@ -22,9 +22,8 @@ export default function MainMenu() {
           workAreaText='Menu Principal'
           divLogoutClass='align-right weight-500'
           workerRoleClass='header-role-base color-brown'
-          workerRoleText={'Atendente'}
+          workerRoleText='Atendente'
           workerNameClass='header-name-base color-brown'
-          workerNameText={'Jussara Silva'}
           buttonLogoutClass='button-logout-base bg-color-light color-brown'
         />
 
