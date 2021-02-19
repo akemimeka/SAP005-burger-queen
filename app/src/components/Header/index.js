@@ -13,7 +13,6 @@ export default function Header({
   workerRoleClass,
   workerRoleText,
   workerNameClass,
-  workerNameText,
   buttonLogoutClass,
 }) {
   const history = useHistory();
@@ -32,7 +31,7 @@ export default function Header({
       <h2 className={workAreaClass}>{workAreaText}</h2>
       <div className={divLogoutClass}>
         <p className={workerRoleClass}>{workerRoleText}</p>
-        <p className={workerNameClass}>{workerNameText}</p>
+        <p className={workerNameClass}>{localStorage.getItem('currentUserName')}</p>
         <Button
           buttonType='text'
           buttonClass={buttonLogoutClass}
