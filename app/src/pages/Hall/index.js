@@ -3,41 +3,22 @@ import React, { Fragment, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-brown.png';
+import Table from '../../components/Table';
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 
 export default function Hall() {
+  const [selectedTable, setSelectedTable] = useState(false);
+  const [tableClass, setTableClass] = useState('bg-color-light-brown');
+  const [tableNumberClass, setTableNumberClass] = useState('table-number color-lightest');
   const [clientName, setClientName] = useState('');
   const history = useHistory();
 
-  // Function to get and display the username after he's logged in
-  // const apiURL = 'https://lab-api-bq.herokuapp.com';
-  // const apiUsers = `${apiURL}/users`;
-  // const [workerName, setWorkerName] = useState('');
-
-  // const workerNameDisplay = () => {
-  //   // If there's a user show the message below
-  //   if (workerName) {
-  //     setWorkerName(true);
-  //     <div>{workerName}</div>;
-  //     return;
-  //   }
-  //   const requestOptions = {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({
-  //       name: workerName,
-  //       restaurant: 'hamburgueria-ipe',
-  //     }),
-  //   };
-
-  //   fetch(apiUsers, requestOptions)
-  //     .then((response) => response.json())
-  //     .then((data) => console.log(data))
-  //     .catch((error) => console.log(error));
-  // };
+  function tableOnClick(event) {
+    setTableClass('bg-color-yellow');
+    setTableNumberClass('table-number color-dark-brown');
+    localStorage.setItem('currentTable', event.target.textContent);
+  }
 
   return (
     <Fragment>
@@ -60,33 +41,60 @@ export default function Hall() {
         </div>
 
         <section className='tables-grid-container'>
-          <div className='table-01 table-size-4 bg-color-light-brown' onClick>
-            <p className='table-number color-lightest'>01</p>
-          </div>
-          <div className='table-02 table-size-4 bg-color-light-brown' onClick>
-            <p className='table-number color-lightest'>02</p>
-          </div>
-          <div className='table-03 table-size-4 bg-color-light-brown' onClick>
-            <p className='table-number color-lightest'>03</p>
-          </div>
-          <div className='table-04 table-size-4 bg-color-light-brown' onClick>
-            <p className='table-number color-lightest'>04</p>
-          </div>
-          <div className='table-05 table-size-4 bg-color-light-brown' onClick>
-            <p className='table-number color-lightest'>05</p>
-          </div>
-          <div className='tables-size-2-wrap'>
-            <div className='table-06 table-size-2 bg-color-light-brown' onClick>
-              <p className='table-number color-lightest'>06</p>
-            </div>
-            <div className='table-07 table-size-2 bg-color-light-brown' onClick>
-              <p className='table-number color-lightest'>07</p>
-            </div>
+          <Table
+            divClass={tableClass}
+            divOnClick={tableOnClick}
+            pClass={tableNumberClass}
+            tableNumber='01'
+          />
+
+          <Table
+            divClass={tableClass}
+            divOnClick={tableOnClick}
+            pClass={tableNumberClass}
+            tableNumber='02'
+          />
+
+          <Table
+            divClass={tableClass}
+            divOnClick={tableOnClick}
+            pClass={tableNumberClass}
+            tableNumber='03'
+          />
+
+          <Table
+            divClass={tableClass}
+            divOnClick={tableOnClick}
+            pClass={tableNumberClass}
+            tableNumber='04'
+          />
+
+          <Table
+            divClass={tableClass}
+            divOnClick={tableOnClick}
+            pClass={tableNumberClass}
+            tableNumber='05'
+          />
+
+          <div>
+            <Table
+              divClass={tableClass}
+              divOnClick={tableOnClick}
+              pClass={tableNumberClass}
+              tableNumber='06'
+            />
+
+            <Table
+              divClass={tableClass}
+              divOnClick={tableOnClick}
+              pClass={tableNumberClass}
+              tableNumber='07'
+            />
           </div>
         </section>
 
         <section className='form-container-base form-container-hall bg-color-yellow-20'>
-          <form className='hall-form' onSubmit=''>
+          <form className='hall-form'>
             <InputText
               divWrapClass='client-input-wrap'
               labelClass='label-for-input'
@@ -101,10 +109,13 @@ export default function Hall() {
             />
 
             <Button
-              buttonType='submit'
+              buttonType='text'
               buttonClass='button-base bg-color-green color-lightest'
               buttonText='Fazer pedido'
-              buttonOnClick=''
+              buttonOnClick={(event) => {
+                event.preventDefault();
+                localStorage.setItem('currentClient', clientName);
+              }}
             />
           </form>
         </section>
