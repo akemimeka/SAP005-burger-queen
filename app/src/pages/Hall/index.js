@@ -8,16 +8,22 @@ import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 
 export default function Hall() {
-  const [selectedTable, setSelectedTable] = useState(false);
-  const [tableClass, setTableClass] = useState('bg-color-light-brown');
-  const [tableNumberClass, setTableNumberClass] = useState('table-number color-lightest');
+  // const [tableClass, setTableClass] = useState('bg-color-light-brown');
+  // const [tableNumberClass, setTableNumberClass] = useState('table-number color-lightest');
   const [clientName, setClientName] = useState('');
   const history = useHistory();
 
   function tableOnClick(event) {
-    setTableClass('bg-color-yellow');
-    setTableNumberClass('table-number color-dark-brown');
+    const selectedTable = document.getElementById(event.currentTarget.id);
+    const selectedTableNumber = selectedTable.firstElementChild;
+    selectedTable.className = 'bg-color-yellow';
+    selectedTableNumber.className = 'table-number color-brown';
     localStorage.setItem('currentTable', event.target.textContent);
+  }
+
+  function saveTableAndClientName(event) {
+    event.preventDefault();
+    localStorage.setItem('currentClient', clientName);
   }
 
   return (
@@ -42,52 +48,59 @@ export default function Hall() {
 
         <section className='tables-grid-container'>
           <Table
-            divClass={tableClass}
+            divId='table-01'
+            divClass='table bg-color-light-brown'
             divOnClick={tableOnClick}
-            pClass={tableNumberClass}
+            pClass='table-number color-lightest'
             tableNumber='01'
           />
 
           <Table
-            divClass={tableClass}
+            divId='table-02'
+            divClass='table bg-color-light-brown'
             divOnClick={tableOnClick}
-            pClass={tableNumberClass}
+            pClass='table-number color-lightest'
             tableNumber='02'
           />
 
           <Table
-            divClass={tableClass}
+            divId='table-03'
+            divClass='table bg-color-light-brown'
             divOnClick={tableOnClick}
-            pClass={tableNumberClass}
+            pClass='table-number color-lightest'
             tableNumber='03'
           />
 
           <Table
-            divClass={tableClass}
+            divId='table-04'
+            divClass='table bg-color-light-brown'
             divOnClick={tableOnClick}
-            pClass={tableNumberClass}
+            pClass='table-number color-lightest'
             tableNumber='04'
           />
 
           <Table
-            divClass={tableClass}
+            divId='table-05'
+            divClass='table bg-color-light-brown'
             divOnClick={tableOnClick}
-            pClass={tableNumberClass}
+            pClass='table-number color-lightest'
             tableNumber='05'
           />
 
           <div>
             <Table
-              divClass={tableClass}
+              divId='table-06'
+              divClass='table bg-color-light-brown'
               divOnClick={tableOnClick}
-              pClass={tableNumberClass}
+              pClass='table-number color-lightest'
               tableNumber='06'
             />
 
             <Table
-              divClass={tableClass}
+              divId='table-07'
+              divClass='table bg-color-light-brown'
               divOnClick={tableOnClick}
-              pClass={tableNumberClass}
+              pClass='table-number color-lightest'
               tableNumber='07'
             />
           </div>
@@ -112,10 +125,7 @@ export default function Hall() {
               buttonType='text'
               buttonClass='button-base bg-color-green color-lightest'
               buttonText='Fazer pedido'
-              buttonOnClick={(event) => {
-                event.preventDefault();
-                localStorage.setItem('currentClient', clientName);
-              }}
+              buttonOnClick={saveTableAndClientName}
             />
           </form>
         </section>

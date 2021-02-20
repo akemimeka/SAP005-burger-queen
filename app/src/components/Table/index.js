@@ -2,6 +2,7 @@
 import React from 'react';
 
 export default function Table({
+  divId,
   divClass,
   divOnClick,
   pClass,
@@ -9,6 +10,7 @@ export default function Table({
 }) {
   return (
     <div
+      id={divId}
       className={divClass}
       onClick={divOnClick}
     >
