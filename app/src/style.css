@@ -120,6 +120,12 @@ body {
   color: var(--dark-green);
 }
 
+.input-radio {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
 .input-text {
   width: 23rem;
   background-color: var(--lightest);
@@ -207,27 +213,20 @@ body {
   margin-top: 0.5rem;
 }
 
-.input-radio {
-  opacity: 0;
-  position: fixed;
-  width: 0;
-}
-
-.input-radio:checked + label {
-  background-color: var(--dark-brown);
+.input-role:checked + .label-role {
+  background-color: var(--light-brown);
   color: var(--yellow);
 }
 
 /*MY CHANGES FOR RADIO MENUS BUTTONS*/
 
-.burger-types-wrap
-.extras-wrap {
+.item-options-wrap {
   display: flex;
-  padding-top: 2.5rem;
   justify-content: space-evenly;
+  padding-top: 2.5rem;
 }
 
-.base-extras-radio-menu {
+.label-item-options {
   background-color: var(--yellow);
   padding: 0.2rem 1.5rem;
   border: none;
@@ -239,7 +238,7 @@ body {
   font-size: 0.8rem;
 }
 
-.burger-types-wrap:checked + .base-extras-radio-menu {
+.input-item-options:checked + .label-item-options {
   background-color: var(--dark-green);
   color: var(--lightest);
 }

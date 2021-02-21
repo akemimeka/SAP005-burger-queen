@@ -94,7 +94,7 @@ export default function Signup() {
               <p className='label-for-input'>Função</p>
               <div className='radio-buttons-wrap'>
                 <InputRadio
-                  inputClass='input-radio'
+                  inputClass='input-radio input-role'
                   inputId='role-hall'
                   inputName='role'
                   inputRequired
@@ -102,12 +102,12 @@ export default function Signup() {
                   inputChecked={workerRole === 'hall'}
                   inputOnChange={(event) => setWorkerRole(event.target.value)}
                   labelHtmlFor='role-hall'
-                  labelClass='button-base bg-color-green color-lightest'
+                  labelClass='label-role button-base bg-color-green color-lightest'
                   labelText='Salão'
                 />
 
                 <InputRadio
-                  inputClass='input-radio'
+                  inputClass='input-radio input-role'
                   inputId='role-kitchen'
                   inputName='role'
                   inputRequired
@@ -115,7 +115,7 @@ export default function Signup() {
                   inputChecked={workerRole === 'kitchen'}
                   inputOnChange={(event) => setWorkerRole(event.target.value)}
                   labelHtmlFor='role-kitchen'
-                  labelClass='button-base bg-color-green color-lightest'
+                  labelClass='label-role button-base bg-color-green color-lightest'
                   labelText='Cozinha'
                 />
               </div>

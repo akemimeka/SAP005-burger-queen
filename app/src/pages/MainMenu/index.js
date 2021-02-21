@@ -47,68 +47,68 @@ export default function MainMenu() {
             />
           </div>
 
-          <div className='burger-types-wrap'>
+          <div className='item-options-wrap'>
             <InputRadio
-              inputClass='input-radio burger-types-wrap'
-              inputId='extra-simple-burger'
-              inputName='meat-burgers-sides' // (name tem que ser igual)
+              inputClass='input-radio input-item-options'
+              inputId='burger-type-simple'
+              inputName='burger-type' // (name tem que ser igual)
               inputRequired
               inputValue='simple-burger'
               // inputChecked
               // inputOnChange
-              labelHtmlFor='simple-burger'
-              labelClass='base-extras-radio-menu'
+              labelHtmlFor='burger-type-simple'
+              labelClass='label-item-options'
               labelText='Simples'
             />
             <InputRadio
-              inputClass='input-radio burger-types'
-              inputId='extra-double-burger'
-              inputName='meat-burgers-sides' // (name tem que ser igual)
+              inputClass='input-radio input-item-options'
+              inputId='burger-type-double'
+              inputName='burger-type' // (name tem que ser igual)
               inputRequired
               inputValue='double-burger'
               // inputChecked
               // inputOnChange
-              labelHtmlFor='double-burger'
-              labelClass='base-extras-radio-menu'
+              labelHtmlFor='burger-type-double'
+              labelClass='label-item-options'
               labelText='Duplo'
             />
           </div>
 
-          <div className='extras-wrap'>
+          <div className='item-options-wrap'>
             <InputRadio
-              inputClass='input-radio extras-wrap'
+              inputClass='input-radio input-item-options'
               inputId='extra-cheese'
-              inputName='extra-sides'
+              inputName='burger-extra'
               inputRequired
               inputValue='cheese'
               // inputChecked
               // inputOnChange
-              labelHtmlFor='side-plus-cheese'
-              labelClass='base-extras-radio-menu'
-              labelText=' + Queijo'
+              labelHtmlFor='extra-cheese'
+              labelClass='label-item-options'
+              labelText='+ Queijo'
             />
             <InputRadio
-              inputClass='input-radio extras-wrap'
+              inputClass='input-radio input-item-options'
               inputId='extra-egg'
-              inputName='extra-sides'
+              inputName='burger-extra'
               inputRequired
               inputValue='egg'
               // inputChecked
               // inputOnChange
               labelHtmlFor='extra-egg'
-              labelClass='base-extras-radio-menu'
-              labelText=' + Ovo'
+              labelClass='label-item-options'
+              labelText='+ Ovo'
             />
             <InputRadio
-              inputClass='input-radio extras-wrap'
+              inputClass='input-radio input-item-options'
               inputId='extra-none'
-              inputName='extra-sides'
+              inputName='burger-extra'
               inputRequired
               inputValue='none'
               // inputChecked
               // inputOnChange
               labelHtmlFor='extra-none'
-              labelClass='base-extras-radio-menu'
+              labelClass='label-item-options'
               labelText='Nenhum'
             />
           </div>
