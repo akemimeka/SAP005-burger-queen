@@ -9,6 +9,7 @@ import frenchFries from '../../images/menu-photos/fries.png';
 import onionRings from '../../images/menu-photos/onion-rings.png';
 import water from '../../images/menu-photos/water.png';
 import soda from '../../images/menu-photos/soda.png';
+import InputRadio from '../../components/InputRadio';
 
 export default function MainMenu() {
   return (
@@ -28,21 +29,89 @@ export default function MainMenu() {
         />
 
         <section className='menu-grid-child main-menu-burgers bg-color-yellow-20'>
-          <MenuItem
-            menuItemSrc={meatBurger}
-            menuItemDescription='Hambúrguer de Carne'
-            menuItemText='Carne'
-          />
-          <MenuItem
-            menuItemSrc={chickenBurger}
-            menuItemDescription='Hambúrguer de Frango'
-            menuItemText='Frango'
-          />
-          <MenuItem
-            menuItemSrc={veggieBurger}
-            menuItemDescription='Hambúrguer Vegetariano'
-            menuItemText='Vegetariano'
-          />
+          <div className='burger-meat-options'>
+            <MenuItem
+              menuItemSrc={meatBurger}
+              menuItemDescription='Hambúrguer de Carne'
+              menuItemText='Carne'
+            />
+            <MenuItem
+              menuItemSrc={chickenBurger}
+              menuItemDescription='Hambúrguer de Frango'
+              menuItemText='Frango'
+            />
+            <MenuItem
+              menuItemSrc={veggieBurger}
+              menuItemDescription='Hambúrguer Vegetariano'
+              menuItemText='Vegetariano'
+            />
+          </div>
+
+          <div className='burger-types-wrap'>
+            <InputRadio
+              inputClass='input-radio burger-types-wrap'
+              inputId='extra-simple-burger'
+              inputName='meat-burgers-sides' // (name tem que ser igual)
+              inputRequired
+              inputValue='simple-burger'
+              // inputChecked
+              // inputOnChange
+              labelHtmlFor='simple-burger'
+              labelClass='base-extras-radio-menu'
+              labelText='Simples'
+            />
+            <InputRadio
+              inputClass='input-radio burger-types'
+              inputId='extra-double-burger'
+              inputName='meat-burgers-sides' // (name tem que ser igual)
+              inputRequired
+              inputValue='double-burger'
+              // inputChecked
+              // inputOnChange
+              labelHtmlFor='double-burger'
+              labelClass='base-extras-radio-menu'
+              labelText='Duplo'
+            />
+          </div>
+
+          <div className='extras-wrap'>
+            <InputRadio
+              inputClass='input-radio extras-wrap'
+              inputId='extra-cheese'
+              inputName='extra-sides'
+              inputRequired
+              inputValue='cheese'
+              // inputChecked
+              // inputOnChange
+              labelHtmlFor='side-plus-cheese'
+              labelClass='base-extras-radio-menu'
+              labelText=' + Queijo'
+            />
+            <InputRadio
+              inputClass='input-radio extras-wrap'
+              inputId='extra-egg'
+              inputName='extra-sides'
+              inputRequired
+              inputValue='egg'
+              // inputChecked
+              // inputOnChange
+              labelHtmlFor='extra-egg'
+              labelClass='base-extras-radio-menu'
+              labelText=' + Ovo'
+            />
+            <InputRadio
+              inputClass='input-radio extras-wrap'
+              inputId='extra-none'
+              inputName='extra-sides'
+              inputRequired
+              inputValue='none'
+              // inputChecked
+              // inputOnChange
+              labelHtmlFor='extra-none'
+              labelClass='base-extras-radio-menu'
+              labelText='Nenhum'
+            />
+          </div>
         </section>
 
         <section className='menu-grid-child main-menu-sides bg-color-yellow-20'>
