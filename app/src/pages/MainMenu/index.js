@@ -47,66 +47,68 @@ export default function MainMenu() {
             />
           </div>
 
-          <div className='input-radio-menu'>
+          <div className='burger-types-wrap'>
             <InputRadio
-              inputClass='input-radio-menu'
-              inputId='optional-simple-burger'
+              inputClass='input-radio burger-types-wrap'
+              inputId='extra-simple-burger'
               inputName='meat-burgers-sides' // (name tem que ser igual)
               inputRequired
               inputValue='simple-burger'
-              labelHtmlFor='optional-simple-burger'
-              labelClass='base-input-radio-menu bg-color-dark-brown color-yellow'
+              // inputChecked
+              // inputOnChange
+              labelHtmlFor='simple-burger'
+              labelClass='base-extras-radio-menu'
               labelText='Simples'
             />
             <InputRadio
-              inputClass='input-radio-menu'
-              inputId='optional-double-burger'
+              inputClass='input-radio burger-types'
+              inputId='extra-double-burger'
               inputName='meat-burgers-sides' // (name tem que ser igual)
               inputRequired
               inputValue='double-burger'
               // inputChecked
               // inputOnChange
-              labelHtmlFor='optional-double-burger'
-              labelClass='input-radio-menu'
+              labelHtmlFor='double-burger'
+              labelClass='base-extras-radio-menu'
               labelText='Duplo'
             />
           </div>
 
-          <div className='input-radio-menu'>
+          <div className='extras-wrap'>
             <InputRadio
-              inputClass='input-radio-menu'
-              inputId='plus-extra-cheese'
-              inputName='sides-extras'
+              inputClass='input-radio extras-wrap'
+              inputId='extra-cheese'
+              inputName='extra-sides'
               inputRequired
-              inputValue='plus-cheese'
+              inputValue='cheese'
               // inputChecked
               // inputOnChange
-              labelHtmlFor='side-cheese-plus'
-              labelClass='input-radio-menu'
+              labelHtmlFor='side-plus-cheese'
+              labelClass='base-extras-radio-menu'
               labelText=' + Queijo'
             />
             <InputRadio
-              inputClass='input-radio-menu'
-              inputId='plus-extra-egg'
-              inputName='sides-extras'
+              inputClass='input-radio extras-wrap'
+              inputId='extra-egg'
+              inputName='extra-sides'
               inputRequired
-              inputValue='plus-egg'
+              inputValue='egg'
               // inputChecked
               // inputOnChange
-              labelHtmlFor='side-egg-plus'
-              labelClass='input-radio-menu'
+              labelHtmlFor='extra-egg'
+              labelClass='base-extras-radio-menu'
               labelText=' + Ovo'
             />
             <InputRadio
-              inputClass='input-radio-menu'
-              inputId='plus-extra-none'
-              inputName='sides-none'
+              inputClass='input-radio extras-wrap'
+              inputId='extra-none'
+              inputName='extra-sides'
               inputRequired
-              inputValue='plus-none'
+              inputValue='none'
               // inputChecked
               // inputOnChange
-              labelHtmlFor='side-none'
-              labelClass='input-radio-menu'
+              labelHtmlFor='extra-none'
+              labelClass='base-extras-radio-menu'
               labelText='Nenhum'
             />
           </div>
