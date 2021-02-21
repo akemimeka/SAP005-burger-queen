@@ -31,16 +31,45 @@ export default function MainMenu() {
         <section className='menu-grid-child main-menu-burgers bg-color-yellow-20'>
           <div className='burger-meat-options'>
             <MenuItem
+              inputClass='input-radio'
+              inputId='burger-meat'
+              inputName='meat-options'
+              inputRequired
+              inputValue='red-meat'
+              // inputChecked
+              // inputOnChange
+              labelHtmlFor='burger-meat'
+              labelClass='label-meat-options'
               menuItemSrc={meatBurger}
               menuItemDescription='Hambúrguer de Carne'
               menuItemText='Carne'
             />
+
             <MenuItem
+              inputClass='input-radio'
+              inputId='burger-meat'
+              inputName='meat-options'
+              inputRequired
+              inputValue='chicken-meat'
+              // inputChecked
+              // inputOnChange
+              labelHtmlFor='burger-meat'
+              labelClass='label-meat-options'
               menuItemSrc={chickenBurger}
               menuItemDescription='Hambúrguer de Frango'
               menuItemText='Frango'
             />
+
             <MenuItem
+              inputClass='input-radio'
+              inputId='burger-meat'
+              inputName='meat-options'
+              inputRequired
+              inputValue='veggie-meat'
+              // inputChecked
+              // inputOnChange
+              labelHtmlFor='burger-meat'
+              labelClass='label-meat-options'
               menuItemSrc={veggieBurger}
               menuItemDescription='Hambúrguer Vegetariano'
               menuItemText='Vegetariano'
@@ -115,29 +144,59 @@ export default function MainMenu() {
         </section>
 
         <section className='menu-grid-child main-menu-sides bg-color-yellow-20'>
-          <MenuItem
-            menuItemSrc={frenchFries}
-            menuItemDescription='Fritas'
-            menuItemText='Fritas'
-          />
-          <MenuItem
-            menuItemSrc={onionRings}
-            menuItemDescription='Anéis de cebola'
-            menuItemText='Anéis de cebola'
-          />
+          <div className='item-options-wrap'>
+            <MenuItem
+              menuItemSrc={frenchFries}
+              menuItemDescription='Fritas'
+              menuItemText='Fritas'
+            />
+            <MenuItem
+              menuItemSrc={onionRings}
+              menuItemDescription='Anéis de cebola'
+              menuItemText='Anéis de cebola'
+            />
+          </div>
         </section>
 
         <section className='menu-grid-child main-menu-drinks bg-color-yellow-20'>
-          <MenuItem
-            menuItemSrc={water}
-            menuItemDescription='Água'
-            menuItemText='Água'
-          />
-          <MenuItem
-            menuItemSrc={soda}
-            menuItemDescription='Refrigerante'
-            menuItemText='Refrigerante'
-          />
+          <div className='item-options-wrap'>
+            <MenuItem
+              menuItemSrc={water}
+              menuItemDescription='Água'
+              menuItemText='Água'
+            />
+            <MenuItem
+              menuItemSrc={soda}
+              menuItemDescription='Refrigerante'
+              menuItemText='Refrigerante'
+            />
+          </div>
+          <div className='item-options-wrap'>
+            <InputRadio
+              inputClass='input-radio input-item-options'
+              inputId='drink-water'
+              inputName='drink-options'
+              inputRequired
+              inputValue='none'
+              // inputChecked
+              // inputOnChange
+              labelHtmlFor='drink-water'
+              labelClass='label-item-options'
+              labelText='500ML'
+            />
+            <InputRadio
+              inputClass='input-radio input-item-options'
+              inputId='drink-sonda'
+              inputName='drink-options'
+              inputRequired
+              inputValue='none'
+              // inputChecked
+              // inputOnChange
+              labelHtmlFor='drink-sonda'
+              labelClass='label-item-options'
+              labelText='750ML'
+            />
+          </div>
         </section>
         <aside className='menu-grid-child main-menu-orders bg-color-yellow-20'>TOTAL</aside>
       </div>

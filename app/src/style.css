@@ -70,7 +70,7 @@ body {
 .header-base {
   width: 100vw;
   height: 5.1rem;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   display: flex;
   justify-content: space-between;
@@ -216,69 +216,6 @@ body {
 .input-role:checked + .label-role {
   background-color: var(--light-brown);
   color: var(--yellow);
-}
-
-/*MY CHANGES FOR RADIO MENUS BUTTONS*/
-
-.item-options-wrap {
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 2.5rem;
-}
-
-.label-item-options {
-  background-color: var(--yellow);
-  padding: 0.2rem 1.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  color: var(--dark-brown);
-  font-size: 0.8rem;
-}
-
-.input-item-options:checked + .label-item-options {
-  background-color: var(--dark-green);
-  color: var(--lightest);
-}
-
-/* .base-input-radio-menu input[type="radio"]{
-  position: relative;
-  top: 0;
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-family: "Work Sans", sans-serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  transition: ease 0.1s;
-}
-
-.input-radio-menu {
-  opacity: 0;
-  position: fixed;
-  width: 0;
-  color: var(--yellow);
-}
-
-.input-radio-menu:checked +label {
-  background-color: var(--yellow);
-  color: var(--dark-green);
-}
-
-.input-radio-menu input[type="radio"]:focus + label {
-  border: 2px dashed #444;
- } */
-
-/*END OF CHANGES*/
-
-
-.burger-meat-options {
-  display: flex;
-  justify-content: space-between;
 }
 
 .msg-different-passwords {
@@ -438,8 +375,8 @@ body {
   align-content: center;  
 }
 .menu-item-image {
-  width: 127px;
-  height: 127px;
+  width: 8rem;
+  height: 8rem;
   border: 0.3rem solid var(--dark-brown);
   border-radius: 0.6rem;
 }
@@ -454,6 +391,39 @@ body {
   background-color: var(--dark-brown);
   color: var(--yellow);
   padding: 0.25rem 0.7rem;
+}
+
+.menu-item-image:checked + .menu-item-name {
+  border: 0.3rem solid var(--light-green);
+  border-radius: 0.6rem;
+  color: var(--lightest);
+}
+
+
+/* MENU ITEM RADIO BUTTONS */
+.burger-meat-options {
+  display: flex;
+  justify-content: space-between;
+}
+.item-options-wrap {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2.5rem;
+}
+.label-item-options {
+  background-color: var(--yellow);
+  padding: 0.2rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--dark-brown);
+  font-size: 0.8rem;
+}
+.input-item-options:checked + .label-item-options {
+  background-color: var(--dark-green);
+  color: var(--lightest);
 }
 
 /* KITCHEN PAGE */
