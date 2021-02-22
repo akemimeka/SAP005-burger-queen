@@ -12,6 +12,10 @@ import soda from '../../images/menu-photos/soda.png';
 import InputRadio from '../../components/InputRadio';
 
 export default function MainMenu() {
+  const getTableNumber = localStorage.getItem('currentTable');
+  const getClientName = localStorage.getItem('currentClient');
+  const menuHeaderSubtitle = `Mesa ${getTableNumber} · ${getClientName}`;
+
   return (
     <Fragment>
       <div className='menu-grid-container'>
@@ -20,7 +24,7 @@ export default function MainMenu() {
           headerLogoLink='/salao'
           logoSrc={logo}
           workAreaClass='header-title-base color-brown'
-          workAreaText='Menu Principal'
+          workAreaText={menuHeaderSubtitle}
           divLogoutClass='align-right weight-500'
           workerRoleClass='header-role-base color-brown'
           workerRoleText='Atendente'
