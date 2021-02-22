@@ -60,7 +60,7 @@ body {
 .weight-600 { font-weight: 600 }
 
 .main-container-base {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -187,10 +187,6 @@ body {
 
 
 /* LOGIN PAGE */
-.main-container-login {
-  padding-bottom: 2rem;
-}
-
 .logo-login {
   width: 14rem;
 }
@@ -201,11 +197,6 @@ body {
 
 
 /* SIGNUP PAGE */
-.main-container-signup {
-  padding-top: 5.1rem;
-  padding-bottom: 2rem;
-}
-
 .radio-buttons-wrap {
   width: 23rem;
   display: flex;
@@ -228,10 +219,6 @@ body {
 
 
 /* HALL PAGE */
-.main-container-hall {
-  padding-top: 5.1rem;
-}
-
 .info-message {
   width: 20rem;
   font-size: 1.5rem;
@@ -351,7 +338,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 5.1rem 1fr 1fr 1fr;
+  grid-template-rows: 5.1rem 4fr 2fr 3fr;
   gap: 2%;
   grid-template-areas:
     'header   header'
@@ -392,13 +379,32 @@ body {
 }
 
 /* MENU ITEM BOX */
+.menu-section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.menu-section-title {
+  margin-bottom: 1rem;
+  color: var(--dark-brown);
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .menu-item-wrap {
   display: flex;
-  position: relative;
+  flex-direction: column;
+}
+
+.label-item-box {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;  
 }
+
 .menu-item-image {
   width: 8rem;
   height: 8rem;
@@ -410,11 +416,20 @@ body {
   border-radius: 0.3rem;
   background-color: var(--dark-brown);
   color: var(--lightest);
-  padding: 0.25rem 0.7rem;
+  padding: 0.25rem 0.6rem;
   width: auto;
   position: relative;
-  top: -0.9rem;
+  top: -1rem;
   text-align: center;
+}
+
+.menu-item-wrap input:checked + label > img {
+  border: 0.3rem solid var(--dark-green);
+}
+
+.menu-item-wrap input:checked + label > p {
+  background-color: var(--dark-green);
+  color: var(--lightest);
 }
 
 /* MENU ITEM RADIO BUTTONS */
@@ -422,11 +437,24 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.item-options-wrap {
+
+.burger-type-wrap {
+  margin: 0.7rem 0 1.5rem 0;
+}
+
+.item-options-wrap,
+.burger-type-wrap {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 0.8rem;
 }
+
+.drink-size-wrap {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+
 .label-item-options {
   background-color: var(--yellow);
   padding: 0.2rem 1.5rem;
@@ -438,19 +466,10 @@ body {
   color: var(--dark-brown);
   font-size: 0.8rem;
 }
+
 .input-item-options:checked + .label-item-options {
   background-color: var(--dark-green);
   color: var(--lightest);
-}
-
-.itens-main-title {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  text-transform: uppercase;
-  color: var(--dark-brown);
-  font-weight: 500;
-  font-size: 1rem;
 }
 
 /* KITCHEN PAGE */

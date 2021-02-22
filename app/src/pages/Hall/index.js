@@ -41,7 +41,7 @@ export default function Hall() {
         buttonLogoutClass='button-logout-base bg-color-light color-brown'
       />
 
-      <main className='main-container-base main-container-hall'>
+      <main className='main-container-base'>
         <div className='info-message color-dark-green weight-500'>
           Selecione uma mesa e digite o nome do cliente
         </div>
