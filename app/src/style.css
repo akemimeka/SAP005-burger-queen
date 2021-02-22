@@ -338,7 +338,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 5.1rem 1fr 1fr 1fr;
+  grid-template-rows: 5.1rem 4fr 2fr 3fr;
   gap: 2%;
   grid-template-areas:
     'header   header'
@@ -379,6 +379,12 @@ body {
 }
 
 /* MENU ITEM BOX */
+.menu-section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .menu-section-title {
   margin-bottom: 1rem;
   color: var(--dark-brown);
@@ -440,6 +446,13 @@ body {
 .burger-type-wrap {
   display: flex;
   justify-content: space-evenly;
+}
+
+.drink-size-wrap {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
 }
 
 .label-item-options {

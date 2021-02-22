@@ -32,7 +32,7 @@ export default function MainMenu() {
           buttonLogoutClass='button-logout-base bg-color-light color-brown'
         />
 
-        <section className='menu-grid-child main-menu-burgers bg-color-yellow-20'>
+        <section className='menu-grid-child menu-section-container main-menu-burgers bg-color-yellow-20'>
           <h3 className='menu-section-title'>Hambúrgueres</h3>
           <div className='burger-meat-options'>
             <MenuItem
@@ -124,7 +124,7 @@ export default function MainMenu() {
           </div>
         </section>
 
-        <section className='menu-grid-child main-menu-sides bg-color-yellow-20'>
+        <section className='menu-grid-child menu-section-container main-menu-sides bg-color-yellow-20'>
           <h3 className='menu-section-title'>Acompanhamentos</h3>
           <div className='item-options-wrap'>
             <MenuItem
@@ -152,7 +152,7 @@ export default function MainMenu() {
           </div>
         </section>
 
-        <section className='menu-grid-child main-menu-drinks bg-color-yellow-20'>
+        <section className='menu-grid-child menu-section-container main-menu-drinks bg-color-yellow-20'>
           <h3 className='menu-section-title'>Bebidas</h3>
           <div className='item-options-wrap'>
             <MenuItem
@@ -179,7 +179,7 @@ export default function MainMenu() {
             />
           </div>
 
-          <div className='item-options-wrap'>
+          <div className='drink-size-wrap'>
             <InputRadio
               inputClass='hidden input-item-options'
               inputId='drink-size-500'
