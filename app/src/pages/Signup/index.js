@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-// import { GoToPage } from '../../services';
+import { GoToPage } from '../../services';
 import logo from '../../images/logo-horizontal-brown.png';
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
@@ -45,7 +45,7 @@ export default function Signup() {
     fetch(apiUsers, requestOptions)
       .then((response) => response.json())
       .then((data) => console.log(data))
-      .then(() => history.push('/'))
+      .then(() => GoToPage(history, '/'))
       .catch((error) => console.log(error));
   };
 

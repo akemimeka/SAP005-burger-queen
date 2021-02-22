@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { GoToPage } from '../../services';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-brown.png';
 import Table from '../../components/Table';
@@ -8,8 +9,6 @@ import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 
 export default function Hall() {
-  // const [tableClass, setTableClass] = useState('bg-color-light-brown');
-  // const [tableNumberClass, setTableNumberClass] = useState('table-number color-lightest');
   const history = useHistory();
   const [clientName, setClientName] = useState('');
 
@@ -24,7 +23,7 @@ export default function Hall() {
   function menuButtonOnClick(event, path) {
     event.preventDefault();
     localStorage.setItem('currentClient', clientName);
-    history.push(path);
+    GoToPage(history, path);
   }
 
   return (

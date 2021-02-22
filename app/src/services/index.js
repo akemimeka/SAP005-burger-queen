@@ -1,14 +1,14 @@
 export function GoToPage(history, path) {
-  history.push(`'${path}'`);
+  history.push(path);
 }
 
-export function navigateAfterLogin(role) {
+export function navigateAfterLogin(history, role) {
   switch (role) {
     case 'hall':
-      GoToPage('/salao');
+      GoToPage(history, '/salao');
       break;
     case 'kitchen':
-      GoToPage('/cozinha');
+      GoToPage(history, '/cozinha');
       break;
     default:
       break;
