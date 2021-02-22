@@ -33,115 +33,186 @@ export default function MainMenu() {
         />
 
         <section className='menu-grid-child main-menu-burgers bg-color-yellow-20'>
+          <div className='itens-main-title'>Hambúrgueres</div>
           <div className='burger-meat-options'>
+
             <MenuItem
+              inputClass='input-radio menu-item-name'
+              inputId='burger-red-meat'
+              inputName='meat-options'
+              inputRequired
+              inputValue='red-meat'
+              labelHtmlFor='burger-red-meat'
+              labelClass='label-item-box'
               menuItemSrc={meatBurger}
               menuItemDescription='Hambúrguer de Carne'
               menuItemText='Carne'
             />
+
             <MenuItem
+              inputClass='input-radio menu-item-name'
+              inputId='burger-chicken-meat'
+              inputName='meat-options'
+              inputRequired
+              inputValue='chicken-meat'
+              labelHtmlFor='burger-chicken-meat'
+              labelClass='label-item-box'
               menuItemSrc={chickenBurger}
               menuItemDescription='Hambúrguer de Frango'
               menuItemText='Frango'
             />
+
             <MenuItem
+              inputClass='input-radio menu-item-name'
+              inputId='burger-veggie-meat'
+              inputName='meat-options'
+              inputRequired
+              inputValue='veggie-meat'
+              labelHtmlFor='burger-veggie-meat'
+              labelClass='label-item-box'
               menuItemSrc={veggieBurger}
               menuItemDescription='Hambúrguer Vegetariano'
               menuItemText='Vegetariano'
             />
           </div>
 
-          <div className='burger-types-wrap'>
+          <div className='item-options-wrap'>
             <InputRadio
-              inputClass='input-radio burger-types-wrap'
-              inputId='extra-simple-burger'
-              inputName='meat-burgers-sides' // (name tem que ser igual)
+              inputClass='input-radio input-item-options'
+              inputId='burger-type-simple'
+              inputName='burger-type'
               inputRequired
               inputValue='simple-burger'
-              // inputChecked
-              // inputOnChange
-              labelHtmlFor='simple-burger'
-              labelClass='base-extras-radio-menu'
+              labelHtmlFor='burger-type-simple'
+              labelClass='label-item-options'
               labelText='Simples'
             />
             <InputRadio
-              inputClass='input-radio burger-types'
-              inputId='extra-double-burger'
-              inputName='meat-burgers-sides' // (name tem que ser igual)
+              inputClass='input-radio input-item-options'
+              inputId='burger-type-double'
+              inputName='burger-type'
               inputRequired
               inputValue='double-burger'
-              // inputChecked
-              // inputOnChange
-              labelHtmlFor='double-burger'
-              labelClass='base-extras-radio-menu'
+              labelHtmlFor='burger-type-double'
+              labelClass='label-item-options'
               labelText='Duplo'
             />
           </div>
 
-          <div className='extras-wrap'>
+          <div className='item-options-wrap'>
             <InputRadio
-              inputClass='input-radio extras-wrap'
+              inputClass='input-radio input-item-options'
               inputId='extra-cheese'
-              inputName='extra-sides'
+              inputName='burger-extra'
               inputRequired
               inputValue='cheese'
-              // inputChecked
-              // inputOnChange
-              labelHtmlFor='side-plus-cheese'
-              labelClass='base-extras-radio-menu'
-              labelText=' + Queijo'
+              labelHtmlFor='extra-cheese'
+              labelClass='label-item-options'
+              labelText='+ Queijo'
             />
             <InputRadio
-              inputClass='input-radio extras-wrap'
+              inputClass='input-radio input-item-options'
               inputId='extra-egg'
-              inputName='extra-sides'
+              inputName='burger-extra'
               inputRequired
               inputValue='egg'
-              // inputChecked
-              // inputOnChange
               labelHtmlFor='extra-egg'
-              labelClass='base-extras-radio-menu'
-              labelText=' + Ovo'
+              labelClass='label-item-options'
+              labelText='+ Ovo'
             />
             <InputRadio
-              inputClass='input-radio extras-wrap'
+              inputClass='input-radio input-item-options'
               inputId='extra-none'
-              inputName='extra-sides'
+              inputName='burger-extra'
               inputRequired
               inputValue='none'
-              // inputChecked
-              // inputOnChange
               labelHtmlFor='extra-none'
-              labelClass='base-extras-radio-menu'
+              labelClass='label-item-options'
               labelText='Nenhum'
             />
           </div>
         </section>
 
         <section className='menu-grid-child main-menu-sides bg-color-yellow-20'>
-          <MenuItem
-            menuItemSrc={frenchFries}
-            menuItemDescription='Fritas'
-            menuItemText='Fritas'
-          />
-          <MenuItem
-            menuItemSrc={onionRings}
-            menuItemDescription='Anéis de cebola'
-            menuItemText='Anéis de cebola'
-          />
+          <div className='itens-main-title'>Acompanhamentos</div>
+          <div className='item-options-wrap'>
+            <MenuItem
+              inputClass='input-radio menu-item-name'
+              inputId='fries-sides'
+              inputName='extra-sides'
+              inputRequired
+              inputValue='french-fries'
+              labelHtmlFor='fries-sides'
+              labelClass='label-itens-box'
+              menuItemSrc={frenchFries}
+              menuItemDescription='Fritas'
+              menuItemText='Fritas'
+            />
+            <MenuItem
+              inputClass='input-radio menu-item-name'
+              inputId='onion-sides'
+              inputName='extra-sides'
+              inputRequired
+              inputValue='onion-rings'
+              labelHtmlFor='onion-sides'
+              labelClass='label-itens-box'
+              menuItemSrc={onionRings}
+              menuItemDescription='Anéis de cebola'
+              menuItemText='Anéis de cebola'
+            />
+          </div>
         </section>
 
         <section className='menu-grid-child main-menu-drinks bg-color-yellow-20'>
-          <MenuItem
-            menuItemSrc={water}
-            menuItemDescription='Água'
-            menuItemText='Água'
-          />
-          <MenuItem
-            menuItemSrc={soda}
-            menuItemDescription='Refrigerante'
-            menuItemText='Refrigerante'
-          />
+          <div className='itens-main-title'>Bebidas</div>
+          <div className='item-options-wrap'>
+            <MenuItem
+              inputClass='input-radio menu-item-name'
+              inputId='drink-water'
+              inputName='drinks-options'
+              inputRequired
+              inputValue='water'
+              labelHtmlFor='drink-water'
+              labelClass='label-itens-box'
+              menuItemSrc={water}
+              menuItemDescription='Água'
+              menuItemText='Água'
+            />
+            <MenuItem
+              inputClass='input-radio menu-item-name'
+              inputId='drink-soda'
+              inputName='drinks-options'
+              inputRequired
+              inputValue='soda'
+              labelHtmlFor='drink-soda'
+              labelClass='label-itens-box'
+              menuItemSrc={soda}
+              menuItemDescription='Refrigerante'
+              menuItemText='Refrigerante'
+            />
+          </div>
+          <div className='item-options-wrap'>
+            <InputRadio
+              inputClass='input-radio input-item-options'
+              inputId='drink-water'
+              inputName='drink-options'
+              inputRequired
+              inputValue='none'
+              labelHtmlFor='drink-water'
+              labelClass='label-item-box'
+              labelText='500ML'
+            />
+            <InputRadio
+              inputClass='input-radio input-item-options'
+              inputId='drink-sonda'
+              inputName='drink-options'
+              inputRequired
+              inputValue='none'
+              labelHtmlFor='drink-sonda'
+              labelClass='label-item-options'
+              labelText='750ML'
+            />
+          </div>
         </section>
         <aside className='menu-grid-child main-menu-orders bg-color-yellow-20'>TOTAL</aside>
       </div>
