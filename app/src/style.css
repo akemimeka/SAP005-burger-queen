@@ -60,7 +60,7 @@ body {
 .weight-600 { font-weight: 600 }
 
 .main-container-base {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -187,10 +187,6 @@ body {
 
 
 /* LOGIN PAGE */
-.main-container-login {
-  padding-bottom: 2rem;
-}
-
 .logo-login {
   width: 14rem;
 }
@@ -201,11 +197,6 @@ body {
 
 
 /* SIGNUP PAGE */
-.main-container-signup {
-  padding-top: 5.1rem;
-  padding-bottom: 2rem;
-}
-
 .radio-buttons-wrap {
   width: 23rem;
   display: flex;
@@ -228,10 +219,6 @@ body {
 
 
 /* HALL PAGE */
-.main-container-hall {
-  padding-top: 5.1rem;
-}
-
 .info-message {
   width: 20rem;
   font-size: 1.5rem;
