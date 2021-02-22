@@ -33,10 +33,10 @@ export default function MainMenu() {
         />
 
         <section className='menu-grid-child main-menu-burgers bg-color-yellow-20'>
-          <div className='itens-main-title'>Hambúrgueres</div>
+          <h3 className='menu-section-title'>Hambúrgueres</h3>
           <div className='burger-meat-options'>
             <MenuItem
-              inputClass='input-radio menu-item-name'
+              inputClass='hidden menu-item-name'
               inputId='burger-red-meat'
               inputName='meat-options'
               inputValue='red-meat'
@@ -48,7 +48,7 @@ export default function MainMenu() {
             />
 
             <MenuItem
-              inputClass='input-radio menu-item-name'
+              inputClass='hidden menu-item-name'
               inputId='burger-chicken-meat'
               inputName='meat-options'
               inputValue='chicken-meat'
@@ -60,7 +60,7 @@ export default function MainMenu() {
             />
 
             <MenuItem
-              inputClass='input-radio menu-item-name'
+              inputClass='hidden menu-item-name'
               inputId='burger-veggie-meat'
               inputName='meat-options'
               inputValue='veggie-meat'
@@ -72,9 +72,9 @@ export default function MainMenu() {
             />
           </div>
 
-          <div className='item-options-wrap'>
+          <div className='burger-type-wrap'>
             <InputRadio
-              inputClass='input-radio input-item-options'
+              inputClass='hidden input-item-options'
               inputId='burger-type-simple'
               inputName='burger-type'
               inputValue='simple-burger'
@@ -83,7 +83,7 @@ export default function MainMenu() {
               labelText='Simples'
             />
             <InputRadio
-              inputClass='input-radio input-item-options'
+              inputClass='hidden input-item-options'
               inputId='burger-type-double'
               inputName='burger-type'
               inputValue='double-burger'
@@ -95,7 +95,7 @@ export default function MainMenu() {
 
           <div className='item-options-wrap'>
             <InputRadio
-              inputClass='input-radio input-item-options'
+              inputClass='hidden input-item-options'
               inputId='extra-cheese'
               inputName='burger-extra'
               inputValue='cheese'
@@ -104,7 +104,7 @@ export default function MainMenu() {
               labelText='+ Queijo'
             />
             <InputRadio
-              inputClass='input-radio input-item-options'
+              inputClass='hidden input-item-options'
               inputId='extra-egg'
               inputName='burger-extra'
               inputValue='egg'
@@ -113,7 +113,7 @@ export default function MainMenu() {
               labelText='+ Ovo'
             />
             <InputRadio
-              inputClass='input-radio input-item-options'
+              inputClass='hidden input-item-options'
               inputId='extra-none'
               inputName='burger-extra'
               inputValue='none'
@@ -125,26 +125,26 @@ export default function MainMenu() {
         </section>
 
         <section className='menu-grid-child main-menu-sides bg-color-yellow-20'>
-          <div className='itens-main-title'>Acompanhamentos</div>
+          <h3 className='menu-section-title'>Acompanhamentos</h3>
           <div className='item-options-wrap'>
             <MenuItem
-              inputClass='input-radio menu-item-name'
+              inputClass='hidden menu-item-name'
               inputId='fries-sides'
               inputName='extra-sides'
               inputValue='french-fries'
               labelHtmlFor='fries-sides'
-              labelClass='label-itens-box'
+              labelClass='label-item-box'
               menuItemSrc={frenchFries}
               menuItemDescription='Fritas'
               menuItemText='Fritas'
             />
             <MenuItem
-              inputClass='input-radio menu-item-name'
+              inputClass='hidden menu-item-name'
               inputId='onion-sides'
               inputName='extra-sides'
               inputValue='onion-rings'
               labelHtmlFor='onion-sides'
-              labelClass='label-itens-box'
+              labelClass='label-item-box'
               menuItemSrc={onionRings}
               menuItemDescription='Anéis de cebola'
               menuItemText='Anéis de cebola'
@@ -153,53 +153,57 @@ export default function MainMenu() {
         </section>
 
         <section className='menu-grid-child main-menu-drinks bg-color-yellow-20'>
-          <div className='itens-main-title'>Bebidas</div>
+          <h3 className='menu-section-title'>Bebidas</h3>
           <div className='item-options-wrap'>
             <MenuItem
-              inputClass='input-radio menu-item-name'
+              inputClass='hidden menu-item-name'
               inputId='drink-water'
               inputName='drinks-options'
               inputValue='water'
               labelHtmlFor='drink-water'
-              labelClass='label-itens-box'
+              labelClass='label-item-box'
               menuItemSrc={water}
               menuItemDescription='Água'
               menuItemText='Água'
             />
             <MenuItem
-              inputClass='input-radio menu-item-name'
+              inputClass='hidden menu-item-name'
               inputId='drink-soda'
               inputName='drinks-options'
               inputValue='soda'
               labelHtmlFor='drink-soda'
-              labelClass='label-itens-box'
+              labelClass='label-item-box'
               menuItemSrc={soda}
               menuItemDescription='Refrigerante'
               menuItemText='Refrigerante'
             />
           </div>
+
           <div className='item-options-wrap'>
             <InputRadio
-              inputClass='input-radio input-item-options'
-              inputId='drink-water'
-              inputName='drink-options'
-              inputValue='none'
-              labelHtmlFor='drink-water'
-              labelClass='label-item-box'
+              inputClass='hidden input-item-options'
+              inputId='drink-size-500'
+              inputName='drink-size'
+              inputValue='500ml'
+              labelHtmlFor='drink-size-500'
+              labelClass='label-item-options'
               labelText='500ML'
             />
             <InputRadio
-              inputClass='input-radio input-item-options'
-              inputId='drink-sonda'
-              inputName='drink-options'
-              inputValue='none'
-              labelHtmlFor='drink-sonda'
+              inputClass='hidden input-item-options'
+              inputId='drink-size-750'
+              inputName='drink-size'
+              inputValue='750ml'
+              labelHtmlFor='drink-size-750'
               labelClass='label-item-options'
               labelText='750ML'
             />
           </div>
         </section>
-        <aside className='menu-grid-child main-menu-orders bg-color-yellow-20'>TOTAL</aside>
+
+        <aside className='menu-grid-child main-menu-orders bg-color-yellow-20'>
+          TOTAL
+        </aside>
       </div>
     </Fragment>
   );

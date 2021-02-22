@@ -379,6 +379,15 @@ body {
 }
 
 /* MENU ITEM BOX */
+.menu-section-title {
+  margin-bottom: 1rem;
+  color: var(--dark-brown);
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .menu-item-wrap {
   display: flex;
   flex-direction: column;
@@ -423,10 +432,14 @@ body {
   justify-content: space-between;
 }
 
-.item-options-wrap {
+.burger-type-wrap {
+  margin: 0.7rem 0 1.5rem 0;
+}
+
+.item-options-wrap,
+.burger-type-wrap {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 0.8rem;
 }
 
 .label-item-options {
@@ -444,16 +457,6 @@ body {
 .input-item-options:checked + .label-item-options {
   background-color: var(--dark-green);
   color: var(--lightest);
-}
-
-.itens-main-title {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  text-transform: uppercase;
-  color: var(--dark-brown);
-  font-weight: 500;
-  font-size: 1rem;
 }
 
 /* KITCHEN PAGE */
