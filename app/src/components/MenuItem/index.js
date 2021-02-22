@@ -8,13 +8,11 @@ export default function MenuItem({
   inputClass,
   inputId,
   inputName,
-  inputRequired,
   inputValue,
   inputChecked,
   inputOnChange,
   labelHtmlFor,
   labelClass,
-  labelText,
 }) {
   return (
     <div className='menu-item-wrap'>
@@ -23,7 +21,6 @@ export default function MenuItem({
         className={inputClass}
         id={inputId}
         name={inputName}
-        required={inputRequired}
         value={inputValue}
         checked={inputChecked}
         onChange={inputOnChange}
@@ -37,11 +34,8 @@ export default function MenuItem({
           src={menuItemSrc}
           alt={menuItemDescription}
         />
-        {labelText}
-      </label>
-      <div className='menu-item-title'>
         <p className='menu-item-name'>{menuItemText}</p>
-      </div>
+      </label>
     </div>
   );
 }

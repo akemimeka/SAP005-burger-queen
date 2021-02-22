@@ -35,12 +35,10 @@ export default function MainMenu() {
         <section className='menu-grid-child main-menu-burgers bg-color-yellow-20'>
           <div className='itens-main-title'>Hambúrgueres</div>
           <div className='burger-meat-options'>
-
             <MenuItem
               inputClass='input-radio menu-item-name'
               inputId='burger-red-meat'
               inputName='meat-options'
-              inputRequired
               inputValue='red-meat'
               labelHtmlFor='burger-red-meat'
               labelClass='label-item-box'
@@ -53,7 +51,6 @@ export default function MainMenu() {
               inputClass='input-radio menu-item-name'
               inputId='burger-chicken-meat'
               inputName='meat-options'
-              inputRequired
               inputValue='chicken-meat'
               labelHtmlFor='burger-chicken-meat'
               labelClass='label-item-box'
@@ -66,7 +63,6 @@ export default function MainMenu() {
               inputClass='input-radio menu-item-name'
               inputId='burger-veggie-meat'
               inputName='meat-options'
-              inputRequired
               inputValue='veggie-meat'
               labelHtmlFor='burger-veggie-meat'
               labelClass='label-item-box'
@@ -81,7 +77,6 @@ export default function MainMenu() {
               inputClass='input-radio input-item-options'
               inputId='burger-type-simple'
               inputName='burger-type'
-              inputRequired
               inputValue='simple-burger'
               labelHtmlFor='burger-type-simple'
               labelClass='label-item-options'
@@ -91,7 +86,6 @@ export default function MainMenu() {
               inputClass='input-radio input-item-options'
               inputId='burger-type-double'
               inputName='burger-type'
-              inputRequired
               inputValue='double-burger'
               labelHtmlFor='burger-type-double'
               labelClass='label-item-options'
@@ -104,7 +98,6 @@ export default function MainMenu() {
               inputClass='input-radio input-item-options'
               inputId='extra-cheese'
               inputName='burger-extra'
-              inputRequired
               inputValue='cheese'
               labelHtmlFor='extra-cheese'
               labelClass='label-item-options'
@@ -114,7 +107,6 @@ export default function MainMenu() {
               inputClass='input-radio input-item-options'
               inputId='extra-egg'
               inputName='burger-extra'
-              inputRequired
               inputValue='egg'
               labelHtmlFor='extra-egg'
               labelClass='label-item-options'
@@ -124,7 +116,6 @@ export default function MainMenu() {
               inputClass='input-radio input-item-options'
               inputId='extra-none'
               inputName='burger-extra'
-              inputRequired
               inputValue='none'
               labelHtmlFor='extra-none'
               labelClass='label-item-options'
@@ -140,7 +131,6 @@ export default function MainMenu() {
               inputClass='input-radio menu-item-name'
               inputId='fries-sides'
               inputName='extra-sides'
-              inputRequired
               inputValue='french-fries'
               labelHtmlFor='fries-sides'
               labelClass='label-itens-box'
@@ -152,7 +142,6 @@ export default function MainMenu() {
               inputClass='input-radio menu-item-name'
               inputId='onion-sides'
               inputName='extra-sides'
-              inputRequired
               inputValue='onion-rings'
               labelHtmlFor='onion-sides'
               labelClass='label-itens-box'
@@ -170,7 +159,6 @@ export default function MainMenu() {
               inputClass='input-radio menu-item-name'
               inputId='drink-water'
               inputName='drinks-options'
-              inputRequired
               inputValue='water'
               labelHtmlFor='drink-water'
               labelClass='label-itens-box'
@@ -182,7 +170,6 @@ export default function MainMenu() {
               inputClass='input-radio menu-item-name'
               inputId='drink-soda'
               inputName='drinks-options'
-              inputRequired
               inputValue='soda'
               labelHtmlFor='drink-soda'
               labelClass='label-itens-box'
@@ -196,7 +183,6 @@ export default function MainMenu() {
               inputClass='input-radio input-item-options'
               inputId='drink-water'
               inputName='drink-options'
-              inputRequired
               inputValue='none'
               labelHtmlFor='drink-water'
               labelClass='label-item-box'
@@ -206,7 +192,6 @@ export default function MainMenu() {
               inputClass='input-radio input-item-options'
               inputId='drink-sonda'
               inputName='drink-options'
-              inputRequired
               inputValue='none'
               labelHtmlFor='drink-sonda'
               labelClass='label-item-options'
