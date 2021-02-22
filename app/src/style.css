@@ -380,25 +380,17 @@ body {
   border: 0.3rem solid var(--dark-brown);
   border-radius: 0.6rem;
 }
-.menu-item-title {
+
+.menu-item-name {
+  border-radius: 0.3rem;
+  background-color: var(--dark-brown);
+  color: var(--lightest);
+  padding: 0.25rem 0.7rem;
   width: auto;
   position: relative;
   top: -0.9rem;
   text-align: center;
 }
-.menu-item-name {
-  border-radius: 0.3rem;
-  background-color: var(--dark-brown);
-  color: var(--yellow);
-  padding: 0.25rem 0.7rem;
-}
-
-.menu-item-image:checked + .menu-item-name {
-  border: 0.3rem solid var(--light-green);
-  border-radius: 0.6rem;
-  color: var(--lightest);
-}
-
 
 /* MENU ITEM RADIO BUTTONS */
 .burger-meat-options {
@@ -408,7 +400,7 @@ body {
 .item-options-wrap {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 2.5rem;
+  padding-top: 0.8rem;
 }
 .label-item-options {
   background-color: var(--yellow);
@@ -424,6 +416,16 @@ body {
 .input-item-options:checked + .label-item-options {
   background-color: var(--dark-green);
   color: var(--lightest);
+}
+
+.itens-main-title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-transform: uppercase;
+  color: var(--dark-brown);
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 /* KITCHEN PAGE */
