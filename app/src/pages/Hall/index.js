@@ -10,8 +10,8 @@ import Button from '../../components/Button';
 export default function Hall() {
   // const [tableClass, setTableClass] = useState('bg-color-light-brown');
   // const [tableNumberClass, setTableNumberClass] = useState('table-number color-lightest');
-  const [clientName, setClientName] = useState('');
   const history = useHistory();
+  const [clientName, setClientName] = useState('');
 
   function tableOnClick(event) {
     const selectedTable = document.getElementById(event.currentTarget.id);
@@ -21,9 +21,10 @@ export default function Hall() {
     localStorage.setItem('currentTable', event.target.textContent);
   }
 
-  function saveTableAndClientName(event) {
+  function menuButtonOnClick(event, path) {
     event.preventDefault();
     localStorage.setItem('currentClient', clientName);
+    history.push(path);
   }
 
   return (
@@ -121,12 +122,22 @@ export default function Hall() {
               inputOnChange={(event) => setClientName(event.target.value)}
             />
 
-            <Button
-              buttonType='text'
-              buttonClass='button-base bg-color-green color-lightest'
-              buttonText='Fazer pedido'
-              buttonOnClick={saveTableAndClientName}
-            />
+            <div className='menu-buttons-wrap'>
+              <Button
+                buttonType='text'
+                buttonClass='button-base button-to-menu bg-color-green color-lightest'
+                buttonText='Menu principal'
+                buttonOnClick={(event) => menuButtonOnClick(event, '/menu-principal')}
+              />
+
+              <Button
+                buttonType='text'
+                buttonClass='button-base button-to-menu bg-color-green color-lightest'
+                buttonText='Menu matinal'
+                buttonOnClick={(event) => menuButtonOnClick(event, '/menu-matinal')}
+              />
+            </div>
+
           </form>
         </section>
       </main>

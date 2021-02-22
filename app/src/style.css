@@ -386,7 +386,7 @@ body {
 .hall-form {
   display: flex;
   justify-content: space-between;
-  align-items:flex-end;
+  align-items: center;
 }
 
 .client-input-wrap {
@@ -395,6 +395,17 @@ body {
 
 .input-client {
   width: 17rem;
+}
+
+.menu-buttons-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button-to-menu {
+  width: 15rem;
+  margin: 0.5rem 0;
 }
 
 
