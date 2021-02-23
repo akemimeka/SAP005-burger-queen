@@ -11,6 +11,7 @@ import water from '../../images/menu-photos/water.png';
 import soda from '../../images/menu-photos/soda.png';
 import InputRadio from '../../components/InputRadio';
 import TotalAndSend from '../../components/TotalAndSend';
+import OrderedItem from '../../components/OrderedItem';
 
 export default function MainMenu() {
   const getTableNumber = localStorage.getItem('currentTable');
@@ -209,7 +210,7 @@ export default function MainMenu() {
           </div>
 
           <div className='order-list-items'>
-
+            {/* AQUI IRÃO APARECER OS ITENS PEDIDOS */}
           </div>
 
           <TotalAndSend
