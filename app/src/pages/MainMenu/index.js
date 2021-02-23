@@ -10,6 +10,7 @@ import onionRings from '../../images/menu-photos/onion-rings.png';
 import water from '../../images/menu-photos/water.png';
 import soda from '../../images/menu-photos/soda.png';
 import InputRadio from '../../components/InputRadio';
+import TotalAndSend from '../../components/TotalAndSend';
 
 export default function MainMenu() {
   const getTableNumber = localStorage.getItem('currentTable');
@@ -202,7 +203,20 @@ export default function MainMenu() {
         </section>
 
         <aside className='menu-grid-child main-menu-orders bg-color-yellow-20'>
-          TOTAL
+          <div className='order-title-wrap'>
+            <h3 className='menu-section-title'>Pedido</h3>
+            <hr className='dividing-line bg-color-dark-brown'></hr>
+          </div>
+
+          <div className='order-list-items'>
+
+          </div>
+
+          <TotalAndSend
+            totalPriceValue
+            sendOrderButton
+            cancelOrderButton
+          />
         </aside>
       </div>
     </Fragment>
