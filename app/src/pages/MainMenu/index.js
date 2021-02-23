@@ -12,6 +12,7 @@ import soda from '../../images/menu-photos/soda.png';
 import InputRadio from '../../components/InputRadio';
 import TotalAndSend from '../../components/TotalAndSend';
 import OrderedItem from '../../components/OrderedItem';
+import ItemQuantity from '../../components/ItemQuantity';
 
 export default function MainMenu() {
   const getTableNumber = localStorage.getItem('currentTable');
@@ -211,6 +212,19 @@ export default function MainMenu() {
 
           <div className='order-list-items'>
             {/* AQUI IRÃO APARECER OS ITENS PEDIDOS */}
+
+            <OrderedItem
+              itemNameText='hamburg. de carne'
+              itemPriceText=''
+            />
+            <OrderedItem
+              itemNameText='duplo'
+              itemPriceText='15,00'
+            />
+            <ItemQuantity
+              itemQuantityText='01'
+              itemTotalValue='20,00'
+            />
           </div>
 
           <TotalAndSend

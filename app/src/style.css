@@ -488,12 +488,12 @@ body {
 }
 
 .dividing-line {
-  height: 0.1rem;
+  height: 1px;
   margin-top: 0.5rem;
   border: none;
 }
 
-/* ORDER LIST WITH ITEMS */
+/* ORDERED ITEM COMPONENT */
 .order-list-items {
   padding: 1.5rem 0;
   overflow: scroll;
@@ -515,14 +515,52 @@ body {
 }
 
 .ordered-item-price {
+  width: 2.4rem;
   margin-left: 1.8rem;
   font-family: 'B612', monospace;
   font-weight: bold;
-  font-size: 0.79rem;
+  font-size: 0.8rem;
+}
+
+/* ITEM QUANTITY COMPONENT */
+.item-quantity-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.item-quantity-buttons-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-quantity-button {
+  padding: 0.5rem;
+  border-radius: 50%;
+  line-height: 0.6rem;
+  letter-spacing: 0;
+  font-size: 1rem;
+}
+
+.item-quantity-number {
+  margin: 0 1.2rem;
+  font-family: 'B612', monospace;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.item-total-value {
+  width: 2.4rem;
+  margin-left: 1.8rem;
+  font-family: 'B612', monospace;
+  font-weight: bold;
+  font-size: 0.8rem;
 }
 
 
-/* TOTAL AND SEND */
+/* TOTAL AND SEND COMPONENT*/
 .total-and-send-container {
   display: flex;
   flex-direction: column;
@@ -547,7 +585,6 @@ body {
   justify-content: space-between;
   align-self: center;
 }
-
 
 
 /* KITCHEN PAGE */
