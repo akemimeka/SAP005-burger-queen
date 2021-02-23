@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+// import styled froms 'styled-components';
 import { GoToPage } from '../../services';
 import logo from '../../images/logo-horizontal-brown.png';
 import InputText from '../../components/InputText';
@@ -19,6 +20,24 @@ export default function Signup() {
   const [workerPassword, setWorkerPassword] = useState('');
   const [workerConfirmPassword, setWorkerConfirmPassword] = useState('');
   const [equalPasswords, setEqualPasswords] = useState(true);
+
+  // const Container = styled.div`
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // height: 100vh;
+  // `;
+
+  // const Button = styled.button`
+  // min-width: 100px;
+  // padding: 16px 32px;
+  // border-radius: 4px;
+  // border: none;
+  // background: #141414;
+  // color: #fff;
+  // font-size: 24px;
+  // cursor: pointer;
+  // `;
 
   const registerUser = (event) => {
     event.preventDefault();
@@ -49,8 +68,18 @@ export default function Signup() {
       .catch((error) => console.log(error));
   };
 
+  // const [showModal, setShowModal] = useState(false);
+  // const openModal = () => {
+  //   setShowModal(prev => !prev);
+  // };
+
   return (
     <Fragment>
+      {/* <Container>
+        <Button onClick={openModal}>Im a Modal</Button>
+        <Modal showModal={showModal} setShowModal={setShowModal}
+        />
+      </Container> */}
       <Header
         headerClass='header-base bg-color-green'
         headerLogoLink='/'
@@ -60,7 +89,6 @@ export default function Signup() {
         workAreaText='Cadastro'
         divLogoutClass='hidden'
       />
-
       <main className='main-container-base main-container-signup'>
         <div className='form-container-base form-container-signup-login' >
           <form onSubmit={registerUser}>

@@ -38,6 +38,14 @@ body {
   background-size: auto;
 }
 
+/* MODAL */
+.modal-base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 
 /* BASE STYLING */
 .color-brown { color: var(--dark-brown) }
