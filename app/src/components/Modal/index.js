@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useCallback } from 'react';
 
-const Modal = ({
+export default function Modal({
   showModal,
   setShowModal,
-  id = 'modal', onClose = () => { }, children,
-}) => {
+  id = 'modal',
+  onClose = () => { }, children,
+}) {
   const handleOutsideClick = (event) => {
     if (event.target.id === id) onClose();
   };
@@ -26,13 +27,11 @@ const Modal = ({
   );
 
   return (
-    <div id='{id}' className='modal-wrap' onClick={handleOutsideClick} >
+    <div id='{id}' className='modal-wrap' onClick={handleOutsideClick}>
       <div className='modal-base'>
         <button className='modal-close-button' onClick={onClose}>Fechar</button>
         <div className='modal-body'>{children}</div>
       </div>
-    </div >
+    </div>
   );
-};
-
-export default Modal;
+}

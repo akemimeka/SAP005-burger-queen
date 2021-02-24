@@ -1,9 +1,10 @@
+/* eslint-disable max-len */
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 // import styled from 'styled-components';
 import Modal from '../../components/Modal';
-import { GoToPage } from '../../services';
+// import { GoToPage } from '../../services';
 import logo from '../../images/logo-horizontal-brown.png';
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
@@ -21,33 +22,22 @@ export default function Signup() {
   const [workerPassword, setWorkerPassword] = useState('');
   const [workerConfirmPassword, setWorkerConfirmPassword] = useState('');
   const [equalPasswords, setEqualPasswords] = useState(true);
-
-  // const Container = styled.div`
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // height: 100vh;
-  // `;
-
-  // const modalBtn = styled.button`
-  // min-width: 100px;
-  // padding: 16px 32px;
-  // border-radius: 4px;
-  // border: none;
-  // background: #141414;
-  // color: #fff;
-  // font-size: 24px;
-  // cursor: pointer;
-  // `;
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const registerUser = (event) => {
     event.preventDefault();
 
-    if (workerPassword !== workerConfirmPassword) {
+    if (workerPassword === workerConfirmPassword) {
+      handleSubmit();
       setEqualPasswords(false);
-      return;
+    } else {
+      setIsModalVisible(true);
+      setErrorMessage('As senhas devem ser iguais. Por favor, tente novamente!');
     }
+  };
 
+  const handleSubmit = () => {
     const requestOptions = {
       method: 'POST',
       headers: {
@@ -64,25 +54,22 @@ export default function Signup() {
 
     fetch(apiUsers, requestOptions)
       .then((response) => response.json())
-      .then((data) => console.log(data))
-      .then(() => GoToPage(history, '/'))
-      .catch((error) => console.log(error));
+      .then((data) => {
+        if (data.message !== undefined) {
+          setIsModalVisible(true);
+          setErrorMessage(`${data.message}`);
+        } else {
+          localStorage.setItem('toke', data.token);
+          localStorage.setItem('userId', data.id);
+          history.push(`/${data.role}`);
+          // .then(() => GoToPage(history, '/'))
+          // .catch((error) => console.log(error));
+        }
+      });
   };
-
-  // const [showModal, setShowModal] = useState(false);
-  // const openModal = () => {
-  //   setShowModal((prev) => !prev);
-  // };
-
-  const [isModalVisibile, setIsModalVisible] = useState(false);
 
   return (
     <Fragment>
-      {/* <Container>
-        <modalBtn onClick={openModal}>Im a Modal</modalBtn>
-        <Modal showModal={showModal} setShowModal={setShowModal}
-        />
-      </Container> */}
       <Header
         headerClass='header-base bg-color-green'
         headerLogoLink='/'
@@ -181,11 +168,12 @@ export default function Signup() {
               buttonClass='button-base button-centered mg-top-2 bg-color-light-brown color-yellow'
               OnClick={() => setIsModalVisible(true)} buttonText='Cadastrar'
             />
-            {isModalVisibile ? (
+            {isModalVisible ? (
               <Modal onClose={() => setIsModalVisible(false)}>
-                <h2>Teste de Modal</h2>
+                <h2>{errorMessage}</h2>
               </Modal>
             ) : null}
+
           </form>
         </div>
 
