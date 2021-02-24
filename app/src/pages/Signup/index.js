@@ -33,7 +33,7 @@ export default function Signup() {
       setEqualPasswords(false);
     } else {
       setIsModalVisible(true);
-      setErrorMessage('As senhas devem ser iguais. Por favor, tente novamente!');
+      setErrorMessage('As senhas são diferentes. Tente novamente.');
     }
   };
 
@@ -170,8 +170,7 @@ export default function Signup() {
             />
             {isModalVisible ? (
               <Modal onClose={() => setIsModalVisible(false)}>
-                <button
-                  buttonText='Cris'></button>
+                <p>{errorMessage}</p>
               </Modal>
             ) : null}
 
