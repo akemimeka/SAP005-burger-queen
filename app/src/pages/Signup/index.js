@@ -170,7 +170,8 @@ export default function Signup() {
             />
             {isModalVisible ? (
               <Modal onClose={() => setIsModalVisible(false)}>
-                <h2>{errorMessage}</h2>
+                <button
+                  buttonText='Cris'></button>
               </Modal>
             ) : null}
 
