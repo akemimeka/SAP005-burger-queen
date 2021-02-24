@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-// import styled froms 'styled-components';
+// import styled from 'styled-components';
+import Modal from '../../components/Modal';
 import { GoToPage } from '../../services';
 import logo from '../../images/logo-horizontal-brown.png';
 import InputText from '../../components/InputText';
@@ -28,7 +29,7 @@ export default function Signup() {
   // height: 100vh;
   // `;
 
-  // const Button = styled.button`
+  // const modalBtn = styled.button`
   // min-width: 100px;
   // padding: 16px 32px;
   // border-radius: 4px;
@@ -70,13 +71,15 @@ export default function Signup() {
 
   // const [showModal, setShowModal] = useState(false);
   // const openModal = () => {
-  //   setShowModal(prev => !prev);
+  //   setShowModal((prev) => !prev);
   // };
+
+  const [isModalVisibile, setIsModalVisible] = useState(false);
 
   return (
     <Fragment>
       {/* <Container>
-        <Button onClick={openModal}>Im a Modal</Button>
+        <modalBtn onClick={openModal}>Im a Modal</modalBtn>
         <Modal showModal={showModal} setShowModal={setShowModal}
         />
       </Container> */}
@@ -176,8 +179,13 @@ export default function Signup() {
             <Button
               buttonType='submit'
               buttonClass='button-base button-centered mg-top-2 bg-color-light-brown color-yellow'
-              buttonText='Cadastrar'
+              OnClick={() => setIsModalVisible(true)} buttonText='Cadastrar'
             />
+            {isModalVisibile ? (
+              <Modal onClose={() => setIsModalVisible(false)}>
+                <h2>Teste de Modal</h2>
+              </Modal>
+            ) : null}
           </form>
         </div>
 
@@ -191,6 +199,6 @@ export default function Signup() {
       </main>
 
       <Footer />
-    </Fragment>
+    </Fragment >
   );
 }
