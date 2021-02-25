@@ -1,10 +1,9 @@
+/* eslint-disable no-console */
 /* eslint-disable react/prop-types */
-import React, { useEffect, useCallback, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Modal({
-  showModal,
-  setShowModal,
   id = 'modal-base',
   onClose = () => { },
   children,
@@ -16,24 +15,10 @@ export default function Modal({
     if (event.target.id === id) onClose();
   };
 
-  // Close with keyboard (Esc key)
-  const keyPress = useCallback((event) => {
-    if (event.key === 'Escape' && showModal) {
-      setShowModal(false);
-    }
-  }, [setShowModal, showModal]);
-
-  useEffect(
-    () => {
-      document.addEventListener('keydown', keyPress);
-      return () => document.removeEventListener('keydown', keyPress);
-    },
-    [keyPress],
-  );
-
   return (
     <Fragment>
-      <div id={id} className='modal-overlay' onClick={handleOutsideClick}>
+      <div id={id} className='modal-overlay' onClick={handleOutsideClick}
+      >
         <div className='modal-open'>{children}
           <div className='modal-image'>
             <img

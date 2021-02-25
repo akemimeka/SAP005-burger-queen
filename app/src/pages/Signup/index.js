@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable no-console */
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../../components/Modal';
 import logo from '../../images/logo-horizontal-brown.png';
@@ -34,6 +34,22 @@ export default function Signup() {
       setShowModal(true);
     }
   };
+
+  // Close Modal with keyboard (Esc key)
+  const keyPress = useCallback((event) => {
+    console.log(event.key);
+    if (event.key === 'Escape' && showModal) {
+      setShowModal(false);
+    }
+  }, [setShowModal, showModal]);
+
+  useEffect(
+    () => {
+      document.addEventListener('keydown', keyPress);
+      return () => document.removeEventListener('keydown', keyPress);
+    },
+    [keyPress],
+  );
 
   const handleSubmit = () => {
     const requestOptions = {
