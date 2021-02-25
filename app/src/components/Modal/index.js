@@ -1,12 +1,15 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useCallback, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Modal({
   showModal,
   setShowModal,
-  id = 'modal',
+  id = 'modal-base',
   onClose = () => { },
   children,
+  modalSrc,
+  modalText,
   buttonText,
 }) {
   const handleOutsideClick = (event) => {
@@ -30,15 +33,27 @@ export default function Modal({
 
   return (
     <Fragment>
-      <div id='{id}' className='modal-base' onClick={handleOutsideClick}>
-        <div className='modal-wrap'>
-          <div className='modal-content'>{children}
-            <button
-              className='button-base button-centered mg-top-2 bg-color-light-brown color-yellow'
-              onClick={onClose}
-            >
-              {buttonText}
-            </button>
+      <div id={id} className='modal-overlay' onClick={handleOutsideClick}>
+        <div className='modal-open'>{children}
+          <div className='modal-image'>
+            <img
+              className='logo-modal'
+              src={modalSrc}
+              alt='Logo Hamburgueria Ipê'
+            />
+          </div>
+          <div className='modal-body'>
+            <p>{modalText}</p>
+          </div>
+          <div className='modal-footer'>
+            <Link to="/">
+              <button
+                className='button-base  bg-color-yellow color-brown'
+                onClick={onClose}
+              >
+                {buttonText}
+              </button>
+            </Link>
           </div>
         </div>
       </div>

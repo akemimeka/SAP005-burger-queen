@@ -1,11 +1,10 @@
 /* eslint-disable max-len */
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-// import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Modal from '../../components/Modal';
-// import { GoToPage } from '../../services';
 import logo from '../../images/logo-horizontal-brown.png';
+import modalLogo from '../../images/logo-circular-brown.png';
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
@@ -15,25 +14,24 @@ import Header from '../../components/Header';
 export default function Signup() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';
   const apiUsers = `${apiURL}/users`;
-  const history = useHistory();
   const [workerName, setWorkerName] = useState('');
   const [workerEmail, setWorkerEmail] = useState('');
   const [workerRole, setWorkerRole] = useState('');
   const [workerPassword, setWorkerPassword] = useState('');
   const [workerConfirmPassword, setWorkerConfirmPassword] = useState('');
   const [equalPasswords, setEqualPasswords] = useState(true);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [showModal, setShowModal] = useState(false);
 
   const registerUser = (event) => {
     event.preventDefault();
 
+    if (workerPassword !== workerConfirmPassword) {
+      setEqualPasswords(false);
+    }
+
     if (workerPassword === workerConfirmPassword) {
       handleSubmit();
-      setEqualPasswords(false);
-    } else {
-      setIsModalVisible(true);
-      setErrorMessage('As senhas são diferentes. Tente novamente.');
+      setShowModal(true);
     }
   };
 
@@ -54,22 +52,20 @@ export default function Signup() {
 
     fetch(apiUsers, requestOptions)
       .then((response) => response.json())
-      .then((data) => {
-        if (data.message !== undefined) {
-          setIsModalVisible(true);
-          setErrorMessage(`${data.message}`);
-        } else {
-          localStorage.setItem('toke', data.token);
-          localStorage.setItem('userId', data.id);
-          history.push(`/${data.role}`);
-          // .then(() => GoToPage(history, '/'))
-          // .catch((error) => console.log(error));
-        }
-      });
+      .then((data) => console.log(data))
+      .then(() => setShowModal(true))
+      .catch((error) => console.log(error));
   };
 
   return (
     <Fragment>
+      {showModal ? (
+        <Modal
+          modalSrc={modalLogo}
+          buttonText='Clique aqui para fazer Login'
+          modalText='Seu cadastro foi realizado com sucesso!'
+          onClose={() => setShowModal(false)}></Modal>) : null}
+
       <Header
         headerClass='header-base bg-color-green'
         headerLogoLink='/'
@@ -166,13 +162,9 @@ export default function Signup() {
             <Button
               buttonType='submit'
               buttonClass='button-base button-centered mg-top-2 bg-color-light-brown color-yellow'
-              OnClick={() => setIsModalVisible(true)} buttonText='Cadastrar'
+              buttonText='Cadastrar'
+              OnClick={(event) => handleSubmit(event.target.value)}
             />
-            {isModalVisible ? (
-              <Modal onClose={() => setIsModalVisible(false)}>
-                <p>{errorMessage}</p>
-              </Modal>
-            ) : null}
 
           </form>
         </div>
