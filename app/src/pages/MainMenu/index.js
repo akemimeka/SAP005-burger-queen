@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import React, { Fragment, useState } from 'react';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
@@ -25,14 +26,15 @@ export default function MainMenu() {
   const [filteredBurgersByFlavor, setFilteredBurgersByFlavor] = useState([]);
   const [filteredBurgersByType, setFilteredBurgersByType] = useState([]);
   const [selectedBurger, setFilteredBurgerByExtra] = useState([]);
+  const [filteredDrinks, setFilteredDrinks] = useState([]);
+  const [selectedItem, setSelectedItem] = useState([]);
   const [disableBurgerType, setDisableBurgerType] = useState(true);
   const [disableBurgerExtra, setDisableBurgerExtra] = useState(true);
+  const [disableDrinkSize, setDisableDrinkSize] = useState(true);
 
   const requestOptions = {
     method: 'GET',
-    headers: {
-      Authorization: currentUserToken,
-    },
+    headers: { Authorization: currentUserToken },
   };
 
   fetch(apiProducts, requestOptions)
@@ -42,12 +44,24 @@ export default function MainMenu() {
 
   const filterByFlavor = (list, flavor) => {
     const filteredList = list.filter((item) => item.flavor === flavor);
-    return setFilteredBurgersByFlavor(filteredList);
+    setFilteredBurgersByFlavor(filteredList);
   };
 
-  const filterByType = (list, word) => {
-    const filteredList = list.filter((item) => item.name.includes(word));
-    return setFilteredBurgersByType(filteredList);
+  const filterByType = (list, type) => {
+    const filteredList = list.filter((item) => item.name.includes(type));
+    setFilteredBurgersByType(filteredList);
+  };
+
+  const filterByName = (list, name) => {
+    const filteredItem = list.filter((item) => item.name === name || item.name.includes(name));
+    console.log('selected item', filteredItem[0]);
+    setSelectedItem(filteredItem[0]);
+  };
+
+  const filterByDrink = (list, drink) => {
+    const filteredList = list.filter((item) => item.name.includes(drink));
+    console.log('selected drink', filteredList);
+    setFilteredDrinks(filteredList);
   };
 
   const onClickFlavor = (id) => {
@@ -64,7 +78,20 @@ export default function MainMenu() {
     const word = (id !== 'none' ? id : null);
     const filteredList = filteredBurgersByType.filter((item) => item.complement === word);
     console.log('selected burger', filteredList[0]);
-    return setFilteredBurgerByExtra(filteredList[0]);
+    setFilteredBurgerByExtra(filteredList[0]);
+  };
+
+  const onClickDrinkType = (id) => {
+    filterByDrink(products, id);
+    setDisableDrinkSize(false);
+  };
+
+  const onClickDrinkSize = (id) => {
+    filterByName(filteredDrinks, id);
+  };
+
+  const onClickItem = (id) => {
+    filterByName(products, id);
   };
 
   return (
@@ -199,6 +226,7 @@ export default function MainMenu() {
               inputId='Batata frita'
               inputName='extra-sides'
               inputValue='Fritas'
+              inputOnChange={onClickItem}
               labelHtmlFor='Batata frita'
               labelClass='label-item-box'
               menuItemSrc={frenchFries}
@@ -210,6 +238,7 @@ export default function MainMenu() {
               inputId='Anéis de cebola'
               inputName='extra-sides'
               inputValue='onion-rings'
+              inputOnChange={onClickItem}
               labelHtmlFor='Anéis de cebola'
               labelClass='label-item-box'
               menuItemSrc={onionRings}
@@ -224,10 +253,11 @@ export default function MainMenu() {
           <div className='item-options-wrap'>
             <MenuItem
               inputClass='hidden menu-item-name'
-              inputId='drink-water'
+              inputId='Água'
               inputName='drinks-options'
               inputValue='water'
-              labelHtmlFor='drink-water'
+              inputOnChange={onClickDrinkType}
+              labelHtmlFor='Água'
               labelClass='label-item-box'
               menuItemSrc={water}
               menuItemDescription='Água'
@@ -235,10 +265,11 @@ export default function MainMenu() {
             />
             <MenuItem
               inputClass='hidden menu-item-name'
-              inputId='drink-soda'
+              inputId='Refrigerante'
               inputName='drinks-options'
               inputValue='soda'
-              labelHtmlFor='drink-soda'
+              inputOnChange={onClickDrinkType}
+              labelHtmlFor='Refrigerante'
               labelClass='label-item-box'
               menuItemSrc={soda}
               menuItemDescription='Refrigerante'
@@ -249,19 +280,23 @@ export default function MainMenu() {
           <div className='drink-size-wrap'>
             <InputRadio
               inputClass='hidden input-item-options'
-              inputId='drink-size-500'
+              inputId='500'
               inputName='drink-size'
               inputValue='500ml'
-              labelHtmlFor='drink-size-500'
+              inputOnChange={onClickDrinkSize}
+              inputDisabled={disableDrinkSize}
+              labelHtmlFor='500'
               labelClass='label-item-options'
               labelText='500ML'
             />
             <InputRadio
               inputClass='hidden input-item-options'
-              inputId='drink-size-750'
+              inputId='750'
               inputName='drink-size'
+              inputOnChange={onClickDrinkSize}
+              inputDisabled={disableDrinkSize}
               inputValue='750ml'
-              labelHtmlFor='drink-size-750'
+              labelHtmlFor='750'
               labelClass='label-item-options'
               labelText='750ML'
             />
@@ -274,22 +309,10 @@ export default function MainMenu() {
             <hr className='dividing-line bg-color-dark-brown'></hr>
           </div>
 
-          <div className='order-list-items'>
-            {/* AQUI IRÃO APARECER OS ITENS PEDIDOS */}
-            {/* {burgerFlavor ? (
-              <Fragment>
-                <OrderedItem
-                  itemNameText={burgerFlavor}
-                  itemPriceText='10,00'
-                />
-                <ItemQuantity
-                  itemQuantityText='01'
-                  itemTotalValue='20,00'
-                />
-              </Fragment>
-            ) : <p className='empty-order-msg color-brown weight-500'>
-            Os itens lançados irão aparecer aqui
-            </p>} */}
+          <div className='order-list-items' id='order-list'>
+            <p className='empty-order-msg color-brown weight-500'>
+              Os itens lançados irão aparecer aqui
+            </p>
           </div>
 
           <TotalAndSend
