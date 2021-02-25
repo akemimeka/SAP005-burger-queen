@@ -493,6 +493,13 @@ body {
   border: none;
 }
 
+.empty-order-msg {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /* ORDERED ITEM COMPONENT */
 .order-list-items {
   padding: 1.5rem 0;
@@ -525,7 +532,7 @@ body {
 /* ITEM QUANTITY COMPONENT */
 .item-quantity-container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 1.5rem;
 }
