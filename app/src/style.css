@@ -474,6 +474,10 @@ body {
   color: var(--lightest);
 }
 
+.input-item-options:disabled + .label-item-options {
+  opacity: 0.5;
+}
+
 /* ORDERS */
 .main-menu-orders {
   grid-area: orders;
@@ -491,6 +495,13 @@ body {
   height: 1px;
   margin-top: 0.5rem;
   border: none;
+}
+
+.empty-order-msg {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 /* ORDERED ITEM COMPONENT */
@@ -525,7 +536,7 @@ body {
 /* ITEM QUANTITY COMPONENT */
 .item-quantity-container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 1.5rem;
 }

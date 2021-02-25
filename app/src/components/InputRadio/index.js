@@ -4,6 +4,7 @@ import React, { Fragment } from 'react';
 export default function InputRadio({
   inputClass,
   inputId,
+  inputDisabled,
   inputName,
   inputRequired,
   inputValue,
@@ -19,11 +20,12 @@ export default function InputRadio({
         type='radio'
         className={inputClass}
         id={inputId}
+        disabled={inputDisabled}
         name={inputName}
         required={inputRequired}
         value={inputValue}
         checked={inputChecked}
-        onChange={inputOnChange}
+        onChange={() => inputOnChange(inputId)}
       />
       <label htmlFor={labelHtmlFor} className={labelClass}>
         {labelText}

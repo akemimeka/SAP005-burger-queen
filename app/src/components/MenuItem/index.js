@@ -23,7 +23,7 @@ export default function MenuItem({
         name={inputName}
         value={inputValue}
         checked={inputChecked}
-        onChange={inputOnChange}
+        onChange={() => inputOnChange(inputId)}
       />
       <label
         htmlFor={labelHtmlFor}

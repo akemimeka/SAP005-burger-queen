@@ -1,4 +1,5 @@
-import { React, Fragment } from 'react';
+/* eslint-disable object-curly-newline */
+import React, { Fragment, useState } from 'react';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
 import logo from '../../images/logo-horizontal-brown.png';
@@ -15,9 +16,83 @@ import OrderedItem from '../../components/OrderedItem';
 import ItemQuantity from '../../components/ItemQuantity';
 
 export default function MainMenu() {
+  const apiURL = 'https://lab-api-bq.herokuapp.com';
+  const apiProducts = `${apiURL}/products`;
+  const currentUserToken = localStorage.getItem('currentUserToken');
   const getTableNumber = localStorage.getItem('currentTable');
   const getClientName = localStorage.getItem('currentClient');
   const menuHeaderSubtitle = `Mesa ${getTableNumber} · ${getClientName}`;
+  const [products, setProducts] = useState([]);
+  const [filteredBurgersByFlavor, setFilteredBurgersByFlavor] = useState([]);
+  const [filteredBurgersByType, setFilteredBurgersByType] = useState([]);
+  const [selectedBurger, setFilteredBurgerByExtra] = useState([]);
+  const [filteredDrinks, setFilteredDrinks] = useState([]);
+  const [selectedItem, setSelectedItem] = useState([]);
+  const [disableBurgerType, setDisableBurgerType] = useState(true);
+  const [disableBurgerExtra, setDisableBurgerExtra] = useState(true);
+  const [disableDrinkSize, setDisableDrinkSize] = useState(true);
+
+  const requestOptions = {
+    method: 'GET',
+    headers: { Authorization: currentUserToken },
+  };
+
+  fetch(apiProducts, requestOptions)
+    .then((response) => response.json())
+    .then((data) => setProducts(data))
+    .catch((error) => console.log(error));
+
+  const filterByFlavor = (list, flavor) => {
+    const filteredList = list.filter((item) => item.flavor === flavor);
+    setFilteredBurgersByFlavor(filteredList);
+  };
+
+  const filterByType = (list, type) => {
+    const filteredList = list.filter((item) => item.name.includes(type));
+    setFilteredBurgersByType(filteredList);
+  };
+
+  const filterByName = (list, name) => {
+    const filteredItem = list.filter((item) => item.name === name || item.name.includes(name));
+    console.log('selected item', filteredItem[0]);
+    setSelectedItem(filteredItem[0]);
+  };
+
+  const filterByDrink = (list, drink) => {
+    const filteredList = list.filter((item) => item.name.includes(drink));
+    console.log('selected drink', filteredList);
+    setFilteredDrinks(filteredList);
+  };
+
+  const onClickFlavor = (id) => {
+    filterByFlavor(products, id);
+    setDisableBurgerType(false);
+  };
+
+  const onClickType = (id) => {
+    filterByType(filteredBurgersByFlavor, id);
+    setDisableBurgerExtra(false);
+  };
+
+  const onClickExtra = (id) => {
+    const word = (id !== 'none' ? id : null);
+    const filteredList = filteredBurgersByType.filter((item) => item.complement === word);
+    console.log('selected burger', filteredList[0]);
+    setFilteredBurgerByExtra(filteredList[0]);
+  };
+
+  const onClickDrinkType = (id) => {
+    filterByDrink(products, id);
+    setDisableDrinkSize(false);
+  };
+
+  const onClickDrinkSize = (id) => {
+    filterByName(filteredDrinks, id);
+  };
+
+  const onClickItem = (id) => {
+    filterByName(products, id);
+  };
 
   return (
     <Fragment>
@@ -40,10 +115,11 @@ export default function MainMenu() {
           <div className='burger-meat-options'>
             <MenuItem
               inputClass='hidden menu-item-name'
-              inputId='burger-red-meat'
+              inputId='carne'
               inputName='meat-options'
-              inputValue='red-meat'
-              labelHtmlFor='burger-red-meat'
+              inputValue='Hambúrg. de Carne'
+              inputOnChange={onClickFlavor}
+              labelHtmlFor='carne'
               labelClass='label-item-box'
               menuItemSrc={meatBurger}
               menuItemDescription='Hambúrguer de Carne'
@@ -52,10 +128,11 @@ export default function MainMenu() {
 
             <MenuItem
               inputClass='hidden menu-item-name'
-              inputId='burger-chicken-meat'
+              inputId='frango'
               inputName='meat-options'
-              inputValue='chicken-meat'
-              labelHtmlFor='burger-chicken-meat'
+              inputValue='Hambúrg. de Frango'
+              inputOnChange={onClickFlavor}
+              labelHtmlFor='frango'
               labelClass='label-item-box'
               menuItemSrc={chickenBurger}
               menuItemDescription='Hambúrguer de Frango'
@@ -64,10 +141,11 @@ export default function MainMenu() {
 
             <MenuItem
               inputClass='hidden menu-item-name'
-              inputId='burger-veggie-meat'
+              inputId='vegetariano'
               inputName='meat-options'
-              inputValue='veggie-meat'
-              labelHtmlFor='burger-veggie-meat'
+              inputValue='Hambúrg. Vegetariano'
+              inputOnChange={onClickFlavor}
+              labelHtmlFor='vegetariano'
               labelClass='label-item-box'
               menuItemSrc={veggieBurger}
               menuItemDescription='Hambúrguer Vegetariano'
@@ -78,19 +156,24 @@ export default function MainMenu() {
           <div className='burger-type-wrap'>
             <InputRadio
               inputClass='hidden input-item-options'
-              inputId='burger-type-simple'
+              inputId='simples'
+              inputDisabled={disableBurgerType}
               inputName='burger-type'
               inputValue='simple-burger'
-              labelHtmlFor='burger-type-simple'
+              inputOnChange={onClickType}
+              labelHtmlFor='simples'
               labelClass='label-item-options'
               labelText='Simples'
             />
+
             <InputRadio
               inputClass='hidden input-item-options'
-              inputId='burger-type-double'
+              inputId='duplo'
+              inputDisabled={disableBurgerType}
               inputName='burger-type'
               inputValue='double-burger'
-              labelHtmlFor='burger-type-double'
+              inputOnChange={onClickType}
+              labelHtmlFor='duplo'
               labelClass='label-item-options'
               labelText='Duplo'
             />
@@ -99,28 +182,36 @@ export default function MainMenu() {
           <div className='item-options-wrap'>
             <InputRadio
               inputClass='hidden input-item-options'
-              inputId='extra-cheese'
+              inputId='queijo'
+              inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
               inputValue='cheese'
-              labelHtmlFor='extra-cheese'
+              inputOnChange={onClickExtra}
+              labelHtmlFor='queijo'
               labelClass='label-item-options'
               labelText='+ Queijo'
             />
+
             <InputRadio
               inputClass='hidden input-item-options'
-              inputId='extra-egg'
+              inputId='ovo'
+              inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
               inputValue='egg'
-              labelHtmlFor='extra-egg'
+              inputOnChange={onClickExtra}
+              labelHtmlFor='ovo'
               labelClass='label-item-options'
               labelText='+ Ovo'
             />
+
             <InputRadio
               inputClass='hidden input-item-options'
-              inputId='extra-none'
+              inputId='none'
+              inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
-              inputValue='none'
-              labelHtmlFor='extra-none'
+              inputValue='Sem extra'
+              inputOnChange={onClickExtra}
+              labelHtmlFor='none'
               labelClass='label-item-options'
               labelText='Nenhum'
             />
@@ -132,10 +223,11 @@ export default function MainMenu() {
           <div className='item-options-wrap'>
             <MenuItem
               inputClass='hidden menu-item-name'
-              inputId='fries-sides'
+              inputId='Batata frita'
               inputName='extra-sides'
-              inputValue='french-fries'
-              labelHtmlFor='fries-sides'
+              inputValue='Fritas'
+              inputOnChange={onClickItem}
+              labelHtmlFor='Batata frita'
               labelClass='label-item-box'
               menuItemSrc={frenchFries}
               menuItemDescription='Fritas'
@@ -143,10 +235,11 @@ export default function MainMenu() {
             />
             <MenuItem
               inputClass='hidden menu-item-name'
-              inputId='onion-sides'
+              inputId='Anéis de cebola'
               inputName='extra-sides'
               inputValue='onion-rings'
-              labelHtmlFor='onion-sides'
+              inputOnChange={onClickItem}
+              labelHtmlFor='Anéis de cebola'
               labelClass='label-item-box'
               menuItemSrc={onionRings}
               menuItemDescription='Anéis de cebola'
@@ -160,10 +253,11 @@ export default function MainMenu() {
           <div className='item-options-wrap'>
             <MenuItem
               inputClass='hidden menu-item-name'
-              inputId='drink-water'
+              inputId='Água'
               inputName='drinks-options'
               inputValue='water'
-              labelHtmlFor='drink-water'
+              inputOnChange={onClickDrinkType}
+              labelHtmlFor='Água'
               labelClass='label-item-box'
               menuItemSrc={water}
               menuItemDescription='Água'
@@ -171,10 +265,11 @@ export default function MainMenu() {
             />
             <MenuItem
               inputClass='hidden menu-item-name'
-              inputId='drink-soda'
+              inputId='Refrigerante'
               inputName='drinks-options'
               inputValue='soda'
-              labelHtmlFor='drink-soda'
+              inputOnChange={onClickDrinkType}
+              labelHtmlFor='Refrigerante'
               labelClass='label-item-box'
               menuItemSrc={soda}
               menuItemDescription='Refrigerante'
@@ -185,19 +280,23 @@ export default function MainMenu() {
           <div className='drink-size-wrap'>
             <InputRadio
               inputClass='hidden input-item-options'
-              inputId='drink-size-500'
+              inputId='500'
               inputName='drink-size'
               inputValue='500ml'
-              labelHtmlFor='drink-size-500'
+              inputOnChange={onClickDrinkSize}
+              inputDisabled={disableDrinkSize}
+              labelHtmlFor='500'
               labelClass='label-item-options'
               labelText='500ML'
             />
             <InputRadio
               inputClass='hidden input-item-options'
-              inputId='drink-size-750'
+              inputId='750'
               inputName='drink-size'
+              inputOnChange={onClickDrinkSize}
+              inputDisabled={disableDrinkSize}
               inputValue='750ml'
-              labelHtmlFor='drink-size-750'
+              labelHtmlFor='750'
               labelClass='label-item-options'
               labelText='750ML'
             />
@@ -210,21 +309,10 @@ export default function MainMenu() {
             <hr className='dividing-line bg-color-dark-brown'></hr>
           </div>
 
-          <div className='order-list-items'>
-            {/* AQUI IRÃO APARECER OS ITENS PEDIDOS */}
-
-            <OrderedItem
-              itemNameText='hamburg. de carne'
-              itemPriceText=''
-            />
-            <OrderedItem
-              itemNameText='duplo'
-              itemPriceText='15,00'
-            />
-            <ItemQuantity
-              itemQuantityText='01'
-              itemTotalValue='20,00'
-            />
+          <div className='order-list-items' id='order-list'>
+            <p className='empty-order-msg color-brown weight-500'>
+              Os itens lançados irão aparecer aqui
+            </p>
           </div>
 
           <TotalAndSend
