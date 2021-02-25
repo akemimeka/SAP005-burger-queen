@@ -474,6 +474,10 @@ body {
   color: var(--lightest);
 }
 
+.input-item-options:disabled + .label-item-options {
+  opacity: 0.5;
+}
+
 /* ORDERS */
 .main-menu-orders {
   grid-area: orders;

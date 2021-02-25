@@ -25,10 +25,8 @@ export default function MainMenu() {
   const [filteredBurgersByFlavor, setFilteredBurgersByFlavor] = useState([]);
   const [filteredBurgersByType, setFilteredBurgersByType] = useState([]);
   const [selectedBurger, setFilteredBurgerByExtra] = useState([]);
-  const [ableInput, setAbleInput] = useState(true);
-  // const [burgerFlavor, setBurgerFlavor] = useState('');
-  // const [burgerType, setBurgerType] = useState('');
-  // const [burgerExtra, setBurgerExtra] = useState('');
+  const [disableBurgerType, setDisableBurgerType] = useState(true);
+  const [disableBurgerExtra, setDisableBurgerExtra] = useState(true);
 
   const requestOptions = {
     method: 'GET',
@@ -44,39 +42,29 @@ export default function MainMenu() {
 
   const filterByFlavor = (list, flavor) => {
     const filteredList = list.filter((item) => item.flavor === flavor);
-    console.log('filter flavor', filteredList);
     return setFilteredBurgersByFlavor(filteredList);
   };
 
   const filterByType = (list, word) => {
     const filteredList = list.filter((item) => item.name.includes(word));
-    console.log('filter name', filteredList);
     return setFilteredBurgersByType(filteredList);
   };
 
-  // const filterByExtra = (list, word) => {
-  //   const filteredList = list.filter((item) => item.complement === word);
-  //   console.log('filter extra', filteredList);
-  //   return setFilteredBurgerByExtra(filteredList);
-  // };
-
   const onClickFlavor = (id) => {
     filterByFlavor(products, id);
-    setAbleInput(false);
-    // setBurgerFlavor(value);
+    setDisableBurgerType(false);
   };
 
   const onClickType = (id) => {
     filterByType(filteredBurgersByFlavor, id);
-    // setBurgerType(value);
+    setDisableBurgerExtra(false);
   };
 
   const onClickExtra = (id) => {
     const word = (id !== 'none' ? id : null);
     const filteredList = filteredBurgersByType.filter((item) => item.complement === word);
-    console.log('filter extra', filteredList);
-    return setFilteredBurgerByExtra(filteredList);
-    // setBurgerExtra(value);
+    console.log('selected burger', filteredList[0]);
+    return setFilteredBurgerByExtra(filteredList[0]);
   };
 
   return (
@@ -142,7 +130,7 @@ export default function MainMenu() {
             <InputRadio
               inputClass='hidden input-item-options'
               inputId='simples'
-              inputDisabled={ableInput}
+              inputDisabled={disableBurgerType}
               inputName='burger-type'
               inputValue='simple-burger'
               inputOnChange={onClickType}
@@ -154,7 +142,7 @@ export default function MainMenu() {
             <InputRadio
               inputClass='hidden input-item-options'
               inputId='duplo'
-              inputDisabled={ableInput}
+              inputDisabled={disableBurgerType}
               inputName='burger-type'
               inputValue='double-burger'
               inputOnChange={onClickType}
@@ -168,6 +156,7 @@ export default function MainMenu() {
             <InputRadio
               inputClass='hidden input-item-options'
               inputId='queijo'
+              inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
               inputValue='cheese'
               inputOnChange={onClickExtra}
@@ -179,6 +168,7 @@ export default function MainMenu() {
             <InputRadio
               inputClass='hidden input-item-options'
               inputId='ovo'
+              inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
               inputValue='egg'
               inputOnChange={onClickExtra}
@@ -190,6 +180,7 @@ export default function MainMenu() {
             <InputRadio
               inputClass='hidden input-item-options'
               inputId='none'
+              inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
               inputValue='Sem extra'
               inputOnChange={onClickExtra}
