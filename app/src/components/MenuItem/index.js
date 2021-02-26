@@ -11,7 +11,6 @@ export default function MenuItem({
   inputValue,
   inputChecked,
   inputOnChange,
-  labelHtmlFor,
   labelClass,
 }) {
   return (
@@ -26,7 +25,7 @@ export default function MenuItem({
         onChange={() => inputOnChange(inputId)}
       />
       <label
-        htmlFor={labelHtmlFor}
+        htmlFor={inputId}
         className={labelClass}
       >
         <img

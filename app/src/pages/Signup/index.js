@@ -37,7 +37,7 @@ export default function Signup() {
 
   // Close Modal with keyboard (Esc key)
   const keyPress = useCallback((event) => {
-    console.log(event.key);
+    // console.log(event.key);
     if (event.key === 'Escape' && showModal) {
       setShowModal(false);
     }
@@ -80,7 +80,9 @@ export default function Signup() {
           modalSrc={modalLogo}
           buttonText='Clique aqui para fazer Login'
           modalText='Seu cadastro foi realizado com sucesso!'
-          onClose={() => setShowModal(false)}></Modal>) : null}
+          onClose={() => setShowModal(false)}
+        >
+        </Modal>) : null}
 
       <Header
         headerClass='header-base bg-color-green'

@@ -10,7 +10,7 @@ import frenchFries from '../../images/menu-photos/fries.png';
 import onionRings from '../../images/menu-photos/onion-rings.png';
 import water from '../../images/menu-photos/water.png';
 import soda from '../../images/menu-photos/soda.png';
-import InputRadio from '../../components/InputRadio';
+import InputRadioMenu from '../../components/InputRadioMenu';
 import TotalAndSend from '../../components/TotalAndSend';
 import OrderedItem from '../../components/OrderedItem';
 import ItemQuantity from '../../components/ItemQuantity';
@@ -119,7 +119,6 @@ export default function MainMenu() {
               inputName='meat-options'
               inputValue='Hambúrg. de Carne'
               inputOnChange={onClickFlavor}
-              labelHtmlFor='carne'
               labelClass='label-item-box'
               menuItemSrc={meatBurger}
               menuItemDescription='Hambúrguer de Carne'
@@ -132,7 +131,6 @@ export default function MainMenu() {
               inputName='meat-options'
               inputValue='Hambúrg. de Frango'
               inputOnChange={onClickFlavor}
-              labelHtmlFor='frango'
               labelClass='label-item-box'
               menuItemSrc={chickenBurger}
               menuItemDescription='Hambúrguer de Frango'
@@ -145,7 +143,6 @@ export default function MainMenu() {
               inputName='meat-options'
               inputValue='Hambúrg. Vegetariano'
               inputOnChange={onClickFlavor}
-              labelHtmlFor='vegetariano'
               labelClass='label-item-box'
               menuItemSrc={veggieBurger}
               menuItemDescription='Hambúrguer Vegetariano'
@@ -154,64 +151,59 @@ export default function MainMenu() {
           </div>
 
           <div className='burger-type-wrap'>
-            <InputRadio
+            <InputRadioMenu
               inputClass='hidden input-item-options'
               inputId='simples'
               inputDisabled={disableBurgerType}
               inputName='burger-type'
               inputValue='simple-burger'
               inputOnChange={onClickType}
-              labelHtmlFor='simples'
               labelClass='label-item-options'
               labelText='Simples'
             />
 
-            <InputRadio
+            <InputRadioMenu
               inputClass='hidden input-item-options'
               inputId='duplo'
               inputDisabled={disableBurgerType}
               inputName='burger-type'
               inputValue='double-burger'
               inputOnChange={onClickType}
-              labelHtmlFor='duplo'
               labelClass='label-item-options'
               labelText='Duplo'
             />
           </div>
 
           <div className='item-options-wrap'>
-            <InputRadio
+            <InputRadioMenu
               inputClass='hidden input-item-options'
               inputId='queijo'
               inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
               inputValue='cheese'
               inputOnChange={onClickExtra}
-              labelHtmlFor='queijo'
               labelClass='label-item-options'
               labelText='+ Queijo'
             />
 
-            <InputRadio
+            <InputRadioMenu
               inputClass='hidden input-item-options'
               inputId='ovo'
               inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
               inputValue='egg'
               inputOnChange={onClickExtra}
-              labelHtmlFor='ovo'
               labelClass='label-item-options'
               labelText='+ Ovo'
             />
 
-            <InputRadio
+            <InputRadioMenu
               inputClass='hidden input-item-options'
               inputId='none'
               inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
               inputValue='Sem extra'
               inputOnChange={onClickExtra}
-              labelHtmlFor='none'
               labelClass='label-item-options'
               labelText='Nenhum'
             />
@@ -227,7 +219,6 @@ export default function MainMenu() {
               inputName='extra-sides'
               inputValue='Fritas'
               inputOnChange={onClickItem}
-              labelHtmlFor='Batata frita'
               labelClass='label-item-box'
               menuItemSrc={frenchFries}
               menuItemDescription='Fritas'
@@ -239,7 +230,6 @@ export default function MainMenu() {
               inputName='extra-sides'
               inputValue='onion-rings'
               inputOnChange={onClickItem}
-              labelHtmlFor='Anéis de cebola'
               labelClass='label-item-box'
               menuItemSrc={onionRings}
               menuItemDescription='Anéis de cebola'
@@ -257,7 +247,6 @@ export default function MainMenu() {
               inputName='drinks-options'
               inputValue='water'
               inputOnChange={onClickDrinkType}
-              labelHtmlFor='Água'
               labelClass='label-item-box'
               menuItemSrc={water}
               menuItemDescription='Água'
@@ -269,7 +258,6 @@ export default function MainMenu() {
               inputName='drinks-options'
               inputValue='soda'
               inputOnChange={onClickDrinkType}
-              labelHtmlFor='Refrigerante'
               labelClass='label-item-box'
               menuItemSrc={soda}
               menuItemDescription='Refrigerante'
@@ -278,25 +266,23 @@ export default function MainMenu() {
           </div>
 
           <div className='drink-size-wrap'>
-            <InputRadio
+            <InputRadioMenu
               inputClass='hidden input-item-options'
               inputId='500'
               inputName='drink-size'
               inputValue='500ml'
               inputOnChange={onClickDrinkSize}
               inputDisabled={disableDrinkSize}
-              labelHtmlFor='500'
               labelClass='label-item-options'
               labelText='500ML'
             />
-            <InputRadio
+            <InputRadioMenu
               inputClass='hidden input-item-options'
               inputId='750'
               inputName='drink-size'
+              inputValue='750ml'
               inputOnChange={onClickDrinkSize}
               inputDisabled={disableDrinkSize}
-              inputValue='750ml'
-              labelHtmlFor='750'
               labelClass='label-item-options'
               labelText='750ML'
             />
