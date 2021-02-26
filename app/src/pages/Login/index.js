@@ -42,7 +42,7 @@ export default function Login() {
 
   return (
     <Fragment>
-      <main className='main-container-base main-container-login'>
+      <main className='main-container-base'>
         <h1>
           <img className='logo-login' src={logo} alt='Logo Hamburgueria Ipê' />
         </h1>

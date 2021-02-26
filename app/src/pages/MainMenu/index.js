@@ -1,4 +1,5 @@
-import { React, Fragment } from 'react';
+/* eslint-disable object-curly-newline */
+import React, { Fragment, useState } from 'react';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
 import logo from '../../images/logo-horizontal-brown.png';
@@ -10,11 +11,88 @@ import onionRings from '../../images/menu-photos/onion-rings.png';
 import water from '../../images/menu-photos/water.png';
 import soda from '../../images/menu-photos/soda.png';
 import InputRadio from '../../components/InputRadio';
+import TotalAndSend from '../../components/TotalAndSend';
+import OrderedItem from '../../components/OrderedItem';
+import ItemQuantity from '../../components/ItemQuantity';
 
 export default function MainMenu() {
+  const apiURL = 'https://lab-api-bq.herokuapp.com';
+  const apiProducts = `${apiURL}/products`;
+  const currentUserToken = localStorage.getItem('currentUserToken');
   const getTableNumber = localStorage.getItem('currentTable');
   const getClientName = localStorage.getItem('currentClient');
   const menuHeaderSubtitle = `Mesa ${getTableNumber} · ${getClientName}`;
+  const [products, setProducts] = useState([]);
+  const [filteredBurgersByFlavor, setFilteredBurgersByFlavor] = useState([]);
+  const [filteredBurgersByType, setFilteredBurgersByType] = useState([]);
+  const [selectedBurger, setFilteredBurgerByExtra] = useState([]);
+  const [filteredDrinks, setFilteredDrinks] = useState([]);
+  const [selectedItem, setSelectedItem] = useState([]);
+  const [disableBurgerType, setDisableBurgerType] = useState(true);
+  const [disableBurgerExtra, setDisableBurgerExtra] = useState(true);
+  const [disableDrinkSize, setDisableDrinkSize] = useState(true);
+
+  const requestOptions = {
+    method: 'GET',
+    headers: { Authorization: currentUserToken },
+  };
+
+  fetch(apiProducts, requestOptions)
+    .then((response) => response.json())
+    .then((data) => setProducts(data))
+    .catch((error) => console.log(error));
+
+  const filterByFlavor = (list, flavor) => {
+    const filteredList = list.filter((item) => item.flavor === flavor);
+    setFilteredBurgersByFlavor(filteredList);
+  };
+
+  const filterByType = (list, type) => {
+    const filteredList = list.filter((item) => item.name.includes(type));
+    setFilteredBurgersByType(filteredList);
+  };
+
+  const filterByName = (list, name) => {
+    const filteredItem = list.filter((item) => item.name === name || item.name.includes(name));
+    console.log('selected item', filteredItem[0]);
+    setSelectedItem(filteredItem[0]);
+  };
+
+  const filterByDrink = (list, drink) => {
+    const filteredList = list.filter((item) => item.name.includes(drink));
+    console.log('selected drink', filteredList);
+    setFilteredDrinks(filteredList);
+  };
+
+  const onClickFlavor = (id) => {
+    filterByFlavor(products, id);
+    setDisableBurgerType(false);
+  };
+
+  const onClickType = (id) => {
+    filterByType(filteredBurgersByFlavor, id);
+    setDisableBurgerExtra(false);
+  };
+
+  const onClickExtra = (id) => {
+    const word = (id !== 'none' ? id : null);
+    const filteredList = filteredBurgersByType.filter((item) => item.complement === word);
+    console.log('selected burger', filteredList[0]);
+    setFilteredBurgerByExtra(filteredList[0]);
+  };
+
+  const onClickDrinkType = (id) => {
+    filterByDrink(products, id);
+    setDisableDrinkSize(false);
+  };
+
+  const onClickDrinkSize = (id) => {
+    filterByName(filteredDrinks, id);
+  };
+
+  const onClickItem = (id) => {
+    filterByName(products, id);
+  };
 
   return (
     <Fragment>
@@ -32,17 +110,16 @@ export default function MainMenu() {
           buttonLogoutClass='button-logout-base bg-color-light color-brown'
         />
 
-        <section className='menu-grid-child main-menu-burgers bg-color-yellow-20'>
-          <div className='itens-main-title'>Hambúrgueres</div>
+        <section className='menu-grid-child menu-section-container main-menu-burgers bg-color-yellow-20'>
+          <h3 className='menu-section-title'>Hambúrgueres</h3>
           <div className='burger-meat-options'>
-
             <MenuItem
-              inputClass='input-radio menu-item-name'
-              inputId='burger-red-meat'
+              inputClass='hidden menu-item-name'
+              inputId='carne'
               inputName='meat-options'
-              inputRequired
-              inputValue='red-meat'
-              labelHtmlFor='burger-red-meat'
+              inputValue='Hambúrg. de Carne'
+              inputOnChange={onClickFlavor}
+              labelHtmlFor='carne'
               labelClass='label-item-box'
               menuItemSrc={meatBurger}
               menuItemDescription='Hambúrguer de Carne'
@@ -50,12 +127,12 @@ export default function MainMenu() {
             />
 
             <MenuItem
-              inputClass='input-radio menu-item-name'
-              inputId='burger-chicken-meat'
+              inputClass='hidden menu-item-name'
+              inputId='frango'
               inputName='meat-options'
-              inputRequired
-              inputValue='chicken-meat'
-              labelHtmlFor='burger-chicken-meat'
+              inputValue='Hambúrg. de Frango'
+              inputOnChange={onClickFlavor}
+              labelHtmlFor='frango'
               labelClass='label-item-box'
               menuItemSrc={chickenBurger}
               menuItemDescription='Hambúrguer de Frango'
@@ -63,12 +140,12 @@ export default function MainMenu() {
             />
 
             <MenuItem
-              inputClass='input-radio menu-item-name'
-              inputId='burger-veggie-meat'
+              inputClass='hidden menu-item-name'
+              inputId='vegetariano'
               inputName='meat-options'
-              inputRequired
-              inputValue='veggie-meat'
-              labelHtmlFor='burger-veggie-meat'
+              inputValue='Hambúrg. Vegetariano'
+              inputOnChange={onClickFlavor}
+              labelHtmlFor='vegetariano'
               labelClass='label-item-box'
               menuItemSrc={veggieBurger}
               menuItemDescription='Hambúrguer Vegetariano'
@@ -76,24 +153,27 @@ export default function MainMenu() {
             />
           </div>
 
-          <div className='item-options-wrap'>
+          <div className='burger-type-wrap'>
             <InputRadio
-              inputClass='input-radio input-item-options'
-              inputId='burger-type-simple'
+              inputClass='hidden input-item-options'
+              inputId='simples'
+              inputDisabled={disableBurgerType}
               inputName='burger-type'
-              inputRequired
               inputValue='simple-burger'
-              labelHtmlFor='burger-type-simple'
+              inputOnChange={onClickType}
+              labelHtmlFor='simples'
               labelClass='label-item-options'
               labelText='Simples'
             />
+
             <InputRadio
-              inputClass='input-radio input-item-options'
-              inputId='burger-type-double'
+              inputClass='hidden input-item-options'
+              inputId='duplo'
+              inputDisabled={disableBurgerType}
               inputName='burger-type'
-              inputRequired
               inputValue='double-burger'
-              labelHtmlFor='burger-type-double'
+              inputOnChange={onClickType}
+              labelHtmlFor='duplo'
               labelClass='label-item-options'
               labelText='Duplo'
             />
@@ -101,61 +181,66 @@ export default function MainMenu() {
 
           <div className='item-options-wrap'>
             <InputRadio
-              inputClass='input-radio input-item-options'
-              inputId='extra-cheese'
+              inputClass='hidden input-item-options'
+              inputId='queijo'
+              inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
-              inputRequired
               inputValue='cheese'
-              labelHtmlFor='extra-cheese'
+              inputOnChange={onClickExtra}
+              labelHtmlFor='queijo'
               labelClass='label-item-options'
               labelText='+ Queijo'
             />
+
             <InputRadio
-              inputClass='input-radio input-item-options'
-              inputId='extra-egg'
+              inputClass='hidden input-item-options'
+              inputId='ovo'
+              inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
-              inputRequired
               inputValue='egg'
-              labelHtmlFor='extra-egg'
+              inputOnChange={onClickExtra}
+              labelHtmlFor='ovo'
               labelClass='label-item-options'
               labelText='+ Ovo'
             />
+
             <InputRadio
-              inputClass='input-radio input-item-options'
-              inputId='extra-none'
+              inputClass='hidden input-item-options'
+              inputId='none'
+              inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
-              inputRequired
-              inputValue='none'
-              labelHtmlFor='extra-none'
+              inputValue='Sem extra'
+              inputOnChange={onClickExtra}
+              labelHtmlFor='none'
               labelClass='label-item-options'
               labelText='Nenhum'
             />
           </div>
         </section>
 
-        <section className='menu-grid-child main-menu-sides bg-color-yellow-20'>
-          <div className='itens-main-title'>Acompanhamentos</div>
+        <section className='menu-grid-child menu-section-container main-menu-sides bg-color-yellow-20'>
+          <h3 className='menu-section-title'>Acompanhamentos</h3>
           <div className='item-options-wrap'>
             <MenuItem
-              inputClass='input-radio menu-item-name'
-              inputId='fries-sides'
+              inputClass='hidden menu-item-name'
+              inputId='Batata frita'
               inputName='extra-sides'
-              inputRequired
-              inputValue='french-fries'
-              labelHtmlFor='fries-sides'
-              labelClass='label-itens-box'
+              inputValue='Fritas'
+              inputOnChange={onClickItem}
+              labelHtmlFor='Batata frita'
+              labelClass='label-item-box'
               menuItemSrc={frenchFries}
               menuItemDescription='Fritas'
               menuItemText='Fritas'
             />
             <MenuItem
-              inputClass='input-radio menu-item-name'
-              inputId='onion-sides'
+              inputClass='hidden menu-item-name'
+              inputId='Anéis de cebola'
               inputName='extra-sides'
-              inputRequired
               inputValue='onion-rings'
-              labelHtmlFor='onion-sides'
-              labelClass='label-itens-box'
+              inputOnChange={onClickItem}
+              labelHtmlFor='Anéis de cebola'
+              labelClass='label-item-box'
               menuItemSrc={onionRings}
               menuItemDescription='Anéis de cebola'
               menuItemText='Anéis de cebola'
@@ -163,58 +248,79 @@ export default function MainMenu() {
           </div>
         </section>
 
-        <section className='menu-grid-child main-menu-drinks bg-color-yellow-20'>
-          <div className='itens-main-title'>Bebidas</div>
+        <section className='menu-grid-child menu-section-container main-menu-drinks bg-color-yellow-20'>
+          <h3 className='menu-section-title'>Bebidas</h3>
           <div className='item-options-wrap'>
             <MenuItem
-              inputClass='input-radio menu-item-name'
-              inputId='drink-water'
+              inputClass='hidden menu-item-name'
+              inputId='Água'
               inputName='drinks-options'
-              inputRequired
               inputValue='water'
-              labelHtmlFor='drink-water'
-              labelClass='label-itens-box'
+              inputOnChange={onClickDrinkType}
+              labelHtmlFor='Água'
+              labelClass='label-item-box'
               menuItemSrc={water}
               menuItemDescription='Água'
               menuItemText='Água'
             />
             <MenuItem
-              inputClass='input-radio menu-item-name'
-              inputId='drink-soda'
+              inputClass='hidden menu-item-name'
+              inputId='Refrigerante'
               inputName='drinks-options'
-              inputRequired
               inputValue='soda'
-              labelHtmlFor='drink-soda'
-              labelClass='label-itens-box'
+              inputOnChange={onClickDrinkType}
+              labelHtmlFor='Refrigerante'
+              labelClass='label-item-box'
               menuItemSrc={soda}
               menuItemDescription='Refrigerante'
               menuItemText='Refrigerante'
             />
           </div>
-          <div className='item-options-wrap'>
+
+          <div className='drink-size-wrap'>
             <InputRadio
-              inputClass='input-radio input-item-options'
-              inputId='drink-water'
-              inputName='drink-options'
-              inputRequired
-              inputValue='none'
-              labelHtmlFor='drink-water'
-              labelClass='label-item-box'
+              inputClass='hidden input-item-options'
+              inputId='500'
+              inputName='drink-size'
+              inputValue='500ml'
+              inputOnChange={onClickDrinkSize}
+              inputDisabled={disableDrinkSize}
+              labelHtmlFor='500'
+              labelClass='label-item-options'
               labelText='500ML'
             />
             <InputRadio
-              inputClass='input-radio input-item-options'
-              inputId='drink-sonda'
-              inputName='drink-options'
-              inputRequired
-              inputValue='none'
-              labelHtmlFor='drink-sonda'
+              inputClass='hidden input-item-options'
+              inputId='750'
+              inputName='drink-size'
+              inputOnChange={onClickDrinkSize}
+              inputDisabled={disableDrinkSize}
+              inputValue='750ml'
+              labelHtmlFor='750'
               labelClass='label-item-options'
               labelText='750ML'
             />
           </div>
         </section>
-        <aside className='menu-grid-child main-menu-orders bg-color-yellow-20'>TOTAL</aside>
+
+        <aside className='menu-grid-child main-menu-orders bg-color-yellow-20'>
+          <div className='order-title-wrap'>
+            <h3 className='menu-section-title'>Pedido</h3>
+            <hr className='dividing-line bg-color-dark-brown'></hr>
+          </div>
+
+          <div className='order-list-items' id='order-list'>
+            <p className='empty-order-msg color-brown weight-500'>
+              Os itens lançados irão aparecer aqui
+            </p>
+          </div>
+
+          <TotalAndSend
+            totalPriceValue
+            sendOrderButton
+            cancelOrderButton
+          />
+        </aside>
       </div>
     </Fragment>
   );
