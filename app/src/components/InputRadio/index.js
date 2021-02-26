@@ -25,7 +25,7 @@ export default function InputRadio({
         required={inputRequired}
         value={inputValue}
         checked={inputChecked}
-        onChange={() => inputOnChange(inputId)}
+        onChange={inputOnChange}
       />
       <label htmlFor={labelHtmlFor} className={labelClass}>
         {labelText}
