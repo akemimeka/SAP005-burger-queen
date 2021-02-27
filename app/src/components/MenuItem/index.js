@@ -12,7 +12,7 @@ export default function MenuItem({
   inputChecked,
   inputOnChange,
   labelClass,
-  itemClassName,
+  menuItemClassName,
 }) {
   return (
     <div className='menu-item-wrap'>
@@ -34,7 +34,7 @@ export default function MenuItem({
           src={menuItemSrc}
           alt={menuItemDescription}
         />
-        <p className={itemClassName}>{menuItemText}</p>
+        <p className={menuItemClassName}>{menuItemText}</p>
       </label>
     </div>
   );

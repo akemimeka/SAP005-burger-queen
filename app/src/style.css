@@ -452,10 +452,6 @@ body {
   padding: 1.5rem;
 }
 
-/* .header-base {
-  grid-area: header;
-} */
-
 .main-menu-coffees {
   grid-area: coffees;
   border-radius: 0 1.5rem 1.5rem 0;

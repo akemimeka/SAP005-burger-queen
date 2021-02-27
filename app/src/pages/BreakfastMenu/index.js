@@ -69,7 +69,7 @@ export default function MainMenu() {
               labelClass='label-item-box'
               menuItemSrc={americanCoffee}
               menuItemDescription='Café Americano'
-              itemClassName='breakfast-item-name'
+              menuItemClassName='breakfast-item-name'
               menuItemText='Café Americano'
             />
 
@@ -82,7 +82,7 @@ export default function MainMenu() {
               labelClass='label-item-box'
               menuItemSrc={hotLatte}
               menuItemDescription='Café com Leite'
-              itemClassName='breakfast-item-name'
+              menuItemClassName='breakfast-item-name'
               menuItemText='Café com Leite'
             />
           </div>
@@ -100,7 +100,7 @@ export default function MainMenu() {
               labelClass='label-item-box'
               menuItemSrc={grilledSandwich}
               menuItemDescription='Misto Quente'
-              itemClassName='breakfast-item-name'
+              menuItemClassName='breakfast-item-name'
               menuItemText=' Misto Quente '
             />
           </div>
@@ -118,7 +118,7 @@ export default function MainMenu() {
               labelClass='label-item-box'
               menuItemSrc={naturalJuice}
               menuItemDescription='Suco Natural'
-              itemClassName='breakfast-item-name'
+              menuItemClassName='breakfast-item-name'
               menuItemText='Suco Natural'
             />
           </div>
