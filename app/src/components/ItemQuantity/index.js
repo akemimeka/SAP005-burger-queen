@@ -28,7 +28,7 @@ export default function ItemQuantity({
         </div>
         <p className='item-total-value color-dark-green'>{itemTotalValue}</p>
       </div>
-      <hr className='dividing-line bg-color-green'></hr>
+      <hr className='dividing-line last-line bg-color-green'></hr>
     </Fragment>
   );
 }
