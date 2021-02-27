@@ -122,6 +122,7 @@ export default function MainMenu() {
               labelClass='label-item-box'
               menuItemSrc={meatBurger}
               menuItemDescription='Hambúrguer de Carne'
+              itemClassName='menu-item-name'
               menuItemText='Carne'
             />
 
@@ -134,6 +135,7 @@ export default function MainMenu() {
               labelClass='label-item-box'
               menuItemSrc={chickenBurger}
               menuItemDescription='Hambúrguer de Frango'
+              itemClassName='menu-item-name'
               menuItemText='Frango'
             />
 
@@ -146,6 +148,7 @@ export default function MainMenu() {
               labelClass='label-item-box'
               menuItemSrc={veggieBurger}
               menuItemDescription='Hambúrguer Vegetariano'
+              itemClassName='menu-item-name'
               menuItemText='Vegetariano'
             />
           </div>
@@ -159,6 +162,7 @@ export default function MainMenu() {
               inputValue='simple-burger'
               inputOnChange={onClickType}
               labelClass='label-item-options'
+              itemClassName='menu-item-name'
               labelText='Simples'
             />
 
@@ -170,6 +174,7 @@ export default function MainMenu() {
               inputValue='double-burger'
               inputOnChange={onClickType}
               labelClass='label-item-options'
+              itemClassName='menu-item-name'
               labelText='Duplo'
             />
           </div>
@@ -183,6 +188,7 @@ export default function MainMenu() {
               inputValue='cheese'
               inputOnChange={onClickExtra}
               labelClass='label-item-options'
+              itemClassName='menu-item-name'
               labelText='+ Queijo'
             />
 
@@ -194,6 +200,7 @@ export default function MainMenu() {
               inputValue='egg'
               inputOnChange={onClickExtra}
               labelClass='label-item-options'
+              itemClassName='menu-item-name'
               labelText='+ Ovo'
             />
 
@@ -205,6 +212,7 @@ export default function MainMenu() {
               inputValue='Sem extra'
               inputOnChange={onClickExtra}
               labelClass='label-item-options'
+              itemClassName='menu-item-name'
               labelText='Nenhum'
             />
           </div>
@@ -222,6 +230,7 @@ export default function MainMenu() {
               labelClass='label-item-box'
               menuItemSrc={frenchFries}
               menuItemDescription='Fritas'
+              itemClassName='menu-item-name'
               menuItemText='Fritas'
             />
             <MenuItem
@@ -233,6 +242,7 @@ export default function MainMenu() {
               labelClass='label-item-box'
               menuItemSrc={onionRings}
               menuItemDescription='Anéis de cebola'
+              itemClassName='menu-item-name'
               menuItemText='Anéis de cebola'
             />
           </div>
@@ -250,6 +260,7 @@ export default function MainMenu() {
               labelClass='label-item-box'
               menuItemSrc={water}
               menuItemDescription='Água'
+              itemClassName='menu-item-name'
               menuItemText='Água'
             />
             <MenuItem
@@ -261,6 +272,7 @@ export default function MainMenu() {
               labelClass='label-item-box'
               menuItemSrc={soda}
               menuItemDescription='Refrigerante'
+              itemClassName='menu-item-name'
               menuItemText='Refrigerante'
             />
           </div>
@@ -274,6 +286,7 @@ export default function MainMenu() {
               inputOnChange={onClickDrinkSize}
               inputDisabled={disableDrinkSize}
               labelClass='label-item-options'
+              itemClassName='menu-item-name'
               labelText='500ML'
             />
             <InputRadioMenu
@@ -284,6 +297,7 @@ export default function MainMenu() {
               inputOnChange={onClickDrinkSize}
               inputDisabled={disableDrinkSize}
               labelClass='label-item-options'
+              itemClassName='menu-item-name'
               labelText='750ML'
             />
           </div>

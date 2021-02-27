@@ -390,7 +390,7 @@ body {
 
 
 /* MENU PAGE */
-/* GRID */
+/* GRID MAIN MENU*/
 .menu-grid-container {
   height: 100vh;
   display: grid;
@@ -427,6 +427,47 @@ body {
 
 .main-menu-drinks {
   grid-area: drinks;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+
+/* GRID BREAKFAST MENU*/
+.breakfast-grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  grid-template-rows: 5.1rem 1fr 1fr 1fr;
+  gap: 2%;
+  grid-template-areas:
+    'header        header'
+    'coffees       orders'
+    'sandwiches    orders'
+    'icedrinks     orders';
+  padding-bottom: 2%;
+}
+
+.menu-grid-child{
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+/* .header-base {
+  grid-area: header;
+} */
+
+.main-menu-coffees {
+  grid-area: coffees;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.main-menu-sandwiches {
+  grid-area: sandwiches;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.main-menu-icedrinks {
+  grid-area: icedrinks;
   border-radius: 0 1.5rem 1.5rem 0;
 }
 
@@ -507,6 +548,27 @@ body {
   justify-content: space-between;
   align-self: center;
 }
+
+
+/* BREAKFAST MENU ITEM RADIO BUTTONS */
+.breakfast-menu-options {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.breakfast-item-name {
+  border-radius: 0.3rem;
+  background-color: var(--dark-brown);
+  color: var(--lightest);
+  padding: 0.25rem 1rem;
+  width: auto;
+  position: relative;
+  top: -1rem;
+  text-align: center;
+}
+
 
 .label-item-options {
   background-color: var(--yellow);
