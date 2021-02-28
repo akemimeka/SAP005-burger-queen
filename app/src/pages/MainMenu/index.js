@@ -1,5 +1,5 @@
 /* eslint-disable object-curly-newline */
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
 import logo from '../../images/logo-horizontal-brown.png';
@@ -11,35 +11,43 @@ import onionRings from '../../images/menu-photos/onion-rings.png';
 import water from '../../images/menu-photos/water.png';
 import soda from '../../images/menu-photos/soda.png';
 import InputRadioMenu from '../../components/InputRadioMenu';
+import CompleteOrderedBurger from '../../components/CompleteOrderedBurger';
 import TotalAndSend from '../../components/TotalAndSend';
-import OrderedItem from '../../components/OrderedItem';
-import ItemQuantity from '../../components/ItemQuantity';
 
 export default function MainMenu() {
-  const apiURL = 'https://lab-api-bq.herokuapp.com';
-  const apiProducts = `${apiURL}/products`;
   const currentUserToken = localStorage.getItem('currentUserToken');
-  const getTableNumber = localStorage.getItem('currentTable');
-  const getClientName = localStorage.getItem('currentClient');
-  const menuHeaderSubtitle = `Mesa ${getTableNumber} · ${getClientName}`;
-  const [products, setProducts] = useState([]);
+  const tableNumber = localStorage.getItem('currentTable');
+  const clientName = localStorage.getItem('currentClient');
+  const menuHeaderSubtitle = `Mesa ${tableNumber} · ${clientName}`;
+  const [allProducts, setAllProducts] = useState([]);
   const [orderList, setOrderList] = useState([]);
+  const [itemQtd, setItemQtd] = useState(1);
   const [burgersByFlavor, setBurgersByFlavor] = useState([]);
   const [burgersByType, setBurgersByType] = useState([]);
   const [drinksByType, setDrinksByType] = useState([]);
   const [disableBurgerType, setDisableBurgerType] = useState(true);
   const [disableBurgerExtra, setDisableBurgerExtra] = useState(true);
   const [disableDrinkSize, setDisableDrinkSize] = useState(true);
+  const [finalOrder, setFinalOrder] = useState({
+    client: clientName,
+    table: tableNumber,
+    products: [],
+  });
 
-  const requestOptions = {
-    method: 'GET',
-    headers: { Authorization: currentUserToken },
-  };
+  useEffect(() => {
+    const apiURL = 'https://lab-api-bq.herokuapp.com';
+    const apiProducts = `${apiURL}/products`;
 
-  fetch(apiProducts, requestOptions)
-    .then((response) => response.json())
-    .then((data) => setProducts(data))
-    .catch((error) => console.log(error));
+    const requestOptions = {
+      method: 'GET',
+      headers: { Authorization: currentUserToken },
+    };
+
+    fetch(apiProducts, requestOptions)
+      .then((response) => response.json())
+      .then((data) => setAllProducts(data))
+      .catch((error) => console.log(error));
+  }, [currentUserToken]);
 
   const filterByName = (list, name) => {
     const filteredItem = list.filter((item) => item.name === name || item.name.includes(name));
@@ -47,7 +55,7 @@ export default function MainMenu() {
   };
 
   const selectBurgerFlavor = (id) => {
-    const burgerList = products.filter((item) => item.flavor === id);
+    const burgerList = allProducts.filter((item) => item.flavor === id);
     setBurgersByFlavor(burgerList);
     setDisableBurgerType(false);
   };
@@ -61,65 +69,55 @@ export default function MainMenu() {
   const selectBurgerExtra = (id) => {
     const word = (id !== 'none' ? id : null);
     const filteredList = burgersByType.filter((item) => item.complement === word);
-    const chosenBurger = filteredList[0];
-    setOrderList([...orderList, chosenBurger]);
+    const burger = filteredList[0];
+    setOrderList([...orderList, {
+      id: burger.id,
+      name: burger.name,
+      flavor: burger.flavor,
+      complement: burger.complement,
+      sub_type: burger.sub_type,
+      price: burger.price,
+      qtd: 1,
+    }]);
   };
 
   const selectDrinkType = (id) => {
-    const drinkList = filterByName(products, id);
+    const drinkList = filterByName(allProducts, id);
     setDrinksByType(drinkList);
     setDisableDrinkSize(false);
   };
 
   const selectDrinkSize = (id) => {
-    const selectedDrink = filterByName(drinksByType, id)[0];
-    setOrderList([...orderList, selectedDrink]);
+    const drink = filterByName(drinksByType, id)[0];
+    setOrderList([...orderList, {
+      id: drink.id,
+      name: drink.name,
+      sub_type: drink.sub_type,
+      price: drink.price,
+      qtd: 1,
+    }]);
   };
 
   const selectOneClickItem = (id) => {
-    const selectedItem = filterByName(products, id)[0];
-    setOrderList([...orderList, selectedItem]);
+    const item = filterByName(allProducts, id)[0];
+    setOrderList([...orderList, {
+      id: item.id,
+      name: item.name,
+      sub_type: item.sub_type,
+      price: item.price,
+      qtd: 1,
+    }]);
   };
 
-  const minusButton = () => {
-    setBurgerQuantity(burgerQuantity - 1);
-  };
+  // const minusButton = () => {
+  //   setBurgerQuantity(burgerQuantity - 1);
+  // };
 
-  const plusButton = () => {
-    setBurgerQuantity(burgerQuantity + 1);
-  };
+  // const plusButton = () => {
+  //   setBurgerQuantity(burgerQuantity + 1);
+  // };
 
-  const [burgerQuantity, setBurgerQuantity] = useState(1);
-
-  const ShowOrderedBurger = (item) => {
-    const burgerFlavor = `Hambúrg. ${item.flavor}`;
-    const burgerTypeAndExtra = item.complement !== null ? `${item.name.slice(11)} + ${item.complement}` : `${item.name.slice(11)} - Sem extra`;
-
-    return (
-      <Fragment>
-        <OrderedItem
-          key={`burger-name-${item.index}`}
-          itemNameText={burgerFlavor}
-        />
-        <OrderedItem
-          key={`burger-type-extra-${item.index}`}
-          itemNameText={burgerTypeAndExtra}
-          itemPriceText={item.price}
-        />
-        <ItemQuantity
-          key={`burger-quantity-${item.index}`}
-          minusButton={minusButton(burgerQuantity, setBurgerQuantity)}
-          itemQuantityText={burgerQuantity}
-          plusButton={plusButton(burgerQuantity, setBurgerQuantity)}
-          itemTotalValue={item.price}
-        />
-      </Fragment>
-    );
-  };
-
-  const formatPrice = (value) => {
-    value.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-  };
+  // const [burgerQuantity, setBurgerQuantity] = useState(1);
 
   return (
     <Fragment>
@@ -322,61 +320,22 @@ export default function MainMenu() {
             <hr className='dividing-line bg-color-dark-brown'></hr>
           </div>
 
-          {/* <div>
-            {orderList.map((item) => <div key>
-              {item.name}, {item.complement}, {item.price}
-              </div>)}
-          </div> */}
-
           <div className='order-list-items' id='order-list'>
             {
-              orderList.map((item) => (
-                <Fragment key={`item-${item.id}`}>
-                  <div
-                    className='ordered-item-wrap'>
-                    <p className='ordered-item-name'>
-                      {`Hambúrg. ${item.flavor}`}
-                    </p>
-                    <p className='ordered-item-price'></p>
-                  </div>
-                  <div
-                    className='ordered-item-wrap'>
-                    <p className='ordered-item-name'>
-                      {item.complement !== null
-                        ? `${item.name.slice(11)} + ${item.complement}`
-                        : `${item.name.slice(11)} - Sem extra`}
-                    </p>
-                    <p className='ordered-item-price'>
-                      {(item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-                    </p>
-                  </div>
-
-                  <ItemQuantity
-                    minusButton={minusButton}
-                    itemQuantityText={burgerQuantity}
-                    plusButton={plusButton}
-                    itemTotalValue={(burgerQuantity * item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+              orderList.length === 0
+                ? <p className='empty-order-msg color-brown weight-500'>Os itens lançados irão aparecer aqui</p>
+                : orderList.map((item, index) => (
+                  <CompleteOrderedBurger
+                    key={`item-${index}`}
+                    item={item}
                   />
-                </Fragment>
-              ))
+                ))
             }
-
-            {/* {orderList === []
-              ? <p className='empty-order-msg color-brown weight-500'>
-                Os itens lançados irão aparecer aqui
-                </p>
-              : orderList.map((item) => {
-                if (item.sub_type === 'hamburguer') {
-                  <div key> */}
-            {/* {item.name}, {item.complement}, {item.price}
-                  </div>;
-                }
-              }) */}
           </div>
 
           <TotalAndSend
           // totalPriceValue
-          // sendOrderButton
+          // sendOrderButton={console.log(orderList)}
           // cancelOrderButton
           />
         </aside>

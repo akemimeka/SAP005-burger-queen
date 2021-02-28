@@ -1,13 +1,21 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Button from '../Button';
 
-export default function ItemQuantity({
-  minusButton,
-  itemQuantityText,
-  plusButton,
-  itemTotalValue,
-}) {
+export default function ItemQuantity({ item }) {
+  const [itemQuantity, setItemQuantity] = useState(1);
+
+  const minusButton = () => {
+    setItemQuantity(itemQuantity - 1);
+  };
+
+  const plusButton = () => {
+    setItemQuantity(itemQuantity + 1);
+  };
+
+  const itemTotalPrice = (itemQuantity * item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+
   return (
     <Fragment>
       <div className='item-quantity-container'>
@@ -18,7 +26,7 @@ export default function ItemQuantity({
             buttonOnClick={minusButton}
             buttonText='–'
           />
-          <p className='item-quantity-number color-brown'>x {itemQuantityText}</p>
+          <p className='item-quantity-number color-brown'>x {itemQuantity}</p>
           <Button
             buttonType='text'
             buttonClass='button-base item-quantity-button bg-color-dark-brown color-lightest'
@@ -26,7 +34,9 @@ export default function ItemQuantity({
             buttonText='+'
           />
         </div>
-        <p className='item-total-value color-dark-green'>{itemTotalValue}</p>
+        <p className='item-total-value color-dark-green'>
+          {itemTotalPrice}
+        </p>
       </div>
       <hr className='dividing-line last-line bg-color-green'></hr>
     </Fragment>
