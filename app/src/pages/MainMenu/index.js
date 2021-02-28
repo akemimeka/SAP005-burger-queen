@@ -13,6 +13,7 @@ import soda from '../../images/menu-photos/soda.png';
 import InputRadioMenu from '../../components/InputRadioMenu';
 import CompleteOrderedBurger from '../../components/CompleteOrderedBurger';
 import TotalAndSend from '../../components/TotalAndSend';
+import CompleteOrderedItem from '../../components/CompleteOrderedItem';
 
 export default function MainMenu() {
   const currentUserToken = localStorage.getItem('currentUserToken');
@@ -325,10 +326,15 @@ export default function MainMenu() {
               orderList.length === 0
                 ? <p className='empty-order-msg color-brown weight-500'>Os itens lançados irão aparecer aqui</p>
                 : orderList.map((item, index) => (
-                  <CompleteOrderedBurger
-                    key={`item-${index}`}
-                    item={item}
-                  />
+                  item.sub_type === 'hamburguer'
+                    ? <CompleteOrderedBurger
+                        key={`item-${index}`}
+                        item={item}
+                      />
+                    : <CompleteOrderedItem
+                        key={`item-${index}`}
+                        item={item}
+                      />
                 ))
             }
           </div>
