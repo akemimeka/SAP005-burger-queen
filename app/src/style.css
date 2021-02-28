@@ -647,7 +647,6 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 1.5rem;
 }
 
 .item-quantity-buttons-wrap {
@@ -677,10 +676,11 @@ body {
   font-family: 'B612', monospace;
   font-weight: bold;
   font-size: 0.8rem;
+  text-align: right;
 }
 
 .last-line {
-  margin-bottom: 1.5rem;
+  margin: 1rem 0;
 }
 
 
