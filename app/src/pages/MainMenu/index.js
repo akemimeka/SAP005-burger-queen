@@ -324,7 +324,9 @@ export default function MainMenu() {
           <div className='order-list-items' id='order-list'>
             {
               orderList.length === 0
-                ? <p className='empty-order-msg color-brown weight-500'>Os itens lançados irão aparecer aqui</p>
+                ? <p className='empty-order-msg color-brown weight-500'>
+                    Os itens lançados irão aparecer aqui
+                  </p>
                 : orderList.map((item, index) => (
                   item.sub_type === 'hamburguer'
                     ? <CompleteOrderedBurger
