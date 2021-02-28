@@ -23,11 +23,10 @@ export default function MainMenu() {
   const getClientName = localStorage.getItem('currentClient');
   const menuHeaderSubtitle = `Mesa ${getTableNumber} · ${getClientName}`;
   const [products, setProducts] = useState([]);
-  const [filteredBurgersByFlavor, setFilteredBurgersByFlavor] = useState([]);
-  const [filteredBurgersByType, setFilteredBurgersByType] = useState([]);
-  const [selectedBurger, setFilteredBurgerByExtra] = useState([]);
-  const [filteredDrinks, setFilteredDrinks] = useState([]);
-  const [selectedItem, setSelectedItem] = useState([]);
+  const [orderList, setOrderList] = useState([]);
+  const [burgersByFlavor, setBurgersByFlavor] = useState([]);
+  const [burgersByType, setBurgersByType] = useState([]);
+  const [drinksByType, setDrinksByType] = useState([]);
   const [disableBurgerType, setDisableBurgerType] = useState(true);
   const [disableBurgerExtra, setDisableBurgerExtra] = useState(true);
   const [disableDrinkSize, setDisableDrinkSize] = useState(true);
@@ -42,56 +41,84 @@ export default function MainMenu() {
     .then((data) => setProducts(data))
     .catch((error) => console.log(error));
 
-  const filterByFlavor = (list, flavor) => {
-    const filteredList = list.filter((item) => item.flavor === flavor);
-    setFilteredBurgersByFlavor(filteredList);
-  };
-
-  const filterByType = (list, type) => {
-    const filteredList = list.filter((item) => item.name.includes(type));
-    setFilteredBurgersByType(filteredList);
-  };
-
   const filterByName = (list, name) => {
     const filteredItem = list.filter((item) => item.name === name || item.name.includes(name));
-    console.log('selected item', filteredItem[0]);
-    setSelectedItem(filteredItem[0]);
+    return filteredItem;
   };
 
-  const filterByDrink = (list, drink) => {
-    const filteredList = list.filter((item) => item.name.includes(drink));
-    console.log('selected drink', filteredList);
-    setFilteredDrinks(filteredList);
-  };
-
-  const onClickFlavor = (id) => {
-    filterByFlavor(products, id);
+  const selectBurgerFlavor = (id) => {
+    const burgerList = products.filter((item) => item.flavor === id);
+    setBurgersByFlavor(burgerList);
     setDisableBurgerType(false);
   };
 
-  const onClickType = (id) => {
-    filterByType(filteredBurgersByFlavor, id);
+  const selectBurgerType = (id) => {
+    const burgerList = filterByName(burgersByFlavor, id);
+    setBurgersByType(burgerList);
     setDisableBurgerExtra(false);
   };
 
-  const onClickExtra = (id) => {
+  const selectBurgerExtra = (id) => {
     const word = (id !== 'none' ? id : null);
-    const filteredList = filteredBurgersByType.filter((item) => item.complement === word);
-    console.log('selected burger', filteredList[0]);
-    setFilteredBurgerByExtra(filteredList[0]);
+    const filteredList = burgersByType.filter((item) => item.complement === word);
+    const chosenBurger = filteredList[0];
+    setOrderList([...orderList, chosenBurger]);
   };
 
-  const onClickDrinkType = (id) => {
-    filterByDrink(products, id);
+  const selectDrinkType = (id) => {
+    const drinkList = filterByName(products, id);
+    setDrinksByType(drinkList);
     setDisableDrinkSize(false);
   };
 
-  const onClickDrinkSize = (id) => {
-    filterByName(filteredDrinks, id);
+  const selectDrinkSize = (id) => {
+    const selectedDrink = filterByName(drinksByType, id)[0];
+    setOrderList([...orderList, selectedDrink]);
   };
 
-  const onClickItem = (id) => {
-    filterByName(products, id);
+  const selectOneClickItem = (id) => {
+    const selectedItem = filterByName(products, id)[0];
+    setOrderList([...orderList, selectedItem]);
+  };
+
+  const minusButton = () => {
+    setBurgerQuantity(burgerQuantity - 1);
+  };
+
+  const plusButton = () => {
+    setBurgerQuantity(burgerQuantity + 1);
+  };
+
+  const [burgerQuantity, setBurgerQuantity] = useState(1);
+
+  const ShowOrderedBurger = (item) => {
+    const burgerFlavor = `Hambúrg. ${item.flavor}`;
+    const burgerTypeAndExtra = item.complement !== null ? `${item.name.slice(11)} + ${item.complement}` : `${item.name.slice(11)} - Sem extra`;
+
+    return (
+      <Fragment>
+        <OrderedItem
+          key={`burger-name-${item.index}`}
+          itemNameText={burgerFlavor}
+        />
+        <OrderedItem
+          key={`burger-type-extra-${item.index}`}
+          itemNameText={burgerTypeAndExtra}
+          itemPriceText={item.price}
+        />
+        <ItemQuantity
+          key={`burger-quantity-${item.index}`}
+          minusButton={minusButton(burgerQuantity, setBurgerQuantity)}
+          itemQuantityText={burgerQuantity}
+          plusButton={plusButton(burgerQuantity, setBurgerQuantity)}
+          itemTotalValue={item.price}
+        />
+      </Fragment>
+    );
+  };
+
+  const formatPrice = (value) => {
+    value.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
   };
 
   return (
@@ -118,7 +145,7 @@ export default function MainMenu() {
               inputId='carne'
               inputName='meat-options'
               inputValue='Hambúrg. de Carne'
-              inputOnChange={onClickFlavor}
+              inputOnChange={selectBurgerFlavor}
               labelClass='label-item-box'
               menuItemSrc={meatBurger}
               menuItemDescription='Hambúrguer de Carne'
@@ -131,7 +158,7 @@ export default function MainMenu() {
               inputId='frango'
               inputName='meat-options'
               inputValue='Hambúrg. de Frango'
-              inputOnChange={onClickFlavor}
+              inputOnChange={selectBurgerFlavor}
               labelClass='label-item-box'
               menuItemSrc={chickenBurger}
               menuItemDescription='Hambúrguer de Frango'
@@ -144,7 +171,7 @@ export default function MainMenu() {
               inputId='vegetariano'
               inputName='meat-options'
               inputValue='Hambúrg. Vegetariano'
-              inputOnChange={onClickFlavor}
+              inputOnChange={selectBurgerFlavor}
               labelClass='label-item-box'
               menuItemSrc={veggieBurger}
               menuItemDescription='Hambúrguer Vegetariano'
@@ -160,7 +187,7 @@ export default function MainMenu() {
               inputDisabled={disableBurgerType}
               inputName='burger-type'
               inputValue='simple-burger'
-              inputOnChange={onClickType}
+              inputOnChange={selectBurgerType}
               labelClass='label-item-options'
               menuItemClassName='menu-item-name'
               labelText='Simples'
@@ -172,7 +199,7 @@ export default function MainMenu() {
               inputDisabled={disableBurgerType}
               inputName='burger-type'
               inputValue='double-burger'
-              inputOnChange={onClickType}
+              inputOnChange={selectBurgerType}
               labelClass='label-item-options'
               menuItemClassName='menu-item-name'
               labelText='Duplo'
@@ -186,7 +213,7 @@ export default function MainMenu() {
               inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
               inputValue='cheese'
-              inputOnChange={onClickExtra}
+              inputOnChange={selectBurgerExtra}
               labelClass='label-item-options'
               menuItemClassName='menu-item-name'
               labelText='+ Queijo'
@@ -198,7 +225,7 @@ export default function MainMenu() {
               inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
               inputValue='egg'
-              inputOnChange={onClickExtra}
+              inputOnChange={selectBurgerExtra}
               labelClass='label-item-options'
               menuItemClassName='menu-item-name'
               labelText='+ Ovo'
@@ -210,7 +237,7 @@ export default function MainMenu() {
               inputDisabled={disableBurgerExtra}
               inputName='burger-extra'
               inputValue='Sem extra'
-              inputOnChange={onClickExtra}
+              inputOnChange={selectBurgerExtra}
               labelClass='label-item-options'
               menuItemClassName='menu-item-name'
               labelText='Nenhum'
@@ -226,7 +253,7 @@ export default function MainMenu() {
               inputId='Batata frita'
               inputName='extra-sides'
               inputValue='Fritas'
-              inputOnChange={onClickItem}
+              inputOnChange={selectOneClickItem}
               labelClass='label-item-box'
               menuItemSrc={frenchFries}
               menuItemDescription='Fritas'
@@ -238,7 +265,7 @@ export default function MainMenu() {
               inputId='Anéis de cebola'
               inputName='extra-sides'
               inputValue='onion-rings'
-              inputOnChange={onClickItem}
+              inputOnChange={selectOneClickItem}
               labelClass='label-item-box'
               menuItemSrc={onionRings}
               menuItemDescription='Anéis de cebola'
@@ -256,7 +283,7 @@ export default function MainMenu() {
               inputId='Água'
               inputName='drinks-options'
               inputValue='water'
-              inputOnChange={onClickDrinkType}
+              inputOnChange={selectDrinkType}
               labelClass='label-item-box'
               menuItemSrc={water}
               menuItemDescription='Água'
@@ -268,7 +295,7 @@ export default function MainMenu() {
               inputId='Refrigerante'
               inputName='drinks-options'
               inputValue='soda'
-              inputOnChange={onClickDrinkType}
+              inputOnChange={selectDrinkType}
               labelClass='label-item-box'
               menuItemSrc={soda}
               menuItemDescription='Refrigerante'
@@ -283,7 +310,7 @@ export default function MainMenu() {
               inputId='500'
               inputName='drink-size'
               inputValue='500ml'
-              inputOnChange={onClickDrinkSize}
+              inputOnChange={selectDrinkSize}
               inputDisabled={disableDrinkSize}
               labelClass='label-item-options'
               menuItemClassName='menu-item-name'
@@ -294,7 +321,7 @@ export default function MainMenu() {
               inputId='750'
               inputName='drink-size'
               inputValue='750ml'
-              inputOnChange={onClickDrinkSize}
+              inputOnChange={selectDrinkSize}
               inputDisabled={disableDrinkSize}
               labelClass='label-item-options'
               menuItemClassName='menu-item-name'
@@ -309,16 +336,62 @@ export default function MainMenu() {
             <hr className='dividing-line bg-color-dark-brown'></hr>
           </div>
 
+          {/* <div>
+            {orderList.map((item) => <div key>
+              {item.name}, {item.complement}, {item.price}
+              </div>)}
+          </div> */}
+
           <div className='order-list-items' id='order-list'>
-            <p className='empty-order-msg color-brown weight-500'>
-              Os itens lançados irão aparecer aqui
-            </p>
+            {
+              orderList.map((item) => (
+                <Fragment key={`item-${item.id}`}>
+                  <div
+                    className='ordered-item-wrap'>
+                    <p className='ordered-item-name'>
+                      {`Hambúrg. ${item.flavor}`}
+                    </p>
+                    <p className='ordered-item-price'></p>
+                  </div>
+                  <div
+                    className='ordered-item-wrap'>
+                    <p className='ordered-item-name'>
+                      {item.complement !== null
+                        ? `${item.name.slice(11)} + ${item.complement}`
+                        : `${item.name.slice(11)} - Sem extra`}
+                    </p>
+                    <p className='ordered-item-price'>
+                      {(item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                    </p>
+                  </div>
+
+                  <ItemQuantity
+                    minusButton={minusButton}
+                    itemQuantityText={burgerQuantity}
+                    plusButton={plusButton}
+                    itemTotalValue={(burgerQuantity * item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                  />
+                </Fragment>
+              ))
+            }
+
+            {/* {orderList === []
+              ? <p className='empty-order-msg color-brown weight-500'>
+                Os itens lançados irão aparecer aqui
+                </p>
+              : orderList.map((item) => {
+                if (item.sub_type === 'hamburguer') {
+                  <div key> */}
+            {/* {item.name}, {item.complement}, {item.price}
+                  </div>;
+                }
+              }) */}
           </div>
 
           <TotalAndSend
-            totalPriceValue
-            sendOrderButton
-            cancelOrderButton
+          // totalPriceValue
+          // sendOrderButton
+          // cancelOrderButton
           />
         </aside>
       </div>

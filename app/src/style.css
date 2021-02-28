@@ -679,6 +679,10 @@ body {
   font-size: 0.8rem;
 }
 
+.last-line {
+  margin-bottom: 1.5rem;
+}
+
 
 /* TOTAL AND SEND COMPONENT*/
 .total-and-send-container {
