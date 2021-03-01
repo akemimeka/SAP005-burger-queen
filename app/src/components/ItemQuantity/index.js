@@ -9,19 +9,6 @@ export default function ItemQuantity({
   itemQuantity,
   itemTotalPrice,
 }) {
-  // const [itemQuantity, setItemQuantity] = useState(1);
-
-  // const minusButton = () => {
-  //   setItemQuantity(itemQuantity - 1);
-  // };
-
-  // const plusButton = () => {
-  //   setItemQuantity(itemQuantity + 1);
-  // };
-
-  // const itemTotalPrice = (itemQuantity * item.price)
-  // .toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-
   return (
     <Fragment>
       <div className='item-quantity-container'>
