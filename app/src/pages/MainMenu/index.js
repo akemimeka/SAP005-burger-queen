@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable object-curly-newline */
 import React, { Fragment, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
 import logo from '../../images/logo-horizontal-brown.png';
+import Button from '../../components/Button';
 import meatBurger from '../../images/menu-photos/burger-meat.png';
 import chickenBurger from '../../images/menu-photos/burger-chicken.png';
 import veggieBurger from '../../images/menu-photos/burger-veggie.png';
@@ -32,7 +34,7 @@ export default function MainMenu() {
   const [products, setProducts] = useState([]);
   const newOrder = { client: clientName, table: tableNumber, products: [] };
   const [finalOrder, setFinalOrder] = useState(newOrder);
-  const [calculateFinalTotal, setCalculateFinalTotal] = useState(0);
+  const [finalTotal, setFinalTotal] = useState(0);
 
   useEffect(() => {
     const apiURL = 'https://lab-api-bq.herokuapp.com';
@@ -79,7 +81,7 @@ export default function MainMenu() {
       price: burger.price,
       qtd: 1,
     }]);
-    setCalculateFinalTotal(calculateFinalTotal + burger.price);
+    setFinalTotal(finalTotal + burger.price);
   };
 
   const selectDrinkType = (id) => {
@@ -97,7 +99,7 @@ export default function MainMenu() {
       price: drink.price,
       qtd: 1,
     }]);
-    setCalculateFinalTotal(calculateFinalTotal + drink.price);
+    setFinalTotal(finalTotal + drink.price);
   };
 
   const selectOneClickItem = (id) => {
@@ -109,27 +111,39 @@ export default function MainMenu() {
       price: item.price,
       qtd: 1,
     }]);
-    setCalculateFinalTotal(calculateFinalTotal + item.price);
+    setFinalTotal(finalTotal + item.price);
   };
 
   const minusButton = (index, itemPrice) => {
-    const array = [...orderList];
-    array[index].qtd -= 1;
-    setOrderList(array);
-    setCalculateFinalTotal(calculateFinalTotal - itemPrice);
+    const newOrderList = [...orderList];
+
+    if (newOrderList[index].qtd === 1) {
+      newOrderList.splice(index, 1);
+    } else {
+      newOrderList[index].qtd -= 1;
+    }
+
+    setOrderList(newOrderList);
+    setFinalTotal(finalTotal - itemPrice);
   };
 
   const plusButton = (index, itemPrice) => {
-    const array = [...orderList];
-    array[index].qtd += 1;
-    setOrderList(array);
-    setCalculateFinalTotal(calculateFinalTotal + itemPrice);
+    const newOrderList = [...orderList];
+
+    newOrderList[index].qtd += 1;
+    setOrderList(newOrderList);
+    setFinalTotal(finalTotal + itemPrice);
   };
 
   const itemTotalPrice = (price, quantity) => (price * quantity).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
 
   const sendOrder = () => {
     setFinalOrder(finalOrder.products = [...orderList]);
+  };
+
+  const removeAllItems = () => {
+    setOrderList([]);
+    setFinalTotal(0);
   };
 
   return (
@@ -350,9 +364,18 @@ export default function MainMenu() {
           <div className='order-list-items' id='order-list'>
             {
               orderList.length === 0
-                ? <p className='empty-order-msg color-brown weight-500'>
-                  Os itens lançados irão aparecer aqui
+                ? <Fragment>
+                  <p className='empty-order-msg color-brown weight-500'>
+                    Os itens lançados irão aparecer aqui
                   </p>
+                  <Link to='/salao'>
+                    <Button
+                      buttonType='text'
+                      buttonClass='button-base button-centered bg-color-yellow color-brown'
+                      buttonText='Voltar'
+                    />
+                  </Link>
+                </Fragment>
                 : orderList.map((item, index) => (
                   item.sub_type === 'hamburguer'
                     ? <CompleteOrderedBurger
@@ -362,7 +385,7 @@ export default function MainMenu() {
                       itemName={item.name}
                       itemPrice={item.price}
                       itemQuantity={item.qtd}
-                      minusButton={() => plusButton(index, item.price)}
+                      minusButton={() => minusButton(index, item.price)}
                       plusButton={() => plusButton(index, item.price)}
                       itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
                     />
@@ -380,9 +403,11 @@ export default function MainMenu() {
           </div>
 
           <TotalAndSend
-            totalPriceValue={calculateFinalTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+            totalPriceValue={finalTotal.toLocaleString(
+              'pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 },
+            )}
             sendOrderButton={() => sendOrder()}
-            cancelOrderButton={() => setOrderList([])}
+            cancelOrderButton={() => removeAllItems()}
           />
         </aside>
       </div>
