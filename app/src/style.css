@@ -446,12 +446,6 @@ body {
   padding-bottom: 2%;
 }
 
-.menu-grid-child{
-  width: 100%;
-  height: 100%;
-  padding: 1.5rem;
-}
-
 .main-menu-coffees {
   grid-area: coffees;
   border-radius: 0 1.5rem 1.5rem 0;
@@ -466,6 +460,45 @@ body {
   grid-area: icedrinks;
   border-radius: 0 1.5rem 1.5rem 0;
 }
+
+/* GRID KITCHEN ORDERS*/
+.kitchen-grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5.1rem 1fr 1fr 1fr;
+  gap: 2% 2%;
+  grid-template-areas:
+    "header"
+    "todo-orders"
+    "doing-orders";
+  padding-bottom: 2%;
+}
+
+.header { 
+  grid-area: header; 
+}
+
+.todo-orders { 
+  grid-area: todo-orders;
+}
+
+.doing-orders { 
+  grid-area: doing-orders;
+}
+
+
+
+
+
+
+
+.order-grid-child{
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+}
+
 
 
 /* MENU ITEM BOX */
@@ -565,7 +598,6 @@ body {
   text-align: center;
 }
 
-
 .label-item-options {
   background-color: var(--yellow);
   padding: 0.2rem 1.5rem;
@@ -647,6 +679,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .item-quantity-buttons-wrap {
@@ -676,11 +709,6 @@ body {
   font-family: 'B612', monospace;
   font-weight: bold;
   font-size: 0.8rem;
-  text-align: right;
-}
-
-.last-line {
-  margin: 1rem 0;
 }
 
 
