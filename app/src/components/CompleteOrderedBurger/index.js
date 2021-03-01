@@ -6,8 +6,10 @@ import Button from '../Button';
 import OrderedItem from '../OrderedItem';
 
 export default function CompleteOrderedBurger({
-  item,
-  index,
+  itemFlavor,
+  itemComplement,
+  itemName,
+  itemPrice,
   minusButton,
   itemQuantity,
   plusButton,
@@ -16,13 +18,13 @@ export default function CompleteOrderedBurger({
   return (
     <Fragment>
       <OrderedItem
-        itemNameText={`Hambúrg. ${item.flavor}`}
+        itemNameText={`Hambúrg. ${itemFlavor}`}
       />
       <OrderedItem
-        itemNameText={item.complement !== null
-          ? `${item.name.slice(11)} + ${item.complement}`
-          : `${item.name.slice(11)} • Sem extra`}
-        itemPriceText={(item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+        itemNameText={itemComplement !== null
+          ? `${itemName.slice(11)} + ${itemComplement}`
+          : `${itemName.slice(11)} • Sem extra`}
+        itemPriceText={(itemPrice).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
       />
       <div className='item-quantity-container'>
         <div className='item-quantity-buttons-wrap'>
@@ -36,12 +38,12 @@ export default function CompleteOrderedBurger({
           <Button
             buttonType='text'
             buttonClass='button-base item-quantity-button bg-color-dark-brown color-lightest'
-            buttonOnClick={(event) => plusButton(event, index)}
+            buttonOnClick={plusButton}
             buttonText='+'
           />
         </div>
         <p className='item-total-value color-dark-green'>
-          {() => itemTotalPrice(item)}
+          {itemTotalPrice}
         </p>
       </div>
       <hr className='dividing-line last-line bg-color-green'></hr>
