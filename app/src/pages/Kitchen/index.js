@@ -53,26 +53,22 @@ export default function Kitchen() {
         />
         <section className='menu-grid-child todo-orders bg-color-yellow-20'>
           <h3 className='menu-section-title'>Pedidos Pendentes</h3>
-          <div className='kitchen-order-options'>
-            <OrdersCards
-            />
-          </div>
+
+          <OrdersCards
+          />
+
         </section>
 
         <section className='menu-grid-child doing-orders bg-color-yellow-20'>
           <h3 className='menu-section-title'>Em Preparo</h3>
-          <div className='kitchen-order-options'>
-            <OrdersCards
-            />
-          </div>
+          <OrdersCards
+          />
         </section>
 
         <section className='menu-grid-child done-orders bg-color-yellow-20'>
           <h3 className='menu-section-title'>Pedidos Concluídos</h3>
-          <div className='kitchen-order-options'>
-            <OrdersCards
-            />
-          </div>
+          <OrdersCards
+          />
         </section>
 
       </div>
