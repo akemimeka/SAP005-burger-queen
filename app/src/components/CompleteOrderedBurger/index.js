@@ -1,10 +1,18 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
 import React, { Fragment } from 'react';
-import ItemQuantity from '../ItemQuantity';
+import Button from '../Button';
+// import ItemQuantity from '../ItemQuantity';
 import OrderedItem from '../OrderedItem';
 
-export default function OrderedBurger({ item }) {
+export default function CompleteOrderedBurger({
+  item,
+  index,
+  minusButton,
+  itemQuantity,
+  plusButton,
+  itemTotalPrice,
+}) {
   return (
     <Fragment>
       <OrderedItem
@@ -16,9 +24,27 @@ export default function OrderedBurger({ item }) {
           : `${item.name.slice(11)} • Sem extra`}
         itemPriceText={(item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
       />
-      <ItemQuantity
-        item={item}
-      />
+      <div className='item-quantity-container'>
+        <div className='item-quantity-buttons-wrap'>
+          <Button
+            buttonType='text'
+            buttonClass='button-base item-quantity-button bg-color-dark-brown color-lightest'
+            buttonOnClick={minusButton}
+            buttonText='–'
+          />
+          <p className='item-quantity-number color-brown'>x {itemQuantity}</p>
+          <Button
+            buttonType='text'
+            buttonClass='button-base item-quantity-button bg-color-dark-brown color-lightest'
+            buttonOnClick={(event) => plusButton(event, index)}
+            buttonText='+'
+          />
+        </div>
+        <p className='item-total-value color-dark-green'>
+          {() => itemTotalPrice(item)}
+        </p>
+      </div>
+      <hr className='dividing-line last-line bg-color-green'></hr>
     </Fragment>
   );
 }
