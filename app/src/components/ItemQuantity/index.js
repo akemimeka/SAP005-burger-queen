@@ -1,20 +1,26 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import Button from '../Button';
 
-export default function ItemQuantity({ item }) {
-  const [itemQuantity, setItemQuantity] = useState(1);
+export default function ItemQuantity({
+  minusButton,
+  plusButton,
+  itemQuantity,
+  itemTotalPrice,
+}) {
+  // const [itemQuantity, setItemQuantity] = useState(1);
 
-  const minusButton = () => {
-    setItemQuantity(itemQuantity - 1);
-  };
+  // const minusButton = () => {
+  //   setItemQuantity(itemQuantity - 1);
+  // };
 
-  const plusButton = () => {
-    setItemQuantity(itemQuantity + 1);
-  };
+  // const plusButton = () => {
+  //   setItemQuantity(itemQuantity + 1);
+  // };
 
-  const itemTotalPrice = (itemQuantity * item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+  // const itemTotalPrice = (itemQuantity * item.price)
+  // .toLocaleString('pt-BR', { minimumFractionDigits: 2 });
 
   return (
     <Fragment>

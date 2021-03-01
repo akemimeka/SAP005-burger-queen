@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-unused-expressions */
 /* eslint-disable object-curly-newline */
 import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../../components/Header';
@@ -14,6 +16,7 @@ import InputRadioMenu from '../../components/InputRadioMenu';
 import CompleteOrderedBurger from '../../components/CompleteOrderedBurger';
 import TotalAndSend from '../../components/TotalAndSend';
 import CompleteOrderedItem from '../../components/CompleteOrderedItem';
+import Button from '../../components/Button';
 
 export default function MainMenu() {
   const currentUserToken = localStorage.getItem('currentUserToken');
@@ -78,7 +81,7 @@ export default function MainMenu() {
       complement: burger.complement,
       sub_type: burger.sub_type,
       price: burger.price,
-      qtd: 1,
+      qtd: itemQtd,
     }]);
   };
 
@@ -95,7 +98,7 @@ export default function MainMenu() {
       name: drink.name,
       sub_type: drink.sub_type,
       price: drink.price,
-      qtd: 1,
+      qtd: itemQtd,
     }]);
   };
 
@@ -106,19 +109,26 @@ export default function MainMenu() {
       name: item.name,
       sub_type: item.sub_type,
       price: item.price,
-      qtd: 1,
+      qtd: itemQtd,
     }]);
   };
 
-  // const minusButton = () => {
+  // const minusButton = (index) => {
   //   setBurgerQuantity(burgerQuantity - 1);
   // };
 
-  // const plusButton = () => {
-  //   setBurgerQuantity(burgerQuantity + 1);
-  // };
+  const plusButton = (event, index) => {
+    event.preventDefault();
+    orderList[index].qtd = setItemQtd(itemQtd + 1);
+  };
 
-  // const [burgerQuantity, setBurgerQuantity] = useState(1);
+  const itemTotalPrice = (item) => {
+    (itemQtd * item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+  };
+
+  const sendOrder = () => {
+    setFinalOrder(finalOrder.products = [...orderList]);
+  };
 
   return (
     <Fragment>
@@ -325,26 +335,31 @@ export default function MainMenu() {
             {
               orderList.length === 0
                 ? <p className='empty-order-msg color-brown weight-500'>
-                    Os itens lançados irão aparecer aqui
+                  Os itens lançados irão aparecer aqui
                   </p>
                 : orderList.map((item, index) => (
                   item.sub_type === 'hamburguer'
                     ? <CompleteOrderedBurger
-                        key={`item-${index}`}
-                        item={item}
-                      />
+                      key={`item-${index}`}
+                      item={item}
+                      index={index}
+                      // minusButton={minusButton(index)}
+                      itemQuantity={itemQtd}
+                      plusButton={plusButton}
+                      itemTotalPrice={itemTotalPrice(item)}
+                    />
                     : <CompleteOrderedItem
-                        key={`item-${index}`}
-                        item={item}
-                      />
+                      key={`item-${index}`}
+                      item={item}
+                    />
                 ))
             }
           </div>
 
           <TotalAndSend
-          // totalPriceValue
-          // sendOrderButton={console.log(orderList)}
-          // cancelOrderButton
+            // totalPriceValue={}
+            sendOrderButton={() => sendOrder()}
+            cancelOrderButton={() => setOrderList([])}
           />
         </aside>
       </div>
