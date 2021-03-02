@@ -175,7 +175,11 @@ export default function Signup() {
               inputOnChange={(event) => setWorkerConfirmPassword(event.target.value)}
             />
 
-            {!equalPasswords && <p className='msg-different-passwords'>As senhas são diferentes. Tente novamente.</p>}
+            {
+              !equalPasswords && <p className='msg-different-passwords'>
+                As senhas são diferentes. Tente novamente.
+              </p>
+            }
 
             <Button
               buttonType='submit'

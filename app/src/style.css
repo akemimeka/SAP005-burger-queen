@@ -40,6 +40,10 @@ body {
   background-size: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* BASE STYLING */
 .color-brown { color: var(--dark-brown) }
 .color-yellow { color: var(--yellow) }
@@ -607,7 +611,7 @@ body {
 }
 
 .empty-order-msg {
-  margin-top: 2rem;
+  margin: 2rem 0;
   font-size: 0.9rem;
   text-align: center;
   text-transform: uppercase;
