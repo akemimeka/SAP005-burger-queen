@@ -1,6 +1,7 @@
+/* eslint-disable object-shorthand */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable object-curly-newline */
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
@@ -19,10 +20,13 @@ import TotalAndSend from '../../components/TotalAndSend';
 import CompleteOrderedItem from '../../components/CompleteOrderedItem';
 
 export default function MainMenu() {
+  const apiURL = 'https://lab-api-bq.herokuapp.com';
   const currentUserToken = localStorage.getItem('currentUserToken');
   const tableNumber = localStorage.getItem('currentTable');
   const clientName = localStorage.getItem('currentClient');
   const menuHeaderSubtitle = `Mesa ${tableNumber} · ${clientName}`;
+  const form = useRef(null);
+  const resetInputs = () => setTimeout(() => form.current.reset(), 500);
   const [allProducts, setAllProducts] = useState([]);
   const [orderList, setOrderList] = useState([]);
   const [burgersByFlavor, setBurgersByFlavor] = useState([]);
@@ -31,21 +35,21 @@ export default function MainMenu() {
   const [disableBurgerType, setDisableBurgerType] = useState(true);
   const [disableBurgerExtra, setDisableBurgerExtra] = useState(true);
   const [disableDrinkSize, setDisableDrinkSize] = useState(true);
-  const [products, setProducts] = useState([]);
-  const newOrder = { client: clientName, table: tableNumber, products: [] };
-  const [finalOrder, setFinalOrder] = useState(newOrder);
   const [finalTotal, setFinalTotal] = useState(0);
+  const [products, setProducts] = useState([]);
+  const [finalOrder, setFinalOrder] = useState({
+    client: clientName, table: tableNumber, products: products,
+  });
 
   useEffect(() => {
-    const apiURL = 'https://lab-api-bq.herokuapp.com';
     const apiProducts = `${apiURL}/products`;
 
-    const requestOptions = {
+    const getRequestOptions = {
       method: 'GET',
       headers: { Authorization: currentUserToken },
     };
 
-    fetch(apiProducts, requestOptions)
+    fetch(apiProducts, getRequestOptions)
       .then((response) => response.json())
       .then((data) => setAllProducts(data))
       .catch((error) => console.log(error));
@@ -82,6 +86,7 @@ export default function MainMenu() {
       qtd: 1,
     }]);
     setFinalTotal(finalTotal + burger.price);
+    resetInputs();
   };
 
   const selectDrinkType = (id) => {
@@ -100,6 +105,7 @@ export default function MainMenu() {
       qtd: 1,
     }]);
     setFinalTotal(finalTotal + drink.price);
+    resetInputs();
   };
 
   const selectOneClickItem = (id) => {
@@ -112,6 +118,7 @@ export default function MainMenu() {
       qtd: 1,
     }]);
     setFinalTotal(finalTotal + item.price);
+    resetInputs();
   };
 
   const minusButton = (index, itemPrice) => {
@@ -122,7 +129,6 @@ export default function MainMenu() {
     } else {
       newOrderList[index].qtd -= 1;
     }
-
     setOrderList(newOrderList);
     setFinalTotal(finalTotal - itemPrice);
   };
@@ -135,20 +141,48 @@ export default function MainMenu() {
     setFinalTotal(finalTotal + itemPrice);
   };
 
-  const itemTotalPrice = (price, quantity) => (price * quantity).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-
-  const sendOrder = () => {
-    setFinalOrder(finalOrder.products = [...orderList]);
-  };
+  const itemTotalPrice = (price, quantity) => (
+    (price * quantity).toLocaleString('pt-BR', { minimumFractionDigits: 2 })
+  );
 
   const removeAllItems = () => {
     setOrderList([]);
     setFinalTotal(0);
   };
 
+  const sendOrder = () => {
+    const apiOrders = `${apiURL}/orders`;
+    const newOrder = orderList.map((item) => (
+      { id: item.id, qtd: item.qtd }
+    ));
+
+    const orderProducts = [...products, ...newOrder];
+    setProducts(orderProducts);
+    const order = { ...finalOrder, products: orderProducts };
+    setFinalOrder(order);
+
+    const postRequestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: currentUserToken,
+      },
+      body: JSON.stringify(order),
+    };
+
+    fetch(apiOrders, postRequestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log('Pedido enviado para a cozinha com sucesso!');
+      })
+      .then(setProducts([]))
+      .catch((error) => console.log(error));
+  };
+
   return (
     <Fragment>
-      <div className='menu-grid-container'>
+      <form className='menu-grid-container' ref={form}>
         <Header
           headerClass='header-base header-main-menu bg-color-yellow'
           headerLogoLink='/salao'
@@ -410,7 +444,7 @@ export default function MainMenu() {
             cancelOrderButton={() => removeAllItems()}
           />
         </aside>
-      </div>
+      </form>
     </Fragment>
   );
 }
