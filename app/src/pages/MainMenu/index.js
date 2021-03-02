@@ -3,10 +3,10 @@
 /* eslint-disable object-curly-newline */
 import React, { Fragment, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../images/logo-horizontal-brown.png';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
-import logo from '../../images/logo-horizontal-brown.png';
-import Button from '../../components/Button';
+import InputRadioMenu from '../../components/InputRadioMenu';
 import meatBurger from '../../images/menu-photos/burger-meat.png';
 import chickenBurger from '../../images/menu-photos/burger-chicken.png';
 import veggieBurger from '../../images/menu-photos/burger-veggie.png';
@@ -14,7 +14,7 @@ import frenchFries from '../../images/menu-photos/fries.png';
 import onionRings from '../../images/menu-photos/onion-rings.png';
 import water from '../../images/menu-photos/water.png';
 import soda from '../../images/menu-photos/soda.png';
-import InputRadioMenu from '../../components/InputRadioMenu';
+import Button from '../../components/Button';
 import CompleteOrderedBurger from '../../components/CompleteOrderedBurger';
 import TotalAndSend from '../../components/TotalAndSend';
 import CompleteOrderedItem from '../../components/CompleteOrderedItem';
@@ -121,7 +121,8 @@ export default function MainMenu() {
     resetInputs();
   };
 
-  const minusButton = (index, itemPrice) => {
+  const minusButton = (event, index, itemPrice) => {
+    event.preventDefault();
     const newOrderList = [...orderList];
 
     if (newOrderList[index].qtd === 1) {
@@ -133,7 +134,8 @@ export default function MainMenu() {
     setFinalTotal(finalTotal - itemPrice);
   };
 
-  const plusButton = (index, itemPrice) => {
+  const plusButton = (event, index, itemPrice) => {
+    event.preventDefault();
     const newOrderList = [...orderList];
 
     newOrderList[index].qtd += 1;
@@ -145,12 +147,14 @@ export default function MainMenu() {
     (price * quantity).toLocaleString('pt-BR', { minimumFractionDigits: 2 })
   );
 
-  const removeAllItems = () => {
+  const removeAllItems = (event) => {
+    event.preventDefault();
     setOrderList([]);
     setFinalTotal(0);
   };
 
-  const sendOrder = () => {
+  const sendOrder = (event) => {
+    event.preventDefault();
     const apiOrders = `${apiURL}/orders`;
     const newOrder = orderList.map((item) => (
       { id: item.id, qtd: item.qtd }
@@ -419,8 +423,8 @@ export default function MainMenu() {
                       itemName={item.name}
                       itemPrice={item.price}
                       itemQuantity={item.qtd}
-                      minusButton={() => minusButton(index, item.price)}
-                      plusButton={() => plusButton(index, item.price)}
+                      minusButton={(event) => minusButton(event, index, item.price)}
+                      plusButton={(event) => plusButton(event, index, item.price)}
                       itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
                     />
                     : <CompleteOrderedItem
@@ -428,8 +432,8 @@ export default function MainMenu() {
                       itemName={item.name}
                       itemPrice={item.price}
                       itemQuantity={item.qtd}
-                      minusButton={() => minusButton(index, item.price)}
-                      plusButton={() => plusButton(index, item.price)}
+                      minusButton={(event) => minusButton(event, index, item.price)}
+                      plusButton={(event) => plusButton(event, index, item.price)}
                       itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
                     />
                 ))
@@ -440,8 +444,8 @@ export default function MainMenu() {
             totalPriceValue={finalTotal.toLocaleString(
               'pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 },
             )}
-            sendOrderButton={() => sendOrder()}
-            cancelOrderButton={() => removeAllItems()}
+            sendOrderButton={(event) => sendOrder(event)}
+            cancelOrderButton={(event) => removeAllItems(event)}
           />
         </aside>
       </form>
