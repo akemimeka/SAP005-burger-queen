@@ -467,7 +467,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 5.1rem 1fr 1fr 1fr;
-  gap: 2% 2%;
+  gap: 2%;
   grid-template-areas:
     'header'
     'todo-orders'
