@@ -620,7 +620,8 @@ a {
 /* ORDERED ITEM COMPONENT */
 .order-list-items {
   padding: 1.5rem 0;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .ordered-item-wrap {
