@@ -1,10 +1,11 @@
-/* eslint-disable no-plusplus */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable object-curly-newline */
 import React, { Fragment, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
 import logo from '../../images/logo-horizontal-brown.png';
+import Button from '../../components/Button';
 import meatBurger from '../../images/menu-photos/burger-meat.png';
 import chickenBurger from '../../images/menu-photos/burger-chicken.png';
 import veggieBurger from '../../images/menu-photos/burger-veggie.png';
@@ -16,7 +17,6 @@ import InputRadioMenu from '../../components/InputRadioMenu';
 import CompleteOrderedBurger from '../../components/CompleteOrderedBurger';
 import TotalAndSend from '../../components/TotalAndSend';
 import CompleteOrderedItem from '../../components/CompleteOrderedItem';
-import Button from '../../components/Button';
 
 export default function MainMenu() {
   const currentUserToken = localStorage.getItem('currentUserToken');
@@ -25,18 +25,16 @@ export default function MainMenu() {
   const menuHeaderSubtitle = `Mesa ${tableNumber} · ${clientName}`;
   const [allProducts, setAllProducts] = useState([]);
   const [orderList, setOrderList] = useState([]);
-  const [itemQtd, setItemQtd] = useState(1);
   const [burgersByFlavor, setBurgersByFlavor] = useState([]);
   const [burgersByType, setBurgersByType] = useState([]);
   const [drinksByType, setDrinksByType] = useState([]);
   const [disableBurgerType, setDisableBurgerType] = useState(true);
   const [disableBurgerExtra, setDisableBurgerExtra] = useState(true);
   const [disableDrinkSize, setDisableDrinkSize] = useState(true);
-  const [finalOrder, setFinalOrder] = useState({
-    client: clientName,
-    table: tableNumber,
-    products: [],
-  });
+  const [products, setProducts] = useState([]);
+  const newOrder = { client: clientName, table: tableNumber, products: [] };
+  const [finalOrder, setFinalOrder] = useState(newOrder);
+  const [finalTotal, setFinalTotal] = useState(0);
 
   useEffect(() => {
     const apiURL = 'https://lab-api-bq.herokuapp.com';
@@ -81,8 +79,9 @@ export default function MainMenu() {
       complement: burger.complement,
       sub_type: burger.sub_type,
       price: burger.price,
-      qtd: itemQtd,
+      qtd: 1,
     }]);
+    setFinalTotal(finalTotal + burger.price);
   };
 
   const selectDrinkType = (id) => {
@@ -98,8 +97,9 @@ export default function MainMenu() {
       name: drink.name,
       sub_type: drink.sub_type,
       price: drink.price,
-      qtd: itemQtd,
+      qtd: 1,
     }]);
+    setFinalTotal(finalTotal + drink.price);
   };
 
   const selectOneClickItem = (id) => {
@@ -109,25 +109,41 @@ export default function MainMenu() {
       name: item.name,
       sub_type: item.sub_type,
       price: item.price,
-      qtd: itemQtd,
+      qtd: 1,
     }]);
+    setFinalTotal(finalTotal + item.price);
   };
 
-  // const minusButton = (index) => {
-  //   setBurgerQuantity(burgerQuantity - 1);
-  // };
+  const minusButton = (index, itemPrice) => {
+    const newOrderList = [...orderList];
 
-  const plusButton = (event, index) => {
-    event.preventDefault();
-    orderList[index].qtd = setItemQtd(itemQtd + 1);
+    if (newOrderList[index].qtd === 1) {
+      newOrderList.splice(index, 1);
+    } else {
+      newOrderList[index].qtd -= 1;
+    }
+
+    setOrderList(newOrderList);
+    setFinalTotal(finalTotal - itemPrice);
   };
 
-  const itemTotalPrice = (item) => {
-    (itemQtd * item.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+  const plusButton = (index, itemPrice) => {
+    const newOrderList = [...orderList];
+
+    newOrderList[index].qtd += 1;
+    setOrderList(newOrderList);
+    setFinalTotal(finalTotal + itemPrice);
   };
+
+  const itemTotalPrice = (price, quantity) => (price * quantity).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
 
   const sendOrder = () => {
     setFinalOrder(finalOrder.products = [...orderList]);
+  };
+
+  const removeAllItems = () => {
+    setOrderList([]);
+    setFinalTotal(0);
   };
 
   return (
@@ -348,32 +364,50 @@ export default function MainMenu() {
           <div className='order-list-items' id='order-list'>
             {
               orderList.length === 0
-                ? <p className='empty-order-msg color-brown weight-500'>
-                  Os itens lançados irão aparecer aqui
+                ? <Fragment>
+                  <p className='empty-order-msg color-brown weight-500'>
+                    Os itens lançados irão aparecer aqui
                   </p>
+                  <Link to='/salao'>
+                    <Button
+                      buttonType='text'
+                      buttonClass='button-base button-centered bg-color-yellow color-brown'
+                      buttonText='Voltar'
+                    />
+                  </Link>
+                </Fragment>
                 : orderList.map((item, index) => (
                   item.sub_type === 'hamburguer'
                     ? <CompleteOrderedBurger
                       key={`item-${index}`}
-                      item={item}
-                      index={index}
-                      // minusButton={minusButton(index)}
-                      itemQuantity={itemQtd}
-                      plusButton={plusButton}
-                      itemTotalPrice={itemTotalPrice(item)}
+                      itemFlavor={item.flavor}
+                      itemComplement={item.complement}
+                      itemName={item.name}
+                      itemPrice={item.price}
+                      itemQuantity={item.qtd}
+                      minusButton={() => minusButton(index, item.price)}
+                      plusButton={() => plusButton(index, item.price)}
+                      itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
                     />
                     : <CompleteOrderedItem
                       key={`item-${index}`}
-                      item={item}
+                      itemName={item.name}
+                      itemPrice={item.price}
+                      itemQuantity={item.qtd}
+                      minusButton={() => minusButton(index, item.price)}
+                      plusButton={() => plusButton(index, item.price)}
+                      itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
                     />
                 ))
             }
           </div>
 
           <TotalAndSend
-            // totalPriceValue={}
+            totalPriceValue={finalTotal.toLocaleString(
+              'pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 },
+            )}
             sendOrderButton={() => sendOrder()}
-            cancelOrderButton={() => setOrderList([])}
+            cancelOrderButton={() => removeAllItems()}
           />
         </aside>
       </div>
