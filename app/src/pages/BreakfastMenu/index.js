@@ -1,7 +1,8 @@
 /* eslint-disable object-shorthand */
 /* eslint-disable object-curly-newline */
 import React, { Fragment, useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { GoToPage } from '../../services';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
 import logo from '../../images/logo-horizontal-brown.png';
@@ -14,6 +15,7 @@ import CompleteOrderedItem from '../../components/CompleteOrderedItem';
 import TotalAndSend from '../../components/TotalAndSend';
 
 export default function BreakfastMenu() {
+  const history = useHistory();
   const apiURL = 'https://lab-api-bq.herokuapp.com';
   const currentUserToken = localStorage.getItem('currentUserToken');
   const tableNumber = localStorage.getItem('currentTable');
@@ -120,7 +122,12 @@ export default function BreakfastMenu() {
         console.log(data);
         console.log('Pedido enviado para a cozinha com sucesso!');
       })
-      .then(setProducts([]))
+      .then(() => {
+        setProducts([]);
+        localStorage.removeItem('currentTable');
+        localStorage.removeItem('currentClient');
+      })
+      .then(GoToPage(history, '/salao'))
       .catch((error) => console.log(error));
   };
 
@@ -202,7 +209,7 @@ export default function BreakfastMenu() {
               menuItemSrc={naturalJuice}
               menuItemDescription='Suco natural'
               menuItemClassName='breakfast-item-name'
-              menuItemText='Suco natural'
+              menuItemText='Suco de fruta'
             />
           </div>
         </section>
