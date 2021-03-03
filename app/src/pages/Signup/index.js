@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable max-len */
 /* eslint-disable no-console */
 import React, { Fragment, useState, useCallback, useEffect } from 'react';
@@ -37,7 +38,6 @@ export default function Signup() {
 
   // Close Modal with keyboard (Esc key)
   const keyPress = useCallback((event) => {
-    // console.log(event.key);
     if (event.key === 'Escape' && showModal) {
       setShowModal(false);
     }
@@ -54,9 +54,7 @@ export default function Signup() {
   const handleSubmit = () => {
     const requestOptions = {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name: workerName,
         email: workerEmail,

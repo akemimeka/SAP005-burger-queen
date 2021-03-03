@@ -1,5 +1,8 @@
+/* eslint-disable object-shorthand */
 /* eslint-disable object-curly-newline */
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect, useRef } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { GoToPage } from '../../services';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
 import logo from '../../images/logo-horizontal-brown.png';
@@ -7,43 +10,130 @@ import americanCoffee from '../../images/menu-photos/coffee.png';
 import hotLatte from '../../images/menu-photos/latte.png';
 import grilledSandwich from '../../images/menu-photos/grilled-ham-cheese.png';
 import naturalJuice from '../../images/menu-photos/juice.png';
+import Button from '../../components/Button';
+import CompleteOrderedItem from '../../components/CompleteOrderedItem';
 import TotalAndSend from '../../components/TotalAndSend';
-import OrderedItem from '../../components/OrderedItem';
-import ItemQuantity from '../../components/ItemQuantity';
 
-export default function MainMenu() {
+export default function BreakfastMenu() {
+  const history = useHistory();
   const apiURL = 'https://lab-api-bq.herokuapp.com';
-  const apiProducts = `${apiURL}/products`;
   const currentUserToken = localStorage.getItem('currentUserToken');
-  const getTableNumber = localStorage.getItem('currentTable');
-  const getClientName = localStorage.getItem('currentClient');
-  const menuHeaderSubtitle = `Mesa ${getTableNumber} · ${getClientName}`;
+  const tableNumber = localStorage.getItem('currentTable');
+  const clientName = localStorage.getItem('currentClient');
+  const menuHeaderSubtitle = `Mesa ${tableNumber} · ${clientName}`;
+  const form = useRef(null);
+  const resetInputs = () => setTimeout(() => form.current.reset(), 500);
+  const [allProducts, setAllProducts] = useState([]);
+  const [orderList, setOrderList] = useState([]);
+  const [finalTotal, setFinalTotal] = useState(0);
   const [products, setProducts] = useState([]);
-  const [selectedItem, setSelectedItem] = useState([]);
+  const [finalOrder, setFinalOrder] = useState({
+    client: clientName, table: tableNumber, products: products,
+  });
 
-  const requestOptions = {
-    method: 'GET',
-    headers: { Authorization: currentUserToken },
-  };
+  useEffect(() => {
+    const apiProducts = `${apiURL}/products`;
 
-  fetch(apiProducts, requestOptions)
-    .then((response) => response.json())
-    .then((data) => setProducts(data))
-    .catch((error) => console.log(error));
+    const getRequestOptions = {
+      method: 'GET',
+      headers: { Authorization: currentUserToken },
+    };
+
+    fetch(apiProducts, getRequestOptions)
+      .then((response) => response.json())
+      .then((data) => setAllProducts(data))
+      .catch((error) => console.log(error));
+  }, [currentUserToken]);
 
   const filterByName = (list, name) => {
-    const filteredItem = list.filter((item) => item.name === name || item.name.includes(name));
-    console.log('selected item', filteredItem[0]);
-    setSelectedItem(filteredItem[0]);
+    const filteredItem = list.filter((item) => item.name === name);
+    return filteredItem;
   };
 
-  const onClickItem = (id) => {
-    filterByName(products, id);
+  const selectOneClickItem = (id) => {
+    const item = filterByName(allProducts, id)[0];
+    setOrderList([...orderList, {
+      id: item.id,
+      name: item.name,
+      sub_type: item.sub_type,
+      price: item.price,
+      qtd: 1,
+    }]);
+    setFinalTotal(finalTotal + item.price);
+    resetInputs();
+  };
+
+  const minusButton = (event, index, itemPrice) => {
+    event.preventDefault();
+    const newOrderList = [...orderList];
+
+    if (newOrderList[index].qtd === 1) {
+      newOrderList.splice(index, 1);
+    } else {
+      newOrderList[index].qtd -= 1;
+    }
+    setOrderList(newOrderList);
+    setFinalTotal(finalTotal - itemPrice);
+  };
+
+  const plusButton = (event, index, itemPrice) => {
+    event.preventDefault();
+    const newOrderList = [...orderList];
+
+    newOrderList[index].qtd += 1;
+    setOrderList(newOrderList);
+    setFinalTotal(finalTotal + itemPrice);
+  };
+
+  const itemTotalPrice = (price, quantity) => (
+    (price * quantity).toLocaleString('pt-BR', { minimumFractionDigits: 2 })
+  );
+
+  const removeAllItems = (event) => {
+    event.preventDefault();
+    setOrderList([]);
+    setFinalTotal(0);
+  };
+
+  const sendOrder = (event) => {
+    event.preventDefault();
+    const apiOrders = `${apiURL}/orders`;
+    const newOrder = orderList.map((item) => (
+      { id: item.id, qtd: item.qtd }
+    ));
+
+    const orderProducts = [...products, ...newOrder];
+    setProducts(orderProducts);
+    const order = { ...finalOrder, products: orderProducts };
+    setFinalOrder(order);
+
+    const postRequestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: currentUserToken,
+      },
+      body: JSON.stringify(order),
+    };
+
+    fetch(apiOrders, postRequestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log('Pedido enviado para a cozinha com sucesso!');
+      })
+      .then(() => {
+        setProducts([]);
+        localStorage.removeItem('currentTable');
+        localStorage.removeItem('currentClient');
+      })
+      .then(GoToPage(history, '/salao'))
+      .catch((error) => console.log(error));
   };
 
   return (
     <Fragment>
-      <div className='breakfast-grid-container'>
+      <form className='breakfast-grid-container' ref={form}>
         <Header
           headerClass='header-base header-main-menu bg-color-yellow'
           headerLogoLink='/salao'
@@ -62,28 +152,28 @@ export default function MainMenu() {
           <div className='breakfast-menu-options'>
             <MenuItem
               inputClass='hidden breakfast-item-name'
-              inputId='Coffee'
+              inputId='Café americano'
               inputName='hot-drinks'
-              inputValue='Café Americano'
-              inputOnChange={onClickItem}
+              inputValue='Café americano'
+              inputOnChange={selectOneClickItem}
               labelClass='label-item-box'
               menuItemSrc={americanCoffee}
-              menuItemDescription='Café Americano'
+              menuItemDescription='Café americano'
               menuItemClassName='breakfast-item-name'
-              menuItemText='Café Americano'
+              menuItemText='Café americano'
             />
 
             <MenuItem
               inputClass='hidden breakfast-item-name'
-              inputId='Latte'
+              inputId='Café com leite'
               inputName='hot-drinks'
-              inputValue='Café com Leite'
-              inputOnChange={onClickItem}
+              inputValue='Café com leite'
+              inputOnChange={selectOneClickItem}
               labelClass='label-item-box'
               menuItemSrc={hotLatte}
-              menuItemDescription='Café com Leite'
+              menuItemDescription='Café com leite'
               menuItemClassName='breakfast-item-name'
-              menuItemText='Café com Leite'
+              menuItemText='Café com leite'
             />
           </div>
         </section>
@@ -93,15 +183,15 @@ export default function MainMenu() {
           <div className='item-options-wrap'>
             <MenuItem
               inputClass='hidden breakfast-item-name'
-              inputId='Misto Quente'
+              inputId='Misto quente'
               inputName='sandwiches'
-              inputValue='Misto Quente'
-              inputOnChange={onClickItem}
+              inputValue='Misto quente'
+              inputOnChange={selectOneClickItem}
               labelClass='label-item-box'
               menuItemSrc={grilledSandwich}
-              menuItemDescription='Misto Quente'
+              menuItemDescription='Misto quente'
               menuItemClassName='breakfast-item-name'
-              menuItemText=' Misto Quente '
+              menuItemText='Misto quente'
             />
           </div>
         </section>
@@ -111,15 +201,15 @@ export default function MainMenu() {
           <div className='item-options-wrap'>
             <MenuItem
               inputClass='hidden breakfast-item-name'
-              inputId='Suco Natural'
+              inputId='Suco de fruta natural'
               inputName='iced-drinks'
-              inputValue='Suco Natural'
-              inputOnChange={onClickItem}
+              inputValue='Suco natural'
+              inputOnChange={selectOneClickItem}
               labelClass='label-item-box'
               menuItemSrc={naturalJuice}
-              menuItemDescription='Suco Natural'
+              menuItemDescription='Suco natural'
               menuItemClassName='breakfast-item-name'
-              menuItemText='Suco Natural'
+              menuItemText='Suco de fruta'
             />
           </div>
         </section>
@@ -131,18 +221,43 @@ export default function MainMenu() {
           </div>
 
           <div className='order-list-items' id='order-list'>
-            <p className='empty-order-msg color-brown weight-500'>
-              Os itens lançados irão aparecer aqui
-            </p>
+            {
+              orderList.length === 0
+                ? <Fragment>
+                  <p className='empty-order-msg color-brown weight-500'>
+                    Os itens lançados irão aparecer aqui
+                  </p>
+                  <Link to='/salao'>
+                    <Button
+                      buttonType='text'
+                      buttonClass='button-base button-centered bg-color-yellow color-brown'
+                      buttonText='Voltar'
+                    />
+                  </Link>
+                </Fragment>
+                : orderList.map((item, index) => (
+                  <CompleteOrderedItem
+                    key={`item-${index}`}
+                    itemName={item.name}
+                    itemPrice={item.price}
+                    itemQuantity={item.qtd}
+                    minusButton={(event) => minusButton(event, index, item.price)}
+                    plusButton={(event) => plusButton(event, index, item.price)}
+                    itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
+                  />
+                ))
+            }
           </div>
 
           <TotalAndSend
-            totalPriceValue
-            sendOrderButton
-            cancelOrderButton
+            totalPriceValue={finalTotal.toLocaleString(
+              'pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 },
+            )}
+            sendOrderButton={(event) => sendOrder(event)}
+            cancelOrderButton={(event) => removeAllItems(event)}
           />
         </aside>
-      </div>
+      </form>
     </Fragment>
   );
 }
