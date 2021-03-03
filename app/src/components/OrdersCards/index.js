@@ -4,7 +4,7 @@ import React, { Fragment } from 'react';
 import { GetHallWorkerName, ConvertDate, ConvertTime } from '../../services';
 import Button from '../Button';
 
-export default function OrdersCards({
+export default function OrderCard({
   clientName,
   workerId,
   tableNumber,

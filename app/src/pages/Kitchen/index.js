@@ -3,7 +3,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-green.png';
-import OrdersCards from '../../components/OrdersCards';
+import OrderCard from '../../components/OrdersCards';
 import OrderProducts from '../../components/OrderProducts';
 
 export default function Kitchen() {
@@ -70,7 +70,7 @@ export default function Kitchen() {
           <div className='all-orders-container'>
             {
               allOrders.map((order, index) => (
-                <OrdersCards
+                <OrderCard
                   key={`order-${index}`}
                   orderNumber={order.id}
                   clientName={order.client_name}
@@ -88,12 +88,12 @@ export default function Kitchen() {
                     <OrderProducts
                       key={`order-${index}-product-${idx}`}
                       name={product.name}
+                      qtd={product.qtd}
                       flavor={product.flavor}
                       complement={product.complement}
-                      qtd={product.qtd}
                     />
                   ))}
-                </OrdersCards>
+                </OrderCard>
               ))
             }
           </div>

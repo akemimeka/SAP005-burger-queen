@@ -9,11 +9,9 @@ export default function OrderProducts({
 }) {
   return (
     <Fragment>
-      <div className='order-cards-itens'>
-        <p>{name}</p>
-        <p>{flavor}</p>
-        <p>{complement}</p>
-        <p>{qtd}</p>
+      <div className='order-card-item'>
+        <p>{name} {qtd}</p>
+        <p>{flavor ? `${flavor} + ${complement}` : ''}</p>
       </div>
     </Fragment>
   );
