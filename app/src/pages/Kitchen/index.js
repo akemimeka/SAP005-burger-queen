@@ -23,7 +23,7 @@ export default function Kitchen() {
       .catch((error) => console.log(error));
   }, [apiOrders, currentUserToken]);
 
-  const handleOrderStatusToDoing = (index, orderId) => {
+  const handleOrderStatusUpdate = (index, orderId, orderStatus) => {
     const putRequestOptions = {
       method: 'PUT',
       headers: {
@@ -33,15 +33,15 @@ export default function Kitchen() {
         'Access-Control-Allow-Credentials': true,
         'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST',
       },
-      body: JSON.stringify({ status: 'processing' }),
+      body: JSON.stringify({ orderStatus }),
     };
     fetch(`${apiOrders}${orderId}`, putRequestOptions)
       .then((response) => response.json())
       .then((data) => {
         const pendingOrdersList = [...allOrders];
-        pendingOrdersList[index].status = 'processing';
+        pendingOrdersList[index].status = orderStatus;
         setAllOrders(pendingOrdersList);
-        console.log(data.message);
+        console.log(data);
       })
       .catch((error) => console.log(error));
   };
@@ -70,15 +70,15 @@ export default function Kitchen() {
                   key={`order-${index}`}
                   cardHeaderClass='card-header'
                   cardBodyClass='card-body'
+                  orderNumber={order.id}
                   clientName={order.client_name}
                   tableNumber={order.table}
                   orderStatus={order.status}
                   orderCreatedAt={order.createdAt}
-                  orderNumber={order.id}
                   atendente={order.user_id}
                   updatedAt={order.updatedAt}
-                  updateOrderToDoing={() => handleOrderStatusToDoing(index, order.id)}
-                  updateOrderToDone={() => (index, order.id)}
+                  updateOrderToDoing={() => handleOrderStatusUpdate(index, order.id, 'processing')}
+                  updateOrderToDone={() => handleOrderStatusUpdate(index, order.id, 'done')}
                 />
               ))
             }
