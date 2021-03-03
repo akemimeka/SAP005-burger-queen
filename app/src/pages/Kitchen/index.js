@@ -4,6 +4,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-green.png';
 import OrdersCards from '../../components/OrdersCards';
+import OrdersCardsProducts from '../../components/OrdersCardsProducts';
 
 export default function Kitchen() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';
@@ -68,20 +69,31 @@ export default function Kitchen() {
               allOrders.map((order, index) => (
                 <OrdersCards
                   key={`order-${index}`}
-                  cardHeaderClass='card-header'
-                  cardBodyClass='card-body'
+                  cardHeaderClass='orders-card-header'
+                  cardBodyClass='orders-card-body'
                   orderNumber={order.id}
                   clientName={order.client_name}
+                  workerId={order.user_id}
                   tableNumber={order.table}
                   orderStatus={order.status}
+                  orderProcessed={order.processedAt}
                   orderCreatedAt={order.createdAt}
-                  atendente={order.user_id}
                   updatedAt={order.updatedAt}
+                  orderProducts={order.products}
                   updateOrderToDoing={() => handleOrderStatusUpdate(index, order.id, 'processing')}
                   updateOrderToDone={() => handleOrderStatusUpdate(index, order.id, 'done')}
                 />
               ))
             }
+            {allOrders.Products.map((product, id) => (
+              <OrdersCardsProducts
+                key={`product-${id}`}
+                name={product.name}
+                flavor={product.flavor}
+                complement={product.complement}
+                qtd={product.qtd}
+              />
+            ))}
           </div>
 
         </section>
