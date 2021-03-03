@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { Fragment } from 'react';
 
-export default function OrdersCardsProducts({
+export default function OrderProducts({
   name,
   flavor,
   complement,

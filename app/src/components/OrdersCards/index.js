@@ -1,12 +1,10 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
 import React, { Fragment } from 'react';
+import { GetHallWorkerName, ConvertDate, ConvertTime } from '../../services';
 import Button from '../Button';
-import OrdersCardsProducts from '../OrdersCardsProducts';
 
 export default function OrdersCards({
-  cardHeaderClass,
-  cardBodyClass,
   clientName,
   workerId,
   tableNumber,
@@ -17,42 +15,49 @@ export default function OrdersCards({
   updatedAt,
   updateOrderToDoing,
   updateOrderToDone,
-  orderProducts,
+  children,
 }) {
   return (
     <Fragment>
       <div className='orders-cards-wrap'>
-        <div className={cardHeaderClass}>
-          <p className={cardBodyClass}>Cliente: {clientName}</p>
-          <p className={cardBodyClass}>Mesa: {tableNumber}</p>
+        <div className=''>
+          <p className=''>Pedido #{orderNumber}</p>
+          <p className=''>Mesa 0{tableNumber} • Cliente {clientName}</p>
+          <p className=''>Atendente {GetHallWorkerName(workerId)}</p>
         </div>
-        <div className={cardBodyClass}>
-          <p className={cardBodyClass}>Status: {orderStatus}</p>
-          <p className={cardBodyClass}>ProcessedAt: {orderProcessed}</p>
-          <p className={cardBodyClass}>CreatedAt: {orderCreatedAt}</p>
-          <p className={cardBodyClass}>Número do Pedido: {orderNumber}</p>
-          <p className={cardBodyClass}>Atendente: {workerId}</p>
-          <p className={cardBodyClass}>updatedAt: {updatedAt}</p>
-          <div>
-            <p className={cardBodyClass}>Products: {orderProducts}</p>
-          </div>
+        <div className=''>
+          <p className=''>
+            <span>Status atual: </span>
+            {orderStatus === 'pending' && <span>pendente</span>}
+            {orderStatus === 'processing' && <span>em andamento</span>}
+          </p>
+          <p className=''>Data {ConvertDate(orderCreatedAt)}</p>
+          <p className=''>Horário: {ConvertTime(orderCreatedAt)}</p>
+          <p className=''>Processado {orderProcessed}</p>
+          <p className=''>Última atualização {updatedAt}</p>
           <div className='order-cards-footer'>
-            <Button
-              buttonType='text'
-              buttonClass=''
-              buttonText='Em Preparo'
-              buttonOnClick={updateOrderToDoing}
-            />
-
-            <Button
-              buttonType='text'
-              buttonClass=''
-              buttonOnClick={updateOrderToDone}
-              buttonText='Pronto'
-            />
+            {
+              orderStatus === 'pending'
+              && <Button
+                buttonType='text'
+                buttonClass='button-base button-medium bg-color-yellow color-brown'
+                buttonText='Em Preparo'
+                buttonOnClick={updateOrderToDoing}
+              />
+            }
+            {
+              orderStatus === 'processing'
+              && <Button
+                buttonType='text'
+                buttonClass='button-base button-medium bg-color-green color-lightest'
+                buttonOnClick={updateOrderToDone}
+                buttonText='Pronto'
+              />
+            }
           </div>
         </div>
+        {children}
       </div>
-    </Fragment >
+    </Fragment>
   );
 }

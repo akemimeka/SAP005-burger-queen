@@ -4,7 +4,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-green.png';
 import OrdersCards from '../../components/OrdersCards';
-import OrdersCardsProducts from '../../components/OrdersCardsProducts';
+import OrderProducts from '../../components/OrderProducts';
 
 export default function Kitchen() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';
@@ -20,7 +20,10 @@ export default function Kitchen() {
 
     fetch(apiOrders, getRequestOptions)
       .then((response) => response.json())
-      .then((data) => setAllOrders(data))
+      .then((data) => {
+        console.log(data);
+        setAllOrders(data);
+      })
       .catch((error) => console.log(error));
   }, [apiOrders, currentUserToken]);
 
@@ -63,14 +66,12 @@ export default function Kitchen() {
           buttonLogoutClass='button-logout-base bg-color-green color-lightest'
         />
         <section className='menu-grid-child todo-orders bg-color-yellow-20'>
-          <h3 className='menu-section-title'>Pedidos Pendentes</h3>
+          <h3 className='menu-section-title'>Pedidos</h3>
           <div className='all-orders-container'>
             {
               allOrders.map((order, index) => (
                 <OrdersCards
                   key={`order-${index}`}
-                  cardHeaderClass='orders-card-header'
-                  cardBodyClass='orders-card-body'
                   orderNumber={order.id}
                   clientName={order.client_name}
                   workerId={order.user_id}
@@ -82,18 +83,19 @@ export default function Kitchen() {
                   orderProducts={order.products}
                   updateOrderToDoing={() => handleOrderStatusUpdate(index, order.id, 'processing')}
                   updateOrderToDone={() => handleOrderStatusUpdate(index, order.id, 'done')}
-                />
+                >
+                  {order.Products.map((product, idx) => (
+                    <OrderProducts
+                      key={`order-${index}-product-${idx}`}
+                      name={product.name}
+                      flavor={product.flavor}
+                      complement={product.complement}
+                      qtd={product.qtd}
+                    />
+                  ))}
+                </OrdersCards>
               ))
             }
-            {allOrders.Products.map((product, id) => (
-              <OrdersCardsProducts
-                key={`product-${id}`}
-                name={product.name}
-                flavor={product.flavor}
-                complement={product.complement}
-                qtd={product.qtd}
-              />
-            ))}
           </div>
 
         </section>

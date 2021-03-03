@@ -75,7 +75,6 @@ a {
 .header-base {
   width: 100vw;
   height: 5.1rem;
-  /* position: fixed; */
   top: 0;
   display: flex;
   justify-content: space-between;
@@ -393,7 +392,7 @@ a {
 }
 
 
-/* MENU PAGE */
+/*----------- MENU PAGE -----------*/
 /* GRID MAIN MENU*/
 .menu-grid-container {
   height: 100vh;
@@ -465,59 +464,6 @@ a {
   border-radius: 0 1.5rem 1.5rem 0;
 }
 
-/* GRID KITCHEN ORDERS*/
-.kitchen-grid-container {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 5.1rem 1fr 1fr 1fr;
-  gap: 2%;
-  grid-template-areas:
-    'header'
-    'todo-orders'
-    'doing-orders'
-    'done-orders';
-  padding-bottom: 2%;
-}
-
-.header { 
-  grid-area: header; 
-}
-
-.todo-orders { 
-  grid-area: todo-orders;
-  border-radius: 0 1.5rem 1.5rem 0;
-}
-
-.doing-orders { 
-  grid-area: doing-orders;
-  border-radius: 0 1.5rem 1.5rem 0;
-}
-
-.done-orders { 
-  grid-area: done-orders;
-  border-radius: 0 1.5rem 1.5rem 0;
-}
-
-
-.orders-cards-wrap{
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	margin-top: 15px;
-	padding: 1.5%;
-  flex-direction: column;
-  border: 0.3rem solid var(--dark-brown);
-  
-}
-
-.all-orders-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-
-/* -------------------------------END OF KITCHEN---------------------------------- */
 
 /* MENU ITEM BOX */
 .menu-section-container {
@@ -767,7 +713,56 @@ a {
 }
 
 
-/* KITCHEN PAGE */
+/* ----------- KITCHEN ----------- */
+/* GRID KITCHEN ORDERS*/
+.kitchen-grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5.1rem 1fr 1fr 1fr;
+  gap: 2%;
+  grid-template-areas:
+    'header'
+    'todo-orders'
+    'doing-orders'
+    'done-orders';
+  padding-bottom: 2%;
+}
+
+.header { 
+  grid-area: header; 
+}
+
+.todo-orders { 
+  grid-area: todo-orders;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.doing-orders { 
+  grid-area: doing-orders;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.done-orders { 
+  grid-area: done-orders;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.orders-cards-wrap {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 15px;
+	padding: 1.5%;
+  flex-direction: column;
+  border: 0.3rem solid var(--dark-brown);
+  
+}
+
+.all-orders-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 
 /* FOOTER */
