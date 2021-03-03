@@ -7,22 +7,44 @@ import OrdersCards from '../../components/OrdersCards';
 
 export default function Kitchen() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';
+  const apiOrders = `${apiURL}/orders/`;
   const currentUserToken = localStorage.getItem('currentUserToken');
-  // const menuHeaderSubtitle = `Mesa ${getTableNumber} · ${getClientName}`;
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
-    const apiOrders = `${apiURL}/orders`;
-    const requestOptions = {
+    const getRequestOptions = {
       method: 'GET',
       headers: { Authorization: currentUserToken },
     };
 
-    fetch(apiOrders, requestOptions)
+    fetch(apiOrders, getRequestOptions)
       .then((response) => response.json())
       .then((data) => setAllOrders(data))
       .catch((error) => console.log(error));
-  }, [currentUserToken]);
+  }, [apiOrders, currentUserToken]);
+
+  const handleOrderStatusToDoing = (index, orderId) => {
+    const putRequestOptions = {
+      method: 'PUT',
+      headers: {
+        Authorization: currentUserToken,
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST',
+      },
+      body: JSON.stringify({ status: 'processing' }),
+    };
+    fetch(`${apiOrders}${orderId}`, putRequestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        const pendingOrdersList = [...allOrders];
+        pendingOrdersList[index].status = 'processing';
+        setAllOrders(pendingOrdersList);
+        console.log(data.message);
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <Fragment>
@@ -55,6 +77,8 @@ export default function Kitchen() {
                   orderNumber={order.id}
                   atendente={order.user_id}
                   updatedAt={order.updatedAt}
+                  updateOrderToDoing={() => handleOrderStatusToDoing(index, order.id)}
+                  updateOrderToDone={() => (index, order.id)}
                 />
               ))
             }
