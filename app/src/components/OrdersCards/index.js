@@ -1,20 +1,23 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import Button from '../Button';
+import OrdersCardsProducts from '../OrdersCardsProducts';
 
 export default function OrdersCards({
   cardHeaderClass,
   cardBodyClass,
   clientName,
+  workerId,
   tableNumber,
   orderStatus,
+  orderProcessed,
   orderCreatedAt,
   orderNumber,
-  atendente,
   updatedAt,
   updateOrderToDoing,
   updateOrderToDone,
+  orderProducts,
 }) {
   return (
     <Fragment>
@@ -25,28 +28,31 @@ export default function OrdersCards({
         </div>
         <div className={cardBodyClass}>
           <p className={cardBodyClass}>Status: {orderStatus}</p>
+          <p className={cardBodyClass}>ProcessedAt: {orderProcessed}</p>
           <p className={cardBodyClass}>CreatedAt: {orderCreatedAt}</p>
           <p className={cardBodyClass}>Número do Pedido: {orderNumber}</p>
-          <p className={cardBodyClass}>Atendente: {atendente}</p>
+          <p className={cardBodyClass}>Atendente: {workerId}</p>
           <p className={cardBodyClass}>updatedAt: {updatedAt}</p>
+          <div>
+            <p className={cardBodyClass}>Products: {orderProducts}</p>
+          </div>
+          <div className='order-cards-footer'>
+            <Button
+              buttonType='text'
+              buttonClass=''
+              buttonText='Em Preparo'
+              buttonOnClick={updateOrderToDoing}
+            />
 
-          <Button
-            buttonType='text'
-            buttonClass=''
-            buttonText='Em Preparo'
-            buttonOnClick={updateOrderToDoing}
-          />
-
-          <Button
-            buttonType='text'
-            buttonClass=''
-            buttonOnClick={updateOrderToDone}
-            buttonText='Pronto'
-          />
+            <Button
+              buttonType='text'
+              buttonClass=''
+              buttonOnClick={updateOrderToDone}
+              buttonText='Pronto'
+            />
+          </div>
         </div>
       </div>
     </Fragment >
   );
 }
-
-// {() => preparoBtn(index, order.status}}
