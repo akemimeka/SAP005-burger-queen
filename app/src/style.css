@@ -16,6 +16,7 @@
   --lightest: #F8EDDD;
   --red: #d30404;
   --black: rgba(0, 0, 0, 0.801);
+  --pending: #9c2121;
 }
 
 
@@ -56,6 +57,7 @@ a {
 .bg-color-yellow-20 { background-color: var(--yellow-opacity-20) }
 .bg-color-dark-brown { background-color: var(--dark-brown) }
 .bg-color-light-brown { background-color: var(--light-brown) }
+.bg-color-pending { background-color: var(--pending) }
 
 .hidden { display: none }
 
@@ -199,6 +201,10 @@ a {
 .tag-link:hover,
 .button-base:hover {
   top: -0.3rem;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 
@@ -583,7 +589,7 @@ a {
   opacity: 0.5;
 }
 
-/* ORDERS */
+/* ORDERS SECTION */
 .main-menu-orders {
   grid-area: orders;
   border-radius: 1.5rem 0 0 1.5rem;
@@ -748,20 +754,63 @@ a {
   border-radius: 0 1.5rem 1.5rem 0;
 }
 
-.orders-cards-wrap {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	margin-top: 15px;
-	padding: 1.5%;
-  flex-direction: column;
-  border: 0.3rem solid var(--dark-brown);
-  
-}
-
 .all-orders-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* ORDER CARD */
+.order-card-wrap {
+	display: flex;
+  flex-direction: column;
+	justify-content: center;
+  width: 35%;
+  height: 25%;
+	margin: 1rem;
+  border-radius: 1.2rem;
+  -webkit-box-shadow: 0px 0px 8px -1px #00000066;
+  -moz-box-shadow: 0px 0px 8px -1px #00000066;
+  box-shadow: 0px 0px 8px -1px #00000066;
+}
+
+.order-status {
+  padding: 0.7rem 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.order-card-info {
+  padding: 1rem;
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  line-height: 1.3rem;
+}
+
+.order-card-products {
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.order-card-buttons {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.order-items-wrap {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.order-items-quantity {
+  margin-right: 0.5rem;
+  font-family: 'B612', monospace;
+  font-size: 0.9rem;
 }
 
 

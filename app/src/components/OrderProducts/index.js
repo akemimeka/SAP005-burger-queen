@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/prop-types */
 import React, { Fragment } from 'react';
 
@@ -9,9 +10,20 @@ export default function OrderProducts({
 }) {
   return (
     <Fragment>
-      <div className='order-card-item'>
-        <p>{name} {qtd}</p>
-        <p>{flavor ? `${flavor} + ${complement}` : ''}</p>
+      <div className='order-items-wrap'>
+        <p className='order-items-quantity'>
+          {qtd < 10 ? `0${qtd}` : qtd}
+        </p>
+        <div className='order-items-name'>
+          {(name.includes('mL')
+            && name.replace('mL', 'ml'))
+            || <p>{name}</p>}
+          {flavor && complement
+            && <p><span className='capitalize'>{flavor}</span> + {complement}</p>}
+          {flavor && !complement
+            && <p><span className='capitalize'>{flavor}</span> - s/ extra</p>}
+          {!flavor && ''}
+        </div>
       </div>
     </Fragment>
   );
