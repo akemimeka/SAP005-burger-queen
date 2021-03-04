@@ -4,7 +4,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-green.png';
 import OrdersCards from '../../components/OrdersCards';
-import OrdersCardsProducts from '../../components/OrdersCardsProducts';
+// import OrdersCardsProducts from '../../components/OrdersCardsProducts';
 
 export default function Kitchen() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';
@@ -20,9 +20,17 @@ export default function Kitchen() {
 
     fetch(apiOrders, getRequestOptions)
       .then((response) => response.json())
-      .then((data) => setAllOrders(data))
+      .then((data) => {
+        console.log(data);
+        setAllOrders(data);
+      })
       .catch((error) => console.log(error));
   }, [apiOrders, currentUserToken]);
+
+  // const orderCreated = new Date(order.createdAt); //
+  // const orderProcessing = new Date(order.updatedAt);
+  // const dataResidual = Math.abs(orderProcessing) - orderCreated;
+  // const orderFinished = Math.floor(dataResidual / 1000 / 60);
 
   const handleOrderStatusUpdate = (index, orderId, orderStatus) => {
     const putRequestOptions = {
@@ -41,6 +49,10 @@ export default function Kitchen() {
       .then((data) => {
         const pendingOrdersList = [...allOrders];
         pendingOrdersList[index].status = orderStatus;
+
+        // const timeToGetOrderDone = [...allOrders];
+        // timeToGetOrderDone[index].updatedAt = updatedAt;
+
         setAllOrders(pendingOrdersList);
         console.log(data);
       })
@@ -85,32 +97,52 @@ export default function Kitchen() {
                 />
               ))
             }
-            {allOrders.Products.map((product, id) => (
-              <OrdersCardsProducts
-                key={`product-${id}`}
-                name={product.name}
-                flavor={product.flavor}
-                complement={product.complement}
-                qtd={product.qtd}
-              />
-            ))}
           </div>
-
         </section>
-        {/*
-        <section className='menu-grid-child doing-orders bg-color-yellow-20'>
-          <h3 className='menu-section-title'>Em Preparo</h3>
-          <OrdersCards
-          />
-        </section>
-
-        <section className='menu-grid-child done-orders bg-color-yellow-20'>
-          <h3 className='menu-section-title'>Pedidos Concluídos</h3>
-          <OrdersCards
-          />
-        </section> */}
-
       </div>
     </Fragment>
   );
 }
+
+// const orderCreated = new Date(order.createdAt) //
+// const orderProcessing = new Date(order.updatedAt)
+// const dataResidual = Math.abs(orderProcessing) - orderCreated
+// const orderFinished = Math.floor(dataResidual / 1000 / 60)
+
+// {
+//   allOrders.map((order,index) => (
+//     key=`order-${index}`
+//     const orderCreated = new Date(order.createdAt) //
+//     const orderProcessing = new Date(order.updatedAt)
+//     const dataResidual = Math.abs(orderProcessing) - orderCreated
+//     const orderFinished = Math.floor(dataResidual / 1000 / 60)
+
+//   ))
+// }
+// <script>
+// function myFunction() {
+// var minutes = 1000 * 60;
+// var hours = minutes * 60;
+// var days = hours * 24;
+// var years = days * 365;
+// var d = new Date();
+// var t= d.getTime();
+
+// var y = Math.round(t / years);
+
+// function printElapsedTime(fTest) {
+//   let nStartTime = Date.now(),
+//     vReturn = fTest(),
+//     nEndTime = Date.now()
+
+//   console.log(`Elapsed time: ${String(nEndTime - nStartTime)} milliseconds`)
+//   return vReturn
+// }
+
+// let yourFunctionReturn = printElapsedTime(yourFunction)
+
+//                                                Fluxo TimeToCook
+// 1. Criar um map nos pedidos para pegar o tempo total para pegar o createdAt e o updatedAt;
+// 2. Criar consts para fazer a alteração com o 'new Date' p/setar o tempo em createdAt e updateAt;
+// 3. Criar o Math.abs p/ter o resultado absoluto das variáveis
+// 4. Criar o Math.floor p/ter o resultado final ((dataResidual / 1000 / 60))

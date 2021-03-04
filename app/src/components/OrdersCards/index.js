@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React, { Fragment } from 'react';
 import Button from '../Button';
-import OrdersCardsProducts from '../OrdersCardsProducts';
+// import OrdersCardsProducts from '../OrdersCardsProducts';
 
 export default function OrdersCards({
   cardHeaderClass,
