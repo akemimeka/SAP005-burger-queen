@@ -3,8 +3,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-green.png';
-import OrdersCards from '../../components/OrdersCards';
-// import OrdersCardsProducts from '../../components/OrdersCardsProducts';
+import OrderCard from '../../components/OrderCard';
+import OrderProducts from '../../components/OrderProducts';
 
 export default function Kitchen() {
   const apiURL = 'https://lab-api-bq.herokuapp.com';
@@ -74,15 +74,13 @@ export default function Kitchen() {
           workerNameClass='header-name-base color-lightest'
           buttonLogoutClass='button-logout-base bg-color-green color-lightest'
         />
-        <section className='menu-grid-child todo-orders bg-color-yellow-20'>
-          <h3 className='menu-section-title'>Pedidos Pendentes</h3>
+        <section className='menu-grid-child todo-orders'>
+          <h3 className='menu-section-title'>Pedidos</h3>
           <div className='all-orders-container'>
             {
               allOrders.map((order, index) => (
-                <OrdersCards
+                <OrderCard
                   key={`order-${index}`}
-                  cardHeaderClass='orders-card-header'
-                  cardBodyClass='orders-card-body'
                   orderNumber={order.id}
                   clientName={order.client_name}
                   workerId={order.user_id}
@@ -94,7 +92,17 @@ export default function Kitchen() {
                   orderProducts={order.products}
                   updateOrderToDoing={() => handleOrderStatusUpdate(index, order.id, 'processing')}
                   updateOrderToDone={() => handleOrderStatusUpdate(index, order.id, 'done')}
-                />
+                >
+                  {order.Products.map((product, productIndex) => (
+                    <OrderProducts
+                      key={`${order.id}-item-${productIndex}`}
+                      name={product.name}
+                      qtd={product.qtd}
+                      flavor={product.flavor}
+                      complement={product.complement}
+                    />
+                  ))}
+                </OrderCard>
               ))
             }
           </div>
