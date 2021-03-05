@@ -1,103 +1,111 @@
 /* eslint-disable no-console */
 /* eslint-disable object-curly-newline */
 import React, { Fragment, useState, useEffect } from 'react';
-import { currentUserToken, apiOrders } from '../../services';
+import { GetAllOrders, UpdateOrderStatus } from '../../services';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-green.png';
 import OrderCard from '../../components/OrderCard';
 import OrderProducts from '../../components/OrderProducts';
+// import InputRadio from '../../components/InputRadio';
 
 export default function Kitchen() {
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
-    const getRequestOptions = {
-      method: 'GET',
-      headers: { Authorization: currentUserToken },
-    };
-
-    fetch(apiOrders, getRequestOptions)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        const sortById = data.sort((itemA, itemB) => itemB.id - itemA.id);
-        setAllOrders(sortById);
-      })
-      .catch((error) => console.log(error));
+    GetAllOrders(setAllOrders);
   }, []);
-
-  const updateOrderStatus = (index, id, status) => {
-    const putRequestOptions = {
-      method: 'PUT',
-      headers: {
-        Authorization: currentUserToken,
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST',
-      },
-      body: JSON.stringify({ status }),
-    };
-
-    fetch(`${apiOrders}${id}`, putRequestOptions)
-      .then((response) => response.json())
-      .then((data) => {
-        const pendingOrdersList = [...allOrders];
-        pendingOrdersList[index].status = status;
-        setAllOrders(pendingOrdersList);
-        console.log(data);
-      })
-      .catch((error) => console.log('Update order status error: ', error));
-  };
 
   return (
     <Fragment>
-      <div className='kitchen-grid-container'>
-        <Header
-          headerClass='header-base bg-color-light-brown'
-          headerLogoLink='/cozinha'
-          logoSrc={logo}
-          workAreaClass='header-title-base color-lightest'
-          workAreaText='Cozinha'
-          divLogoutClass='align-right weight-500'
-          workerRoleClass='header-role-base color-lightest'
-          workerRoleText='Chef'
-          workerNameClass='header-name-base color-lightest'
-          buttonLogoutClass='button-logout-base bg-color-green color-lightest'
-        />
-        <section className='menu-grid-child todo-orders'>
-          <h3 className='menu-section-title'>Pedidos</h3>
-          <div className='all-orders-container'>
-            {allOrders.map((order, index) => (
-              <OrderCard
-                key={`order-${index}`}
-                orderNumber={order.id}
-                clientName={order.client_name}
-                workerId={order.user_id}
-                tableNumber={order.table}
-                orderStatus={order.status}
-                orderProcessed={order.processedAt}
-                orderCreatedAt={order.createdAt}
-                updatedAt={order.updatedAt}
-                orderProducts={order.products}
-                updateOrderToProcessing={() => updateOrderStatus(index, order.id, 'processing')}
-                updateOrderToReady={() => updateOrderStatus(index, order.id, 'ready')}
-              >
-                {order.Products.map((product, productIndex) => (
-                  <OrderProducts
-                    key={`${order.id}-item-${productIndex}`}
-                    name={product.name}
-                    qtd={product.qtd}
-                    flavor={product.flavor}
-                    complement={product.complement}
-                  />
-                ))}
-              </OrderCard>
-            ))}
-          </div>
+      <Header
+        headerClass='header-base bg-color-light-brown'
+        headerLogoLink='/cozinha'
+        logoSrc={logo}
+        workAreaClass='header-title-base color-lightest'
+        workAreaText='Cozinha • Pedidos'
+        divLogoutClass='align-right weight-500'
+        workerRoleClass='header-role-base color-lightest'
+        workerRoleText='Chef'
+        workerNameClass='header-name-base color-lightest'
+        buttonLogoutClass='button-logout-base bg-color-green color-lightest'
+      />
+      <main className='main-container-kitchen'>
+        {/* <div className='orders-options-container'>
+          <InputRadio
+            inputClass='input-hall-options hidden'
+            inputId='hall-tables'
+            inputName='hall-options'
+            inputValue='hall-tables'
+            // inputOnChange={(event) => showTables(event.target.checked)}
+            labelHtmlFor='hall-tables'
+            labelClass='button-base bg-color-pending color-lightest'
+            labelText='Pendentes'
+          />
 
+          <InputRadio
+            inputClass='input-hall-options hidden'
+            inputId='hall-orders'
+            inputName='hall-options'
+            inputValue='hall-orders'
+            // inputOnChange={(event) => showHallOrders(event.target.checked)}
+            labelHtmlFor='hall-orders'
+            labelClass='button-base bg-color-yellow color-brown'
+            labelText='Em andamento'
+          />
+
+          <InputRadio
+            inputClass='input-hall-options hidden'
+            inputId='hall-orders'
+            inputName='hall-options'
+            inputValue='hall-orders'
+            // inputOnChange={(event) => showHallOrders(event.target.checked)}
+            labelHtmlFor='hall-orders'
+            labelClass='button-base bg-color-green color-lightest'
+            labelText='Prontos'
+          />
+
+          <InputRadio
+            inputClass='input-hall-options hidden'
+            inputId='hall-orders'
+            inputName='hall-options'
+            inputValue='hall-orders'
+            // inputOnChange={(event) => showHallOrders(event.target.checked)}
+            labelHtmlFor='hall-orders'
+            labelClass='button-base bg-color-done color-brown'
+            labelText='Servidos'
+          />
+        </div> */}
+
+        <section className='all-orders-container'>
+          {allOrders.map((order, index) => (
+            (order.status === 'pending' || order.status === 'processing')
+            && <OrderCard
+              key={`order-${index}`}
+              orderNumber={order.id}
+              clientName={order.client_name}
+              workerId={order.user_id}
+              tableNumber={order.table}
+              orderStatus={order.status}
+              orderProcessed={order.processedAt}
+              orderCreatedAt={order.createdAt}
+              updatedAt={order.updatedAt}
+              orderProducts={order.products}
+              updateOrderToProcessing={() => UpdateOrderStatus(index, order.id, 'processing', allOrders, setAllOrders)}
+              updateOrderToReady={() => UpdateOrderStatus(index, order.id, 'ready', allOrders, setAllOrders)}
+            >
+              {order.Products.map((product, productIndex) => (
+                <OrderProducts
+                  key={`${order.id}-item-${productIndex}`}
+                  name={product.name}
+                  qtd={product.qtd}
+                  flavor={product.flavor}
+                  complement={product.complement}
+                />
+              ))}
+            </OrderCard>
+          ))}
         </section>
-      </div>
+      </main>
     </Fragment>
   );
 }
