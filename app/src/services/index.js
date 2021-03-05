@@ -18,9 +18,9 @@ export function navigateAfterLogin(history, role) {
   }
 }
 
-export const getCurrentUserToken = localStorage.getItem('currentUserToken');
-export const getTableNumber = localStorage.getItem('currentTable');
-export const getClientName = localStorage.getItem('currentClient');
+export const currentUserToken = localStorage.getItem('currentUserToken');
+export const tableNumber = localStorage.getItem('currentTable');
+export const clientName = localStorage.getItem('currentClient');
 
 export const cleanTableAndClient = () => {
   localStorage.removeItem('currentTable');
@@ -40,7 +40,7 @@ export const GetHallWorkerName = (workerId) => {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: getCurrentUserToken,
+      Authorization: currentUserToken,
     },
   };
 
@@ -55,13 +55,13 @@ export const GetHallWorkerName = (workerId) => {
 export const ConvertDate = (apiDate) => {
   const date = new Date(apiDate);
   let day = date.getDay();
-  let month = date.getMonth();
+  let month = date.getMonth() + 1;
   const year = date.getFullYear();
 
   if (day < 10) { day = `0${day}`; }
   if (month < 10) { month = `0${month}`; }
 
-  const correctDate = `${day}/${month}/${year}`;
+  const correctDate = `${day}.${month}.${year}`;
 
   return correctDate;
 };
