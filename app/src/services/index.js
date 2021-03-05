@@ -33,25 +33,68 @@ export const cleanTableAndClient = () => {
   localStorage.removeItem('currentClient');
 };
 
+export const getRequestOptions = (token) => {
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+  };
+
+  return options;
+};
+
+export const putRequestOptions = (token, status) => {
+  const options = {
+    method: 'PUT',
+    headers: {
+      Authorization: token,
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true,
+      'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST',
+    },
+    body: JSON.stringify({ status }),
+  };
+
+  return options;
+};
+
 export const GetHallWorkerName = (workerId) => {
   const apiGetUser = `${apiUsers}/${workerId}`;
   const [workerName, setWorkerName] = useState('');
 
-  const getRequestOptions = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: currentUserToken,
-    },
-  };
-
-  fetch(apiGetUser, getRequestOptions)
+  fetch(apiGetUser, getRequestOptions(currentUserToken))
     .then((response) => response.json())
     .then((worker) => setWorkerName(worker.name))
     .catch((error) => console.log(error));
 
   return workerName;
 };
+
+export const GetAllOrders = (setAllOrders) => (
+  fetch(apiOrders, getRequestOptions(currentUserToken))
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      const sortById = data.sort((itemA, itemB) => itemB.id - itemA.id);
+      setAllOrders(sortById);
+    })
+    .catch((error) => console.log(error))
+);
+
+export const UpdateOrderStatus = (index, id, status, allOrders, setAllOrders) => (
+  fetch(`${apiOrders}${id}`, putRequestOptions(currentUserToken, status))
+    .then((response) => response.json())
+    .then((data) => {
+      const pendingOrdersList = [...allOrders];
+      pendingOrdersList[index].status = status;
+      setAllOrders(pendingOrdersList);
+      console.log(data);
+    })
+    .catch((error) => console.log('Update order status error: ', error))
+);
 
 export const ConvertDate = (apiDate) => {
   const date = new Date(apiDate);

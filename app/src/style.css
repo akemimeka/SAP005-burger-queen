@@ -17,6 +17,7 @@
   --red: #d30404;
   --black: rgba(0, 0, 0, 0.801);
   --pending: #9c2121;
+  --done: #65B8E2;
 }
 
 
@@ -58,6 +59,7 @@ a {
 .bg-color-dark-brown { background-color: var(--dark-brown) }
 .bg-color-light-brown { background-color: var(--light-brown) }
 .bg-color-pending { background-color: var(--pending) }
+.bg-color-done { background-color: var(--done) }
 
 .hidden { display: none }
 
@@ -285,11 +287,11 @@ a {
 
 
 /* HALL PAGE */
-.hall-options-container {
+.orders-options-container {
   width: 100vw;
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .input-hall-options + .label-hall-options {
@@ -300,6 +302,14 @@ a {
 .input-hall-options:checked + .label-hall-options {
   background-color: var(--dark-green);
   color: var(--lightest);
+}
+
+.tables-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 75vh;
 }
 
 .info-message {
@@ -417,6 +427,17 @@ a {
 .button-to-menu {
   width: 15rem;
   margin: 0.5rem 0;
+}
+
+.hall-orders-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 75vh;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  overflow-y: scroll;
 }
 
 
@@ -741,45 +762,18 @@ a {
 }
 
 
-/* ----------- KITCHEN ----------- */
-/* GRID KITCHEN ORDERS*/
-.kitchen-grid-container {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 5.1rem 1fr 1fr 1fr;
-  gap: 2%;
-  grid-template-areas:
-    'header'
-    'todo-orders'
-    'doing-orders'
-    'done-orders';
-  padding-bottom: 2%;
-}
-
-.header { 
-  grid-area: header; 
-}
-
-.todo-orders { 
-  grid-area: todo-orders;
-  border-radius: 0 1.5rem 1.5rem 0;
-}
-
-.doing-orders { 
-  grid-area: doing-orders;
-  border-radius: 0 1.5rem 1.5rem 0;
-}
-
-.done-orders { 
-  grid-area: done-orders;
-  border-radius: 0 1.5rem 1.5rem 0;
+/* -------- KITCHEN -------- */
+.main-container-kitchen {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 .all-orders-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-top: 1.5rem;
+  width: 100%;
 }
 
 /* ORDER CARD */

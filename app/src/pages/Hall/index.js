@@ -1,18 +1,25 @@
 /* eslint-disable no-console */
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { GoToPage, setLocalStorage } from '../../services';
+import { GoToPage, setLocalStorage, GetAllOrders, UpdateOrderStatus } from '../../services';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-brown.png';
 import InputRadio from '../../components/InputRadio';
 import HallTables from '../HallTables';
+import OrderCard from '../../components/OrderCard';
+import OrderProducts from '../../components/OrderProducts';
 
 export default function Hall() {
   const history = useHistory();
   const [clientName, setClientName] = useState('');
   const [tableNumber, setTableNumber] = useState('');
-  const [hallTablesClass, setHallTablesClass] = useState('main-container-base');
+  const [hallTablesClass, setHallTablesClass] = useState('hall-orders-container');
   const [hallOrdersClass, setHallOrdersClass] = useState('hidden');
+  const [allOrders, setAllOrders] = useState([]);
+
+  useEffect(() => {
+    GetAllOrders(setAllOrders);
+  }, []);
 
   function saveDataAndGoToMenu(event, path) {
     event.preventDefault();
@@ -22,13 +29,13 @@ export default function Hall() {
   }
 
   const showTables = () => {
-    setHallTablesClass('main-container-base');
+    setHallTablesClass('hall-orders-container');
     setHallOrdersClass('hidden');
   };
 
   const showHallOrders = () => {
     setHallTablesClass('hidden');
-    setHallOrdersClass('main-container-base');
+    setHallOrdersClass('hall-orders-container');
   };
 
   return (
@@ -47,7 +54,7 @@ export default function Hall() {
       />
 
       <main className='main-container-base'>
-        <div className='hall-options-container'>
+        <div className='orders-options-container'>
           <InputRadio
             inputClass='input-hall-options hidden'
             inputId='hall-tables'
@@ -81,10 +88,38 @@ export default function Hall() {
           />
         </div>
 
-        <div className={hallOrdersClass}>
-
-        </div>
+        {/* <div className={hallOrdersClass}> */}
+          <section className={hallOrdersClass}>
+            {allOrders.map((order, index) => (
+              (order.status === 'ready' || order.status === 'done')
+              && <OrderCard
+                key={`order-${index}`}
+                orderNumber={order.id}
+                clientName={order.client_name}
+                workerId={order.user_id}
+                tableNumber={order.table}
+                orderStatus={order.status}
+                orderProcessed={order.processedAt}
+                orderCreatedAt={order.createdAt}
+                updatedAt={order.updatedAt}
+                orderProducts={order.products}
+                updateOrderToDone={() => UpdateOrderStatus(index, order.id, 'done', allOrders, setAllOrders)}
+              >
+                {order.Products.map((product, productIndex) => (
+                  <OrderProducts
+                    key={`${order.id}-item-${productIndex}`}
+                    name={product.name}
+                    qtd={product.qtd}
+                    flavor={product.flavor}
+                    complement={product.complement}
+                  />
+                ))}
+              </OrderCard>
+            ))}
+          </section>
+        {/* </div> */}
       </main>
+
     </Fragment>
   );
 }
