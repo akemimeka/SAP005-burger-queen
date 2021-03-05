@@ -12,9 +12,8 @@ Acesse nossa aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/)
 * [3. Histórias de usuários](#3-histórias-de-usuários)
     * [3.1 Funcionalidades](#31-funcionalidades)
 * [4. Processo de criação](#4-processo-de-criação)
-* [6. Testes](#6-testes)
-* [7. Desenvolvimento](#7-desenvolvimento)
-* [8. Desenvolvedoras](#8-desenvolvedoras)
+* [5. Desenvolvimento](#5-desenvolvimento)
+* [6. Desenvolvedoras](#6-desenvolvedoras)
 
 
 ***
@@ -108,6 +107,71 @@ Pensando no nome **Ipê**, optamos por uma paleta de cores que usa os tons da fl
 
 ![Paleta de Cores](src/images/readme/color-palette.png)
 
+ 
+ ##### Logo
+
+A partir da definição da paleta de cores, criamos um logotipo adequado a interface visual da hamburgueria.
+
+   <p align="center">
+    <img src="src/images/logo-horizontal-brown.png" frameBorder="0"></img>
+  </p>
+
 
 #### Wireframe inicial
+Para desenvolver a interface visual da aplicação, utilizamos o Figma.
 
+  <p align="center">
+    <img src="src/images/readme/ipad-baixafidelidade-1.png" width='284' height='399'frameBorder="0"></img>
+  </p> 
+  
+  <p align="center">
+    <img src="src/images/readme/ipad-baixafidelidade-2.png" width='284' height='399' frameBorder="0"></img>
+  </p>
+
+
+
+ #### Interface Alta Fidelidade
+
+  <p align="center">
+    <img src="src/images/readme/ipad-altafidelidade-1.png" width='284' height='399' frameBorder="0"></img>
+  </p>
+
+   <p align="center">
+    <img src="src/images/readme/ipad-altafidelidade-2.png" width='284' height='399' frameBorder="0"></img>
+  </p>
+
+#### Página do menu principal
+Atendente executando pedido
+ <p align="center">
+    <img src="src/images/readme/menu-principal-lanches.png" width='600' height='600' frameBorder="0"></img>
+  </p>
+  
+ <p align="center">
+    <img src="src/images/readme/menu-principal-selecao.png" width='600' height='600' frameBorder="0"></img>
+  </p>
+ 
+  🔎 Usabilidade
+
+ Realizamos entrevistas e testes com os usuários até chegar na melhor usabilidade da aplicação.
+ Em alguns testes, identificamos que:
+
+ ⚠️ Os atendentes precisavam que as cores dos itens mudassem ao realizar pedidos
+ 
+ ✔️ Solução: Criamos input radios que alteram a cor após o clique
+
+  ## 5. Desenvolvimento
+
+ 🔧 Para esse projeto, utilizamos as ferramentas
+
+* HTML5
+* CSS3
+* JSX
+* ReactJS
+* Figma
+* Trello
+
+ ## 6. Desenvolvedoras
+
+ [Caroline Akemi Mitsueda](https://github.com/akemimeka)
+
+ [Cristina Mantovani](https://github.com/crismantovani)
