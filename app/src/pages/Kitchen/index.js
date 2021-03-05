@@ -1,15 +1,13 @@
 /* eslint-disable no-console */
 /* eslint-disable object-curly-newline */
 import React, { Fragment, useState, useEffect } from 'react';
+import { currentUserToken, apiOrders } from '../../services';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-green.png';
 import OrderCard from '../../components/OrderCard';
 import OrderProducts from '../../components/OrderProducts';
 
 export default function Kitchen() {
-  const apiURL = 'https://lab-api-bq.herokuapp.com';
-  const apiOrders = `${apiURL}/orders/`;
-  const currentUserToken = localStorage.getItem('currentUserToken');
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
@@ -22,12 +20,13 @@ export default function Kitchen() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setAllOrders(data);
+        const sortById = data.sort((a, b) => b.id - a.id);
+        setAllOrders(sortById);
       })
       .catch((error) => console.log(error));
-  }, [apiOrders, currentUserToken]);
+  }, []);
 
-  const handleOrderStatusUpdate = (index, orderId, orderStatus) => {
+  const updateOrderStatus = (index, id, status) => {
     const putRequestOptions = {
       method: 'PUT',
       headers: {
@@ -37,17 +36,18 @@ export default function Kitchen() {
         'Access-Control-Allow-Credentials': true,
         'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST',
       },
-      body: JSON.stringify({ orderStatus }),
+      body: JSON.stringify({ status }),
     };
-    fetch(`${apiOrders}${orderId}`, putRequestOptions)
+
+    fetch(`${apiOrders}${id}`, putRequestOptions)
       .then((response) => response.json())
       .then((data) => {
         const pendingOrdersList = [...allOrders];
-        pendingOrdersList[index].status = orderStatus;
+        pendingOrdersList[index].status = status;
         setAllOrders(pendingOrdersList);
         console.log(data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log('Update order status error: ', error));
   };
 
   return (
@@ -68,50 +68,35 @@ export default function Kitchen() {
         <section className='menu-grid-child todo-orders'>
           <h3 className='menu-section-title'>Pedidos</h3>
           <div className='all-orders-container'>
-            {
-              allOrders.map((order, index) => (
-                <OrderCard
-                  key={`order-${index}`}
-                  orderNumber={order.id}
-                  clientName={order.client_name}
-                  workerId={order.user_id}
-                  tableNumber={order.table}
-                  orderStatus={order.status}
-                  orderProcessed={order.processedAt}
-                  orderCreatedAt={order.createdAt}
-                  updatedAt={order.updatedAt}
-                  orderProducts={order.products}
-                  updateOrderToDoing={() => handleOrderStatusUpdate(index, order.id, 'processing')}
-                  updateOrderToDone={() => handleOrderStatusUpdate(index, order.id, 'done')}
-                >
-                  {order.Products.map((product, productIndex) => (
-                    <OrderProducts
-                      key={`${order.id}-item-${productIndex}`}
-                      name={product.name}
-                      qtd={product.qtd}
-                      flavor={product.flavor}
-                      complement={product.complement}
-                    />
-                  ))}
-                </OrderCard>
-              ))
-            }
+            {allOrders.map((order, index) => (
+              <OrderCard
+                key={`order-${index}`}
+                orderNumber={order.id}
+                clientName={order.client_name}
+                workerId={order.user_id}
+                tableNumber={order.table}
+                orderStatus={order.status}
+                orderProcessed={order.processedAt}
+                orderCreatedAt={order.createdAt}
+                updatedAt={order.updatedAt}
+                orderProducts={order.products}
+                updateOrderToProcessing={() => updateOrderStatus(index, order.id, 'processing')}
+                updateOrderToReady={() => updateOrderStatus(index, order.id, 'ready')}
+              >
+                {order.Products.map((product, productIndex) => (
+                  <OrderProducts
+                    key={`${order.id}-item-${productIndex}`}
+                    name={product.name}
+                    qtd={product.qtd}
+                    flavor={product.flavor}
+                    complement={product.complement}
+                  />
+                ))}
+              </OrderCard>
+            ))}
           </div>
 
         </section>
-        {/*
-        <section className='menu-grid-child doing-orders bg-color-yellow-20'>
-          <h3 className='menu-section-title'>Em Preparo</h3>
-          <OrdersCards
-          />
-        </section>
-
-        <section className='menu-grid-child done-orders bg-color-yellow-20'>
-          <h3 className='menu-section-title'>Pedidos Concluídos</h3>
-          <OrdersCards
-          />
-        </section> */}
-
       </div>
     </Fragment>
   );
