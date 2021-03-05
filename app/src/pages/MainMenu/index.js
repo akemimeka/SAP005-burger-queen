@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 /* eslint-disable object-shorthand */
-/* eslint-disable no-unused-expressions */
 /* eslint-disable object-curly-newline */
-import React, { Fragment, useState, useEffect, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { GoToPage } from '../../services';
+import React, { Fragment, useState, useEffect, useRef, useCallback } from 'react';
+import { Link } from 'react-router-dom';
+import modalLogo from '../../images/logo-circular-brown.png';
+import ModalKitchen from '../../components/ModalKitchen';
 import logo from '../../images/logo-horizontal-brown.png';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
@@ -22,7 +22,7 @@ import TotalAndSend from '../../components/TotalAndSend';
 import CompleteOrderedItem from '../../components/CompleteOrderedItem';
 
 export default function MainMenu() {
-  const history = useHistory();
+  // const history = useHistory();
   const apiURL = 'https://lab-api-bq.herokuapp.com';
   const currentUserToken = localStorage.getItem('currentUserToken');
   const tableNumber = localStorage.getItem('currentTable');
@@ -43,6 +43,22 @@ export default function MainMenu() {
   const [finalOrder, setFinalOrder] = useState({
     client: clientName, table: tableNumber, products: products,
   });
+  const [showModal, setShowModal] = useState(false);
+
+  // Close Modal with keyboard (Esc key)
+  const keyPress = useCallback((event) => {
+    if (event.key === 'Escape' && showModal) {
+      setShowModal(false);
+    }
+  }, [setShowModal, showModal]);
+
+  useEffect(
+    () => {
+      document.addEventListener('keydown', keyPress);
+      return () => document.removeEventListener('keydown', keyPress);
+    },
+    [keyPress],
+  );
 
   useEffect(() => {
     const apiProducts = `${apiURL}/products`;
@@ -180,6 +196,9 @@ export default function MainMenu() {
     fetch(apiOrders, postRequestOptions)
       .then((response) => response.json())
       .then((data) => {
+        if (data !== undefined) {
+          setShowModal(true);
+        }
         console.log(data);
         console.log('Pedido enviado para a cozinha com sucesso!');
       })
@@ -188,12 +207,21 @@ export default function MainMenu() {
         localStorage.removeItem('currentTable');
         localStorage.removeItem('currentClient');
       })
-      .then(GoToPage(history, '/salao'))
+      // .then(GoToPage(history, '/salao'))
       .catch((error) => console.log(error));
   };
 
   return (
     <Fragment>
+      {showModal ? (
+        <ModalKitchen
+          modalSrc={modalLogo}
+          buttonText='Voltar para o salão'
+          modalText='Pedido enviado para a cozinha com sucesso!'
+          onClose={() => setShowModal(false)}
+        >
+        </ModalKitchen>) : null}
+
       <form className='menu-grid-container' ref={form}>
         <Header
           headerClass='header-base header-main-menu bg-color-yellow'
@@ -421,29 +449,29 @@ export default function MainMenu() {
                   />
                 </Link>
               </Fragment>}
-              {orderList.map((item, index) => (
-                item.sub_type === 'hamburguer'
-                  ? <CompleteOrderedBurger
-                    key={`item-${index}`}
-                    itemFlavor={item.flavor}
-                    itemComplement={item.complement}
-                    itemName={item.name}
-                    itemPrice={item.price}
-                    itemQuantity={item.qtd}
-                    minusButton={(event) => minusButton(event, index, item.price)}
-                    plusButton={(event) => plusButton(event, index, item.price)}
-                    itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
-                  />
-                  : <CompleteOrderedItem
-                    key={`item-${index}`}
-                    itemName={item.name}
-                    itemPrice={item.price}
-                    itemQuantity={item.qtd}
-                    minusButton={(event) => minusButton(event, index, item.price)}
-                    plusButton={(event) => plusButton(event, index, item.price)}
-                    itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
-                  />
-              ))}
+            {orderList.map((item, index) => (
+              item.sub_type === 'hamburguer'
+                ? <CompleteOrderedBurger
+                  key={`item-${index}`}
+                  itemFlavor={item.flavor}
+                  itemComplement={item.complement}
+                  itemName={item.name}
+                  itemPrice={item.price}
+                  itemQuantity={item.qtd}
+                  minusButton={(event) => minusButton(event, index, item.price)}
+                  plusButton={(event) => plusButton(event, index, item.price)}
+                  itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
+                />
+                : <CompleteOrderedItem
+                  key={`item-${index}`}
+                  itemName={item.name}
+                  itemPrice={item.price}
+                  itemQuantity={item.qtd}
+                  minusButton={(event) => minusButton(event, index, item.price)}
+                  plusButton={(event) => plusButton(event, index, item.price)}
+                  itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
+                />
+            ))}
           </div>
 
           <TotalAndSend
