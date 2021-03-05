@@ -1,8 +1,10 @@
+/* eslint-disable no-console */
 /* eslint-disable object-shorthand */
 /* eslint-disable object-curly-newline */
-import React, { Fragment, useState, useEffect, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { GoToPage } from '../../services';
+import React, { Fragment, useState, useEffect, useRef, useCallback } from 'react';
+import { Link } from 'react-router-dom';
+import modalLogo from '../../images/logo-circular-brown.png';
+import ModalKitchen from '../../components/ModalKitchen';
 import Header from '../../components/Header';
 import MenuItem from '../../components/MenuItem';
 import logo from '../../images/logo-horizontal-brown.png';
@@ -15,7 +17,7 @@ import CompleteOrderedItem from '../../components/CompleteOrderedItem';
 import TotalAndSend from '../../components/TotalAndSend';
 
 export default function BreakfastMenu() {
-  const history = useHistory();
+  // const history = useHistory();
   const apiURL = 'https://lab-api-bq.herokuapp.com';
   const currentUserToken = localStorage.getItem('currentUserToken');
   const tableNumber = localStorage.getItem('currentTable');
@@ -30,6 +32,22 @@ export default function BreakfastMenu() {
   const [finalOrder, setFinalOrder] = useState({
     client: clientName, table: tableNumber, products: products,
   });
+  const [showModal, setShowModal] = useState(false);
+
+  // Close Modal with keyboard (Esc key)
+  const keyPress = useCallback((event) => {
+    if (event.key === 'Escape' && showModal) {
+      setShowModal(false);
+    }
+  }, [setShowModal, showModal]);
+
+  useEffect(
+    () => {
+      document.addEventListener('keydown', keyPress);
+      return () => document.removeEventListener('keydown', keyPress);
+    },
+    [keyPress],
+  );
 
   useEffect(() => {
     const apiProducts = `${apiURL}/products`;
@@ -119,6 +137,9 @@ export default function BreakfastMenu() {
     fetch(apiOrders, postRequestOptions)
       .then((response) => response.json())
       .then((data) => {
+        if (data !== undefined) {
+          setShowModal(true);
+        }
         console.log(data);
         console.log('Pedido enviado para a cozinha com sucesso!');
       })
@@ -127,12 +148,20 @@ export default function BreakfastMenu() {
         localStorage.removeItem('currentTable');
         localStorage.removeItem('currentClient');
       })
-      .then(GoToPage(history, '/salao'))
+      // .then(GoToPage(history, '/salao'))
       .catch((error) => console.log(error));
   };
 
   return (
     <Fragment>
+      {showModal ? (
+        <ModalKitchen
+          modalSrc={modalLogo}
+          buttonText='Voltar para o salão'
+          modalText='Pedido enviado para a cozinha com sucesso!'
+          onClose={() => setShowModal(false)}
+        >
+        </ModalKitchen>) : null}
       <form className='breakfast-grid-container' ref={form}>
         <Header
           headerClass='header-base header-main-menu bg-color-yellow'
