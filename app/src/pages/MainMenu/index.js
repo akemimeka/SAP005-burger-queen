@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable object-shorthand */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable object-curly-newline */
