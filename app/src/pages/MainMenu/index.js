@@ -408,44 +408,42 @@ export default function MainMenu() {
           </div>
 
           <div className='order-list-items' id='order-list'>
-            {
-              orderList.length === 0
-                ? <Fragment>
-                  <p className='empty-order-msg color-brown weight-500'>
-                    Os itens lançados irão aparecer aqui
+            {orderList.length === 0
+              && <Fragment>
+                <p className='empty-order-msg color-brown weight-500'>
+                  Os itens lançados irão aparecer aqui
                   </p>
-                  <Link to='/salao'>
-                    <Button
-                      buttonType='text'
-                      buttonClass='button-base button-centered bg-color-yellow color-brown'
-                      buttonText='Voltar'
-                    />
-                  </Link>
-                </Fragment>
-                : orderList.map((item, index) => (
-                  item.sub_type === 'hamburguer'
-                    ? <CompleteOrderedBurger
-                      key={`item-${index}`}
-                      itemFlavor={item.flavor}
-                      itemComplement={item.complement}
-                      itemName={item.name}
-                      itemPrice={item.price}
-                      itemQuantity={item.qtd}
-                      minusButton={(event) => minusButton(event, index, item.price)}
-                      plusButton={(event) => plusButton(event, index, item.price)}
-                      itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
-                    />
-                    : <CompleteOrderedItem
-                      key={`item-${index}`}
-                      itemName={item.name}
-                      itemPrice={item.price}
-                      itemQuantity={item.qtd}
-                      minusButton={(event) => minusButton(event, index, item.price)}
-                      plusButton={(event) => plusButton(event, index, item.price)}
-                      itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
-                    />
-                ))
-            }
+                <Link to='/salao'>
+                  <Button
+                    buttonType='text'
+                    buttonClass='button-base button-centered bg-color-yellow color-brown'
+                    buttonText='Voltar'
+                  />
+                </Link>
+              </Fragment>}
+              {orderList.map((item, index) => (
+                item.sub_type === 'hamburguer'
+                  ? <CompleteOrderedBurger
+                    key={`item-${index}`}
+                    itemFlavor={item.flavor}
+                    itemComplement={item.complement}
+                    itemName={item.name}
+                    itemPrice={item.price}
+                    itemQuantity={item.qtd}
+                    minusButton={(event) => minusButton(event, index, item.price)}
+                    plusButton={(event) => plusButton(event, index, item.price)}
+                    itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
+                  />
+                  : <CompleteOrderedItem
+                    key={`item-${index}`}
+                    itemName={item.name}
+                    itemPrice={item.price}
+                    itemQuantity={item.qtd}
+                    minusButton={(event) => minusButton(event, index, item.price)}
+                    plusButton={(event) => plusButton(event, index, item.price)}
+                    itemTotalPrice={itemTotalPrice(item.price, item.qtd)}
+                  />
+              ))}
           </div>
 
           <TotalAndSend
