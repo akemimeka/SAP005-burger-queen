@@ -1,3 +1,6 @@
+  <p align="center">
+    <img src="src/images/logo-circular-brown.png" width=250 height=250 frameBorder="0"></img>
+  </p>
 # :hamburger: Hamburgueria Ipê
 
 Acesse nossa aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/)
@@ -18,14 +21,14 @@ Acesse nossa aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/)
 
 ## 1. Introdução
 
- **[Hamburgueria Ipê](http://hamburgueria-ipe.vercel.app/)** é uma aplicação *web* escalável, desenvolvida para a gestão de uma hamburgueria com foco em *tablets* e atendendo todas as necessidades de seus usuários.
- 
- As premissas partem do desafio [Burger Queen](https://github.com/Laboratoria/SAP005-burger-queen) proposto pela Laboratória.
- 
- 
- <p align="center">
- <img src="https://media.giphy.com/media/xT9KVzVj01qfRPiJr2/giphy.gif" width=480 height=200 frameBorder="0"></img>
- </p>
+**[Hamburgueria Ipê](http://hamburgueria-ipe.vercel.app/)** é uma aplicação *web* escalável, desenvolvida para a gestão de uma hamburgueria com foco em *tablets* e atendendo todas as necessidades de seus usuários.
+
+As premissas partem do desafio [Burger Queen](https://github.com/Laboratoria/SAP005-burger-queen) proposto pela Laboratória.
+
+
+  <p align="center">
+    <img src="https://media.giphy.com/media/xT9KVzVj01qfRPiJr2/giphy.gif" width=480 height=200 frameBorder="0"></img>
+  </p>
 
 
 ## 2. Sobre a aplicação
@@ -37,11 +40,13 @@ A hamburgueria Ipê lançou o serviço 24h e teve um resultado muito positivo. P
 O cliente nos forneceu as seguintes histórias de usuário:
 
 :writing_hand: **História de usuário #1**
+
 Eu, como funcionário da hamburgueria:
 
 * Quero entrar na plataforma e ver apenas a tela importante para o meu trabalho
 
 :writing_hand: **História de usuário #2**
+
 Eu, como atendente:
 
 * Quero poder anotar o meu pedido
@@ -49,6 +54,7 @@ Eu, como atendente:
 * Poder enviar o pedido para a cozinha para ser preparado
 
 :writing_hand: **História de usuário #3**
+
 Eu, como *chef* de cozinha:
 
 * Quero ver os pedidos dos clientes em ordem
@@ -56,7 +62,9 @@ Eu, como *chef* de cozinha:
 * Poder notificar os atendentes que o pedido está pronto para ser entregue ao cliente
 
 :writing_hand: **História de usuário #4**
+
 Eu, como atendente:
+
 * Quero ver os pedidos que estão prontos para entregá-los rapidamente aos clientes
 
 
@@ -81,21 +89,25 @@ Também foi definido que os dados **devem ficar armazenados**, mesmo após a con
 
 ## 4. Processo de criação
 
- 💡 Organização 
+#### :clipboard:	Organização 
 
- Utilizamos o Trello para organizar todo o processo de desenvolvimento da aplicação.
+Utilizamos o método de Kanban no Trello para organizar todo o processo de desenvolvimento da aplicação.
 
 * Definimos padronizações do código
 * Divisão de tarefas
-* Backlog de cada Sprint
+* Backlog do Produto e de cada Sprint
 * Tempo para entrega de cada tarefa
 
- ![Print da tela do Trello](src/images/readme/trello.png)
 
-💡 Identidade Visual
-Pensando no nome **Ipê**, optamos por uma paleta de cores que segue os mesmos tons da flor
+![Print da tela do Trello](src/images/readme/trello.png)
+
+
+#### :woman_artist: Identidade Visual
+
+Pensando no nome **Ipê**, optamos por uma paleta de cores que usa os tons da flor Ipê de forma mais suave para tornar a visualização fácil e agradável.
 
 ![Paleta de Cores](src/images/readme/color-palette.png)
 
 
- 
+#### Wireframe inicial
+
