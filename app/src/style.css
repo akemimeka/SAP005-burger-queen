@@ -285,6 +285,23 @@ a {
 
 
 /* HALL PAGE */
+.hall-options-container {
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+.input-hall-options + .label-hall-options {
+  background-color: var(--yellow);
+  color: var(--dark-brown);
+}
+
+.input-hall-options:checked + .label-hall-options {
+  background-color: var(--dark-green);
+  color: var(--lightest);
+}
+
 .info-message {
   width: 20rem;
   font-size: 1.5rem;
@@ -664,7 +681,6 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  /* margin-bottom: 1.5rem; */
 }
 
 .item-quantity-buttons-wrap {
@@ -816,7 +832,8 @@ a {
 .order-items-quantity {
   margin-right: 0.5rem;
   font-family: 'B612', monospace;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 

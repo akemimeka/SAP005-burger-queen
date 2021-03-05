@@ -1,6 +1,16 @@
 /* eslint-disable object-curly-newline */
 import React, { useState } from 'react';
 
+export const currentUserToken = localStorage.getItem('currentUserToken');
+export const tableNumber = localStorage.getItem('currentTable');
+export const clientName = localStorage.getItem('currentClient');
+export const setLocalStorage = (key, value) => localStorage.setItem(key, value);
+
+const apiURL = 'https://lab-api-bq.herokuapp.com';
+export const apiProducts = `${apiURL}/products/`;
+export const apiOrders = `${apiURL}/orders/`;
+export const apiUsers = `${apiURL}/users`;
+
 export function GoToPage(history, path) {
   history.push(path);
 }
@@ -18,20 +28,10 @@ export function navigateAfterLogin(history, role) {
   }
 }
 
-export const currentUserToken = localStorage.getItem('currentUserToken');
-export const tableNumber = localStorage.getItem('currentTable');
-export const clientName = localStorage.getItem('currentClient');
-export const setLocalStorage = (key, value) => localStorage.setItem(key, value);
-
 export const cleanTableAndClient = () => {
   localStorage.removeItem('currentTable');
   localStorage.removeItem('currentClient');
 };
-
-const apiURL = 'https://lab-api-bq.herokuapp.com';
-export const apiProducts = `${apiURL}/products/`;
-export const apiOrders = `${apiURL}/orders/`;
-export const apiUsers = `${apiURL}/users`;
 
 export const GetHallWorkerName = (workerId) => {
   const apiGetUser = `${apiUsers}/${workerId}`;
