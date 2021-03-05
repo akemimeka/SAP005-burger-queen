@@ -304,7 +304,7 @@ a {
     'table-03    .    tables-06-07  tables-06-07';
 }
 
-.tables-grid-container > div:first-child {
+.table-01 {
   grid-area: table-01;
   text-align: right;
   border-radius: 0.7rem;
@@ -314,7 +314,7 @@ a {
   justify-content: center;
 }
 
-.tables-grid-container > div:nth-child(2) {
+.table-02 {
   grid-area: table-02;
   text-align: right;
   border-radius: 0.7rem;
@@ -324,7 +324,7 @@ a {
   justify-content: center;
 }
 
-.tables-grid-container > div:nth-child(3) {
+.table-03 {
   grid-area: table-03;
   text-align: right;
   border-radius: 0.7rem;
@@ -334,7 +334,7 @@ a {
   justify-content: center;
 }
 
-.tables-grid-container > div:nth-child(4) {
+.table-04 {
   grid-area: table-04;
   border-radius: 0.7rem;
   padding: 0 1.4rem;
@@ -343,7 +343,7 @@ a {
   justify-content: center;
 }
 
-.tables-grid-container > div:nth-child(5) {
+.table-05 {
   grid-area: table-05;
   border-radius: 0.7rem;
   padding: 0 1.4rem;
@@ -352,13 +352,13 @@ a {
   justify-content: center;
 }
 
-.tables-grid-container > :last-child {
+.smaller-tables-wrap {
   grid-area: tables-06-07;
   display: flex;
   justify-content: space-between;
 }
 
-.tables-grid-container > div:nth-child(6) > div {
+.table-06, .table-07 {
   border-radius: 0.7rem;
   padding: 0.7rem 1.3rem;
   text-align: center;
@@ -366,6 +366,11 @@ a {
 
 .table-number {
   font-size: 2.7rem;
+}
+
+.input-table:checked + .table-number {
+  background-color: var(--yellow);
+  color: var(--dark-brown);
 }
 
 .form-container-hall {
@@ -804,6 +809,7 @@ a {
 
 .order-items-wrap {
   display: flex;
+  align-items: baseline;
   margin-bottom: 0.5rem;
 }
 

@@ -1,28 +1,22 @@
 /* eslint-disable no-console */
 import React, { Fragment, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { GoToPage } from '../../services';
+import { GoToPage, setLocalStorage } from '../../services';
 import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-brown.png';
-import Table from '../../components/Table';
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
+import InputRadio from '../../components/InputRadio';
 
 export default function Hall() {
   const history = useHistory();
   const [clientName, setClientName] = useState('');
-
-  function tableOnClick(event) {
-    const selectedTable = document.getElementById(event.currentTarget.id);
-    const selectedTableNumber = selectedTable.firstElementChild;
-    selectedTable.className = 'bg-color-yellow';
-    selectedTableNumber.className = 'table-number color-brown';
-    localStorage.setItem('currentTable', event.target.textContent);
-  }
+  const [tableNumber, setTableNumber] = useState('');
 
   function menuButtonOnClick(event, path) {
     event.preventDefault();
-    localStorage.setItem('currentClient', clientName);
+    setLocalStorage('currentClient', clientName);
+    setLocalStorage('currentTable', tableNumber);
     GoToPage(history, path);
   }
 
@@ -47,61 +41,89 @@ export default function Hall() {
         </div>
 
         <section className='tables-grid-container'>
-          <Table
-            divId='table-01'
-            divClass='table bg-color-light-brown'
-            divOnClick={tableOnClick}
-            pClass='table-number color-lightest'
-            tableNumber='01'
+          <InputRadio
+            inputClass='input-table hidden'
+            inputId='table-01'
+            inputName='tables'
+            inputValue='01'
+            inputChecked={tableNumber === '01'}
+            inputOnChange={(event) => setTableNumber(event.target.value)}
+            labelHtmlFor='table-01'
+            labelClass='table-01 table-number bg-color-light-brown color-lightest'
+            labelText='01'
           />
 
-          <Table
-            divId='table-02'
-            divClass='table bg-color-light-brown'
-            divOnClick={tableOnClick}
-            pClass='table-number color-lightest'
-            tableNumber='02'
+          <InputRadio
+            inputClass='input-table hidden'
+            inputId='table-02'
+            inputName='tables'
+            inputValue='02'
+            inputChecked={tableNumber === '02'}
+            inputOnChange={(event) => setTableNumber(event.target.value)}
+            labelHtmlFor='table-02'
+            labelClass='table-02 table-number bg-color-light-brown color-lightest'
+            labelText='02'
           />
 
-          <Table
-            divId='table-03'
-            divClass='table bg-color-light-brown'
-            divOnClick={tableOnClick}
-            pClass='table-number color-lightest'
-            tableNumber='03'
+          <InputRadio
+            inputClass='input-table hidden'
+            inputId='table-03'
+            inputName='tables'
+            inputValue='03'
+            inputChecked={tableNumber === '03'}
+            inputOnChange={(event) => setTableNumber(event.target.value)}
+            labelHtmlFor='table-03'
+            labelClass='table-03 table-number bg-color-light-brown color-lightest'
+            labelText='03'
           />
 
-          <Table
-            divId='table-04'
-            divClass='table bg-color-light-brown'
-            divOnClick={tableOnClick}
-            pClass='table-number color-lightest'
-            tableNumber='04'
+          <InputRadio
+            inputClass='input-table hidden'
+            inputId='table-04'
+            inputName='tables'
+            inputValue='04'
+            inputChecked={tableNumber === '04'}
+            inputOnChange={(event) => setTableNumber(event.target.value)}
+            labelHtmlFor='table-04'
+            labelClass='table-04 table-number bg-color-light-brown color-lightest'
+            labelText='04'
           />
 
-          <Table
-            divId='table-05'
-            divClass='table bg-color-light-brown'
-            divOnClick={tableOnClick}
-            pClass='table-number color-lightest'
-            tableNumber='05'
+          <InputRadio
+            inputClass='input-table hidden'
+            inputId='table-05'
+            inputName='tables'
+            inputValue='05'
+            inputChecked={tableNumber === '05'}
+            inputOnChange={(event) => setTableNumber(event.target.value)}
+            labelHtmlFor='table-05'
+            labelClass='table-05 table-number bg-color-light-brown color-lightest'
+            labelText='05'
           />
 
-          <div>
-            <Table
-              divId='table-06'
-              divClass='table bg-color-light-brown'
-              divOnClick={tableOnClick}
-              pClass='table-number color-lightest'
-              tableNumber='06'
+          <div className='smaller-tables-wrap'>
+            <InputRadio
+              inputClass='input-table hidden'
+              inputId='table-06'
+              inputName='tables'
+              inputValue='06'
+              inputChecked={tableNumber === '06'}
+              inputOnChange={(event) => setTableNumber(event.target.value)}
+              labelHtmlFor='table-06'
+              labelClass='table-06 table-number bg-color-light-brown color-lightest'
+              labelText='06'
             />
 
-            <Table
-              divId='table-07'
-              divClass='table bg-color-light-brown'
-              divOnClick={tableOnClick}
-              pClass='table-number color-lightest'
-              tableNumber='07'
+            <InputRadio
+              inputClass='input-table hidden'
+              inputId='table-07'
+              inputName='tables'
+              inputValue='07'
+              inputChecked={tableNumber === '07'}
+              inputOnChange={(event) => setTableNumber(event.target.value)}
+              labelHtmlFor='table-07'
+              labelClass='table-07 table-number bg-color-light-brown color-lightest'
+              labelText='07'
             />
           </div>
         </section>
