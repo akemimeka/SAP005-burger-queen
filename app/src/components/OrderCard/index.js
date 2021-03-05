@@ -18,7 +18,7 @@ export default function OrderCard({
   updateOrderToDone,
 }) {
   const getOrderCreatedAt = new Date(orderCreatedAt);
-  const getOrderProcessedAt = new Date(orderProcessed);
+  const getOrderProcessedAt = new Date(getOrderCreatedAt);
   const getOrderResidual = Math.abs(getOrderProcessedAt) - getOrderCreatedAt;
   const showOrderPrepTime = Math.floor(getOrderResidual / 1000 / 60);
 
