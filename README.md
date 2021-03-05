@@ -1,5 +1,5 @@
   <p align="center">
-    <img src="src/images/logo-circular-brown.png" width=250 height=250 frameBorder="0"></img>
+    <img src="app/src/images/logo-circular-brown.png" width=250 height=250 frameBorder="0"></img>
   </p>
 # :hamburger: Hamburgueria Ipê
 
@@ -7,13 +7,21 @@ Acesse nossa aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/)
 
 ## Índice
 
-* [1. Introdução](#1-introdução)
-* [2. Sobre a aplicação](#2-sobre-a-aplicação)
-* [3. Histórias de usuários](#3-histórias-de-usuários)
-    * [3.1 Funcionalidades](#31-funcionalidades)
-* [4. Processo de criação](#4-processo-de-criação)
-* [5. Desenvolvimento](#5-desenvolvimento)
-* [6. Desenvolvedoras](#6-desenvolvedoras)
+- [:hamburger: Hamburgueria Ipê](#hamburger-hamburgueria-ipê)
+  - [Índice](#índice)
+  - [1. Introdução](#1-introdução)
+  - [2. Sobre a aplicação](#2-sobre-a-aplicação)
+  - [3. Histórias de usuários](#3-histórias-de-usuários)
+      - [3.1 Funcionalidades](#31-funcionalidades)
+  - [4. Processo de criação](#4-processo-de-criação)
+      - [:clipboard:	Organização](#clipboardorganização)
+      - [:woman_artist: Identidade Visual](#woman_artist-identidade-visual)
+        - [Logo](#logo)
+      - [Wireframe inicial](#wireframe-inicial)
+      - [Interface Alta Fidelidade](#interface-alta-fidelidade)
+      - [Página do menu principal](#página-do-menu-principal)
+  - [5. Desenvolvimento](#5-desenvolvimento)
+  - [6. Desenvolvedoras](#6-desenvolvedoras)
 
 
 ***
@@ -98,14 +106,14 @@ Utilizamos o método de Kanban no Trello para organizar todo o processo de desen
 * Tempo para entrega de cada tarefa
 
 
-![Print da tela do Trello](src/images/readme/trello.png)
+![Print da tela do Trello](app/src/images/readme/trello.png)
 
 
 #### :woman_artist: Identidade Visual
 
 Pensando no nome **Ipê**, optamos por uma paleta de cores que usa os tons da flor Ipê de forma mais suave para tornar a visualização fácil e agradável.
 
-![Paleta de Cores](src/images/readme/color-palette.png)
+![Paleta de Cores](app/src/images/readme/color-palette.png)
 
  
  ##### Logo
@@ -113,7 +121,7 @@ Pensando no nome **Ipê**, optamos por uma paleta de cores que usa os tons da fl
 A partir da definição da paleta de cores, criamos um logotipo adequado a interface visual da hamburgueria.
 
    <p align="center">
-    <img src="src/images/logo-horizontal-brown.png" frameBorder="0"></img>
+    <img src="app/src/images/logo-horizontal-brown.png" frameBorder="0"></img>
   </p>
 
 
@@ -121,11 +129,11 @@ A partir da definição da paleta de cores, criamos um logotipo adequado a inter
 Para desenvolver a interface visual da aplicação, utilizamos o Figma.
 
   <p align="center">
-    <img src="src/images/readme/ipad-baixafidelidade-1.png" width='284' height='399'frameBorder="0"></img>
+    <img src="app/src/images/readme/ipad-baixafidelidade-1.png" width='284' height='399'frameBorder="0"></img>
   </p> 
   
   <p align="center">
-    <img src="src/images/readme/ipad-baixafidelidade-2.png" width='284' height='399' frameBorder="0"></img>
+    <img src="app/src/images/readme/ipad-baixafidelidade-2.png" width='284' height='399' frameBorder="0"></img>
   </p>
 
 
@@ -133,21 +141,21 @@ Para desenvolver a interface visual da aplicação, utilizamos o Figma.
  #### Interface Alta Fidelidade
 
   <p align="center">
-    <img src="src/images/readme/ipad-altafidelidade-1.png" width='284' height='399' frameBorder="0"></img>
+    <img src="app/src/images/readme/ipad-altafidelidade-1.png" width='284' height='399' frameBorder="0"></img>
   </p>
 
    <p align="center">
-    <img src="src/images/readme/ipad-altafidelidade-2.png" width='284' height='399' frameBorder="0"></img>
+    <img src="app/src/images/readme/ipad-altafidelidade-2.png" width='284' height='399' frameBorder="0"></img>
   </p>
 
 #### Página do menu principal
 Atendente executando pedido
  <p align="center">
-    <img src="src/images/readme/menu-principal-lanches.png" width='600' height='600' frameBorder="0"></img>
+    <img src="app/src/images/readme/menu-principal-lanches.png" width='600' height='600' frameBorder="0"></img>
   </p>
   
  <p align="center">
-    <img src="src/images/readme/menu-principal-selecao.png" width='600' height='600' frameBorder="0"></img>
+    <img src="app/src/images/readme/menu-principal-selecao.png" width='600' height='600' frameBorder="0"></img>
   </p>
  
   🔎 Usabilidade
