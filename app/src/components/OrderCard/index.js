@@ -10,7 +10,6 @@ export default function OrderCard({
   workerId,
   tableNumber,
   orderStatus,
-  orderProcessed,
   orderCreatedAt,
   orderNumber,
   updateOrderToProcessing,
@@ -33,7 +32,7 @@ export default function OrderCard({
           && <div className='order-status weight-500 bg-color-green color-lightest'>Pronto para servir</div>}
 
         <div className='order-card-info color-brown'>
-          <p className='order-card-info-item'>#{orderNumber} • Mesa 0{tableNumber} • {clientName}</p>
+          <p className='order-card-info-item'>#{orderNumber} • Mesa {tableNumber} • {clientName}</p>
           <p className='order-card-info-item'>Atendente {GetHallWorkerName(workerId)}</p>
           <p className='order-card-info-item'>Entrada: {ConvertDate(orderCreatedAt)} às {ConvertTime(orderCreatedAt)}</p>
           <p className='order-card-info-item'>Tempo de Preparo: {showOrderPrepTime} min</p>

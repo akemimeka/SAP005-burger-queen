@@ -20,7 +20,7 @@ export default function Kitchen() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        const sortById = data.sort((a, b) => b.id - a.id);
+        const sortById = data.sort((itemA, itemB) => itemB.id - itemA.id);
         setAllOrders(sortById);
       })
       .catch((error) => console.log(error));

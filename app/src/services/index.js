@@ -21,6 +21,7 @@ export function navigateAfterLogin(history, role) {
 export const currentUserToken = localStorage.getItem('currentUserToken');
 export const tableNumber = localStorage.getItem('currentTable');
 export const clientName = localStorage.getItem('currentClient');
+export const setLocalStorage = (key, value) => localStorage.setItem(key, value);
 
 export const cleanTableAndClient = () => {
   localStorage.removeItem('currentTable');
