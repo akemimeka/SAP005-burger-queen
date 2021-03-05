@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
 import React, { Fragment } from 'react';
@@ -12,11 +13,15 @@ export default function OrderCard({
   orderProcessed,
   orderCreatedAt,
   orderNumber,
-  updatedAt,
   updateOrderToProcessing,
   updateOrderToReady,
   children,
 }) {
+  const getOrderCreatedAt = new Date(orderCreatedAt);
+  const getOrderProcessedAt = new Date(orderProcessed);
+  const getOrderResidual = Math.abs(getOrderProcessedAt) - getOrderCreatedAt;
+  const showOrderPrepTime = Math.floor(getOrderResidual / 1000 / 60);
+
   return (
     <Fragment>
       <div className='order-card-wrap bg-color-yellow-20'>
@@ -31,8 +36,7 @@ export default function OrderCard({
           <p className='order-card-info-item'>#{orderNumber} • Mesa 0{tableNumber} • {clientName}</p>
           <p className='order-card-info-item'>Atendente {GetHallWorkerName(workerId)}</p>
           <p className='order-card-info-item'>Entrada: {ConvertDate(orderCreatedAt)} às {ConvertTime(orderCreatedAt)}</p>
-          {/* <p className=''>Processado {orderProcessed}</p>
-          <p className=''>Última atualização {updatedAt}</p> */}
+          <p className='order-card-info-item'>Tempo de Preparo: {showOrderPrepTime} min</p>
         </div>
 
         <hr className='dividing-line bg-color-dark-brown'></hr>
