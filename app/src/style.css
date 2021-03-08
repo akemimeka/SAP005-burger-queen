@@ -12,6 +12,7 @@
   --light-green: #A1BD43;
   --yellow: #F6C13C;
   --yellow-opacity-20: #f6c13c20;
+  --light-yellow: #F8E7C9;
   --champagne: #F5E4CC;
   --lightest: #F8EDDD;
   --red: #d30404;
@@ -52,9 +53,11 @@ a {
 .color-lightest { color: var(--lightest) }
 .color-champagne { color: var(--champagne) }
 .color-dark-green { color: var(--dark-green) }
+.color-done { color: #1281B8 }
 .bg-color-green { background-color: var(--dark-green) }
 .bg-color-light { background-color: var(--lightest) }
 .bg-color-yellow { background-color: var(--yellow) }
+.bg-color-light-yellow { background-color: var(--light-yellow); }
 .bg-color-yellow-20 { background-color: var(--yellow-opacity-20) }
 .bg-color-dark-brown { background-color: var(--dark-brown) }
 .bg-color-light-brown { background-color: var(--light-brown) }
@@ -433,11 +436,11 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  height: 75vh;
+  height: 80%;
   width: 100%;
-  position: relative;
+  /* position: relative;
   bottom: 0;
-  overflow-y: scroll;
+  overflow-y: scroll; */
 }
 
 
@@ -780,10 +783,9 @@ a {
 .order-card-wrap {
 	display: flex;
   flex-direction: column;
-	justify-content: center;
-  width: 35%;
-  height: 25%;
-	margin: 1rem;
+	justify-content: space-between;
+  min-width: 17rem;
+	margin-bottom: 3rem;
   border-radius: 1.2rem;
   -webkit-box-shadow: 0px 0px 8px -1px #00000066;
   -moz-box-shadow: 0px 0px 8px -1px #00000066;
@@ -828,6 +830,10 @@ a {
   font-family: 'B612', monospace;
   font-size: 0.85rem;
   font-weight: 600;
+}
+
+.order-done-msg {
+  text-transform: uppercase;
 }
 
 
