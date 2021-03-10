@@ -102,7 +102,8 @@ a {
   top: 0.3rem;
 }
 .logo-modal {
-  width: 15rem;
+  width: 12rem;
+  height: auto;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -279,6 +280,10 @@ a {
   font-weight: 500;
   color: var(--dark-green);
   padding: 10px 20px;
+}
+
+.modal-body {
+  text-align: center;
 }
 
 .modal-footer {

@@ -38,7 +38,7 @@ export default function OrderCard({
             <p className='order-card-info-item'>#{orderNumber} • Mesa {tableNumber} • {clientName}</p>
             <p className='order-card-info-item'>Atendente {GetHallWorkerName(workerId)}</p>
             <p className='order-card-info-item'>Entrada: {ConvertDate(orderCreatedAt)} às {ConvertTime(orderCreatedAt)}</p>
-            <p className='order-card-info-item'>Tempo de Preparo: {showOrderPrepTime} min</p>
+            {/* <p className='order-card-info-item'>Tempo de Preparo: {showOrderPrepTime} min</p> */}
           </div>
 
           <hr className='dividing-line bg-color-dark-brown'></hr>
