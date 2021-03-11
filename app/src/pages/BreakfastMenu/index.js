@@ -17,7 +17,6 @@ import CompleteOrderedItem from '../../components/CompleteOrderedItem';
 import TotalAndSend from '../../components/TotalAndSend';
 
 export default function BreakfastMenu() {
-  // const history = useHistory();
   const apiURL = 'https://lab-api-bq.herokuapp.com';
   const currentUserToken = localStorage.getItem('currentUserToken');
   const tableNumber = localStorage.getItem('currentTable');
