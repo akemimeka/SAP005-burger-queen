@@ -20,7 +20,14 @@ export default function OrderCard({
   const getOrderCreatedAt = new Date(orderCreatedAt);
   const getOrderProcessedAt = new Date(getOrderCreatedAt);
   const getOrderResidual = Math.abs(getOrderProcessedAt) - getOrderCreatedAt;
-  const showOrderPrepTime = Math.floor(getOrderResidual / 1000 / 60);
+  const showOrderPrepTime = Math.floor((getOrderResidual / 1000) / 60);
+  console.log('Tempo para preparar =', showOrderPrepTime);
+
+  // const dateOne = new Date('orderCreatedAt');
+  // const dateTwo = new Date('dateOne');
+  // const msDifference = dateTwo - dateOne;
+  // const minutes = Math.floor(msDifference / 1000 / 60);
+  // console.log('Minutes between two dates =', minutes);
 
   return (
     <Fragment>
