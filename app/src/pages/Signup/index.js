@@ -77,7 +77,7 @@ export default function Signup() {
         <Modal
           modalSrc={modalLogo}
           buttonText='Clique aqui para fazer login'
-          modalText={`Seu cadastro foi ${<br/>} realizado com sucesso!`}
+          modalText='Seu cadastro foi realizado com sucesso!'
           onClose={() => setShowModal(false)}
         >
         </Modal>) : null}
