@@ -78,18 +78,18 @@ Eu, como atendente:
 #### 3.1 Funcionalidades
 Para atender todas as necessidades dos usuários, definimos que a aplicação *web* deve ter as seguintes funcionalidades:
 
-- [ ] Criar login e senha
-- [ ] Registar tipo de usuário conforme área (cozinha ou salão)
-- [ ] Entrar na tela correta para cada usuário
-- [ ] Anotar o nome e mesa
-- [ ] Adicionar produtos aos pedidos
-- [ ] Excluir produtos
-- [ ] Ver resumo e o valor total da compra
-- [ ] Enviar o pedido para a cozinha (armazenar em um banco de dados)
-- [ ] Funcionar bem e se adequar a um tablet
-- [ ] Ver os pedidos à medida em que são feitos
-- [ ] Marcar os pedidos que foram preparados e estão prontos para serem servidos
-- [ ] Ver quanto tempo levou para preparar o pedido até ser marcado como concluído
+✔️   Criar login e senha
+✔️  Registar tipo de usuário conforme área (cozinha ou salão)
+✔️  Entrar na tela correta para cada usuário
+✔️  Anotar o nome e mesa
+✔️  Adicionar produtos aos pedidos
+✔️  Excluir produtos
+✔️  Ver resumo e o valor total da compra
+✔️  Enviar o pedido para a cozinha (armazenar em um banco de dados)
+✔️  Funcionar bem e se adequar a um tablet
+✔️  Ver os pedidos à medida em que são feitos
+✔️  Marcar os pedidos que foram preparados e estão prontos para serem servidos
+✔️  Ver quanto tempo levou para preparar o pedido até ser marcado como concluído
 
 Também foi definido que os dados **devem ficar armazenados**, mesmo após a conclusão do pedido, para que o cliente possa levantar estatísticas no futuro.
 

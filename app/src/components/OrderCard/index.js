@@ -31,28 +31,28 @@ export default function OrderCard({
 
   return (
     <Fragment>
-      <div className='order-card-wrap bg-color-yellow-20'>
-        {orderStatus === 'pending'
-          && <div className='order-status weight-500 bg-color-pending color-lightest'>Pendente</div>}
-        {orderStatus === 'processing'
-          && <div className='order-status weight-500 bg-color-yellow color-brown'>Em andamento</div>}
-        {(orderStatus === 'ready')
-          && <div className='order-status weight-500 bg-color-green color-lightest'>Pronto para servir</div>}
-        {(orderStatus === 'done')
-          && <div className='order-status weight-500 bg-color-done color-lightest'>Servido</div>}
-        <div className='order-card-info color-brown'>
-          <p className='order-card-info-item'>#{orderNumber} • Mesa {tableNumber} • {clientName}</p>
-          <p className='order-card-info-item'>Atendente {GetHallWorkerName(workerId)}</p>
-          <p className='order-card-info-item'>Entrada: {ConvertDate(orderCreatedAt)} às {ConvertTime(orderCreatedAt)}</p>
-          <p className='order-card-info-item'>Tempo de Preparo: {showOrderPrepTime} min</p>
-        </div>
-        {/* {
-          orderStatus === 'pending' && ''
-        } */}
-        <hr className='dividing-line bg-color-dark-brown'></hr>
+      <div className='order-card-wrap bg-color-light-yellow'>
+        <div>
+          {orderStatus === 'pending'
+            && <div className='order-status weight-500 bg-color-pending color-lightest'>Pendente</div>}
+          {orderStatus === 'processing'
+            && <div className='order-status weight-500 bg-color-yellow color-brown'>Em andamento</div>}
+          {(orderStatus === 'ready')
+            && <div className='order-status weight-500 bg-color-green color-lightest'>Pronto para servir</div>}
+          {(orderStatus === 'done')
+            && <div className='order-status weight-500 bg-color-done color-lightest'>Servido</div>}
+          <div className='order-card-info color-brown'>
+            <p className='order-card-info-item'>#{orderNumber} • Mesa {tableNumber} • {clientName}</p>
+            <p className='order-card-info-item'>Atendente {GetHallWorkerName(workerId)}</p>
+            <p className='order-card-info-item'>Entrada: {ConvertDate(orderCreatedAt)} às {ConvertTime(orderCreatedAt)}</p>
+            {/* <p className='order-card-info-item'>Tempo de Preparo: {showOrderPrepTime} min</p> */}
+          </div>
 
-        <div className='order-card-products'>
-          {children}
+          <hr className='dividing-line bg-color-dark-brown'></hr>
+
+          <div className='order-card-products'>
+            {children}
+          </div>
         </div>
 
         <div className='order-card-buttons'>
@@ -77,6 +77,8 @@ export default function OrderCard({
               buttonText='Servido'
               buttonOnClick={updateOrderToDone}
             />}
+          {orderStatus === 'done'
+            && <p className='order-done-msg weight-600 color-done'>Pedido finalizado</p>}
         </div>
       </div>
     </Fragment>
