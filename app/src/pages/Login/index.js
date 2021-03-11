@@ -36,8 +36,7 @@ export default function Login() {
         localStorage.setItem('currentUserToken', workerData.token);
         return workerData.role;
       })
-      .then((role) => navigateAfterLogin(history, role))
-      .catch((error) => console.log(error));
+      .then((role) => navigateAfterLogin(history, role));
   };
 
   return (

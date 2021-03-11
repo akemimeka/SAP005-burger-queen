@@ -101,6 +101,7 @@ a {
   position: relative;
   top: 0.3rem;
 }
+
 .logo-modal {
   width: 12rem;
   height: auto;
@@ -443,9 +444,6 @@ a {
   justify-content: space-evenly;
   height: 80%;
   width: 100%;
-  /* position: relative;
-  bottom: 0;
-  overflow-y: scroll; */
 }
 
 
