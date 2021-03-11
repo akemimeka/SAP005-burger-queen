@@ -6,7 +6,6 @@ import Header from '../../components/Header';
 import logo from '../../images/logo-horizontal-green.png';
 import OrderCard from '../../components/OrderCard';
 import OrderProducts from '../../components/OrderProducts';
-// import InputRadio from '../../components/InputRadio';
 
 export default function Kitchen() {
   const [allOrders, setAllOrders] = useState([]);
@@ -30,52 +29,6 @@ export default function Kitchen() {
         buttonLogoutClass='button-logout-base bg-color-green color-lightest'
       />
       <main className='main-container-kitchen'>
-        {/* <div className='orders-options-container'>
-          <InputRadio
-            inputClass='input-hall-options hidden'
-            inputId='hall-tables'
-            inputName='hall-options'
-            inputValue='hall-tables'
-            // inputOnChange={(event) => showTables(event.target.checked)}
-            labelHtmlFor='hall-tables'
-            labelClass='button-base bg-color-pending color-lightest'
-            labelText='Pendentes'
-          />
-
-          <InputRadio
-            inputClass='input-hall-options hidden'
-            inputId='hall-orders'
-            inputName='hall-options'
-            inputValue='hall-orders'
-            // inputOnChange={(event) => showHallOrders(event.target.checked)}
-            labelHtmlFor='hall-orders'
-            labelClass='button-base bg-color-yellow color-brown'
-            labelText='Em andamento'
-          />
-
-          <InputRadio
-            inputClass='input-hall-options hidden'
-            inputId='hall-orders'
-            inputName='hall-options'
-            inputValue='hall-orders'
-            // inputOnChange={(event) => showHallOrders(event.target.checked)}
-            labelHtmlFor='hall-orders'
-            labelClass='button-base bg-color-green color-lightest'
-            labelText='Prontos'
-          />
-
-          <InputRadio
-            inputClass='input-hall-options hidden'
-            inputId='hall-orders'
-            inputName='hall-options'
-            inputValue='hall-orders'
-            // inputOnChange={(event) => showHallOrders(event.target.checked)}
-            labelHtmlFor='hall-orders'
-            labelClass='button-base bg-color-done color-brown'
-            labelText='Servidos'
-          />
-        </div> */}
-
         <section className='all-orders-container'>
           {allOrders.map((order, index) => (
             (order.status === 'pending' || order.status === 'processing')

@@ -36,7 +36,6 @@ export default function Signup() {
     }
   };
 
-  // Close Modal with keyboard (Esc key)
   const keyPress = useCallback((event) => {
     if (event.key === 'Escape' && showModal) {
       setShowModal(false);
@@ -66,9 +65,7 @@ export default function Signup() {
 
     fetch(apiUsers, requestOptions)
       .then((response) => response.json())
-      .then((data) => console.log(data))
-      .then(() => setShowModal(true))
-      .catch((error) => console.log(error));
+      .then(() => setShowModal(true));
   };
 
   return (

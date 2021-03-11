@@ -33,7 +33,6 @@ export default function BreakfastMenu() {
   });
   const [showModal, setShowModal] = useState(false);
 
-  // Close Modal with keyboard (Esc key)
   const keyPress = useCallback((event) => {
     if (event.key === 'Escape' && showModal) {
       setShowModal(false);
@@ -58,8 +57,7 @@ export default function BreakfastMenu() {
 
     fetch(apiProducts, getRequestOptions)
       .then((response) => response.json())
-      .then((data) => setAllProducts(data))
-      .catch((error) => console.log(error));
+      .then((data) => setAllProducts(data));
   }, [currentUserToken]);
 
   const filterByName = (list, name) => {
@@ -139,16 +137,12 @@ export default function BreakfastMenu() {
         if (data !== undefined) {
           setShowModal(true);
         }
-        console.log(data);
-        console.log('Pedido enviado para a cozinha com sucesso!');
       })
       .then(() => {
         setProducts([]);
         localStorage.removeItem('currentTable');
         localStorage.removeItem('currentClient');
-      })
-      // .then(GoToPage(history, '/salao'))
-      .catch((error) => console.log(error));
+      });
   };
 
   return (

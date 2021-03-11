@@ -88,7 +88,6 @@ export default function Hall() {
           />
         </div>
 
-        {/* <div className={hallOrdersClass}> */}
           <section className={hallOrdersClass}>
             {allOrders.map((order, index) => (
               (order.status === 'ready' || order.status === 'done')
@@ -117,7 +116,6 @@ export default function Hall() {
               </OrderCard>
             ))}
           </section>
-        {/* </div> */}
       </main>
 
     </Fragment>

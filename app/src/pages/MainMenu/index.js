@@ -22,7 +22,6 @@ import TotalAndSend from '../../components/TotalAndSend';
 import CompleteOrderedItem from '../../components/CompleteOrderedItem';
 
 export default function MainMenu() {
-  // const history = useHistory();
   const apiURL = 'https://lab-api-bq.herokuapp.com';
   const currentUserToken = localStorage.getItem('currentUserToken');
   const tableNumber = localStorage.getItem('currentTable');
@@ -45,7 +44,6 @@ export default function MainMenu() {
   });
   const [showModal, setShowModal] = useState(false);
 
-  // Close Modal with keyboard (Esc key)
   const keyPress = useCallback((event) => {
     if (event.key === 'Escape' && showModal) {
       setShowModal(false);
@@ -70,8 +68,7 @@ export default function MainMenu() {
 
     fetch(apiProducts, getRequestOptions)
       .then((response) => response.json())
-      .then((data) => setAllProducts(data))
-      .catch((error) => console.log(error));
+      .then((data) => setAllProducts(data));
   }, [currentUserToken]);
 
   const filterByName = (list, name) => {
@@ -199,16 +196,12 @@ export default function MainMenu() {
         if (data !== undefined) {
           setShowModal(true);
         }
-        console.log(data);
-        console.log('Pedido enviado para a cozinha com sucesso!');
       })
       .then(() => {
         setProducts([]);
         localStorage.removeItem('currentTable');
         localStorage.removeItem('currentClient');
-      })
-      // .then(GoToPage(history, '/salao'))
-      .catch((error) => console.log(error));
+      });
   };
 
   return (

@@ -1,5 +1,5 @@
 /* eslint-disable object-curly-newline */
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export const currentUserToken = localStorage.getItem('currentUserToken');
 export const tableNumber = localStorage.getItem('currentTable');
@@ -67,8 +67,7 @@ export const GetHallWorkerName = (workerId) => {
 
   fetch(apiGetUser, getRequestOptions(currentUserToken))
     .then((response) => response.json())
-    .then((worker) => setWorkerName(worker.name))
-    .catch((error) => console.log(error));
+    .then((worker) => setWorkerName(worker.name));
 
   return workerName;
 };
@@ -77,23 +76,19 @@ export const GetAllOrders = (setAllOrders) => (
   fetch(apiOrders, getRequestOptions(currentUserToken))
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       const sortById = data.sort((itemA, itemB) => itemB.id - itemA.id);
       setAllOrders(sortById);
     })
-    .catch((error) => console.log(error))
 );
 
 export const UpdateOrderStatus = (index, id, status, allOrders, setAllOrders) => (
   fetch(`${apiOrders}${id}`, putRequestOptions(currentUserToken, status))
     .then((response) => response.json())
-    .then((data) => {
+    .then(() => {
       const pendingOrdersList = [...allOrders];
       pendingOrdersList[index].status = status;
       setAllOrders(pendingOrdersList);
-      console.log(data);
     })
-    .catch((error) => console.log('Update order status error: ', error))
 );
 
 export const ConvertDate = (apiDate) => {
