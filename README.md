@@ -16,7 +16,7 @@ Acesse nossa aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/)
 - [4. Funcionalidades](#4-funcionalidades)
 - [5. Processo de criação](#5-processo-de-criação)
 - [6. Ferramentas](#6-ferramentas)
-- [7. Desenvolvedoras](#7-Desenvolvedoras)
+- [7. Desenvolvedoras](#7-desenvolvedoras)
 
 ***
 ## 1. Introdução
@@ -70,18 +70,29 @@ Eu, como atendente:
 ## 4. Funcionalidades
 Para atender todas as necessidades dos usuários, definimos que a aplicação *web* deve ter as seguintes funcionalidades:
 
-  ✔️   Criar login e senha
-  ✔️  Registar tipo de usuário conforme área (cozinha ou salão)
-  ✔️  Entrar na tela correta para cada usuário
-  ✔️  Anotar o nome e mesa
-  ✔️  Adicionar produtos aos pedidos
-  ✔️  Excluir produtos
-  ✔️  Ver resumo e o valor total da compra
-  ✔️  Enviar o pedido para a cozinha (armazenar em um banco de dados)
-  ✔️  Funcionar bem e se adequar a um tablet
-  ✔️  Ver os pedidos à medida em que são feitos
-  ✔️  Marcar os pedidos que foram preparados e estão prontos para   serem servidos
-  ✔️  Ver quanto tempo levou para preparar o pedido até ser marcado como concluído
+✔️  Criar login e senha
+
+✔️  Registar tipo de usuário conforme área (cozinha ou salão)
+
+✔️  Entrar na tela correta para cada usuário
+
+✔️  Anotar o nome e mesa
+
+✔️  Adicionar produtos aos pedidos
+
+✔️  Excluir produtos
+
+✔️  Ver resumo e o valor total da compra
+
+✔️  Enviar o pedido para a cozinha (armazenar em um banco de dados)
+
+✔️  Funcionar bem e se adequar a um tablet
+
+✔️  Ver os pedidos à medida em que são feitos
+
+✔️  Marcar os pedidos que foram preparados e estão prontos para   serem servidos
+
+✔️  Ver quanto tempo levou para preparar o pedido até ser marcado como concluído
 
 Também foi definido que os dados **devem ficar armazenados**, mesmo após a conclusão do pedido, para que o cliente possa levantar estatísticas no futuro.
 
@@ -152,17 +163,17 @@ Atendente executando pedido
  
  ✔️ Solução: Criamos input radios que alteram a cor após o clique
 
-  ## 6. Ferramentas
+## 6. Ferramentas
 
  **Code:**
  
- <img alt="ReactJS" src="app/src/images/readme/react.png"><img alt="HTML5" src="app/src/images/readme/html5.png"/><img alt="CSS3" src="app/src/images/readme/css3.png"><img alt="JSX" src="app/src/images/readme/js.png"><img alt="NodeJS" src="app/src/images/readme/nodejs.png"><img alt="Vercel" src="app/src/images/readme/vercel.png">
+ <img alt="ReactJS" src="app/src/images/readme/react.png"> <img alt="HTML5" src="app/src/images/readme/html5.png"/> <img alt="CSS3" src="app/src/images/readme/css3.png"> <img alt="JSX" src="app/src/images/readme/js.png"> <img alt="NodeJS" src="app/src/images/readme/nodejs.png"> <img alt="Vercel" src="app/src/images/readme/vercel.png">
 
 **Planejamento:**
 
-<img alt="Trello" src="app/src/images/readme/trello.png"><img alt="Figma" src="app/src/images/readme/figma.png"><img alt="Canva" src="app/src/images/readme/canva.png">
+<img alt="Trello" src="app/src/images/readme/trello.png"> <img alt="Figma" src="app/src/images/readme/figma.png"> <img alt="Canva" src="app/src/images/readme/canva.png">
 
- ## 7. Desenvolvedoras
+## 7. Desenvolvedoras
  
  Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsueda e Cris Mantovani, alunas da SAP005 do *bootcamp* da [Laboratória](https://github.com/Laboratoria).
  
@@ -172,7 +183,7 @@ Atendente executando pedido
  
  | Akemi Mitsueda                                                             |                            Cris Mantovani               |
  | :-------------------------------------------------------------------------:| :-----------------------------------------------------: |
- | <img alt="Akemi" src="app/src/images/readme/akemi_dev.jpg" height='120px'> | <img alt="Akemi" src="app/src/images/readme/cris_dev.png" height='120px'>                                                                             |
+ | <img alt="Akemi" src="app/src/images/readme/akemi_dev.jpg" height='200px'> | <img alt="Akemi" src="app/src/images/readme/cris_dev.png" height='200px'>                                                                             |
  | [<img alt="GitHub Akemi" src="app/src/images/readme/github_badge.png">](https://github.com/akemimeka) [<img alt="LinkedIn Akemi" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/akemimeka/) | [<img alt="GitHub Cris" src="app/src/images/readme/github_badge.png">](https://github.com/crismantovani) [<img alt="LinkedIn Cris" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/crissmantovani/) |
 
 </div>
