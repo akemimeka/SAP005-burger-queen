@@ -21,6 +21,7 @@ export default function OrderCard({
   const getOrderProcessedAt = new Date(getOrderCreatedAt);
   const getOrderResidual = Math.abs(getOrderProcessedAt) - getOrderCreatedAt;
   const showOrderPrepTime = Math.floor((getOrderResidual / 1000) / 60);
+  const timeToGetOrderDone = showOrderPrepTime === 60 ? `${getOrderResidual + 1}: 00` : `${getOrderResidual}:${showOrderPrepTime < 10 ? '0' : `${showOrderPrepTime}`}`;
   console.log('Tempo para preparar =', showOrderPrepTime);
 
   // const dateOne = new Date('orderCreatedAt');
@@ -45,7 +46,7 @@ export default function OrderCard({
             <p className='order-card-info-item'>#{orderNumber} • Mesa {tableNumber} • {clientName}</p>
             <p className='order-card-info-item'>Atendente {GetHallWorkerName(workerId)}</p>
             <p className='order-card-info-item'>Entrada: {ConvertDate(orderCreatedAt)} às {ConvertTime(orderCreatedAt)}</p>
-            {/* <p className='order-card-info-item'>Tempo de Preparo: {showOrderPrepTime} min</p> */}
+            <p className='order-card-info-item'>Tempo de Preparo: {timeToGetOrderDone}</p>
           </div>
 
           <hr className='dividing-line bg-color-dark-brown'></hr>
