@@ -1,25 +1,25 @@
   <p align="center">
     <img src="app/src/images/logo-circular-brown.png" width=250 height=250 frameBorder="0"></img>
   </p>
+
 # :hamburger: Hamburgueria Ipê
 
 Acesse nossa aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/)
 
 ***
 
-##Índice
+## :page_facing_up: Índice
 
-  - [1. Introdução](#1-introdução)
-  - [2. Sobre a aplicação](#2-sobre-a-aplicação)
-  - [3. Histórias de usuários](#3-histórias-de-usuários)
-  - [4. Funcionalidades](#4-funcionalidades)
-  - [5. Processo de criação](#5-processo-de-criação)
-  - [5. Ferramentas](#5-ferramentas)
-  - [6. Desenvolvedoras](#6-desenvolvedoras)
+- [1. Introdução](#1-introdução)
+- [2. A aplicação](#2-a-aplicação)
+- [3. Histórias de usuários](#3-histórias-de-usuários)
+- [4. Funcionalidades](#4-funcionalidades)
+- [5. Processo de criação](#5-processo-de-criação)
+- [6. Ferramentas](#6-ferramentas)
+- [7. Desenvolvedoras](#7-Desenvolvedoras)
 
 ***
-
-### 1. Introdução
+## 1. Introdução
 
 **[Hamburgueria Ipê](http://hamburgueria-ipe.vercel.app/)** é uma aplicação *web* escalável, desenvolvida para a gestão de uma hamburgueria com foco em *tablets* e atendendo todas as necessidades de seus usuários.
 
@@ -31,10 +31,10 @@ As premissas partem do desafio [Burger Queen](https://github.com/Laboratoria/SAP
   </p>
 
 
-### 2. Sobre a aplicação
+## 2. A aplicação
 A hamburgueria Ipê lançou o serviço 24h e teve um resultado muito positivo. Para manter o crescimento, precisa de uma aplicação *web* pensada para *tablets*, que permita armazenar os pedidos dos cardápios **Principal** e **Café da Manhã**, englobar todos os extras, enviar para a cozinha e informar aos atendentes quando os pedidos podem ser servidos aos clientes.
 
-### 3. Histórias de usuários
+## 3. Histórias de usuários
 
 O cliente nos forneceu as seguintes histórias de usuário:
 
@@ -67,7 +67,7 @@ Eu, como atendente:
 * Quero ver os pedidos que estão prontos para entregá-los rapidamente aos clientes
 
 
-### 4. Funcionalidades
+## 4. Funcionalidades
 Para atender todas as necessidades dos usuários, definimos que a aplicação *web* deve ter as seguintes funcionalidades:
 
   ✔️   Criar login e senha
@@ -103,7 +103,7 @@ Pensando no nome **Ipê**, optamos por uma paleta de cores que usa os tons da fl
 
 ![Paleta de Cores](app/src/images/readme/color-palette.png)
 
- #### Logo
+ ### Logo
 
 A partir da definição da paleta de cores, criamos um logotipo adequado a interface visual da hamburgueria.
 
@@ -152,24 +152,17 @@ Atendente executando pedido
  
  ✔️ Solução: Criamos input radios que alteram a cor após o clique
 
-  ### 5. Ferramentas
+  ## 6. Ferramentas
 
  **Code:**
  
- <img alt="ReactJS" src="app/src/images/readme/react.png">
- <img alt="HTML5" src="app/src/images/readme/html5.png"/>
- <img alt="CSS3" src="app/src/images/readme/css3.png"> 
- <img alt="JSX" src="app/src/images/readme/js.png">
- <img alt="NodeJS" src="app/src/images/readme/nodejs.png">
- <img alt="Vercel" src="app/src/images/readme/vercel.png">
+ <img alt="ReactJS" src="app/src/images/readme/react.png"><img alt="HTML5" src="app/src/images/readme/html5.png"/><img alt="CSS3" src="app/src/images/readme/css3.png"><img alt="JSX" src="app/src/images/readme/js.png"><img alt="NodeJS" src="app/src/images/readme/nodejs.png"><img alt="Vercel" src="app/src/images/readme/vercel.png">
 
 **Planejamento:**
 
-<img alt="Trello" src="app/src/images/readme/trello.png">
-<img alt="Figma" src="app/src/images/readme/figma.png">
-<img alt="Canva" src="app/src/images/readme/canva.png">
+<img alt="Trello" src="app/src/images/readme/trello.png"><img alt="Figma" src="app/src/images/readme/figma.png"><img alt="Canva" src="app/src/images/readme/canva.png">
 
- ## 6. Desenvolvedoras
+ ## 7. Desenvolvedoras
  
  Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsueda e Cris Mantovani, alunas da SAP005 do *bootcamp* da [Laboratória](https://github.com/Laboratoria).
  
@@ -177,14 +170,9 @@ Atendente executando pedido
  
  <div align="center">
  
- | Akemi Mitsueda        | Cris Mantovani| 
-| :---------------------:|:-------------:| 
-| <img alt="Akemi" src="app/src/images/readme/akemi_dev.jpg" height='120px'>               | <img alt="Akemi" src="app/src/images/readme/cris_dev.png" height='120px'> | $1600 |
-| <img alt="GitHub Akemi" src="app/src/images/readme/github_badge.png"> <img alt="LinkedIn Akemi" src="app/src/images/readme/linkedin_badge.png">             |  <img alt="GitHub Akemi" src="app/src/images/readme/github_badge.png"> <img alt="LinkedIn Akemi" src="app/src/images/readme/linkedin_badge.png">      |
+ | Akemi Mitsueda                                                             |                            Cris Mantovani               |
+ | :-------------------------------------------------------------------------:| :-----------------------------------------------------: |
+ | <img alt="Akemi" src="app/src/images/readme/akemi_dev.jpg" height='120px'> | <img alt="Akemi" src="app/src/images/readme/cris_dev.png" height='120px'>                                                                             |
+ | [<img alt="GitHub Akemi" src="app/src/images/readme/github_badge.png">](https://github.com/akemimeka) [<img alt="LinkedIn Akemi" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/akemimeka/) | [<img alt="GitHub Cris" src="app/src/images/readme/github_badge.png">](https://github.com/crismantovani) [<img alt="LinkedIn Cris" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/crissmantovani/) |
 
 </div>
-
-
- [Caroline Akemi Mitsueda](https://github.com/akemimeka)
-
- [Cristina Mantovani](https://github.com/crismantovani)
