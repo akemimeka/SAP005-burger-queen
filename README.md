@@ -217,38 +217,3 @@ Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsu
 
 </div>
 Copyright [year] [fullname]	
-
-```mermaid
-graph LR
-A[Salão] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
-E isso gera
-```mermaid
-sequenceDiagram
-Cliente ->> Atendente: Olá Atendente. Quero fazer um pedido!
-Atendente-->>Cliente: Qual é o seu pedido, Cliente?
-Atendente-->> Cliente: Quero estes itens!
-Atendente-x John: I am good thanks!
-Note right of John: Atendente thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
-
-Atendente-->Cliente: Enviando para a cozinha...
-Cliente->John: Yes... John, how are you?
-```
-
-
-``` mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-    D-->A;
-```
-
-
-
-
-https://media.giphy.com/media/g4jDE1JnpUNaw/giphy.gif
