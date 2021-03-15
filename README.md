@@ -2,8 +2,8 @@
   <img src="app/src/images/readme/banner.png" frameBorder="0"></img>
   <h1>Hamburgueria Ipê</h1>
 
-### ⚛️ :fork_and_knife:	:iphone: :chart:	 🚀
-#### Original,  minimalista e <i>clean</i>
+## ⚛️ :fork_and_knife:	:iphone: :chart:	 🚀
+### Original,  minimalista e <i>clean</i>
 </div>
 
 Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JSX e CSS3.
@@ -18,14 +18,26 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 #### 🗂️ Documentação
 - Todo o processo está bem documentado para melhor entendimento
 #### 📊 Data Science
-- Possibilidade de levantar dados para evolução do negócio
+- Possibilidade de levantar dados para o desenvolvimento do negócio
 
 ***
 
-Acesse nossa aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/)
+##:earth_africa: Acesse a aplicação
+<div align="center">
+  <img src="app/src/images/readme/app-presentation.png" frameBorder="0"></img>
 
+</div>
 
-## :page_facing_up: Índice
+Você pode acessar a aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/) e utilizar um dos logins de teste abaixo:
+
+| #                     	|             Salão            	|           Cozinha           	|
+|-----------------------	|:----------------------------:	|:---------------------------:	|
+| :busts_in_silhouette: 	| salao@hamburgueriaipe.com.br 	| chef@hamburgueriaipe.com.br 	|
+| :key:                 	|            123456            	|            123456           	|
+
+ 
+ ***
+## :bookmark_tabs: Índice
 
 <!--ts-->
 
@@ -44,11 +56,11 @@ Acesse nossa aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/)
 
 **[Hamburgueria Ipê](http://hamburgueria-ipe.vercel.app/)** é uma aplicação *web* escalável, desenvolvida para a gestão de uma hamburgueria com foco em *tablets* e atendendo todas as necessidades de seus usuários.
 
-As premissas partem do desafio [Burger Queen](https://github.com/Laboratoria/SAP005-burger-queen) proposto pela Laboratória.
+A aplicação foi desenvolvida para o desafio [Burger Queen](https://github.com/Laboratoria/SAP005-burger-queen) proposto pela Laboratória.
 
 
   <p align="center">
-    <img src="https://media.giphy.com/media/xT9KVzVj01qfRPiJr2/giphy.gif" width=480 height=260 frameBorder="0"></img>
+    <img src="https://media.giphy.com/media/xT9KVzVj01qfRPiJr2/giphy.gif" width=550 height=260 frameBorder="0"></img>
   </p>
 
 
