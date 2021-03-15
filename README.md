@@ -38,14 +38,11 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 
 <!--ts-->
 
-- [1. O Projeto](#1-o-projeto)
-- [2. A aplicação](#2-a-aplicação)
-- [3. Histórias de usuários](#3-histórias-de-usuários)
-- [4. Funcionalidades](#4-funcionalidades)
-- [5. Processo de criação](#5-processo-de-criação)
-- [6. Tecnologias](#6-tecnologias)
-- [7. Desenvolvedoras](#7-desenvolvedoras)
-
+* [1. O Projeto](#1-o-projeto)
+* [2. A aplicação](#2-a-aplicação)
+* [3. Histórias de usuários](#3-histórias-de-usuários)
+    * [3.1 Funcionalidades](#31-funcionalidades)
+* [4. Processo de Criação](#4-processo-de-criação)
 <!--te-->
 ***
 ## 1. O Projeto
@@ -97,10 +94,9 @@ A Hamburgueria Ipê nos forneceu as histórias de usuários:
     <img alt='História de Usuário 1' src="app/src/images/readme/hu4.png">
     </img>
   </p>
-
-
-## ⚙️ 4. Funcionalidades
-Para atender todas as necessidades dos usuários, definimos que a aplicação *web* deve ter as seguintes funcionalidades:
+  
+ ### 3.1 Funcionalidades
+Com base nas histórias dos usuários, definimos algumas funcionalidades para a aplicação:
 
 ✔️  Criar login e senha
 
@@ -126,21 +122,27 @@ Para atender todas as necessidades dos usuários, definimos que a aplicação *w
 
 ✔️  Ver quanto tempo levou para preparar o pedido até ser marcado como concluído
 
-Também foi definido que os dados **devem ficar armazenados**, mesmo após a conclusão do pedido, para que o cliente possa levantar estatísticas no futuro.
-
-
-## 🎨 5. Processo de criação
-
+✔️  Pedidos  **devem ficar armazenados** após conclusão, para levantamento de dados
+##  4. Processo de criação
 #### :clipboard:	Organização 
+Para conseguir entregar todas as funcionalidades do projeto, organizamos todo o fluxo de desenvolvimento do projeto pelo método [Kanban](https://pt.wikipedia.org/wiki/Kanban) no Trello. 
 
-Utilizamos o método de Kanban no Trello para organizar todo o processo de desenvolvimento da aplicação.
+Dessa forma, definimos:
 
-* Definimos padronizações do código
-* Divisão de tarefas
-* Backlog do Produto e de cada Sprint
-* Tempo para entrega de cada tarefa
+:seedling: [MVP](https://pt.wikipedia.org/wiki/Produto_vi%C3%A1vel_m%C3%ADnimo)
+:call_me_hand: Critérios mínimos de aceitação
+:label: Padronizações do código ([Code Style](https://en.wikipedia.org/wiki/Programming_style))
+:hammer_and_pick:  Divisão de tarefas
+🤝 [Daily Scrum](https://www.desenvolvimentoagil.com.br/scrum/daily_scrum)
 
-#### :woman_artist: Identidade Visual
+  <p align="center">
+    <img alt='História de Usuário 1' src="app/src/images/readme/trello-macbook.png" height='450'>
+    </img>
+    
+  *Clique na imagem para ampliar*
+  </p>
+
+#### Identidade Visual
 
 Pensando no nome **Ipê**, optamos por uma paleta de cores que usa os tons da flor Ipê de forma mais suave para tornar a visualização fácil e agradável.
 
