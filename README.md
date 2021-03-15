@@ -98,29 +98,13 @@ A Hamburgueria Ipê nos forneceu as histórias de usuários:
  ### 3.1 Funcionalidades
 Com base nas histórias dos usuários, definimos algumas funcionalidades para a aplicação:
 
-✔️  Usuário pode criar login e senha
+|              HU #1 :heavy_check_mark:              	|           HU #2 :heavy_check_mark:          	|           HU #3 :heavy_check_mark:           	|          HU #4 :heavy_check_mark:          	|
+|:--------------------------------------------------:	|:-------------------------------------------:	|:--------------------------------------------:	|:------------------------------------------:	|
+|                 Criar login e senha                	|       Anotar nome do cliente e a mesa       	|            Ver os pedidos em ordem           	| Ver a lista de pedidos prontos para servir 	|
+| Registar usuário conforme setor (cozinha ou salão) 	| Adicionar e/ou excluir produtos aos pedidos 	| Marcar pedido como 'PRONTO' para ser servido 	|    Marque os pedidos que foram entregues   	|
+|            Fazer login na tela correta             	|     Ver resumo e o valor total do pedido    	| Ver o tempo que levou para preparar o pedido 	|                                            	|
+|                                                    	|        Enviar o pedido para a cozinha       	|                                              	|                                            	|
 
-✔️  Registar tipo de usuário conforme setor (cozinha ou salão)
-
-✔️  Entrar na tela correta para cada usuário
-
-✔️  Anotar o nome do cliente e a mesa
-
-✔️  Adicionar e/ou excluir produtos aos pedidos
-
-✔️  Ver resumo e o valor total do pedido
-
-✔️  Enviar o pedido para a cozinha (armazenar em um banco de dados)
-
-✔️  Responsivo para tablet
-
-✔️  Ver os em ordem conforme são feitos
-
-✔️  Marcar os pedidos que foram preparados e estão prontos para serem servidos
-
-✔️  Ver quanto tempo levou para preparar o pedido até ser marcado como concluído
-
-✔️  Pedidos  **devem ficar armazenados** após conclusão, para levantamento de dados
 ##  4. Processo de criação
 #### :clipboard:	Organização 
 Para conseguir entregar todas as funcionalidades do projeto, organizamos todo o fluxo de desenvolvimento do projeto pelo método [Kanban](https://pt.wikipedia.org/wiki/Kanban) no Trello. 
