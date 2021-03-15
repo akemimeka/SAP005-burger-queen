@@ -20,21 +20,22 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 #### 📊 Data Science
 - Possibilidade de levantar dados para o desenvolvimento do negócio
 
-***
-
-##:earth_africa: Acesse a aplicação
-<div align="center">
+## :earth_africa: Acesse a aplicação
+<p align="center">
   <img src="app/src/images/readme/app-presentation.png" frameBorder="0"></img>
+</p>
 
-</div>
+<br/>
+<h4> Você pode acessar a aplicação <a href="(http://hamburgueria-ipe.vercel.app/"> clicando aqui</a> e utilizar um dos logins de teste abaixo:</h4>
 
-Você pode acessar a aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/) e utilizar um dos logins de teste abaixo:
+<p align='center'>
 
 | #                     	|             Salão            	|           Cozinha           	|
 |-----------------------	|:----------------------------:	|:---------------------------:	|
 | :busts_in_silhouette: 	| salao@hamburgueriaipe.com.br 	| chef@hamburgueriaipe.com.br 	|
 | :key:                 	|            123456            	|            123456           	|
 
+</p>
  
  ***
 ## :bookmark_tabs: Índice
@@ -219,13 +220,11 @@ Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsu
  
  Se você ficou com alguma dúvida, tem sugestões ou quer apenas nos conhecer melhor, por favor, entre em contato :)
  
- <div align="center">
+ <p align="center">
  
  | Akemi Mitsueda                                                             |                            Cris Mantovani               |
  | :-------------------------------------------------------------------------:| :-----------------------------------------------------: |
  | <img alt="Akemi" src="app/src/images/readme/akemi_dev.jpg" height='200px'> | <img alt="Akemi" src="app/src/images/readme/cris_dev.png" height='200px'>                                                                             |
  | [<img alt="GitHub Akemi" src="app/src/images/readme/github_badge.png">](https://github.com/akemimeka) [<img alt="LinkedIn Akemi" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/akemimeka/) | [<img alt="GitHub Cris" src="app/src/images/readme/github_badge.png">](https://github.com/crismantovani) [<img alt="LinkedIn Cris" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/crissmantovani/) |
- 
-
-</div>
+</p>
 Copyright [year] [fullname]	
