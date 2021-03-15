@@ -98,27 +98,25 @@ A Hamburgueria Ipê nos forneceu as histórias de usuários:
  ### 3.1 Funcionalidades
 Com base nas histórias dos usuários, definimos algumas funcionalidades para a aplicação:
 
-✔️  Criar login e senha
+✔️  Usuário pode criar login e senha
 
-✔️  Registar tipo de usuário conforme área (cozinha ou salão)
+✔️  Registar tipo de usuário conforme setor (cozinha ou salão)
 
 ✔️  Entrar na tela correta para cada usuário
 
-✔️  Anotar o nome e mesa
+✔️  Anotar o nome do cliente e a mesa
 
-✔️  Adicionar produtos aos pedidos
+✔️  Adicionar e/ou excluir produtos aos pedidos
 
-✔️  Excluir produtos
-
-✔️  Ver resumo e o valor total da compra
+✔️  Ver resumo e o valor total do pedido
 
 ✔️  Enviar o pedido para a cozinha (armazenar em um banco de dados)
 
-✔️  Funcionar bem e se adequar a um tablet
+✔️  Responsivo para tablet
 
-✔️  Ver os pedidos à medida em que são feitos
+✔️  Ver os em ordem conforme são feitos
 
-✔️  Marcar os pedidos que foram preparados e estão prontos para   serem servidos
+✔️  Marcar os pedidos que foram preparados e estão prontos para serem servidos
 
 ✔️  Ver quanto tempo levou para preparar o pedido até ser marcado como concluído
 
@@ -130,9 +128,13 @@ Para conseguir entregar todas as funcionalidades do projeto, organizamos todo o 
 Dessa forma, definimos:
 
 :seedling: [MVP](https://pt.wikipedia.org/wiki/Produto_vi%C3%A1vel_m%C3%ADnimo)
+
 :call_me_hand: Critérios mínimos de aceitação
+
 :label: Padronizações do código ([Code Style](https://en.wikipedia.org/wiki/Programming_style))
+
 :hammer_and_pick:  Divisão de tarefas
+
 🤝 [Daily Scrum](https://www.desenvolvimentoagil.com.br/scrum/daily_scrum)
 
   <p align="center">
@@ -141,6 +143,18 @@ Dessa forma, definimos:
     
   *Clique na imagem para ampliar*
   </p>
+
+#### User Experience
+Durante o processo de criação, fizemos diversas entrevistas com usuários para começar a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_wireframe) de média fidelidade no [Figma](https://www.figma.com/).
+
+:warning:	As entrevistas foram realizadas por vídeo conferência devido a pandemia do Coronavírus.
+
+Com as respostas dos usuários, conseguimos desenvolver e testar o protótipo de média fidelidade, que pode ser acessado [clicando aqui](https://www.figma.com/proto/5rVNETEzDOLBWddlkh2iUo/Hamburgueria-Ip%C3%AA?node-id=1%3A2&scaling=min-zoom).
+
+  <p align="center">
+    <img src="app/src/images/readme/ipad-media-login-vazio.png"></img> <img src="app/src/images/readme/ipad-media-cadastro.png"></img>
+  </p> 
+
 
 #### Identidade Visual
 
