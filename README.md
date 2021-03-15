@@ -1,22 +1,43 @@
-  <p align="center">
-    <img src="app/src/images/logo-circular-brown.png" width=250 height=250 frameBorder="0"></img>
-  </p>
+<div align="center">
+  <img src="app/src/images/readme/banner.png" frameBorder="0"></img>
+  <h1>Hamburgueria Ipê</h1>
 
-# :hamburger: Hamburgueria Ipê
+### ⚛️ :fork_and_knife:	:iphone: :chart:	 🚀
+#### Original,  minimalista e <i>clean</i>
+</div>
 
-Acesse nossa aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/)
+Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JSX e CSS3.
+
+
+#### :speaking_head: User Experience (UX)
+- Exaustivamente testado para atingir a melhor experiência do usuário
+#### :art: Design original
+- Identidade visual agradável e de fácil identificação das <i>features</i>
+#### 🧩 Componentização
+- A aplicação está toda componentizada para fácil manutenção do código
+#### 🗂️ Documentação
+- Todo o processo está bem documentado para melhor entendimento
+#### 📊 Data Science
+- Possibilidade de levantar dados para evolução do negócio
 
 ***
 
+Acesse nossa aplicação [clicando aqui](http://hamburgueria-ipe.vercel.app/)
+
+
 ## :page_facing_up: Índice
+
+<!--ts-->
 
 - [1. Introdução](#1-introdução)
 - [2. A aplicação](#2-a-aplicação)
 - [3. Histórias de usuários](#3-histórias-de-usuários)
 - [4. Funcionalidades](#4-funcionalidades)
 - [5. Processo de criação](#5-processo-de-criação)
-- [6. Ferramentas](#6-ferramentas)
+- [6. Tecnologias](#6-tecnologias)
 - [7. Desenvolvedoras](#7-desenvolvedoras)
+
+<!--te-->
 
 ***
 ## 1. Introdução
@@ -27,7 +48,7 @@ As premissas partem do desafio [Burger Queen](https://github.com/Laboratoria/SAP
 
 
   <p align="center">
-    <img src="https://media.giphy.com/media/xT9KVzVj01qfRPiJr2/giphy.gif" width=480 height=200 frameBorder="0"></img>
+    <img src="https://media.giphy.com/media/xT9KVzVj01qfRPiJr2/giphy.gif" width=480 height=260 frameBorder="0"></img>
   </p>
 
 
@@ -67,7 +88,7 @@ Eu, como atendente:
 * Quero ver os pedidos que estão prontos para entregá-los rapidamente aos clientes
 
 
-## 4. Funcionalidades
+## ⚙️ 4. Funcionalidades
 Para atender todas as necessidades dos usuários, definimos que a aplicação *web* deve ter as seguintes funcionalidades:
 
 ✔️  Criar login e senha
@@ -97,7 +118,7 @@ Para atender todas as necessidades dos usuários, definimos que a aplicação *w
 Também foi definido que os dados **devem ficar armazenados**, mesmo após a conclusão do pedido, para que o cliente possa levantar estatísticas no futuro.
 
 
-## 5. Processo de criação
+## 🎨 5. Processo de criação
 
 #### :clipboard:	Organização 
 
@@ -163,19 +184,26 @@ Atendente executando pedido
  
  ✔️ Solução: Criamos input radios que alteram a cor após o clique
 
-## 6. Ferramentas
+## ⚒️ Tecnologias
+
+Hamburgueria Ipê utiliza as seguintes ferramentas:
 
  **Code:**
  
- <img alt="ReactJS" src="app/src/images/readme/react.png"> <img alt="HTML5" src="app/src/images/readme/html5.png"/> <img alt="CSS3" src="app/src/images/readme/css3.png"> <img alt="JSX" src="app/src/images/readme/js.png"> <img alt="NodeJS" src="app/src/images/readme/nodejs.png"> <img alt="Vercel" src="app/src/images/readme/vercel.png">
+ [<img alt="ReactJS" src="app/src/images/readme/react.png">](https://pt-br.reactjs.org/) [<img alt="HTML5" src="app/src/images/readme/html5.png"/>](https://html5.org/) [<img alt="CSS3" src="app/src/images/readme/css3.png">](https://www.w3.org/Style/CSS/Overview.en.html) [<img alt="JSX" src="app/src/images/readme/js.png">](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) [<img alt="NodeJS" src="app/src/images/readme/nodejs.png">](https://nodejs.org/en/) [<img alt="Vercel" src="app/src/images/readme/vercel.png">](https://vercel.com/)
 
 **Planejamento:**
 
-<img alt="Trello" src="app/src/images/readme/trello.png"> <img alt="Figma" src="app/src/images/readme/figma.png"> <img alt="Canva" src="app/src/images/readme/canva.png">
+[<img alt="Trello" src="app/src/images/readme/trello.png">](https://trello.com/) [<img alt="Figma" src="app/src/images/readme/figma.png">](https://www.figma.com/) [<img alt="Canva" src="app/src/images/readme/canva.png">](https://www.canva.com/)
 
 ## 7. Desenvolvedoras
- 
- Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsueda e Cris Mantovani, alunas da SAP005 do *bootcamp* da [Laboratória](https://github.com/Laboratoria).
+
+  <p align="center">
+    <img src="https://media.giphy.com/media/23is0rmCx5UlBoNxsZ/giphy.gif" width='500px' height='280px' frameBorder="0" allowFullScreen></img>
+  </p>
+
+
+Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsueda e Cris Mantovani, alunas da SAP005 do *bootcamp* da [Laboratória](https://github.com/Laboratoria).
  
  Se você ficou com alguma dúvida, tem sugestões ou quer apenas nos conhecer melhor, por favor, entre em contato :)
  
@@ -185,5 +213,42 @@ Atendente executando pedido
  | :-------------------------------------------------------------------------:| :-----------------------------------------------------: |
  | <img alt="Akemi" src="app/src/images/readme/akemi_dev.jpg" height='200px'> | <img alt="Akemi" src="app/src/images/readme/cris_dev.png" height='200px'>                                                                             |
  | [<img alt="GitHub Akemi" src="app/src/images/readme/github_badge.png">](https://github.com/akemimeka) [<img alt="LinkedIn Akemi" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/akemimeka/) | [<img alt="GitHub Cris" src="app/src/images/readme/github_badge.png">](https://github.com/crismantovani) [<img alt="LinkedIn Cris" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/crissmantovani/) |
+ 
 
 </div>
+Copyright [year] [fullname]	
+
+```mermaid
+graph LR
+A[Salão] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
+E isso gera
+```mermaid
+sequenceDiagram
+Cliente ->> Atendente: Olá Atendente. Quero fazer um pedido!
+Atendente-->>Cliente: Qual é o seu pedido, Cliente?
+Atendente-->> Cliente: Quero estes itens!
+Atendente-x John: I am good thanks!
+Note right of John: Atendente thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+
+Atendente-->Cliente: Enviando para a cozinha...
+Cliente->John: Yes... John, how are you?
+```
+
+
+``` mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+    D-->A;
+```
+
+
+
+
+https://media.giphy.com/media/g4jDE1JnpUNaw/giphy.gif

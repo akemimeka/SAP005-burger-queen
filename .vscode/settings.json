@@ -1,0 +1,11 @@
+{
+  "font-switcher.fontFamily": "Hack, Consolas, DejaVu Sans Mono, monospace",
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "terminal.integrated.cursorBlinking": true,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorStyle": "block",
+  "editor.lineHeight": 28,
+  "debug.console.fontSize": 12,
+  "editor.minimap.enabled": false
+}
