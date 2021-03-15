@@ -43,6 +43,10 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 * [3. Histórias de usuários](#3-histórias-de-usuários)
     * [3.1 Funcionalidades](#31-funcionalidades)
 * [4. Processo de Criação](#4-processo-de-criação)
+    * [4.1 Organização](#41-organização)
+    * [4.2 User Experience](#42-user-experience)
+    * [4.3 Wireframe de média fidelidade](#43-wireframe-de-média-fidelidade)
+
 <!--te-->
 ***
 ## 1. O Projeto
@@ -106,8 +110,10 @@ Com base nas histórias dos usuários, definimos algumas funcionalidades para a 
 |                                                    	|        Enviar o pedido para a cozinha       	|                                              	|                                            	|
 
 ##  4. Processo de criação
-#### :clipboard:	Organização 
-Para conseguir entregar todas as funcionalidades do projeto, organizamos todo o fluxo de desenvolvimento do projeto pelo método [Kanban](https://pt.wikipedia.org/wiki/Kanban) no Trello. 
+🖍️	Todo o conceito do projeto envolveu uma enorme valorização da experiência do usuário e suas necessidades. Também planejamos e estudamos as opções disponíveis antes de apresentar a solução para a Hamburgueria Ipê.
+
+#### 	4.1 Organização 
+:memo:  Para conseguir entregar todas as funcionalidades do projeto, organizamos todo o fluxo de desenvolvimento do projeto pelo método [Kanban](https://pt.wikipedia.org/wiki/Kanban) no Trello. 
 
 Dessa forma, definimos:
 
@@ -122,21 +128,24 @@ Dessa forma, definimos:
 🤝 [Daily Scrum](https://www.desenvolvimentoagil.com.br/scrum/daily_scrum)
 
   <p align="center">
-    <img alt='História de Usuário 1' src="app/src/images/readme/trello-macbook.png" height='450'>
+    <img alt='Trello' src="app/src/images/readme/trello-macbook.png" height='450'>
     </img>
     
   *Clique na imagem para ampliar*
   </p>
 
-#### User Experience
-Durante o processo de criação, fizemos diversas entrevistas com usuários para começar a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_wireframe) de média fidelidade no [Figma](https://www.figma.com/).
+### 4.2 User Experience
+🤩	Durante o processo de criação, fizemos diversas entrevistas com usuários para começar a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_wireframe) de média fidelidade no [Figma](https://www.figma.com/).
 
 :warning:	As entrevistas foram realizadas por vídeo conferência devido a pandemia do Coronavírus.
 
-Com as respostas dos usuários, conseguimos desenvolver e testar o protótipo de média fidelidade, que pode ser acessado [clicando aqui](https://www.figma.com/proto/5rVNETEzDOLBWddlkh2iUo/Hamburgueria-Ip%C3%AA?node-id=1%3A2&scaling=min-zoom).
+### 4.3 Wireframe de média fidelidade
+🔰 Com as respostas dos usuários, conseguimos desenvolver e testar o protótipo de média fidelidade, que pode ser acessado [clicando aqui](https://www.figma.com/proto/5rVNETEzDOLBWddlkh2iUo/Hamburgueria-Ip%C3%AA?node-id=1%3A2&scaling=min-zoom).
 
   <p align="center">
     <img src="app/src/images/readme/ipad-media-login-vazio.png"></img> <img src="app/src/images/readme/ipad-media-cadastro.png"></img>
+    <br/>
+    <img src="app/src/images/readme/ipad-media-cliente.png"></img> <img src="app/src/images/readme/ipad-media-pedido.png"></img>
   </p> 
 
 
