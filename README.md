@@ -7,8 +7,6 @@
 </div>
 
 Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JSX e CSS3.
-
-
 #### :speaking_head: User Experience (UX)
 - Exaustivamente testado para atingir a melhor experiência do usuário
 #### :art: Design original
@@ -19,22 +17,20 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 - Todo o processo está bem documentado para melhor entendimento
 #### 📊 Data Science
 - Possibilidade de levantar dados para o desenvolvimento do negócio
-
 ## :earth_africa: Acesse a aplicação
 <p align="center">
   <img src="app/src/images/readme/app-presentation.png" frameBorder="0"></img>
 </p>
 
 <br/>
-<h4> Você pode acessar a aplicação <a href="(http://hamburgueria-ipe.vercel.app/"> clicando aqui</a> e utilizar um dos logins de teste abaixo:</h4>
+<h4> Você pode acessar a aplicação <a href="http://hamburgueria-ipe.vercel.app/">clicando aqui</a> e utilizar um dos logins de teste abaixo:</h4>
 
 <p align='center'>
 
 | #                     	|             Salão            	|           Cozinha           	|
-|-----------------------	|:----------------------------:	|:---------------------------:	|
+|:-----------------------:|:----------------------------:	|:---------------------------:	|
 | :busts_in_silhouette: 	| salao@hamburgueriaipe.com.br 	| chef@hamburgueriaipe.com.br 	|
 | :key:                 	|            123456            	|            123456           	|
-
 </p>
  
  ***
@@ -42,7 +38,7 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 
 <!--ts-->
 
-- [1. Introdução](#1-introdução)
+- [1. O Projeto](#1-o-projeto)
 - [2. A aplicação](#2-a-aplicação)
 - [3. Histórias de usuários](#3-histórias-de-usuários)
 - [4. Funcionalidades](#4-funcionalidades)
@@ -51,54 +47,56 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 - [7. Desenvolvedoras](#7-desenvolvedoras)
 
 <!--te-->
-
 ***
-## 1. Introdução
-
-**[Hamburgueria Ipê](http://hamburgueria-ipe.vercel.app/)** é uma aplicação *web* escalável, desenvolvida para a gestão de uma hamburgueria com foco em *tablets* e atendendo todas as necessidades de seus usuários.
-
-A aplicação foi desenvolvida para o desafio [Burger Queen](https://github.com/Laboratoria/SAP005-burger-queen) proposto pela Laboratória.
-
-
-  <p align="center">
-    <img src="https://media.giphy.com/media/xT9KVzVj01qfRPiJr2/giphy.gif" width=550 height=260 frameBorder="0"></img>
-  </p>
-
+## 1. O Projeto
+O desafio *Burguer Queen* proposto pela [Laboratória](https://github.com/Laboratoria), é de desenvolver uma interface para uma hamburgueria 24hrs que está em expansão.
+Premissas:
+- Manter a interface e o estado sincronizados com React
+- Ser um SPA (Single Page App)
+- Ser responsivo em *tablets*
+- Definir a estrutura de pastas e arquivos
+- Usar JavaScript (ES6+) para a lógica do projeto
 
 ## 2. A aplicação
-A hamburgueria Ipê lançou o serviço 24h e teve um resultado muito positivo. Para manter o crescimento, precisa de uma aplicação *web* pensada para *tablets*, que permita armazenar os pedidos dos cardápios **Principal** e **Café da Manhã**, englobar todos os extras, enviar para a cozinha e informar aos atendentes quando os pedidos podem ser servidos aos clientes.
+  <p align="center">
+    <img src="https://media.giphy.com/media/xT9KVzVj01qfRPiJr2/giphy.gif" width=550 height=260 frameBorder="0">
+    </img>
+  </p>
+A Hamburgueria Ipê lançou o serviço de 24 horas e foi muito bem aceito pelos clientes. Agora, a prioridade é continuar crescendo sem perder a qualidade.
+
+Para isso, o atendimento deve ser simples e rápido, a cozinha deve ser eficiente e o negócio deve ser gerenciado com base em dados reais e relatórios fáceis de entender.
 
 ## 3. Histórias de usuários
 
-O cliente nos forneceu as seguintes histórias de usuário:
+A Hamburgueria Ipê nos forneceu as histórias de usuários:
 
 :writing_hand: **História de usuário #1**
 
-Eu, como funcionário da hamburgueria:
-
-* Quero entrar na plataforma e ver apenas a tela importante para o meu trabalho
+  <p align="center">
+    <img alt='História de Usuário 1' src="app/src/images/readme/hu1.png">
+    </img>
+  </p>
 
 :writing_hand: **História de usuário #2**
 
-Eu, como atendente:
-
-* Quero poder anotar o meu pedido
-* Saber o valor de cada produto
-* Poder enviar o pedido para a cozinha para ser preparado
+  <p align="center">
+    <img alt='História de Usuário 1' src="app/src/images/readme/hu2.png">
+    </img>
+  </p>
 
 :writing_hand: **História de usuário #3**
 
-Eu, como *chef* de cozinha:
-
-* Quero ver os pedidos dos clientes em ordem
-* Poder marcar quando os pedidos estão prontos
-* Poder notificar os atendentes que o pedido está pronto para ser entregue ao cliente
+  <p align="center">
+    <img alt='História de Usuário 3' src="app/src/images/readme/hu3.png">
+    </img>
+  </p>
 
 :writing_hand: **História de usuário #4**
 
-Eu, como atendente:
-
-* Quero ver os pedidos que estão prontos para entregá-los rapidamente aos clientes
+  <p align="center">
+    <img alt='História de Usuário 1' src="app/src/images/readme/hu4.png">
+    </img>
+  </p>
 
 
 ## ⚙️ 4. Funcionalidades
