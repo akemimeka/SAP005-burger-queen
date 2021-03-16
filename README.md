@@ -164,9 +164,9 @@ Dessa forma, definimos:
 🔰 Com as respostas dos usuários, conseguimos desenvolver e testar o protótipo de média fidelidade, que pode ser acessado [clicando aqui](https://www.figma.com/proto/5rVNETEzDOLBWddlkh2iUo/Hamburgueria-Ip%C3%AA?node-id=1%3A2&scaling=min-zoom).
 
   <p align="center">
-    <img src="app/src/images/readme/ipad-media-login-vazio.png"></img> <img src="app/src/images/readme/ipad-media-cadastro.png"></img>
+    <img alt='Wireframe - Login Vazio' src="app/src/images/readme/ipad-media-login-vazio.png"  width='250'height='350'></img> <img alt='Wireframe - Cadastro' src="app/src/images/readme/ipad-media-cadastro.png" width='250'height='350'></img>
     <br/>
-    <img src="app/src/images/readme/ipad-media-cliente.png"></img> <img src="app/src/images/readme/ipad-media-pedido.png"></img>
+    <img alt='Wireframe - Mesas do Salão' src="app/src/images/readme/ipad-media-mesas.png" width='250'height='350'></img> <img alt='Wireframe - Pedidos' src="app/src/images/readme/ipad-media-pedido.png"  width='250'height='350'></img>
     
 🔎 *Clique nas imagens para ampliar*
   </p> 
@@ -190,6 +190,7 @@ Fizemos entrevistas com os usuários para alcançarmos tons que entregassem a me
 ✒️ Testamos e escolhemos três fontes para serem utilizadas na aplicação e em todos os meios de comunicação, como banners, *posts* em redes sociais, cartazes, etc.
 
 **Tipografia principal**
+
 A fonte [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?preview.text_type=custom&preview.text=Playfar%20Display) é utilizada no logo e em títulos de páginas:
 
 <p align='center'>
@@ -197,6 +198,7 @@ A fonte [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?pr
 </p>
 
 **Tipografia de apoio**
+
 A fonte [Work Sans](https://fonts.google.com/specimen/Work+Sans?preview.text_type=custom&preview.text=Work%20Sans%20Regular#standard-styles) é utilizada em todo o corpo da aplicação
 
 <p align='center'>
