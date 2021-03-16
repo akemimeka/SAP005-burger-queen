@@ -51,7 +51,7 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
     * [4.4 Wireframe de média fidelidade](#44-wireframe-de-média-fidelidade)
 * [5. Identidadade Visual](#5-identidade-visual)
     * [5.1 Paleta de Cores](#51-paleta-de-cores) 
-    * [5.2 Fontes](#52-fontes)
+    * [5.2 Tipografia](#52-tipografia)
     * [5.3 Logotipo](#53-logotipo)
 
 <!--te-->
@@ -137,7 +137,7 @@ Dessa forma, definimos:
 
 🤝 [Daily Scrum](https://www.desenvolvimentoagil.com.br/scrum/daily_scrum)
 
-  <p align="center">
+  <p align='center'>
     <img alt='Trello' src="app/src/images/readme/trello-macbook.png" height='450'>
     </img>
     
@@ -186,8 +186,22 @@ Fizemos entrevistas com os usuários para alcançarmos tons que entregassem a me
 ![Paleta de Cores](app/src/images/readme/color-palette.png)
 🔎 *Clique na imagem para ampliar*
 
-### 5.2 Fontes
-✒️ Testamos e escolhemos três fontes para a interface
+### 5.2 Tipografia
+✒️ Testamos e escolhemos três fontes para serem utilizadas na aplicação e em todos os meios de comunicação, como banners, *posts* em redes sociais, cartazes, etc.
+
+**Tipografia principal**
+A fonte [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?preview.text_type=custom&preview.text=Playfar%20Display) é utilizada no logo e em títulos de páginas:
+
+<p align='center'>
+<img alt='Tipografia Principal' src='app/src/images/readme/tipografia-principal.png'></img>
+</p>
+
+**Tipografia de apoio**
+A fonte [Work Sans](https://fonts.google.com/specimen/Work+Sans?preview.text_type=custom&preview.text=Work%20Sans%20Regular#standard-styles) é utilizada em todo o corpo da aplicação
+
+<p align='center'>
+<img alt='Tipografia de Apoio' src='app/src/images/readme/tipografia-apoio.png'></img>
+</p>
 
 ### 5.3 Logotipo
 
@@ -249,7 +263,7 @@ Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsu
  
  Se você ficou com alguma dúvida, tem sugestões ou quer apenas nos conhecer melhor, por favor, entre em contato :)
  
- <p align="center">
+ <p align='center'>
  
  | Akemi Mitsueda                                                             |                            Cris Mantovani               |
  | :-------------------------------------------------------------------------:| :-----------------------------------------------------: |
