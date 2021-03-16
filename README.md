@@ -27,10 +27,12 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 
 <p align='center'>
 
+
 | #                     	|             Salão            	|           Cozinha           	|
 |:-----------------------:|:----------------------------:	|:---------------------------:	|
 | :busts_in_silhouette: 	| salao@hamburgueriaipe.com.br 	| chef@hamburgueriaipe.com.br 	|
 | :key:                 	|            123456            	|            123456           	|
+
 </p>
  
  ***
@@ -42,10 +44,15 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 * [2. A aplicação](#2-a-aplicação)
 * [3. Histórias de usuários](#3-histórias-de-usuários)
     * [3.1 Funcionalidades](#31-funcionalidades)
-* [4. Processo de Criação](#4-processo-de-criação)
+* [4. Planejamento](#4-planejamento)
     * [4.1 Organização](#41-organização)
-    * [4.2 User Experience](#42-user-experience)
-    * [4.3 Wireframe de média fidelidade](#43-wireframe-de-média-fidelidade)
+    * [4.2 Fluxograma](#42-fluxograma)
+    * [4.3 User Experience](#43-user-experience)
+    * [4.4 Wireframe de média fidelidade](#44-wireframe-de-média-fidelidade)
+* [5. Identidadade Visual](#5-identidade-visual)
+    * [5.1 Paleta de Cores](#51-paleta-de-cores) 
+    * [5.2 Fontes](#52-fontes)
+    * [5.3 Logotipo](#53-logotipo)
 
 <!--te-->
 ***
@@ -109,10 +116,13 @@ Com base nas histórias dos usuários, definimos algumas funcionalidades para a 
 |            Fazer login na tela correta             	|     Ver resumo e o valor total do pedido    	| Ver o tempo que levou para preparar o pedido 	|                                            	|
 |                                                    	|        Enviar o pedido para a cozinha       	|                                              	|                                            	|
 
-##  4. Processo de criação
+##  4. Planejamento
 🖍️	Todo o conceito do projeto envolveu uma enorme valorização da experiência do usuário e suas necessidades. Também planejamos e estudamos as opções disponíveis antes de apresentar a solução para a Hamburgueria Ipê.
 
-#### 	4.1 Organização 
+#### 	4.1 Organização
+  <p align='center'><img alt='Gif' src='https://media.giphy.com/media/g4jDE1JnpUNaw/giphy.gif' width=600 height=300 frameBorder="0">
+  </p>
+
 :memo:  Para conseguir entregar todas as funcionalidades do projeto, organizamos todo o fluxo de desenvolvimento do projeto pelo método [Kanban](https://pt.wikipedia.org/wiki/Kanban) no Trello. 
 
 Dessa forma, definimos:
@@ -131,48 +141,60 @@ Dessa forma, definimos:
     <img alt='Trello' src="app/src/images/readme/trello-macbook.png" height='450'>
     </img>
     
-  *Clique na imagem para ampliar*
+🔎 *Clique na imagem para ampliar*
   </p>
 
-### 4.2 User Experience
-🤩	Durante o processo de criação, fizemos diversas entrevistas com usuários para começar a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_wireframe) de média fidelidade no [Figma](https://www.figma.com/).
+### 4.2 Fluxograma
+
+🧭 Com as histórias de usuário, conseguimos entender as necessidades da Hamburgueria Ipê e montar o fluxo da aplicação
+
+<p align='center'>
+<img alt='Fluxograma' src='app/src/images/readme/fluxograma.png' width='600'height='500'>
+
+🔎 *Clique na imagem para ampliar*
+ </p>
+ 
+
+### 4.3 User Experience
+🤩	Durante o processo de criação, fizemos diversas entrevistas com usuários para começar a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_wireframe) de média fidelidade no [Figma](https://www.figma.com/) e atender as necessidades do usuário entregando uma boa experiência.
 
 :warning:	As entrevistas foram realizadas por vídeo conferência devido a pandemia do Coronavírus.
 
-### 4.3 Wireframe de média fidelidade
+### 4.4 Wireframe de média fidelidade
 🔰 Com as respostas dos usuários, conseguimos desenvolver e testar o protótipo de média fidelidade, que pode ser acessado [clicando aqui](https://www.figma.com/proto/5rVNETEzDOLBWddlkh2iUo/Hamburgueria-Ip%C3%AA?node-id=1%3A2&scaling=min-zoom).
 
   <p align="center">
     <img src="app/src/images/readme/ipad-media-login-vazio.png"></img> <img src="app/src/images/readme/ipad-media-cadastro.png"></img>
     <br/>
     <img src="app/src/images/readme/ipad-media-cliente.png"></img> <img src="app/src/images/readme/ipad-media-pedido.png"></img>
+    
+🔎 *Clique nas imagens para ampliar*
   </p> 
 
+#### 5. Identidade Visual
+🖌️ O conceito da identidade visual da hamburgueria envolve as cores do Brasil e da típica árvore Ipê Amarelo e sua flor:
 
-#### Identidade Visual
+<p align='center'>
+<img alt='Árvore Ipê Amarelo' src='/app/src/images/readme/ipe.png' width='750px' height='450'></img>
+</p>
 
-Pensando no nome **Ipê**, optamos por uma paleta de cores que usa os tons da flor Ipê de forma mais suave para tornar a visualização fácil e agradável.
+### 5.1 Paleta de Cores
+👩‍🎨 A paleta de cores foi desenvolvida com tons de verde e amarelo  presentes na bandeira do Brasil e da flor Ipê, e, alguns tons terrosos como da árvore
+
+Fizemos entrevistas com os usuários para alcançarmos tons que entregassem a melhor e mais agradável visualização.
 
 ![Paleta de Cores](app/src/images/readme/color-palette.png)
+🔎 *Clique na imagem para ampliar*
 
- ### Logo
+### 5.2 Fontes
+✒️ Testamos e escolhemos três fontes para a interface
+
+### 5.3 Logotipo
 
 A partir da definição da paleta de cores, criamos um logotipo adequado a interface visual da hamburgueria.
 
    <p align="center">
     <img src="app/src/images/logo-horizontal-brown.png"></img>
-  </p>
-
-
-### Wireframe inicial
-Para desenvolver a interface visual da aplicação, utilizamos o Figma.
-
-  <p align="center">
-    <img src="app/src/images/readme/ipad-baixafidelidade-1.png" width='284' height='399'frameBorder="0"></img>
-  </p> 
-  
-  <p align="center">
-    <img src="app/src/images/readme/ipad-baixafidelidade-2.png" width='284' height='399' frameBorder="0"></img>
   </p>
 
  #### Interface Alta Fidelidade
