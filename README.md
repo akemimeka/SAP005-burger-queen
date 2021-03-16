@@ -135,6 +135,8 @@ Dessa forma, definimos:
 
 :hammer_and_pick:  Divisão de tarefas
 
+🔐 Para *merge* no repositório (*main*), somente após [code review](https://en.wikipedia.org/wiki/Code_review) e revisão em pares
+
 🤝 [Daily Scrum](https://www.desenvolvimentoagil.com.br/scrum/daily_scrum)
 
   <p align='center'>
@@ -149,7 +151,7 @@ Dessa forma, definimos:
 🧭 Com as histórias de usuário, conseguimos entender as necessidades da Hamburgueria Ipê e montar o fluxo da aplicação
 
 <p align='center'>
-<img alt='Fluxograma' src='app/src/images/readme/fluxograma.png' width='600'height='500'>
+<a href='app/src/images/readme/fluxograma-zoom.png'><img alt='Fluxograma' src='app/src/images/readme/fluxograma.png'></img></a>
 
 🔎 *Clique na imagem para ampliar*
  </p>
