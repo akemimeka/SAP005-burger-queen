@@ -174,7 +174,7 @@ Dessa forma, definimos:
   </div> 
 
 ## 5. Identidade Visual
-🖌️ O conceito da identidade visual da hamburgueria envolve as cores do Brasil e da típica árvore Ipê Amarelo e sua flor:
+🖌️ O conceito da identidade visual da hamburgueria envolve as cores do Brasil e da árvore símbolo [Ipê Amarelo](https://pt.wikipedia.org/wiki/Handroanthus_albus) e sua flor:
 
 <div align='center'>
   <img alt='Árvore Ipê Amarelo' src='/app/src/images/readme/ipe.png' width='750px' height='450'>
@@ -195,7 +195,7 @@ Fizemos entrevistas com os usuários para alcançarmos tons que entregassem a me
 
 **Tipografia principal**
 
-A fonte [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?preview.text_type=custom&preview.text=Playfar%20Display) é utilizada no logo e em títulos de páginas:
+A fonte [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?preview.text_type=custom&preview.text=Playfar%20Display) é utilizada no logo e em títulos de páginas
 
 <div align='center'>
   <img alt='Tipografia Principal' src='app/src/images/readme/tipografia-principal.png'>
@@ -212,11 +212,30 @@ A fonte [Work Sans](https://fonts.google.com/specimen/Work+Sans?preview.text_typ
 
 ### 5.3 Logotipo
 
-A partir da definição da paleta de cores, criamos um logotipo adequado a interface visual da hamburgueria.
+💎 Após a definição da paleta de cores e tipografia, desenvolvemos o logotipo da hamburgueria para ser original, clean e harmônico com todo o visual da aplicação.
+
+O logo lembra uma mesa de madeira e a cor predominante é marrom (RGB #7F381A), inspirado no tronco da árvore.
+Ao centro, está a flor Ipê que dá nome a hamburgueria, rodeada pelas palavras 'Hamburgueria' e 'Ipê', em tom amarelo-creme (RGB #F8E7C9).
 
    <div align="center">
-    <img src="app/src/images/logo-horizontal-brown.png"></img>
+    <img src="app/src/images/logo-circular-brown.png"></img>
   </div
+<br/><br/>
+
+Desenvolvemos quatro versões para serem aplicadas em fundos de cores distintas:
+
+   <div align="center">
+    <img src="app/src/images/readme/logo-versoes.png"></img>
+  </div
+<br/><br/>
+
+⚠️**Utilização do logotipo**
+
+🟢 Deve ser usado respeitando a paleta de cores, formas e tamanhos, para ter consistência no uso e desenvolver o reconhecimento da marca pelo público.
+
+🚫 O logo  deve ser usado respeitando a identidade visual, mantendo os padrões de cores Pantone ou CMYK para impressos no geral e RGB para aplicações digitais.
+
+
 
  #### Interface Alta Fidelidade
 
@@ -282,4 +301,5 @@ Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsu
 | <a href='https://github.com/akemimeka'><img alt='GitHub - Akemi' src='app/src/images/readme/github_badge.png'></img></a> <a href='https://www.linkedin.com/in/akemimeka/'><img alt='LinkedIn - Akemi' src='app/src/images/readme/linkedin_badge.png'></img></a>  |  <a href='https://github.com/crismantovani'><img alt='GitHub - Cris' src='app/src/images/readme/github_badge.png'></img></a> <a href='https://www.linkedin.com/in/crissmantovani/'><img alt='LinkedIn - Cris' src='app/src/images/readme/linkedin_badge.png'></img></a> 	|          	|
 </div>
 
-Copyright [year] [fullname]	
+### ©2021 - Todos os direitos reservados
+É expressamente proibida qualquer forma de cópia e/ou reprodução deste projeto sem autorização expressa.
