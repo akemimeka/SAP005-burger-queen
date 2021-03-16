@@ -171,7 +171,7 @@ Dessa forma, definimos:
 🔎 *Clique nas imagens para ampliar*
   </p> 
 
-#### 5. Identidade Visual
+## 5. Identidade Visual
 🖌️ O conceito da identidade visual da hamburgueria envolve as cores do Brasil e da típica árvore Ipê Amarelo e sua flor:
 
 <p align='center'>
@@ -255,5 +255,6 @@ Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsu
  | :-------------------------------------------------------------------------:| :-----------------------------------------------------: |
  | <img alt="Akemi" src="app/src/images/readme/akemi_dev.jpg" height='200px'> | <img alt="Akemi" src="app/src/images/readme/cris_dev.png" height='200px'>                                                                             |
  | [<img alt="GitHub Akemi" src="app/src/images/readme/github_badge.png">](https://github.com/akemimeka) [<img alt="LinkedIn Akemi" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/akemimeka/) | [<img alt="GitHub Cris" src="app/src/images/readme/github_badge.png">](https://github.com/crismantovani) [<img alt="LinkedIn Cris" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/crissmantovani/) |
+ 
 </p>
 Copyright [year] [fullname]	
