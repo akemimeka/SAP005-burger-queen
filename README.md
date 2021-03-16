@@ -2,7 +2,7 @@
   <img src="app/src/images/readme/banner.png" frameBorder="0"></img>
   <h1>Hamburgueria Ipê</h1>
 
-## ⚛️ :fork_and_knife:	:iphone: :chart:	 🚀
+## ⚛️ :fork_and_knife:	:iphone: :chart: 🚀 
 ### Original,  minimalista e <i>clean</i>
 </div>
 
@@ -18,14 +18,14 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 #### 📊 Data Science
 - Possibilidade de levantar dados para o desenvolvimento do negócio
 ## :earth_africa: Acesse a aplicação
-<p align="center">
+<div align="center">
   <img src="app/src/images/readme/app-presentation.png" frameBorder="0"></img>
-</p>
+</div>
 
 <br/>
 <h4> Você pode acessar a aplicação <a href="http://hamburgueria-ipe.vercel.app/">clicando aqui</a> e utilizar um dos logins de teste abaixo:</h4>
 
-<p align='center'>
+<div align='center'>
 
 
 | #                     	|             Salão            	|           Cozinha           	|
@@ -33,7 +33,7 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 | :busts_in_silhouette: 	| salao@hamburgueriaipe.com.br 	| chef@hamburgueriaipe.com.br 	|
 | :key:                 	|            123456            	|            123456           	|
 
-</p>
+</div>
  
  ***
 ## :bookmark_tabs: Índice
@@ -66,10 +66,10 @@ Premissas:
 - Usar JavaScript (ES6+) para a lógica do projeto
 
 ## 2. A aplicação
-  <p align="center">
-    <img src="https://media.giphy.com/media/xT9KVzVj01qfRPiJr2/giphy.gif" width=550 height=260 frameBorder="0">
+  <div align="center">
+    <img alt='Gif' src="https://media.giphy.com/media/xT9KVzVj01qfRPiJr2/giphy.gif" width=550 height=260 frameBorder="0">
     </img>
-  </p>
+  </div>
 A Hamburgueria Ipê lançou o serviço de 24 horas e foi muito bem aceito pelos clientes. Agora, a prioridade é continuar crescendo sem perder a qualidade.
 
 Para isso, o atendimento deve ser simples e rápido, a cozinha deve ser eficiente e o negócio deve ser gerenciado com base em dados reais e relatórios fáceis de entender.
@@ -80,31 +80,31 @@ A Hamburgueria Ipê nos forneceu as histórias de usuários:
 
 :writing_hand: **História de usuário #1**
 
-  <p align="center">
+  <div align="center">
     <img alt='História de Usuário 1' src="app/src/images/readme/hu1.png">
     </img>
-  </p>
+  </div>
 
 :writing_hand: **História de usuário #2**
 
-  <p align="center">
-    <img alt='História de Usuário 1' src="app/src/images/readme/hu2.png">
+  <div align="center">
+    <img alt='História de Usuário 2' src="app/src/images/readme/hu2.png">
     </img>
-  </p>
+  </div>
 
 :writing_hand: **História de usuário #3**
 
-  <p align="center">
+  <div align="center">
     <img alt='História de Usuário 3' src="app/src/images/readme/hu3.png">
     </img>
-  </p>
+  </div>
 
 :writing_hand: **História de usuário #4**
 
-  <p align="center">
-    <img alt='História de Usuário 1' src="app/src/images/readme/hu4.png">
+  <div align="center">
+    <img alt='História de Usuário 4' src="app/src/images/readme/hu4.png">
     </img>
-  </p>
+  </div>
   
  ### 3.1 Funcionalidades
 Com base nas histórias dos usuários, definimos algumas funcionalidades para a aplicação:
@@ -120,8 +120,8 @@ Com base nas histórias dos usuários, definimos algumas funcionalidades para a 
 🖍️	Todo o conceito do projeto envolveu uma enorme valorização da experiência do usuário e suas necessidades. Também planejamos e estudamos as opções disponíveis antes de apresentar a solução para a Hamburgueria Ipê.
 
 #### 	4.1 Organização
-  <p align='center'><img alt='Gif' src='https://media.giphy.com/media/g4jDE1JnpUNaw/giphy.gif' width=600 height=300 frameBorder="0">
-  </p>
+  <div align='center'><img alt='Gif' src='https://media.giphy.com/media/g4jDE1JnpUNaw/giphy.gif' width=600 height=300 frameBorder="0"></img>
+  </div>
 
 :memo:  Para conseguir entregar todas as funcionalidades do projeto, organizamos todo o fluxo de desenvolvimento do projeto pelo método [Kanban](https://pt.wikipedia.org/wiki/Kanban) no Trello. 
 
@@ -135,26 +135,26 @@ Dessa forma, definimos:
 
 :hammer_and_pick:  Divisão de tarefas
 
-🔐 Para *merge* no repositório (*main*), somente após [code review](https://en.wikipedia.org/wiki/Code_review) e revisão em pares
+🔐 Para *merge* no repositório (*main*), somente após [*code review*](https://en.wikipedia.org/wiki/Code_review) para revisão em pares e aprovação da *reviewer*
 
 🤝 [Daily Scrum](https://www.desenvolvimentoagil.com.br/scrum/daily_scrum)
 
-  <p align='center'>
+  <div align='center'>
     <img alt='Trello' src="app/src/images/readme/trello-macbook.png" height='450'>
     </img>
     
 🔎 *Clique na imagem para ampliar*
-  </p>
+  </div>
 
 ### 4.2 Fluxograma
 
 🧭 Com as histórias de usuário, conseguimos entender as necessidades da Hamburgueria Ipê e montar o fluxo da aplicação
 
-<p align='center'>
+<div align='center'>
 <a href='app/src/images/readme/fluxograma-zoom.png'><img alt='Fluxograma' src='app/src/images/readme/fluxograma.png'></img></a>
 
 🔎 *Clique na imagem para ampliar*
- </p>
+ </div>
  
 
 ### 4.3 User Experience
@@ -165,20 +165,21 @@ Dessa forma, definimos:
 ### 4.4 Wireframe de média fidelidade
 🔰 Com as respostas dos usuários, conseguimos desenvolver e testar o protótipo de média fidelidade, que pode ser acessado [clicando aqui](https://www.figma.com/proto/5rVNETEzDOLBWddlkh2iUo/Hamburgueria-Ip%C3%AA?node-id=1%3A2&scaling=min-zoom).
 
-  <p align="center">
+  <div align="center">
     <img alt='Wireframe - Login Vazio' src="app/src/images/readme/ipad-media-login-vazio.png"  width='250'height='350'></img> <img alt='Wireframe - Cadastro' src="app/src/images/readme/ipad-media-cadastro.png" width='250'height='350'></img>
     <br/>
     <img alt='Wireframe - Mesas do Salão' src="app/src/images/readme/ipad-media-mesas.png" width='250'height='350'></img> <img alt='Wireframe - Pedidos' src="app/src/images/readme/ipad-media-pedido.png"  width='250'height='350'></img>
     
 🔎 *Clique nas imagens para ampliar*
-  </p> 
+  </div> 
 
 ## 5. Identidade Visual
 🖌️ O conceito da identidade visual da hamburgueria envolve as cores do Brasil e da típica árvore Ipê Amarelo e sua flor:
 
-<p align='center'>
-<img alt='Árvore Ipê Amarelo' src='/app/src/images/readme/ipe.png' width='750px' height='450'></img>
-</p>
+<div align='center'>
+  <img alt='Árvore Ipê Amarelo' src='/app/src/images/readme/ipe.png' width='750px' height='450'>
+  </img>
+</div>
 
 ### 5.1 Paleta de Cores
 👩‍🎨 A paleta de cores foi desenvolvida com tons de verde e amarelo  presentes na bandeira do Brasil e da flor Ipê, e, alguns tons terrosos como da árvore
@@ -186,6 +187,7 @@ Dessa forma, definimos:
 Fizemos entrevistas com os usuários para alcançarmos tons que entregassem a melhor e mais agradável visualização.
 
 ![Paleta de Cores](app/src/images/readme/color-palette.png)
+
 🔎 *Clique na imagem para ampliar*
 
 ### 5.2 Tipografia
@@ -195,45 +197,50 @@ Fizemos entrevistas com os usuários para alcançarmos tons que entregassem a me
 
 A fonte [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?preview.text_type=custom&preview.text=Playfar%20Display) é utilizada no logo e em títulos de páginas:
 
-<p align='center'>
-<img alt='Tipografia Principal' src='app/src/images/readme/tipografia-principal.png'></img>
-</p>
+<div align='center'>
+  <img alt='Tipografia Principal' src='app/src/images/readme/tipografia-principal.png'>
+  </img>
+</div>
 
 **Tipografia de apoio**
 
 A fonte [Work Sans](https://fonts.google.com/specimen/Work+Sans?preview.text_type=custom&preview.text=Work%20Sans%20Regular#standard-styles) é utilizada em todo o corpo da aplicação
 
-<p align='center'>
+<div align='center'>
 <img alt='Tipografia de Apoio' src='app/src/images/readme/tipografia-apoio.png'></img>
-</p>
+</div>
 
 ### 5.3 Logotipo
 
 A partir da definição da paleta de cores, criamos um logotipo adequado a interface visual da hamburgueria.
 
-   <p align="center">
+   <div align="center">
     <img src="app/src/images/logo-horizontal-brown.png"></img>
-  </p>
+  </div
 
  #### Interface Alta Fidelidade
 
-  <p align="center">
-    <img src="app/src/images/readme/ipad-altafidelidade-1.png" width='284' height='399' frameBorder="0"></img>
-  </p>
+  <div align="center">
+    <img src="app/src/images/readme/ipad-altafidelidade-1.png" width='284' height='399' frameBorder="0">
+    </img>
+  </div>
 
-   <p align="center">
-    <img src="app/src/images/readme/ipad-altafidelidade-2.png" width='284' height='399' frameBorder="0"></img>
-  </p>
+   <div align="center">
+    <img src="app/src/images/readme/ipad-altafidelidade-2.png" width='284' height='399' frameBorder="0">
+    </img>
+  </div>
 
 #### Página do menu principal
 Atendente executando pedido
- <p align="center">
-    <img src="app/src/images/readme/menu-principal-lanches.png" width='600' height='600' frameBorder="0"></img>
-  </p>
+ <div align="center">
+    <img src="app/src/images/readme/menu-principal-lanches.png" width='600' height='600' frameBorder="0">
+    </img>
+  </div>
   
- <p align="center">
-    <img src="app/src/images/readme/menu-principal-selecao.png" width='600' height='600' frameBorder="0"></img>
-  </p>
+ <div align="center">
+    <img src="app/src/images/readme/menu-principal-selecao.png" width='600' height='600' frameBorder="0">
+    </img>
+  </div>
  
   🔎 Usabilidade
 
@@ -248,9 +255,9 @@ Atendente executando pedido
 
 Hamburgueria Ipê utiliza as seguintes ferramentas:
 
- **Code:**
- 
- [<img alt="ReactJS" src="app/src/images/readme/react.png">](https://pt-br.reactjs.org/) [<img alt="HTML5" src="app/src/images/readme/html5.png"/>](https://html5.org/) [<img alt="CSS3" src="app/src/images/readme/css3.png">](https://www.w3.org/Style/CSS/Overview.en.html) [<img alt="JSX" src="app/src/images/readme/js.png">](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) [<img alt="NodeJS" src="app/src/images/readme/nodejs.png">](https://nodejs.org/en/) [<img alt="Vercel" src="app/src/images/readme/vercel.png">](https://vercel.com/)
+**Code:**
+
+[<img alt="ReactJS" src="app/src/images/readme/react.png">](https://pt-br.reactjs.org/) [<img alt="HTML5" src="app/src/images/readme/html5.png"/>](https://html5.org/) [<img alt="CSS3" src="app/src/images/readme/css3.png">](https://www.w3.org/Style/CSS/Overview.en.html) [<img alt="JSX" src="app/src/images/readme/js.png">](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) [<img alt="NodeJS" src="app/src/images/readme/nodejs.png">](https://nodejs.org/en/) [<img alt="Vercel" src="app/src/images/readme/vercel.png">](https://vercel.com/)
 
 **Planejamento:**
 
@@ -258,21 +265,21 @@ Hamburgueria Ipê utiliza as seguintes ferramentas:
 
 ## 7. Desenvolvedoras
 
-  <p align="center">
-    <img src="https://media.giphy.com/media/23is0rmCx5UlBoNxsZ/giphy.gif" width='500px' height='280px' frameBorder="0" allowFullScreen></img>
-  </p>
-
+  <div align="center">
+    <img src="https://media.giphy.com/media/23is0rmCx5UlBoNxsZ/giphy.gif" width='500px' height='280px' frameBorder="0" allowFullScreen>
+    </img>
+  </div>
 
 Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsueda e Cris Mantovani, alunas da SAP005 do *bootcamp* da [Laboratória](https://github.com/Laboratoria).
  
  Se você ficou com alguma dúvida, tem sugestões ou quer apenas nos conhecer melhor, por favor, entre em contato :)
  
- <p align='center'>
- 
- | Akemi Mitsueda                                                             |                            Cris Mantovani               |
- | :-------------------------------------------------------------------------:| :-----------------------------------------------------: |
- | <img alt="Akemi" src="app/src/images/readme/akemi_dev.jpg" height='200px'> | <img alt="Akemi" src="app/src/images/readme/cris_dev.png" height='200px'>                                                                             |
- | [<img alt="GitHub Akemi" src="app/src/images/readme/github_badge.png">](https://github.com/akemimeka) [<img alt="LinkedIn Akemi" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/akemimeka/) | [<img alt="GitHub Cris" src="app/src/images/readme/github_badge.png">](https://github.com/crismantovani) [<img alt="LinkedIn Cris" src="app/src/images/readme/linkedin_badge.png">](https://www.linkedin.com/in/crissmantovani/) |
- 
-</p>
+ <div align='center'>
+
+|                              Akemi Mitsueda                             	      |                                 Cris Mantovani                                 	|
+|:------------------------------------------------------------------------------: |:------------------------------------------------------------------------------:	|
+|<img alt="Akemi" src="app/src/images/readme/akemi_dev.jpg" height='200px'></img> | <img alt="Akemi" src="app/src/images/readme/cris_dev.png" height='200px'></img> 	|
+| <a href='https://github.com/akemimeka'><img alt='GitHub - Akemi' src='app/src/images/readme/github_badge.png'></img></a> <a href='https://www.linkedin.com/in/akemimeka/'><img alt='LinkedIn - Akemi' src='app/src/images/readme/linkedin_badge.png'></img></a>  |  <a href='https://github.com/crismantovani'><img alt='GitHub - Cris' src='app/src/images/readme/github_badge.png'></img></a> <a href='https://www.linkedin.com/in/crissmantovani/'><img alt='LinkedIn - Cris' src='app/src/images/readme/linkedin_badge.png'></img></a> 	|          	|
+</div>
+
 Copyright [year] [fullname]	
