@@ -432,6 +432,7 @@ Nossas metas para o futuro são:
 - [ ] Melhoras gerais na API
 - [ ] Favicon
 - [ ] Calcular automaticamente o tempo de preparo dos pedidos
+- [ ] Responsividade para desktop e mobile
 - [ ] 70% de cobertura em testes
 
 ⚠️ Essa lista pode aumentar a qualquer momento :D
@@ -449,6 +450,40 @@ Hamburgueria Ipê utiliza as seguintes ferramentas:
 **Planejamento:**
 
 [<img alt="Trello" src="app/src/images/readme/trello.png">](https://trello.com/) [<img alt="Figma" src="app/src/images/readme/figma.png">](https://www.figma.com/) [<img alt="Canva" src="app/src/images/readme/canva.png">](https://www.canva.com/)
+
+📦 Fique à vontade para rodar o projeto localmente. É bem simples!
+
+**1 -** Clone o repositório para seu local
+
+<p align='center'>
+  <img alt='Clone' src='app/src/images/readme/git-clone.png'></img>
+</p>
+
+**2 -** Instale o [Node.JS](https://nodejs.org/en/)
+
+**3 -** Abra o terminal e instale o [NPM](https://www.npmjs.com/get-npm)
+
+```js ('*.js')  
+npm install
+```
+
+**4 -** Entre na pasta raiz do projeto e digite:
+
+```
+npm start
+```
+
+🖥️ Os ambientes suportados são: 
+<div align='center'>
+
+|<img alt='Edge Icon' src='app/src/images/readme/edge.png'></img> | <img alt='Firefox Icon' src='app/src/images/readme/firefox.png'></img>| <img alt='Chrome Icon' src='app/src/images/readme/chrome.png'></img>|<img alt='Safari Icon' src='app/src/images/readme/safari.png'></img>	|<img alt='Opera Icon' src='app/src/images/readme/opera.png'></img>|          	
+| :-----------:	| :---------: | :---------: | :--------: | :-------:|
+|   IE / Edge	  |    Firefox  |    Chrome   |   Safari   |  Opera 	|
+|   Versão 89 + | Versão 89 + | Versão 89 +	| 13 ou 14 + |    74 +  |
+
+</div>
+
+Enjoy 👊
 
 <p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
@@ -473,9 +508,22 @@ Hamburgueria Ipê utiliza as seguintes ferramentas:
 
 ### 10. Licença
 
-**© 2021 - Todos os direitos reservados**
+  <div align="center">
+    <img src="app/src/images/readme/by-nc-nd.png"'>
+    </img>
+  </div>
 
-É expressamente proibida qualquer forma de cópia e/ou reprodução deste projeto sem autorização expressa.
+**© 2021 - Alguns direitos reservados**
+
+🔴 **NUNCA** use de forma comercial!
+
+🟡 **SEMPRE** que for compartilhar essa aplicação, dê os créditos!
+
+🟢 **NÃO** altere e nem crie derivados dessa aplicação se for para uso público!
+
+Quer pedir uma exceção? Entre em contato antes!
+
+Mais detalhes da licença [clicando aqui](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR).
 
 <p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
