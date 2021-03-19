@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" id='topo'>
   <img src="app/src/images/readme/banner.png" frameBorder="0"></img>
   <h1>Hamburgueria Ipê</h1>
 
@@ -41,22 +41,24 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 - [1. O Projeto](#1-o-projeto)
 - [2. A aplicação](#2-a-aplicação)
 - [3. Histórias de usuários](#3-histórias-de-usuários)
-  * [3.1 Funcionalidades](#31-funcionalidades)
+  * [3.2 Funcionalidades](#funcionalidades)
 - [4. Planejamento](#4-planejamento)
-  * [4.1 Organização](#41-organização)
-  * [4.2 Fluxograma](#42-fluxograma)
-  * [4.3 User Experience](#43-user-experience)
-  * [4.4 Wireframe de média fidelidade](#44-wireframe-de-média-fidelidade)
+  * [4.2 Organização](#42-organização)
+  * [4.3 Fluxograma](#43-fluxograma)
+  * [4.4 User Experience](#44-user-experience)
+  * [4.5 Wireframe de média fidelidade](#45-wireframe-de-média-fidelidade)
 - [5. Identidade Visual](#5-identidade-visual)
-  * [5.1 Paleta de Cores](#51-paleta-de-cores)
-  * [5.2 Tipografia](#52-tipografia)
-  * [5.3 Logotipo](#53-logotipo)
+  * [5.2 Paleta de Cores](#52-paleta-de-cores)
+  * [5.3 Tipografia](#53-tipografia)
+  * [5.4 Logotipo](#54-logotipo)
 - [6. User Interface](#ux-ui)
   * [6.2 Feedback & Melhorias](#feedback-melhorias)
 - [7. Desenvolvimento](#7-desenvolvimento)
   * [7.2 Interface Final](#72-interface-final)
+  * [7.3 Valor do produto](#roi)
+  * [7.4 Próximos passos](#futuro)
 - [8. Tecnologias](#8-tecnologias)
-- [9. Desenvolvedoras](#9-Desenvolvedoras)
+- [9. Desenvolvedoras](#9-desenvolvedoras)
 - [10. Licença](#10-licença)
 
 ***
@@ -69,6 +71,8 @@ Premissas:
 - Definir a estrutura de pastas e arquivos
 - Usar JavaScript (ES6+) para a lógica do projeto
 
+<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+
 ## 2. A aplicação
   <div align="center">
     <img alt='Gif' src="https://media.giphy.com/media/xT9KVzVj01qfRPiJr2/giphy.gif" width=550 height=260 frameBorder="0">
@@ -77,6 +81,8 @@ Premissas:
 A Hamburgueria Ipê lançou o serviço de 24 horas e foi muito bem aceito pelos clientes. Agora, a prioridade é continuar crescendo sem perder a qualidade.
 
 Para isso, o atendimento deve ser simples e rápido, a cozinha deve ser eficiente e o negócio deve ser gerenciado com base em dados reais e relatórios fáceis de entender.
+
+<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
 ## 3. Histórias de usuários
 
@@ -110,7 +116,10 @@ A Hamburgueria Ipê nos forneceu as histórias de usuários:
     </img>
   </div>
   
- ### 3.1 Funcionalidades
+  <div id='funcionalidades'>
+  
+ ### 3.2 Funcionalidades
+ </div>
 Com base nas histórias dos usuários, definimos algumas funcionalidades para a aplicação:
 
 |              HU #1 :heavy_check_mark:              	|           HU #2 :heavy_check_mark:          	|           HU #3 :heavy_check_mark:           	|          HU #4 :heavy_check_mark:          	|
@@ -120,10 +129,12 @@ Com base nas histórias dos usuários, definimos algumas funcionalidades para a 
 |            Fazer login na tela correta             	|     Ver resumo e o valor total do pedido    	| Ver o tempo que levou para preparar o pedido 	|                                            	|
 |                                                    	|        Enviar o pedido para a cozinha       	|                                              	|                                            	|
 
+<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+
 ##  4. Planejamento
 🖍️	Todo o conceito do projeto envolveu uma enorme valorização da experiência do usuário e suas necessidades. Também planejamos e estudamos as opções disponíveis antes de apresentar a solução para a Hamburgueria Ipê.
 
-#### 	4.1 Organização
+#### 	4.2 Organização
   <div align='center'><img alt='Gif' src='https://media.giphy.com/media/g4jDE1JnpUNaw/giphy.gif' width=600 height=300 frameBorder="0"></img>
   </div>
 
@@ -150,7 +161,7 @@ Dessa forma, definimos:
   🔎 *Clique na imagem para ampliar*
   </div>
 
-### 4.2 Fluxograma
+### 4.3 Fluxograma
 
 🧭 Com as histórias de usuário, conseguimos entender as necessidades da Hamburgueria Ipê e montar o fluxo da aplicação
 
@@ -161,14 +172,14 @@ Dessa forma, definimos:
  </div>
  
 
-### 4.3 User Experience
+### 4.4 User Experience
 🤩	Durante o processo de criação, fizemos diversas entrevistas com usuários para ter uma base mais sólda sobre o que eles esperavam e compreender melhor suas necessidades.
 
 Começamos a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_wireframe) de média fidelidade no [Figma](https://www.figma.com/) e atender as necessidades do usuário entregando uma boa experiência.
 
 :warning:	As entrevistas foram realizadas por vídeo conferência devido a pandemia do Coronavírus.
 
-### 4.4 Wireframe de média fidelidade
+### 4.5 Wireframe de média fidelidade
 
 <div align='center'>
   <img alt='Gif' src='https://media.giphy.com/media/OPujGYpTKK78H1wEUX/giphy.gif' width=500 height=300 frameBorder="0">
@@ -184,6 +195,8 @@ Começamos a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_w
     
 🔎 *Clique nas imagens para ampliar*
   </div> 
+  
+  <p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
 ## 5. Identidade Visual
 🖌️ O conceito da identidade visual da hamburgueria envolve as cores do Brasil e da árvore símbolo [Ipê Amarelo](https://pt.wikipedia.org/wiki/Handroanthus_albus) e sua flor:
@@ -193,7 +206,7 @@ Começamos a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_w
   </img>
 </div>
 
-### 5.1 Paleta de Cores
+### 5.2 Paleta de Cores
 👩‍🎨 A paleta de cores foi desenvolvida com tons de verde e amarelo  presentes na bandeira do Brasil e da flor Ipê, e, alguns tons terrosos como da árvore
 
 Fizemos entrevistas com os usuários para alcançarmos tons que entregassem a melhor e mais agradável visualização.
@@ -202,7 +215,7 @@ Fizemos entrevistas com os usuários para alcançarmos tons que entregassem a me
 
 🔎 *Clique na imagem para ampliar*
 
-### 5.2 Tipografia
+### 5.3 Tipografia
 ✒️ Testamos e escolhemos duas fontes para serem utilizadas na aplicação e em todos os meios de comunicação, como banners, *posts* em redes sociais, cartazes, etc.
 
 **Tipografia principal**
@@ -223,7 +236,7 @@ A fonte [Work Sans](https://fonts.google.com/specimen/Work+Sans?preview.text_typ
 <img alt='Tipografia de Apoio' src='app/src/images/readme/tipografia-apoio.png'></img>
 </div>
 
-### 5.3 Logotipo
+### 5.4 Logotipo
 
 💎 Após a definição da paleta de cores e tipografia, desenvolvemos o logotipo da hamburgueria para ser original, clean e harmônico com todo o visual da aplicação.
 
@@ -247,6 +260,8 @@ Desenvolvemos quatro versões para serem aplicadas em fundos de cores distintas:
 🟢 Deve ser usado respeitando a paleta de cores, formas e tamanhos, para ter consistência no uso e desenvolver o reconhecimento da marca pelo público.
 
 🚫 O logo  deve ser usado respeitando a identidade visual, mantendo os padrões de cores Pantone ou CMYK para impressos no geral e RGB para aplicações digitais.
+
+<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
 <div id='ux-ui'/>
 
@@ -348,6 +363,8 @@ As soluções foram aplicadas e a versão final do *wireframe* foi bem aceita pe
 🔎 *Clique nas imagens para ampliar*
   </div> 
 
+<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+
 ## 7. Desenvolvimento
 
 🛠️ Com toda a identidade visual definida, UX & UI plenamente satisfatórios, começamos a desenvolver a interface da Hamburgueria Ipê.
@@ -377,6 +394,50 @@ Os principais objetivos foram definidos logo de início:
 
 🔎 *Clique nas imagens para ampliar*
 
+Toda a aplicação foi aprovada 100% pelo cliente e seus usuários.
+
+<div id='roi'>
+
+### 7.3 Valor do produto (R.O.I)
+</div>
+
+💲 Para que a Hamburgueria Ipê continue crescendo e pensando em futuras expansões, implementamos uma *feature* para auxiliar no R.O.I ([Return Over Investment](https://pt.wikipedia.org/wiki/Retorno_sobre_o_investimento)).
+
+Os pedidos ficam armazenados na [API](https://www.redhat.com/pt-br/topics/api/what-are-application-programming-interfaces) após finalizados.
+Isso abre a possibilidade da equipe de [*back-end*](https://www.alura.com.br/artigos/o-que-e-front-end-e-back-end) utilizar esses dados para uma análise profunda de dados como:
+
+💡 Eficiência da cozinha e do salão
+
+💡 Melhor controle de estoque
+
+💡 Planejar novas filiais
+
+💡 Estratégia para promoções mais eficientes
+
+💡 Comportamento do cliente
+
+Entre diversos outros benefícios que a análise de dados pode oferecer!
+
+<div id='futuro'>
+
+### 7.4 Próximos passos
+</div>
+
+🧙‍♀️ A aplicação está completa e funcional, mas sempre é possível melhorar no futuro.
+
+Nossas metas para o futuro são:
+
+- [ ] Retornar mensagens de erro para cada ação do usuário
+- [ ] Aplicar loading em todas as páginas necessárias
+- [ ] Melhoras gerais na API
+- [ ] Favicon
+- [ ] Calcular automaticamente o tempo de preparo dos pedidos
+- [ ] 70% de cobertura em testes
+
+⚠️ Essa lista pode aumentar a qualquer momento :D
+
+<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+
 ## 8. Tecnologias
 
 Hamburgueria Ipê utiliza as seguintes ferramentas:
@@ -389,6 +450,8 @@ Hamburgueria Ipê utiliza as seguintes ferramentas:
 
 [<img alt="Trello" src="app/src/images/readme/trello.png">](https://trello.com/) [<img alt="Figma" src="app/src/images/readme/figma.png">](https://www.figma.com/) [<img alt="Canva" src="app/src/images/readme/canva.png">](https://www.canva.com/)
 
+<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+
 ## 9. Desenvolvedoras
 
   <div align="center">
@@ -396,7 +459,7 @@ Hamburgueria Ipê utiliza as seguintes ferramentas:
     </img>
   </div>
 
-Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsueda e Cris Mantovani, alunas da SAP005 do *bootcamp* da [Laboratória](https://github.com/Laboratoria).
+👩‍💻 Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsueda e Cris Mantovani, alunas da SAP005 do *bootcamp* da [Laboratória](https://github.com/Laboratoria).
  
  Se você ficou com alguma dúvida, tem sugestões ou quer apenas nos conhecer melhor, por favor, entre em contato :)
  
@@ -410,5 +473,9 @@ Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsu
 
 ### 10. Licença
 
-©2021 - Todos os direitos reservados
+**© 2021 - Todos os direitos reservados**
+
 É expressamente proibida qualquer forma de cópia e/ou reprodução deste projeto sem autorização expressa.
+
+<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+
