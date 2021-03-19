@@ -456,7 +456,7 @@ Hamburgueria Ipê utiliza as seguintes ferramentas:
 **1 -** Clone o repositório para seu local
 
 <p align='center'>
-  <img alt='Clone' src='app/src/images/readme/git-clone.png'></img>
+  <img alt='Clone' src='app/src/images/readme/github-clone.png'></img>
 </p>
 
 **2 -** Instale o [Node.JS](https://nodejs.org/en/)
