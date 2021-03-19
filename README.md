@@ -52,6 +52,7 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
   * [5.2 Tipografia](#52-tipografia)
   * [5.3 Logotipo](#53-logotipo)
 - [6. User Interface](#ux-ui)
+  * [6.2 Feedback & Melhorias](#feedback-melhorias)
 - [7. Interface](#7-interface)
 - [8. Tecnologias](#8-tecnologias)
 - [9. Desenvolvedoras](#9-Desenvolvedoras)
@@ -176,9 +177,9 @@ Começamos a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_w
 🔰 Com as respostas dos usuários, conseguimos desenvolver e testar o protótipo de média fidelidade, que pode ser acessado [clicando aqui](https://www.figma.com/proto/5rVNETEzDOLBWddlkh2iUo/Hamburgueria-Ip%C3%AA?node-id=1%3A2&scaling=min-zoom).
 
   <div align="center">
-    <img alt='Wireframe - Login Vazio' src="app/src/images/readme/ipad-media-login-vazio.png"  width='250'height='350'></img> <img alt='Wireframe - Cadastro' src="app/src/images/readme/ipad-media-cadastro.png" width='250'height='350'></img>
-    <br/>
-    <img alt='Wireframe - Mesas do Salão' src="app/src/images/readme/ipad-media-mesas.png" width='250'height='350'></img> <img alt='Wireframe - Pedidos' src="app/src/images/readme/ipad-media-pedido.png"  width='250'height='350'></img>
+    <img alt='Wireframe - Login Vazio' src="app/src/images/readme/ipad-media-login-vazio.png"  width='250'height='350'></img> &nbsp; <img alt='Wireframe - Cadastro' src="app/src/images/readme/ipad-media-cadastro.png" width='250'height='350'></img>
+    <br/><br/>
+    <img alt='Wireframe - Mesas do Salão' src="app/src/images/readme/ipad-media-mesas.png" width='250'height='350'></img> &nbsp; <img alt='Wireframe - Pedidos' src="app/src/images/readme/ipad-media-pedido.png"  width='250'height='350'></img>
     
 🔎 *Clique nas imagens para ampliar*
   </div> 
@@ -281,12 +282,69 @@ Nessa fase do era o momento de equilibrar UX & UI ([*User Interface*](https://me
 
 ✔️	Prevenção de erros (prever as ações de descuido do usuário)
 
-🗣️ As primeiras conversas com os usuários foram um norte para chegarmos até essa fase. Mas era necessário ouvi-los mais algumas vezes para elevar a UX para outro nível. Voltamos ao Figma , criamos um wireframe de média fidelidade, que pode ser acessado [clicando aqui](https://www.figma.com/proto/5rVNETEzDOLBWddlkh2iUo/Hamburgueria-Ip%C3%AA?node-id=20%3A3&scaling=min-zoom), e usamos ele para uma nova série de entrevistas.
+<br/>
+
+🗣️ As primeiras conversas com os usuários foram um norte para chegarmos até essa fase. Mas era necessário ouvi-los mais algumas vezes para elevar a UX para outro nível!
+
+Voltamos ao Figma , criamos um wireframe de média fidelidade, que pode ser acessado [clicando aqui](https://www.figma.com/proto/5rVNETEzDOLBWddlkh2iUo/Hamburgueria-Ip%C3%AA?node-id=20%3A3&scaling=min-zoom), e usamos ele para uma nova série de entrevistas.
+
+<div align="center">
+  <img alt='Wireframe Alta - Beta' src="app/src/images/readme/ipad-alta-beta-pedido.png" width='250'height='350'></img> &nbsp; <img alt='Wireframe Alta - Beta 2' src="app/src/images/readme/ipad-alta-beta-pedido2.png" width='250'height='350'></img>
+</div> 
+
+🔎 *Clique nas imagens para ampliar*
+
+<div id='feedback-melhorias'>
+
+### 6.2 Feedback & Melhorias
+</div>
+
+<div align="center">
+  <img alt='GIF' src='https://media.giphy.com/media/FRsYCa9eYbxHG/giphy.gif'>
+  </img>
+</div>
+
+
+🔄 O feedback que recebemos dos usuários foi muito positivo no geral.
+A interface visual foi absolutamente elogiada pela beleza, cores agradáveis e em sintonia, além da facilidade para leitura de todos os textos. 
+
+Ainda assim, durante as entrevistas e testes, percebemos que o botão "**Adicionar Item**" prejudicava a experiência, pois tornava a navegação confusa e improdutiva, exigindo que eles dedicassem uma quantidade razoável de tempo para utilizar a aplicação.
+
+Removemos o botão e optamos por mudar a cor de fundo para tentar facilitar a navegação por meio de cores:
+
+<div align="center">
+  <img alt='Wireframe Alta - Pedidos - BG com Cor Alterada' src="app/src/images/readme/pedidos-bg-color-change.png" width='400'height='320'></img>
+</div> 
+
+🔎 *Clique na imagem para ampliar*
+
+Os usuários continuaram confusos 🙃
+
+Oferecemos uma nova solução: **Transformar as fotos dos itens em [radio buttons](https://pt.wikipedia.org/wiki/Bot%C3%A3o_de_op%C3%A7%C3%A3o).**
+
+Quando o atendente clica em cada botão ou foto, o item muda de cor e é automaticamente adicionado a coluna de itens que monta o pedido.
+
+<div align="center">
+<img alt="Versão final dos pedidos - GIF" src='app/src/images/readme/pedidos-versao-final.gif'></img>
+</div>
+
+Essa solução agradou aos usuários e tornou a tarefa de montar pedido mais eficiente.
+
+🔄 Outra funcionalidade que precisou de uma pequena melhoria, foi a coluna que armazena os itens selecionados pelo atendente. Alguns usuários tiveram dificuldade de entender claramente como funcionava.
+Na nova versão, deixamos ela mais *clean*:
+
+<div align="center">
+  <img alt="Versão Antiga - Coluna Pedidos" src='app/src/images/readme/pedidos-side-old.png' width='300'></img> &nbsp; <img alt="Versão Nova - Coluna Pedidos" src='app/src/images/readme/pedidos-side-new.png' width='300'></img>
+</div>
+
+🔎 *Clique nas imagens para ampliar*
+
+As soluções foram aplicadas e a versão final do *wireframe* foi bem aceita pelos usuários.
 
   <div align="center">
-    <img alt='Wireframe Alta - Login' src="app/src/images/readme/ipad-alta-login.png" width='250'height='350'></img> <img alt='Wireframe Alta - Cadastro' src="app/src/images/readme/ipad-alta-cadastro.png" width='250'height='350'></img>
-    <br/>
-    <img alt='Wireframe Alta - Mesas do Salão' src="app/src/images/readme/ipad-alta-mesas.png" width='250'height='350'></img> <img alt='Wireframe Alta - Pedidos' src="app/src/images/readme/ipad-alta-pedido.png" width='250'height='350'></img>
+    <img alt='Wireframe Alta - Login' src="app/src/images/readme/ipad-alta-login.png" width='250'height='350'></img> &nbsp; <img alt='Wireframe Alta - Cadastro' src="app/src/images/readme/ipad-alta-cadastro.png" width='250'height='350'></img>
+    <br/><br/>
+    <img alt='Wireframe Alta - Mesas do Salão' src="app/src/images/readme/ipad-alta-mesas.png" width='250'height='350'></img> &nbsp; <img alt='Wireframe Alta - Pedidos' src="app/src/images/readme/ipad-alta-pedido.png" width='250'height='350'></img>
 
 🔎 *Clique nas imagens para ampliar*
   </div> 
