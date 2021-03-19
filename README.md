@@ -30,7 +30,7 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
 
 | #                     	|             Salão            	|           Cozinha           	|
 |:-----------------------:|:----------------------------:	|:---------------------------:	|
-| :busts_in_silhouette: 	| salao@hamburgueriaipe.com.br 	| chef@hamburgueriaipe.com.br 	|
+| 🆔	| salao@hamburgueriaipe.com.br 	| chef@hamburgueriaipe.com.br 	|
 | :key:                 	|            123456            	|            123456           	|
 
 </div>
@@ -38,23 +38,25 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
  ***
 ## :bookmark_tabs: Índice
 
-<!--ts-->
+- [1. O Projeto](#1-o-projeto)
+- [2. A aplicação](#2-a-aplicação)
+- [3. Histórias de usuários](#3-histórias-de-usuários)
+  * [3.1 Funcionalidades](#31-funcionalidades)
+- [4. Planejamento](#4-planejamento)
+  * [4.1 Organização](#41-organização)
+  * [4.2 Fluxograma](#42-fluxograma)
+  * [4.3 User Experience](#43-user-experience)
+  * [4.4 Wireframe de média fidelidade](#44-wireframe-de-média-fidelidade)
+- [5. Identidade Visual](#5-identidade-visual)
+  * [5.1 Paleta de Cores](#51-paleta-de-cores)
+  * [5.2 Tipografia](#52-tipografia)
+  * [5.3 Logotipo](#53-logotipo)
+- [6. User Interface](#ux-ui)
+- [7. Interface](#7-interface)
+- [8. Tecnologias](#8-tecnologias)
+- [9. Desenvolvedoras](#9-Desenvolvedoras)
+- [10. Licença](#10-licença)
 
-* [1. O Projeto](#1-o-projeto)
-* [2. A aplicação](#2-a-aplicação)
-* [3. Histórias de usuários](#3-histórias-de-usuários)
-    * [3.1 Funcionalidades](#31-funcionalidades)
-* [4. Planejamento](#4-planejamento)
-    * [4.1 Organização](#41-organização)
-    * [4.2 Fluxograma](#42-fluxograma)
-    * [4.3 User Experience](#43-user-experience)
-    * [4.4 Wireframe de média fidelidade](#44-wireframe-de-média-fidelidade)
-* [5. Identidadade Visual](#5-identidade-visual)
-    * [5.1 Paleta de Cores](#51-paleta-de-cores) 
-    * [5.2 Tipografia](#52-tipografia)
-    * [5.3 Logotipo](#53-logotipo)
-
-<!--te-->
 ***
 ## 1. O Projeto
 O desafio *Burguer Queen* proposto pela [Laboratória](https://github.com/Laboratoria), é de desenvolver uma interface para uma hamburgueria 24hrs que está em expansão.
@@ -142,8 +144,8 @@ Dessa forma, definimos:
   <div align='center'>
     <img alt='Trello' src="app/src/images/readme/trello-macbook.png" height='450'>
     </img>
-    
-🔎 *Clique na imagem para ampliar*
+ 
+  🔎 *Clique na imagem para ampliar*
   </div>
 
 ### 4.2 Fluxograma
@@ -158,11 +160,19 @@ Dessa forma, definimos:
  
 
 ### 4.3 User Experience
-🤩	Durante o processo de criação, fizemos diversas entrevistas com usuários para começar a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_wireframe) de média fidelidade no [Figma](https://www.figma.com/) e atender as necessidades do usuário entregando uma boa experiência.
+🤩	Durante o processo de criação, fizemos diversas entrevistas com usuários para ter uma base mais sólda sobre o que eles esperavam e compreender melhor suas necessidades.
+
+Começamos a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_wireframe) de média fidelidade no [Figma](https://www.figma.com/) e atender as necessidades do usuário entregando uma boa experiência.
 
 :warning:	As entrevistas foram realizadas por vídeo conferência devido a pandemia do Coronavírus.
 
 ### 4.4 Wireframe de média fidelidade
+
+<div align='center'>
+  <img alt='Gif' src='https://media.giphy.com/media/OPujGYpTKK78H1wEUX/giphy.gif' width=500 height=300 frameBorder="0">
+  </img>
+ </div>
+
 🔰 Com as respostas dos usuários, conseguimos desenvolver e testar o protótipo de média fidelidade, que pode ser acessado [clicando aqui](https://www.figma.com/proto/5rVNETEzDOLBWddlkh2iUo/Hamburgueria-Ip%C3%AA?node-id=1%3A2&scaling=min-zoom).
 
   <div align="center">
@@ -191,7 +201,7 @@ Fizemos entrevistas com os usuários para alcançarmos tons que entregassem a me
 🔎 *Clique na imagem para ampliar*
 
 ### 5.2 Tipografia
-✒️ Testamos e escolhemos três fontes para serem utilizadas na aplicação e em todos os meios de comunicação, como banners, *posts* em redes sociais, cartazes, etc.
+✒️ Testamos e escolhemos duas fontes para serem utilizadas na aplicação e em todos os meios de comunicação, como banners, *posts* em redes sociais, cartazes, etc.
 
 **Tipografia principal**
 
@@ -201,6 +211,7 @@ A fonte [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?pr
   <img alt='Tipografia Principal' src='app/src/images/readme/tipografia-principal.png'>
   </img>
 </div>
+<br/>
 
 **Tipografia de apoio**
 
@@ -226,7 +237,7 @@ Desenvolvemos quatro versões para serem aplicadas em fundos de cores distintas:
 
    <div align="center">
     <img src="app/src/images/readme/logo-versoes.png"></img>
-  </div
+  </div>
 <br/><br/>
 
 ⚠️**Utilização do logotipo**
@@ -235,42 +246,60 @@ Desenvolvemos quatro versões para serem aplicadas em fundos de cores distintas:
 
 🚫 O logo  deve ser usado respeitando a identidade visual, mantendo os padrões de cores Pantone ou CMYK para impressos no geral e RGB para aplicações digitais.
 
+<div id='ux-ui'/>
 
+## 6. User Interface (e mais um pouco de UX)
 
- #### Interface Alta Fidelidade
+<div align='center'>
+  <img alt='Gif' src='https://media.giphy.com/media/IbC2tmqg8S1tSczdEO/giphy.gif' width=400 height=270 frameBorder="0">
+  </img>
+ </div>
+<br/>
+
+⚖️ Desde o começo do projeto, a experiência do usuário sempre foi uma de nossas prioridades.
+Nessa fase do era o momento de equilibrar UX & UI ([*User Interface*](https://medium.com/aela/qual-a-diferen%C3%A7a-entre-ux-e-ui-design-entenda-de-uma-vez-95b4aeb68479)) ainda mais. Dessa forma, aumentamos consideravelmente as chances de entregar uma aplicação de visual agradável e extremamente funcional!
+
+**Principais objetivos de UI**
+
+✔️	Leitura clara de todos os textos
+
+✔️	Consistência e padrões para não confundir os usuários
+
+✔️	Design minimalista
+
+✔️	Eficiência
+
+✔️	Navegação intuitiva
+
+✔️	Reconhecer ícones, formas, imagens e funcionalidades ao invés de lembrar após várias utilizações
+
+✔️	Responsivo em *tablets*
+
+✔️	Liberdade e controle do usuário
+
+✔️	Feedbacks instântaneos para todas as ações (erros, confirmações, etc.)
+
+✔️	Prevenção de erros (prever as ações de descuido do usuário)
+
+🗣️ As primeiras conversas com os usuários foram um norte para chegarmos até essa fase. Mas era necessário ouvi-los mais algumas vezes para elevar a UX para outro nível. Voltamos ao Figma , criamos um wireframe de média fidelidade, que pode ser acessado [clicando aqui](https://www.figma.com/proto/5rVNETEzDOLBWddlkh2iUo/Hamburgueria-Ip%C3%AA?node-id=20%3A3&scaling=min-zoom), e usamos ele para uma nova série de entrevistas.
 
   <div align="center">
-    <img src="app/src/images/readme/ipad-altafidelidade-1.png" width='284' height='399' frameBorder="0">
-    </img>
-  </div>
+    <img alt='Wireframe Alta - Login' src="app/src/images/readme/ipad-alta-login.png" width='250'height='350'></img> <img alt='Wireframe Alta - Cadastro' src="app/src/images/readme/ipad-alta-cadastro.png" width='250'height='350'></img>
+    <br/>
+    <img alt='Wireframe Alta - Mesas do Salão' src="app/src/images/readme/ipad-alta-mesas.png" width='250'height='350'></img> <img alt='Wireframe Alta - Pedidos' src="app/src/images/readme/ipad-alta-pedido.png" width='250'height='350'></img>
 
-   <div align="center">
-    <img src="app/src/images/readme/ipad-altafidelidade-2.png" width='284' height='399' frameBorder="0">
-    </img>
-  </div>
+🔎 *Clique nas imagens para ampliar*
+  </div> 
 
-#### Página do menu principal
-Atendente executando pedido
- <div align="center">
-    <img src="app/src/images/readme/menu-principal-lanches.png" width='600' height='600' frameBorder="0">
-    </img>
-  </div>
-  
- <div align="center">
-    <img src="app/src/images/readme/menu-principal-selecao.png" width='600' height='600' frameBorder="0">
-    </img>
-  </div>
- 
-  🔎 Usabilidade
+## 7. Interface
 
- Realizamos entrevistas e testes com os usuários até chegar na melhor usabilidade da aplicação.
- Em alguns testes, identificamos que:
+Com toda a identidade visual definida, fomos capazes de desenvolver a interface da aplicação da Hamburgueria Ipê.
 
- ⚠️ Os atendentes precisavam que as cores dos itens mudassem ao realizar pedidos
- 
- ✔️ Solução: Criamos input radios que alteram a cor após o clique
+⚠️ Os atendentes precisavam que as cores dos itens mudassem ao realizar pedidos
 
-## ⚒️ Tecnologias
+✔️ Solução: Criamos input radios que alteram a cor após o clique
+
+## 8. Tecnologias
 
 Hamburgueria Ipê utiliza as seguintes ferramentas:
 
@@ -282,7 +311,7 @@ Hamburgueria Ipê utiliza as seguintes ferramentas:
 
 [<img alt="Trello" src="app/src/images/readme/trello.png">](https://trello.com/) [<img alt="Figma" src="app/src/images/readme/figma.png">](https://www.figma.com/) [<img alt="Canva" src="app/src/images/readme/canva.png">](https://www.canva.com/)
 
-## 7. Desenvolvedoras
+## 9. Desenvolvedoras
 
   <div align="center">
     <img src="https://media.giphy.com/media/23is0rmCx5UlBoNxsZ/giphy.gif" width='500px' height='280px' frameBorder="0" allowFullScreen>
@@ -301,5 +330,7 @@ Hamburgueria Ipê foi orgulhosamente desenvolvido em 4 semanas,  por Akemi Mitsu
 | <a href='https://github.com/akemimeka'><img alt='GitHub - Akemi' src='app/src/images/readme/github_badge.png'></img></a> <a href='https://www.linkedin.com/in/akemimeka/'><img alt='LinkedIn - Akemi' src='app/src/images/readme/linkedin_badge.png'></img></a>  |  <a href='https://github.com/crismantovani'><img alt='GitHub - Cris' src='app/src/images/readme/github_badge.png'></img></a> <a href='https://www.linkedin.com/in/crissmantovani/'><img alt='LinkedIn - Cris' src='app/src/images/readme/linkedin_badge.png'></img></a> 	|          	|
 </div>
 
-### ©2021 - Todos os direitos reservados
+### 10. Licença
+
+©2021 - Todos os direitos reservados
 É expressamente proibida qualquer forma de cópia e/ou reprodução deste projeto sem autorização expressa.
