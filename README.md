@@ -366,19 +366,11 @@ Os principais objetivos foram definidos logo de início:
 
 <div align='center'>
 
-#### Salão
+| Salão 	| Cozinha 	|
+|:-----:	|:-------:	|
+|<img alt='Gif da Cozinha' src='app/src/images/readme/app-final-salao.gif' width='300' height='350'></img> | <img alt='Gif da Cozinha' src='app/src/images/readme/app-final-cozinha.gif' width='300' height='350'></img>	|
 
-  <img alt='Gif do Salão' src='app/src/images/readme/app-final-salao.gif' width='300' height='350'>
-  </img>
-
-#### Cozinha
-
-  <img alt='Gif da Cozinha' src='app/src/images/readme/app-final-cozinha.gif' width='300' height='350'>
-  </img>
-</div>
-
-<div align='center'>
-<h3>Preview </h3>
+<h3>iPad </h3>
 
   <img alt='App Final - Estático' src='app/src/images/readme/app-final-four-ipads.png' width='550'>
 </div>
