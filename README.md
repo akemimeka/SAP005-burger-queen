@@ -53,7 +53,8 @@ Hamburgueria Ipê é uma aplicação para <i>tablets</i> baseada em  ReactJS, JS
   * [5.3 Logotipo](#53-logotipo)
 - [6. User Interface](#ux-ui)
   * [6.2 Feedback & Melhorias](#feedback-melhorias)
-- [7. Interface](#7-interface)
+- [7. Desenvolvimento](#7-desenvolvimento)
+  * [7.2 Interface Final](#72-interface-final)
 - [8. Tecnologias](#8-tecnologias)
 - [9. Desenvolvedoras](#9-Desenvolvedoras)
 - [10. Licença](#10-licença)
@@ -313,10 +314,8 @@ Ainda assim, durante as entrevistas e testes, percebemos que o botão "**Adicion
 Removemos o botão e optamos por mudar a cor de fundo para tentar facilitar a navegação por meio de cores:
 
 <div align="center">
-  <img alt='Wireframe Alta - Pedidos - BG com Cor Alterada' src="app/src/images/readme/pedidos-bg-color-change.png" width='400'height='320'></img>
-</div> 
-
-🔎 *Clique na imagem para ampliar*
+  <img alt='Wireframe Alta - Pedidos - BG com Cor Alterada' src="app/src/images/readme/pedidos-bg-color-change.png"></img>
+</div>
 
 Os usuários continuaram confusos 🙃
 
@@ -349,13 +348,42 @@ As soluções foram aplicadas e a versão final do *wireframe* foi bem aceita pe
 🔎 *Clique nas imagens para ampliar*
   </div> 
 
-## 7. Interface
+## 7. Desenvolvimento
 
-Com toda a identidade visual definida, fomos capazes de desenvolver a interface da aplicação da Hamburgueria Ipê.
+🛠️ Com toda a identidade visual definida, UX & UI plenamente satisfatórios, começamos a desenvolver a interface da Hamburgueria Ipê.
+Os principais objetivos foram definidos logo de início:
 
-⚠️ Os atendentes precisavam que as cores dos itens mudassem ao realizar pedidos
+🧾 A aplicação foi desenvolvida como SPA ([*single-page application*](https://en.wikipedia.org/wiki/Single-page_application)), para que o usuário tenha a experiência similar à de um aplicativo para *desktop*.
 
-✔️ Solução: Criamos input radios que alteram a cor após o clique
+📱 Como o ambiente é uma hamburgueria, a aplicação é 100% responsiva para *tablets* utilizados na **vertical**.
+
+🧩 Utilizamos React JS para componentizar todo o site. Isso mantém a aplicação com alto desempenho e também permite que os componentes sejam reutilizados, gerando um código de fácil manutenção por qualquer desenvolvedor.
+
+✨ Instalamos o [ESLint](https://www.npmjs.com/package/eslint) na aplicação para manter o código padronizado e pronto para ser testado.
+
+### 7.2 Interface Final
+💫 Depois de três [*sprints*](https://www.projectbuilder.com.br/blog/scrum-o-que-e-sprint-e-como-executa-lo/), apresentamos a interface final da aplicação e todas as suas funcionalidades:
+
+<div align='center'>
+
+#### Salão
+
+  <img alt='Gif do Salão' src='app/src/images/readme/app-final-salao.gif' width='300' height='350'>
+  </img>
+
+#### Cozinha
+
+  <img alt='Gif da Cozinha' src='app/src/images/readme/app-final-cozinha.gif' width='300' height='350'>
+  </img>
+</div>
+
+<div align='center'>
+<h3>Preview </h3>
+
+  <img alt='App Final - Estático' src='app/src/images/readme/app-final-four-ipads.png' width='550'>
+</div>
+
+🔎 *Clique nas imagens para ampliar*
 
 ## 8. Tecnologias
 
