@@ -71,7 +71,7 @@ Premissas:
 - Definir a estrutura de pastas e arquivos
 - Usar JavaScript (ES6+) para a lógica do projeto
 
-<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+<p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
 ## 2. A aplicação
   <div align="center">
@@ -82,7 +82,7 @@ A Hamburgueria Ipê lançou o serviço de 24 horas e foi muito bem aceito pelos 
 
 Para isso, o atendimento deve ser simples e rápido, a cozinha deve ser eficiente e o negócio deve ser gerenciado com base em dados reais e relatórios fáceis de entender.
 
-<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+<p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
 ## 3. Histórias de usuários
 
@@ -129,7 +129,7 @@ Com base nas histórias dos usuários, definimos algumas funcionalidades para a 
 |            Fazer login na tela correta             	|     Ver resumo e o valor total do pedido    	| Ver o tempo que levou para preparar o pedido 	|                                            	|
 |                                                    	|        Enviar o pedido para a cozinha       	|                                              	|                                            	|
 
-<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+<p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
 ##  4. Planejamento
 🖍️	Todo o conceito do projeto envolveu uma enorme valorização da experiência do usuário e suas necessidades. Também planejamos e estudamos as opções disponíveis antes de apresentar a solução para a Hamburgueria Ipê.
@@ -196,7 +196,7 @@ Começamos a desenvolver o [*wireframe*](https://pt.wikipedia.org/wiki/Website_w
 🔎 *Clique nas imagens para ampliar*
   </div> 
   
-  <p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+  <p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
 ## 5. Identidade Visual
 🖌️ O conceito da identidade visual da hamburgueria envolve as cores do Brasil e da árvore símbolo [Ipê Amarelo](https://pt.wikipedia.org/wiki/Handroanthus_albus) e sua flor:
@@ -261,7 +261,7 @@ Desenvolvemos quatro versões para serem aplicadas em fundos de cores distintas:
 
 🚫 O logo  deve ser usado respeitando a identidade visual, mantendo os padrões de cores Pantone ou CMYK para impressos no geral e RGB para aplicações digitais.
 
-<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+<p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
 <div id='ux-ui'/>
 
@@ -363,7 +363,7 @@ As soluções foram aplicadas e a versão final do *wireframe* foi bem aceita pe
 🔎 *Clique nas imagens para ampliar*
   </div> 
 
-<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+<p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
 ## 7. Desenvolvimento
 
@@ -436,7 +436,7 @@ Nossas metas para o futuro são:
 
 ⚠️ Essa lista pode aumentar a qualquer momento :D
 
-<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+<p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
 ## 8. Tecnologias
 
@@ -450,7 +450,7 @@ Hamburgueria Ipê utiliza as seguintes ferramentas:
 
 [<img alt="Trello" src="app/src/images/readme/trello.png">](https://trello.com/) [<img alt="Figma" src="app/src/images/readme/figma.png">](https://www.figma.com/) [<img alt="Canva" src="app/src/images/readme/canva.png">](https://www.canva.com/)
 
-<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+<p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
 ## 9. Desenvolvedoras
 
