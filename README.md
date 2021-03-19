@@ -477,5 +477,5 @@ Hamburgueria Ipê utiliza as seguintes ferramentas:
 
 É expressamente proibida qualquer forma de cópia e/ou reprodução deste projeto sem autorização expressa.
 
-<p style='text-align: right;'><a href='#topo'>🚀 Voltar ao topo</a></p>
+<p align='right'><a href='#topo'>🚀 Voltar ao topo</a></p>
 
