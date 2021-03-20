@@ -657,15 +657,6 @@ a {
   border: none;
 }
 
-.dividing-vertical-line {
-  border-left: 6px solid green;
-  height: 500px;
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  top: 0;
-}
-
 .empty-order-msg {
   margin: 2rem 0;
   font-size: 0.9rem;
